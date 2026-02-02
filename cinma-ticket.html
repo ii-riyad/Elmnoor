@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تذكرة سينما علم ونور | للطلاب في الإمارات والسعودية ودول الخليج</title>
+    <meta name="description" content="احجز تذكرة سينما علم ونور! منصة مخصصة للطلاب الراغبين بالدراسة في ماليزيا من الإمارات والسعودية والسودان واليمن وقطر وعمان. صوّت لفيلمك المفضل واحجز مكانك.">
+    <meta name="keywords" content="سينما علم ونور, تذكرة سينما ماليزيا, الدراسة في ماليزيا للطلاب السعوديين, الدراسة في ماليزيا للطلاب الإماراتيين, الدراسة في ماليزيا من الخليج, طلاب السعودية في ماليزيا, طلاب الإمارات في ماليزيا, الدراسة بالخارج للخليجيين">
+    <link rel="canonical" href="https://elmnoor.com/cinma-ticket.html">
+    <meta property="og:title" content="تذكرة سينما علم ونور | للطلاب في الإمارات والسعودية ودول الخليج">
+    <meta property="og:description" content="احجز تذكرة سينما علم ونور! منصة للطلاب من الإمارات والسعودية والسودان واليمن وقطر وعمان الراغبين بالدراسة في ماليزيا.">
+    <meta property="og:url" content="https://elmnoor.com/cinma-ticket.html">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Changa:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background: linear-gradient(135deg, #1a2a3a, #0d5e56); min-height: 100vh; padding: 0; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+        :root { --teal: #00A99D; --dark: #2C3E50; --cream: #FDFCF5; }
+
+        /* NAVBAR */
+        .navbar { background: var(--dark); border-bottom: 5px solid #000; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 0 0 #000; width: 100%; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; gap: 1rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; color: var(--cream); text-decoration: none; white-space: nowrap; font-weight: bold; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+        .nav-link { color: var(--cream); text-decoration: none; font-weight: bold; padding: 0.5rem 0.75rem; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+        .nav-link:hover { background: rgba(0, 169, 157, 0.3); }
+        .nav-link.active { background: var(--teal); color: white; }
+        .mobile-menu-btn { display: none; padding: 0.5rem; font-size: 1.5rem; min-width: 44px; min-height: 44px; background: transparent; border: 3px solid var(--cream); border-radius: 8px; color: var(--cream); cursor: pointer; }
+
+        /* MAIN CONTENT */
+        .main-content { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 30px; width: 100%; }
+
+        /* VOTING SECTION */
+        .voting-section { width: 100%; max-width: 100%; margin-bottom: 100px; }
+        .voting-header { text-align: center; margin-bottom: 50px; }
+        .voting-header h1 { color: white; font-size: 2.8rem; margin-bottom: 15px; font-family: 'Changa', sans-serif; font-weight: 700; }
+        .voting-header p { color: rgba(255, 255, 255, 0.85); font-size: 1.3rem; letter-spacing: 0.5px; }
+
+        /* GRID - SIMPLE & CLEAN */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 100%;
+            padding: 0 50px;
+            max-width: none;
+        }
+
+        /* MOVIE CARD */
+        .movie-card {
+            background: var(--cream);
+            border: 2px solid var(--dark);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 18px 18px 0 rgba(0, 0, 0, 0.55);
+        }
+
+        .movie-card.voted {
+            border-color: var(--teal);
+            box-shadow: 14px 14px 0 var(--teal);
+        }
+
+        /* POSTER */
+        .movie-poster {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1.4;
+            overflow: hidden;
+            background: #333;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .poster-fallback {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #555, #333);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .poster-fallback i { font-size: 4rem; margin-bottom: 20px; }
+
+        /* VOTE BADGE */
+        .vote-badge {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: rgba(0, 0, 0, 0.92);
+            color: white;
+            padding: 9px 14px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 1.05rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* MOVIE INFO */
+        .movie-info {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-grow: 1;
+        }
+
+        .movie-info h3 { font-size: 1rem; color: var(--dark); font-family: 'Changa', sans-serif; font-weight: 700; }
+        .movie-info p { color: #555; font-size: 0.75rem; line-height: 1.3; }
+
+        /* BUTTON */
+        .vote-btn {
+            width: 100%;
+            padding: 6px 8px;
+            background: var(--teal);
+            color: white;
+            border: 1px solid var(--dark);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Tajawal', sans-serif;
+            box-shadow: 2px 2px 0 var(--dark);
+            margin-top: auto;
+        }
+
+        .vote-btn:hover { transform: translateY(-2px); box-shadow: 7px 7px 0 var(--dark); }
+        .vote-btn:active { transform: translateY(2px); box-shadow: 3px 3px 0 var(--dark); }
+        .vote-btn.voted { background: #27ae60; opacity: 0.9; }
+
+        /* TICKET */
+        .ticket-container {
+            width: 900px;
+            max-width: 95%;
+            display: flex;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .ticket-left {
+            flex: 2;
+            background: var(--cream);
+            padding: 2.5rem;
+            display: flex;
+            gap: 25px;
+            border-radius: 25px 0 0 25px;
+        }
+
+        .side-strip {
+            width: 65px;
+            background: var(--dark);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .side-strip .ticket-id { writing-mode: vertical-rl; letter-spacing: 3px; font-family: 'Courier New', monospace; font-weight: bold; margin-top: 12px; }
+
+        .ticket-details { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+
+        .info-box {
+            border: 2px solid var(--teal);
+            border-radius: 14px;
+            padding: 12px 18px;
+            background: rgba(0, 169, 157, 0.08);
+        }
+
+        .info-box label { display: block; color: var(--dark); font-size: 0.82rem; font-weight: bold; margin-bottom: 6px; letter-spacing: 0.5px; }
+        .info-box span, .info-box input { display: block; font-size: 1.15rem; color: var(--dark); font-weight: bold; background: transparent; border: none; width: 100%; font-family: 'Tajawal', sans-serif; }
+
+        .info-box.highlight { background: var(--teal); color: white; }
+        .info-box.highlight label, .info-box.highlight input { color: white; }
+        .info-box.highlight input::placeholder { color: rgba(255, 255, 255, 0.75); }
+
+        .ticket-right {
+            flex: 1;
+            background: var(--teal);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            border-left: 4px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 0 25px 25px 0;
+        }
+
+        .ticket-right::before, .ticket-right::after {
+            content: ''; position: absolute; width: 45px; height: 45px; background: #15454d; border-radius: 50%; left: -23px; z-index: 10;
+        }
+        .ticket-right::before { top: -22px; }
+        .ticket-right::after { bottom: -22px; }
+
+        .brand-logo { font-family: 'Changa', sans-serif; font-size: 2.2rem; margin-bottom: 12px; line-height: 1.2; font-weight: 700; }
+        .brand-subtitle { font-size: 1.2rem; opacity: 0.92; margin-bottom: 18px; font-weight: 600; }
+        .character-img { font-size: 5rem; margin-bottom: 12px; }
+
+        /* BUTTONS */
+        .actions { margin-top: 40px; display: flex; gap: 20px; justify-content: center; }
+        .btn-action { padding: 14px 40px; border: none; border-radius: 10px; font-size: 1.05rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s; font-family: 'Tajawal', sans-serif; box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2); }
+
+        .btn-email { background: var(--dark); color: white; box-shadow: 0 5px 0 #0f1620; }
+
+        .btn-action:hover { transform: translateY(-3px); box-shadow: 0 7px 0 rgba(0, 0, 0, 0.3); }
+        .btn-action:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2); }
+        .btn-action:disabled { opacity: 0.65; cursor: not-allowed; }
+
+        .scroll-to-ticket-btn { position: fixed; top: 90px; right: 20px; padding: 12px 20px; background: var(--teal); color: white; border: none; border-radius: 25px; font-size: 0.95rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.3s; z-index: 999; display: flex; align-items: center; gap: 8px; }
+
+        .scroll-to-ticket-btn:hover { transform: scale(1.05); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); }
+        .scroll-to-ticket-btn:active { transform: scale(0.98); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            body { padding: 25px 15px; }
+            .movie-grid { gap: 40px; padding: 0 30px; }
+            .voting-header h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 1024px) {
+            .movie-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; padding: 0 25px; }
+            .voting-header h1 { font-size: 2.3rem; }
+            .ticket-container { width: 90%; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; }
+            .voting-header h1 { font-size: 1.9rem; }
+            .voting-header p { font-size: 1rem; }
+            .movie-grid { grid-template-columns: 1fr; gap: 25px; padding: 0 15px; }
+            .movie-card { border: 6px solid var(--dark); border-radius: 20px; }
+            .movie-info { padding: 20px; gap: 12px; }
+            .movie-info h3 { font-size: 1.4rem; }
+            .movie-info p { font-size: 0.95rem; }
+            .vote-btn { padding: 14px 15px; font-size: 1rem; }
+            .ticket-container { flex-direction: column-reverse; width: 100%; border-radius: 20px; }
+            .ticket-left, .ticket-right { border-radius: 0; }
+            .ticket-left { border-radius: 0 0 20px 20px; padding: 1.8rem; }
+            .ticket-right { border-radius: 20px 20px 0 0; border-left: none; border-bottom: 4px dashed rgba(255, 255, 255, 0.5); padding: 1.8rem; }
+            .ticket-right::before, .ticket-right::after { display: none; }
+            .side-strip { display: none; }
+            .actions { flex-direction: column; }
+            .btn-action { width: 100%; justify-content: center; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+        <div class="nav-content">
+            <a href="index.html" class="logo"><i class="fas fa-graduation-cap"></i><span>علم ونور</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة"><i class="fas fa-bars"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="index.html#majors" class="nav-link"><i class="fas fa-book"></i> التخصصات</a>
+                <a href="index.html" class="nav-link"><i class="fas fa-university"></i> الجامعات</a>
+                <a href="index.html" class="nav-link"><i class="fas fa-concierge-bell"></i> الخدمات</a>
+                <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> تواصل</a>
+                <a href="cinma-ticket.html" class="nav-link active"><i class="fas fa-film"></i> التذكرة</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+    <button class="scroll-to-ticket-btn" onclick="document.getElementById('ticketArea').scrollIntoView({behavior: 'smooth', block: 'center'})"><i class="fas fa-ticket"></i> احجز التذكرة</button>
+    
+    <div class="voting-section">
+        <div class="voting-header">
+            <h1><i class="fas fa-film"></i> صوّت للفيلم المفضل</h1>
+            <p>اختر الفيلم الذي تريد مشاهدته في سينما علم ونور</p>
+            <p style="font-size: 1.05rem; margin-top: 10px; opacity: 0.8;">مخصص للطلاب من الإمارات والسعودية والسودان واليمن وقطر وعمان الراغبين بالدراسة في ماليزيا</p>
+        </div>
+        <div class="movie-grid">
+            <div class="movie-card" data-movie="puss-in-boots" data-title="Puss in Boots 3D">
+                <div class="movie-poster">
+                    <img src="images/puss-in-boots.jpg" alt="Puss in Boots 3D" class="movie-image">
+                    <div class="poster-fallback" style="display: none;"><i class="fas fa-cat"></i><span>Puss in Boots</span></div>
+                    <div class="vote-badge"><i class="fas fa-heart"></i><span class="vote-count">0</span></div>
+                </div>
+                <div class="movie-info">
+                    <h3>Puss in Boots 3D</h3>
+                    <p>مغامرات القط ذو الحذاء</p>
+                    <button class="vote-btn" onclick="voteMovie('puss-in-boots', 'Puss in Boots 3D', this)"><i class="fas fa-thumbs-up"></i> صوّت</button>
+                </div>
+            </div>
+            <div class="movie-card" data-movie="monsters-inc" data-title="Monsters Inc">
+                <div class="movie-poster">
+                    <img src="images/monsters-inc.jpg" alt="Monsters Inc" class="movie-image">
+                    <div class="poster-fallback" style="display: none;"><i class="fas fa-grin-squint"></i><span>Monsters Inc</span></div>
+                    <div class="vote-badge"><i class="fas fa-heart"></i><span class="vote-count">0</span></div>
+                </div>
+                <div class="movie-info">
+                    <h3>Monsters Inc</h3>
+                    <p>شركة المرعبين المحدودة</p>
+                    <button class="vote-btn" onclick="voteMovie('monsters-inc', 'Monsters Inc', this)"><i class="fas fa-thumbs-up"></i> صوّت</button>
+                </div>
+            </div>
+            <div class="movie-card" data-movie="inside-out-2" data-title="Inside Out 2">
+                <div class="movie-poster">
+                    <img src="images/inside-out-2.jpg" alt="Inside Out 2" class="movie-image">
+                    <div class="poster-fallback" style="display: none;"><i class="fas fa-brain"></i><span>Inside Out 2</span></div>
+                    <div class="vote-badge"><i class="fas fa-heart"></i><span class="vote-count">0</span></div>
+                </div>
+                <div class="movie-info">
+                    <h3>Inside Out 2</h3>
+                    <p>رحلة في عقل رايلي</p>
+                    <button class="vote-btn" onclick="voteMovie('inside-out-2', 'Inside Out 2', this)"><i class="fas fa-thumbs-up"></i> صوّت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticket-container" id="ticketArea">
+        <div class="ticket-left">
+            <div class="side-strip">
+                <span>N</span><span>O</span>
+                <br>
+                <span class="ticket-id">#744239</span>
+            </div>
+            <div class="ticket-details">
+                <div class="info-box"><label>الفيلم | Movie</label><span id="selectedMovie">لم يتم الاختيار بعد</span></div>
+                <div class="info-box"><label>الموعد | Time</label><span>5:00 PM مساءً</span></div>
+                <div class="info-box"><label>المكان | Venue</label><span>كلية الحاسبات والمعلومات | FCI Faculty<br><small style="font-size: 0.85rem; opacity: 0.8;">Code: CQMX0001</small></span></div>
+                <div class="info-box highlight">
+                    <label>اسم الطالب | Student Name</label>
+                    <input id="studentName" type="text" placeholder="اكتب اسمك...">
+                    <input id="studentEmail" type="email" placeholder="بريدك الإلكتروني" style="margin-top: 8px;">
+                </div>
+            </div>
+        </div>
+        <div class="ticket-right">
+            <div class="brand-logo"><i class="fas fa-film"></i><br>علم ونور</div>
+            <div class="brand-subtitle">Elm w Noor</div>
+            <i class="fas fa-graduation-cap character-img"></i>
+            <div style="font-size: 0.9rem; margin-top: 10px;">تذكرة سينما<br>Cinema Ticket</div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button id="sendBtn" class="btn-action btn-email" onclick="sendTicket()"><i class="fas fa-ticket"></i> احجز التذكرة</button>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeTicketId();
+            setupImageFallbacks();
+            loadVotes();
+        });
+
+        function initializeTicketId() {
+            const ticketIdEl = document.querySelector('.ticket-id');
+            if (ticketIdEl) ticketIdEl.textContent = '#' + String(Math.floor(Math.random() * 900000 + 100000));
+        }
+
+        function setupImageFallbacks() {
+            document.querySelectorAll('.movie-image').forEach(img => {
+                img.addEventListener('error', function () {
+                    const fallback = this.parentElement.querySelector('.poster-fallback');
+                    if (fallback) { fallback.style.display = 'flex'; this.style.display = 'none'; }
+                });
+            });
+        }
+
+        function voteMovie(movieId, movieTitle, btn) {
+            document.querySelectorAll('.movie-card').forEach(card => card.classList.remove('voted'));
+            document.querySelectorAll('.vote-btn').forEach(button => {
+                button.classList.remove('voted');
+                button.innerHTML = '<i class="fas fa-thumbs-up"></i> صوّت';
+            });
+            const card = document.querySelector(`.movie-card[data-movie="${movieId}"]`);
+            if (card) card.classList.add('voted');
+            btn.classList.add('voted');
+            btn.innerHTML = '<i class="fas fa-check"></i> تم ✓';
+            document.getElementById('selectedMovie').textContent = movieTitle;
+            const votes = JSON.parse(localStorage.getItem('movieVotes') || '{}');
+            votes[movieId] = (votes[movieId] || 0) + 1;
+            localStorage.setItem('movieVotes', JSON.stringify(votes));
+            updateVoteCounts();
+            setTimeout(() => {
+                document.getElementById('ticketArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+
+        function loadVotes() { updateVoteCounts(); }
+
+        function updateVoteCounts() {
+            const votes = JSON.parse(localStorage.getItem('movieVotes') || '{}');
+            document.querySelectorAll('.movie-card').forEach(card => {
+                const movieId = card.dataset.movie;
+                const count = votes[movieId] || 0;
+                const badge = card.querySelector('.vote-count');
+                if (badge) badge.textContent = count;
+            });
+        }
+
+        async function sendTicket() {
+            const nameEl = document.getElementById('studentName');
+            const emailEl = document.getElementById('studentEmail');
+            const sendBtn = document.getElementById('sendBtn');
+            const ticketIdEl = document.querySelector('.ticket-id');
+            const name = nameEl.value.trim() || 'زائر';
+            const email = emailEl.value.trim();
+            const ticketId = ticketIdEl ? ticketIdEl.textContent : '#000000';
+            const selectedMovie = document.getElementById('selectedMovie').textContent;
+            
+            if (!email) { alert('أدخل البريد الإلكتروني'); emailEl.focus(); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('البريد غير صحيح'); emailEl.focus(); return; }
+            if (selectedMovie === 'لم يتم الاختيار بعد') { alert('يرجى اختيار فيلم أولاً'); return; }
+            
+            sendBtn.disabled = true;
+            try {
+                const formData = new FormData();
+                formData.append('type', 'ticket');
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('phone', ticketId.replace('#', ''));
+                formData.append('major', selectedMovie);
+                formData.append('message', `حجز تذكرة سينما علم ونور\n\nرقم التذكرة: ${ticketId}\nالاسم: ${name}\nالبريد: ${email}\nالفيلم: ${selectedMovie}\nالموعد: 5:00 PM مساءً\nالمكان: كلية الحاسبات والمعلومات | FCI Faculty (Code: CQMX0001)`);
+                
+                const response = await fetch('send.php/send.php', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                const data = await response.json().catch(() => ({}));
+                
+                if (response.ok) { 
+                    alert('✅ تم تأكيد الحجز بنجاح!\n\nرقم التذكرة: ' + ticketId + '\n\nتم إرسال تفاصيل الحجز إلى بريدك الإلكتروني.');
+                    nameEl.value = ''; 
+                    emailEl.value = ''; 
+                    document.getElementById('selectedMovie').textContent = 'لم يتم الاختيار بعد';
+                    document.querySelectorAll('.movie-card').forEach(card => card.classList.remove('voted'));
+                    document.querySelectorAll('.vote-btn').forEach(button => {
+                        button.classList.remove('voted');
+                        button.innerHTML = '<i class="fas fa-thumbs-up"></i> صوّت';
+                    });
+                }
+                else { alert('❌ ' + (data.error || 'خطأ في الإرسال')); }
+            } catch (err) { 
+                console.error(err); 
+                alert('❌ خطأ في الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.'); 
+            }
+            finally { sendBtn.disabled = false; }
+        }
+    </script>
+
+
+</body>
+</html>
+
