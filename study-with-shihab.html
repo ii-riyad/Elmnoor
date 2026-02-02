@@ -43,18 +43,6 @@
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
         
-        <style>
-            /* Flashcards Styles */
-            .card-container { perspective: 1000px; width: 100%; height: 250px; margin: 1rem 0; cursor: pointer; }
-            .card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; border-radius: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 4px solid #2C3E50; }
-            .card.is-flipped { transform: rotateY(180deg); }
-            .card-face { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.2rem; font-weight: bold; padding: 1.5rem; text-align: center; overflow-y: auto; background: #FDFCF5; }
-            .card-back { background: #00A99D; color: #fff; transform: rotateY(180deg); }
-            .flashcard-input-group input { width: 100%; padding: 10px; border: 3px solid #2C3E50; border-radius: 8px; margin-bottom: 5px; font-family: inherit; }
-            /* Ensure tool content is toggleable */
-            .tool-content { display: none; }
-            .tool-content.active { display: block; }
-        </style>
     </head>
     <body class="study-page">
         <nav class="navbar">
