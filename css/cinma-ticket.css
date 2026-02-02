@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 body {
@@ -12,16 +12,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 30px
 }
 
 :root {
   --teal: #00A99D;
   --dark: #2C3E50;
-  --cream: #FDFCF5;
+  --cream: #FDFCF5
 }
 
-/* NAVBAR */
 .navbar {
   background: var(--dark);
   border-bottom: 5px solid #000;
@@ -29,7 +28,7 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 5px 0 0 #000;
-  width: 100%;
+  width: 100%
 }
 
 .nav-content {
@@ -40,18 +39,18 @@ body {
   gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  width: 100%
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: .5rem;
   font-size: 1.5rem;
   color: var(--cream);
   text-decoration: none;
   white-space: nowrap;
-  font-weight: bold;
+  font-weight: bold
 }
 
 .nav-links {
@@ -59,33 +58,33 @@ body {
   gap: 1.5rem;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0
 }
 
 .nav-link {
   color: var(--cream);
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 0.75rem;
+  padding: .5rem .75rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: all 0.2s;
+  gap: .5rem;
+  transition: all .2s
 }
 
 .nav-link:hover {
-  background: rgba(0, 169, 157, 0.3);
+  background: rgba(0, 169, 157, .3)
 }
 
 .nav-link.active {
   background: var(--teal);
-  color: white;
+  color: white
 }
 
 .mobile-menu-btn {
   display: none;
-  padding: 0.5rem;
+  padding: .5rem;
   font-size: 1.5rem;
   min-width: 44px;
   min-height: 44px;
@@ -93,29 +92,27 @@ body {
   border: 3px solid var(--cream);
   border-radius: 8px;
   color: var(--cream);
-  cursor: pointer;
+  cursor: pointer
 }
 
-/* MAIN CONTENT */
 .main-content {
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  width: 100%;
+  width: 100%
 }
 
-/* VOTING SECTION */
 .voting-section {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 100px
 }
 
 .voting-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 50px
 }
 
 .voting-header h1 {
@@ -123,26 +120,24 @@ body {
   font-size: 2.8rem;
   margin-bottom: 15px;
   font-family: 'Changa', sans-serif;
-  font-weight: 700;
+  font-weight: 700
 }
 
 .voting-header p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, .85);
   font-size: 1.3rem;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px
 }
 
-/* GRID - SIMPLE & CLEAN */
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   width: 100%;
   padding: 0 50px;
-  max-width: none;
+  max-width: none
 }
 
-/* MOVIE CARD */
 .movie-card {
   background: var(--cream);
   border: 2px solid var(--dark);
@@ -150,34 +145,33 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, .3);
+  transition: all .3s ease
 }
 
 .movie-card:hover {
   transform: translateY(-8px);
-  box-shadow: 18px 18px 0 rgba(0, 0, 0, 0.55);
+  box-shadow: 18px 18px 0 rgba(0, 0, 0, .55)
 }
 
 .movie-card.voted {
   border-color: var(--teal);
-  box-shadow: 14px 14px 0 var(--teal);
+  box-shadow: 14px 14px 0 var(--teal)
 }
 
-/* POSTER */
 .movie-poster {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1.4;
+  aspect-ratio: 1/1.4;
   overflow: hidden;
-  background: #333;
+  background: #333
 }
 
 .movie-poster img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center top
 }
 
 .poster-fallback {
@@ -193,20 +187,19 @@ body {
   background: linear-gradient(135deg, #555, #333);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 20px
 }
 
 .poster-fallback i {
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
-/* VOTE BADGE */
 .vote-badge {
   position: absolute;
   top: 15px;
   left: 15px;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, .92);
   color: white;
   padding: 9px 14px;
   border-radius: 25px;
@@ -215,32 +208,30 @@ body {
   align-items: center;
   gap: 7px;
   font-size: 1.05rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, .3)
 }
 
-/* MOVIE INFO */
 .movie-info {
   padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  flex-grow: 1;
+  flex-grow: 1
 }
 
 .movie-info h3 {
   font-size: 1rem;
   color: var(--dark);
   font-family: 'Changa', sans-serif;
-  font-weight: 700;
+  font-weight: 700
 }
 
 .movie-info p {
   color: #555;
-  font-size: 0.75rem;
-  line-height: 1.3;
+  font-size: .75rem;
+  line-height: 1.3
 }
 
-/* BUTTON */
 .vote-btn {
   width: 100%;
   padding: 6px 8px;
@@ -248,38 +239,37 @@ body {
   color: white;
   border: 1px solid var(--dark);
   border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all .2s;
   font-family: 'Tajawal', sans-serif;
   box-shadow: 2px 2px 0 var(--dark);
-  margin-top: auto;
+  margin-top: auto
 }
 
 .vote-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 7px 7px 0 var(--dark);
+  box-shadow: 7px 7px 0 var(--dark)
 }
 
 .vote-btn:active {
   transform: translateY(2px);
-  box-shadow: 3px 3px 0 var(--dark);
+  box-shadow: 3px 3px 0 var(--dark)
 }
 
 .vote-btn.voted {
   background: #27ae60;
-  opacity: 0.9;
+  opacity: .9
 }
 
-/* TICKET */
 .ticket-container {
   width: 900px;
   max-width: 95%;
   display: flex;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .6);
   border-radius: 25px;
-  overflow: hidden;
+  overflow: hidden
 }
 
 .ticket-left {
@@ -288,7 +278,7 @@ body {
   padding: 2.5rem;
   display: flex;
   gap: 25px;
-  border-radius: 25px 0 0 25px;
+  border-radius: 25px 0 0 25px
 }
 
 .side-strip {
@@ -302,9 +292,9 @@ body {
   color: white;
   padding: 25px 0;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: .85rem;
   flex-shrink: 0;
-  font-weight: bold;
+  font-weight: bold
 }
 
 .side-strip .ticket-id {
@@ -312,7 +302,7 @@ body {
   letter-spacing: 3px;
   font-family: 'Courier New', monospace;
   font-weight: bold;
-  margin-top: 12px;
+  margin-top: 12px
 }
 
 .ticket-details {
@@ -320,23 +310,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px;
+  gap: 18px
 }
 
 .info-box {
   border: 2px solid var(--teal);
   border-radius: 14px;
   padding: 12px 18px;
-  background: rgba(0, 169, 157, 0.08);
+  background: rgba(0, 169, 157, .08)
 }
 
 .info-box label {
   display: block;
   color: var(--dark);
-  font-size: 0.82rem;
+  font-size: .82rem;
   font-weight: bold;
   margin-bottom: 6px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px
 }
 
 .info-box span,
@@ -348,21 +338,21 @@ body {
   background: transparent;
   border: none;
   width: 100%;
-  font-family: 'Tajawal', sans-serif;
+  font-family: 'Tajawal', sans-serif
 }
 
 .info-box.highlight {
   background: var(--teal);
-  color: white;
+  color: white
 }
 
 .info-box.highlight label,
 .info-box.highlight input {
-  color: white;
+  color: white
 }
 
 .info-box.highlight input::placeholder {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, .75)
 }
 
 .ticket-right {
@@ -376,8 +366,8 @@ body {
   color: white;
   text-align: center;
   position: relative;
-  border-left: 4px dashed rgba(255, 255, 255, 0.5);
-  border-radius: 0 25px 25px 0;
+  border-left: 4px dashed rgba(255, 255, 255, .5);
+  border-radius: 0 25px 25px 0
 }
 
 .ticket-right::before,
@@ -389,15 +379,15 @@ body {
   background: #15454d;
   border-radius: 50%;
   left: -23px;
-  z-index: 10;
+  z-index: 10
 }
 
 .ticket-right::before {
-  top: -22px;
+  top: -22px
 }
 
 .ticket-right::after {
-  bottom: -22px;
+  bottom: -22px
 }
 
 .brand-logo {
@@ -405,27 +395,26 @@ body {
   font-size: 2.2rem;
   margin-bottom: 12px;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 700
 }
 
 .brand-subtitle {
   font-size: 1.2rem;
-  opacity: 0.92;
+  opacity: .92;
   margin-bottom: 18px;
-  font-weight: 600;
+  font-weight: 600
 }
 
 .character-img {
   font-size: 5rem;
-  margin-bottom: 12px;
+  margin-bottom: 12px
 }
 
-/* BUTTONS */
 .actions {
   margin-top: 40px;
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: center
 }
 
 .btn-action {
@@ -438,30 +427,30 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: all 0.2s;
+  transition: all .2s;
   font-family: 'Tajawal', sans-serif;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .2)
 }
 
 .btn-email {
   background: var(--dark);
   color: white;
-  box-shadow: 0 5px 0 #0f1620;
+  box-shadow: 0 5px 0 #0f1620
 }
 
 .btn-action:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, .3)
 }
 
 .btn-action:active {
   transform: translateY(1px);
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, .2)
 }
 
 .btn-action:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
+  opacity: .65;
+  cursor: not-allowed
 }
 
 .scroll-to-ticket-btn {
@@ -473,146 +462,145 @@ body {
   color: white;
   border: none;
   border-radius: 25px;
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+  transition: all .3s;
   z-index: 999;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px
 }
 
 .scroll-to-ticket-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .4)
 }
 
 .scroll-to-ticket-btn:active {
-  transform: scale(0.98);
+  transform: scale(.98)
 }
 
-/* RESPONSIVE */
-@media (max-width: 1200px) {
+@media (max-width:1200px) {
   body {
-    padding: 25px 15px;
+    padding: 25px 15px
   }
 
   .movie-grid {
     gap: 40px;
-    padding: 0 30px;
+    padding: 0 30px
   }
 
   .voting-header h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width:1024px) {
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 35px;
-    padding: 0 25px;
+    padding: 0 25px
   }
 
   .voting-header h1 {
-    font-size: 2.3rem;
+    font-size: 2.3rem
   }
 
   .ticket-container {
-    width: 90%;
+    width: 90%
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   body {
-    padding: 0;
+    padding: 0
   }
 
   .voting-header h1 {
-    font-size: 1.9rem;
+    font-size: 1.9rem
   }
 
   .voting-header p {
-    font-size: 1rem;
+    font-size: 1rem
   }
 
   .movie-grid {
     grid-template-columns: 1fr;
     gap: 25px;
-    padding: 0 15px;
+    padding: 0 15px
   }
 
   .movie-card {
     border: 6px solid var(--dark);
-    border-radius: 20px;
+    border-radius: 20px
   }
 
   .movie-info {
     padding: 20px;
-    gap: 12px;
+    gap: 12px
   }
 
   .movie-info h3 {
-    font-size: 1.4rem;
+    font-size: 1.4rem
   }
 
   .movie-info p {
-    font-size: 0.95rem;
+    font-size: .95rem
   }
 
   .vote-btn {
     padding: 14px 15px;
-    font-size: 1rem;
+    font-size: 1rem
   }
 
   .ticket-container {
     flex-direction: column-reverse;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 20px
   }
 
   .ticket-left,
   .ticket-right {
-    border-radius: 0;
+    border-radius: 0
   }
 
   .ticket-left {
     border-radius: 0 0 20px 20px;
-    padding: 1.8rem;
+    padding: 1.8rem
   }
 
   .ticket-right {
     border-radius: 20px 20px 0 0;
     border-left: none;
-    border-bottom: 4px dashed rgba(255, 255, 255, 0.5);
-    padding: 1.8rem;
+    border-bottom: 4px dashed rgba(255, 255, 255, .5);
+    padding: 1.8rem
   }
 
   .ticket-right::before,
   .ticket-right::after {
-    display: none;
+    display: none
   }
 
   .side-strip {
-    display: none;
+    display: none
   }
 
   .actions {
-    flex-direction: column;
+    flex-direction: column
   }
 
   .btn-action {
     width: 100%;
-    justify-content: center;
+    justify-content: center
   }
 
   .nav-links {
-    display: none;
+    display: none
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: block
   }
 }
