@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "nhoizey.gremlins",
+    "usernamehw.errorlens",
+    "ritwickdey.liveserver",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "editorconfig.editorconfig",
+    "yzhang.markdown-all-in-one",
+    "christian-kohler.path-intellisense"
+  ]
+}
