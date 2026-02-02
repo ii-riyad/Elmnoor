@@ -18,7 +18,7 @@ ErrorDocument 404 /404.html
     upgrade-insecure-requests; \
     block-all-mixed-content; \
     require-trusted-types-for 'script'"
-  
+
   # Additional Security Headers
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "DENY"

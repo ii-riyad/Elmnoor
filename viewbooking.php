@@ -177,7 +177,7 @@ $totalBookings = array_sum($stats);
     <div class="container">
         <h1>📋 حجوزات التذاكر</h1>
         <p style="color: #718096; margin-bottom: 20px;">إدارة حجوزات تذاكر سينما علم ونور</p>
-        
+
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-value"><?= $totalBookings ?></div>
@@ -205,13 +205,13 @@ $totalBookings = array_sum($stats);
                     <option value="pending" <?= $statusFilter === 'pending' ? 'selected' : '' ?>>قيد الانتظار</option>
                     <option value="cancelled" <?= $statusFilter === 'cancelled' ? 'selected' : '' ?>>ملغاة</option>
                 </select>
-                
+
                 <select name="order" onchange="this.form.submit()">
                     <option value="DESC" <?= $orderBy === 'DESC' ? 'selected' : '' ?>>الأحدث أولاً</option>
                     <option value="ASC" <?= $orderBy === 'ASC' ? 'selected' : '' ?>>الأقدم أولاً</option>
                 </select>
             </form>
-            
+
             <button onclick="window.print()">🖨️ طباعة</button>
             <button onclick="window.location.href='index.html'">🏠 العودة للرئيسية</button>
         </div>

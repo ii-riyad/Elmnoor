@@ -130,9 +130,9 @@ if ($type === 'ticket' && $pdo) {
         if (!$ticketId) {
             $ticketId = substr(str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT), 0, 6);
         }
-        
+
         $stmt = $pdo->prepare(
-            'INSERT INTO ticket_bookings (ticket_id, name, email, phone, notes, booking_date, status) 
+            'INSERT INTO ticket_bookings (ticket_id, name, email, phone, notes, booking_date, status)
              VALUES (?, ?, ?, ?, ?, NOW(), ?)'
         );
         $stmt->execute([

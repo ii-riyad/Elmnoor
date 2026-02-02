@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "u537910683_movie"; 
+$username = "u537910683_movie";
 $password = "rfifhG0_0"; // تم وضع كلمة المرور داخل علامات التنصيص
-$dbname = "u537910683_elmnoor"; 
+$dbname = "u537910683_elmnoor";
 
 // إنشاء الاتصال
 $conn = new mysqli($servername, $username, $password, $dbname);
