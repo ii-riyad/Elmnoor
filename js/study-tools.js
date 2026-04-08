@@ -6,6 +6,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   console.log('Shihab Tools: Ready & Loaded 🚀')
 
+  const cardsStr = localStorage.getItem('shihabCards')
+  const todosStr = localStorage.getItem('shihabTodos')
+
   // --- 1. إدارة الحالة (State Management) ---
   const state = {
     timer: {
@@ -14,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
       isRunning: false,
       interval: null
     },
-    flashcards: JSON.parse(localStorage.getItem('shihabCards')) || [],
+    flashcards: cardsStr ? JSON.parse(cardsStr) : [],
     cardIndex: 0,
-    todos: JSON.parse(localStorage.getItem('shihabTodos')) || [],
+    todos: todosStr ? JSON.parse(todosStr) : [],
     audio: null
   }
 
