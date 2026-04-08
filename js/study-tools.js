@@ -1,9 +1,4 @@
-/* =========================================================
-   Shihab Study Tools - Ultimate Fix
-   (Timer, Flashcards, GPA, To-Do, Notes, Sounds)
-   ========================================================= */
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   console.log('Shihab Tools: Ready & Loaded 🚀')
 
   const cardsStr = localStorage.getItem('shihabCards')
@@ -63,7 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
     celebration: document.getElementById('celebrationOverlay')
   }
 
-  // Helper: trigger Shihab bubble message
+  /**
+   * Helper: trigger Shihab bubble message
+   * @param {string} key - The message key to trigger (e.g., 'timerStart', 'flashAdd', etc.)
+   * @returns {void}
+   */
   function triggerBubble(key) {
     if (window.shihabSimple && typeof window.shihabSimple.showMessage === 'function') {
       try {
@@ -76,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
        3. معالج النقرات الشامل (The Master Click Handler)
        هذا الجزء هو "الدماغ" الذي يشغل كل الأزرار
        =========================================================== */
-  document.addEventListener('click', function (e) {
+  document.addEventListener('click', (e) => {
     // البحث عن العنصر المضغوط أو أقرب زر (في حال ضغطت على الأيقونة)
     const target = e.target
     const btn = target.closest('button') || target
@@ -212,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  document.addEventListener('keydown', function (e) {
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && els.timerCard && els.timerCard.classList.contains('fullscreen')) {
       setFullscreenState(false)
     }
@@ -226,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- مستمع لتحديث المعدل عند تغيير القيم ---
-  document.addEventListener('change', function (e) {
+  document.addEventListener('change', (e) => {
     if (e.target.classList.contains('gpa-select')) {
       calcGPA()
     }
@@ -241,6 +240,9 @@ document.addEventListener('DOMContentLoaded', function () {
        =========================================================== */
 
   // --- Timer Logic ---
+  /**
+   * @returns {void}
+   */
   function startTimer() {
     if (state.timer.isRunning) return
     state.timer.isRunning = true
@@ -268,6 +270,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 1000)
   }
 
+  /**
+   * @returns {void}
+   */
   function pauseTimer() {
     clearInterval(state.timer.interval)
     state.timer.isRunning = false
@@ -276,6 +281,9 @@ document.addEventListener('DOMContentLoaded', function () {
     triggerBubble('timerPause')
   }
 
+  /**
+   * @returns {void}
+   */
   function resetTimer() {
     clearInterval(state.timer.interval)
     state.timer.isRunning = false
@@ -284,6 +292,9 @@ document.addEventListener('DOMContentLoaded', function () {
     updateControls('stopped')
   }
 
+  /**
+   * @returns {void}
+   */
   function finishTimer() {
     resetTimer()
     els.celebration.classList.add('show')
@@ -292,6 +303,10 @@ document.addEventListener('DOMContentLoaded', function () {
     triggerBubble('timerComplete')
   }
 
+  /**
+   * @param {string} status - 'running', 'paused', or 'stopped'
+   * @returns {void}
+   */
   function updateControls(status) {
     if (status === 'running') {
       els.startBtn.style.display = 'none'
@@ -310,6 +325,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * @param {boolean} isFullscreen - Whether to set the timer to fullscreen mode or not
+   * @returns {void}
+   */
   function setFullscreenState(isFullscreen) {
     if (!els.timerCard || !els.fullscreenBtn) return
     els.timerCard.classList.toggle('fullscreen', isFullscreen)
@@ -322,6 +341,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * Helper to set flip digit and trigger animation if value changes
+   * @param {HTMLElement} el - The element representing the digit to flip
+   * @param {string} value - The new value to set (should be a single character)
+   * @returns {void}
+   */
   function setFlipDigit(el, value) {
     if (!el) return
     if (el.textContent !== value) {
@@ -332,6 +357,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function updateTimerUI() {
     const m = Math.floor(state.timer.timeLeft / 60)
     const s = state.timer.timeLeft % 60
@@ -358,6 +386,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Flashcards Logic ---
+
+  /**
+   * @returns {void}
+   */
   function addFlashcard() {
     const front = els.fcFront.value.trim()
     const back = els.fcBack.value.trim()
@@ -373,6 +405,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function startStudyMode() {
     if (state.flashcards.length === 0) {
       alert('أضف بطاقات أولاً!')
@@ -384,6 +419,10 @@ document.addEventListener('DOMContentLoaded', function () {
     showCard(0)
   }
 
+  /**
+   * @param {number} index - The index of the flashcard to show
+   * @returns {void}
+   */
   function showCard(index) {
     if (!els.cardElement) return
     els.cardElement.classList.remove('is-flipped') // Reset flip
@@ -395,6 +434,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 150)
   }
 
+  /**
+   * @returns {void}
+   */
   function nextCard() {
     if (state.cardIndex < state.flashcards.length - 1) {
       state.cardIndex++
@@ -407,6 +449,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function prevCard() {
     if (state.cardIndex > 0) {
       state.cardIndex--
@@ -414,6 +459,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function deleteCurrentCard() {
     if (confirm('حذف هذه البطاقة؟')) {
       state.flashcards.splice(state.cardIndex, 1)
@@ -428,6 +476,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function editCurrentCard() {
     const card = state.flashcards[state.cardIndex]
     els.fcFront.value = card.front
@@ -437,16 +488,26 @@ document.addEventListener('DOMContentLoaded', function () {
     els.creatorSection.style.display = 'block'
   }
 
+  /**
+   * @returns {void}
+   */
   function saveCards() {
     localStorage.setItem('shihabCards', JSON.stringify(state.flashcards))
     updateFlashcardUI()
   }
 
+  /**
+   * @returns {void}
+   */
   function updateFlashcardUI() {
     if (els.fcCount) els.fcCount.innerText = state.flashcards.length
   }
 
   // --- GPA Logic ---
+
+  /**
+   * @returns {void}
+   */
   function addCourseRow() {
     if (!els.coursesBody) return
     const row = document.createElement('tr')
@@ -475,6 +536,9 @@ document.addEventListener('DOMContentLoaded', function () {
     calcGPA()
   }
 
+  /**
+   * @returns {void}
+   */
   function calcGPA() {
     const rows = document.querySelectorAll('#courses-body tr')
     let totalPts = 0,
@@ -499,6 +563,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- To-Do Logic ---
+
+  /**
+   * @returns {void}
+   */
   function addTodo() {
     const text = els.todoInput.value.trim()
     if (text) {
@@ -511,6 +579,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return false
   }
 
+  /**
+   * @returns {void}
+   */
   function renderTodos() {
     if (!els.todoList) return
     els.todoList.innerHTML = ''
@@ -532,11 +603,19 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+  /**
+   * @returns {void}
+   */
   function saveTodos() {
     localStorage.setItem('shihabTodos', JSON.stringify(state.todos))
   }
 
   // --- Sounds Logic ---
+
+  /**
+   * @param {string} type - The type of sound to play (e.g., 'rain', 'ocean', 'fire', 'forest', 'cafe', or 'none')
+   * @returns {void}
+   */
   function playSound(type) {
     if (state.audio) {
       state.audio.pause()

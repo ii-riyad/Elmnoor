@@ -1,5 +1,5 @@
 // i18n.js — Elm & Noor (robust)
-;(function () {
+;(() => {
   'use strict'
 
   const STORAGE_KEY = 'siteLang',
@@ -51,12 +51,21 @@
   }
 
   const ORIG = new WeakMap()
+
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function setDirLang(lang) {
     const isEn = lang === 'en'
     document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar')
     document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl')
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function applyDataAttributes(lang) {
     document.querySelectorAll('[data-ar], [data-en]').forEach((el) => {
       const val = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ar')
@@ -72,6 +81,11 @@
     })
   }
 
+  /**
+   * @param {Node} root
+   * @param {function(Node): void} cb
+   * @return {void}
+   */
   function walkTextNodes(root, cb) {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -87,6 +101,10 @@
     while ((n = walker.nextNode())) cb(n)
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function applyDict(lang) {
     walkTextNodes(document.body, (node) => {
       if (!ORIG.has(node)) ORIG.set(node, node.nodeValue)
@@ -96,6 +114,10 @@
     })
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function applyPlaceholders(lang) {
     const map = {
       ar: { email: 'البريد الإلكتروني', name: 'الاسم', phone: 'رقم الهاتف', message: 'رسالتك' },
@@ -109,6 +131,10 @@
     })
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function updateToggleLabel(lang) {
     const btn = document.getElementById('langToggleBtn')
     if (!btn) return
@@ -120,7 +146,11 @@
     span.textContent = lang === 'en' ? 'عربي' : 'English'
   }
 
-  // Schedule heavy text/placeholder work so it doesn't block initial paint
+  /**
+   * Schedule heavy text/placeholder work so it doesn't block initial paint
+   * @param {string} lang
+   * @return {void}
+   */
   function scheduleEnhancements(lang) {
     const runHeavy = () => {
       applyDict(lang)
@@ -133,6 +163,10 @@
     }
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function setLang(lang) {
     localStorage.setItem(STORAGE_KEY, lang)
     setDirLang(lang)
@@ -142,7 +176,10 @@
     updateToggleLabel(lang)
   }
 
-  // Lighter init path to improve LCP/TBT: avoid TreeWalker when staying in Arabic
+  /**
+   * Lighter init path to improve LCP/TBT: avoid TreeWalker when staying in Arabic
+   * @return {void}
+   */
   function init() {
     if (localStorage.getItem(VER_KEY) !== VER) {
       localStorage.removeItem(STORAGE_KEY)
@@ -162,7 +199,7 @@
   } else {
     init()
   }
-  document.addEventListener('click', function (e) {
+  document.addEventListener('click', (e) => {
     const btn = e.target.closest && e.target.closest('#langToggleBtn')
     if (!btn) return
     const current = localStorage.getItem(STORAGE_KEY) || 'ar'

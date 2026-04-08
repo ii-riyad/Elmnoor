@@ -1,5 +1,10 @@
-;(function () {
+;(() => {
   const ENDPOINT = '/send.php/send.php'
+  /**
+   * Send email using the provided form data.
+   * @param {FormData} formData
+   * @returns {Promise<{ok: boolean, data: any}>}
+   */
   async function sendEmail(formData) {
     const resp = await fetch(ENDPOINT, {
       method: 'POST',

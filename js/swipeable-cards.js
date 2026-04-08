@@ -1,4 +1,4 @@
-;(function () {
+;(() => {
   'use strict'
 
   class SwipeableCards {
@@ -119,6 +119,9 @@
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function initTocSidebar() {
     const tocToggleBtn = document.getElementById('tocToggleBtn')
     const tocCloseBtn = document.getElementById('tocCloseBtn')
@@ -144,9 +147,12 @@
     })
   }
 
+  /**
+   * @returns {void}
+   */
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault()
         const target = document.querySelector(this.getAttribute('href'))
         if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -154,10 +160,13 @@
     })
   }
 
+  /**
+   * @returns {void}
+   */
   function boot() {
     initTocSidebar()
     const instance = new SwipeableCards()
-    window.scrollToCard = function (cardIndex) {
+    window.scrollToCard = (cardIndex) => {
       if (instance && typeof instance.goToCard === 'function') {
         instance.goToCard(cardIndex)
       }

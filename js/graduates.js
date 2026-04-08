@@ -1,4 +1,4 @@
-;(function () {
+;(() => {
   'use strict'
 
   // تعريف الحالة الأولية
@@ -12,6 +12,9 @@
   // 1. تعريف المتغير فارغاً في البداية لتجنب مشكلة الـ null
   let elements = {}
 
+  /**
+   * @return {void}
+   */
   function loadTodos() {
     const saved = localStorage.getItem('shihabTodos')
     if (saved) {
@@ -25,10 +28,16 @@
     renderTodos()
   }
 
+  /**
+   * @return {void}
+   */
   function saveTodos() {
     localStorage.setItem('shihabTodos', JSON.stringify(state.todos))
   }
 
+  /**
+   * @return {void}
+   */
   function renderTodos() {
     // حماية: عدم التنفيذ إذا لم يتم تحميل القائمة بعد
     if (!elements.todoList) return
@@ -76,6 +85,9 @@
     updateTasksCompleted()
   }
 
+  /**
+   * @return {void}
+   */
   function addTodo() {
     // حماية إضافية
     if (!elements.todoInput) return
@@ -90,6 +102,10 @@
     checkAchievements()
   }
 
+  /**
+   * @param {number} index
+   * @return {void}
+   */
   function toggleTodo(index) {
     state.todos[index].completed = !state.todos[index].completed
     saveTodos()
@@ -97,18 +113,28 @@
     checkAchievements()
   }
 
+  /**
+   * @param {number} index
+   * @return {void}
+   */
   function deleteTodo(index) {
     state.todos.splice(index, 1)
     saveTodos()
     renderTodos()
   }
 
+  /**
+   * @return {void}
+   */
   function updateTasksCompleted() {
     if (!elements.tasksCompleted) return
     const completed = state.todos.filter((t) => t.completed).length
     elements.tasksCompleted.textContent = completed
   }
 
+  /**
+   * @return {void}
+   */
   function loadNotes() {
     const saved = localStorage.getItem('shihabNotes')
     if (saved) {
@@ -117,6 +143,9 @@
     }
   }
 
+  /**
+   * @return {void}
+   */
   function saveNotes() {
     if (elements.notesTextarea) {
       state.notes = elements.notesTextarea.value
@@ -124,6 +153,9 @@
     }
   }
 
+  /**
+   * @return {void}
+   */
   function initSounds() {
     if (!elements.soundButtons) return
     elements.soundButtons.forEach((btn) => {
@@ -131,6 +163,9 @@
     })
   }
 
+  /**
+   * @return {void}
+   */
   function setSound(sound) {
     state.currentSound = sound
     if (elements.soundButtons) {
@@ -140,11 +175,17 @@
     console.log('Sound changed to:', sound)
   }
 
+  /**
+   * @return {void}
+   */
   function loadSound() {
     const saved = localStorage.getItem('shihabSound')
     if (saved) setSound(saved)
   }
 
+  /**
+   * @return {void}
+   */
   function initTabs() {
     if (!elements.toolTabs) return
     elements.toolTabs.forEach((tab) => {
@@ -152,11 +193,17 @@
     })
   }
 
+  /**
+   * @return {void}
+   */
   function switchTab(tabName) {
     elements.toolTabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.tab === tabName))
     elements.toolContents.forEach((content) => content.classList.toggle('active', content.id === `${tabName}Content`))
   }
 
+  /**
+   * @return {void}
+   */
   function loadAchievements() {
     const saved = localStorage.getItem('shihabAchievements')
     if (saved) {
@@ -170,10 +217,16 @@
     renderAchievements()
   }
 
+  /**
+   * @return {void}
+   */
   function saveAchievements() {
     localStorage.setItem('shihabAchievements', JSON.stringify(state.achievements))
   }
 
+  /**
+   * @return {void}
+   */
   function renderAchievements() {
     if (!elements.achievementsGrid) return
     elements.achievementsGrid.querySelectorAll('.achievement-badge').forEach((badge) => {
@@ -182,6 +235,10 @@
     })
   }
 
+  /**
+   * @param {string} achievementId
+   * @return {void}
+   */
   function unlockAchievement(achievementId) {
     if (state.achievements.includes(achievementId)) return
     state.achievements.push(achievementId)
@@ -190,6 +247,10 @@
     showAchievementNotification(achievementId)
   }
 
+  /**
+   * @param {string} achievementId
+   * @return {void}
+   */
   function showAchievementNotification(achievementId) {
     const badge = elements.achievementsGrid.querySelector(`[data-achievement="${achievementId}"]`)
     if (!badge) return
@@ -198,6 +259,9 @@
     setTimeout(() => (badge.style.transform = 'scale(1)'), 300)
   }
 
+  /**
+   * @return {void}
+   */
   function checkAchievements() {
     const sessionsToday = parseInt(elements.tasksCompleted?.textContent || 0)
     if (sessionsToday > 0 && !state.achievements.includes('first-session')) unlockAchievement('first-session')
@@ -206,7 +270,10 @@
     if (completedTasks >= 10 && !state.achievements.includes('tasks-10')) unlockAchievement('tasks-10')
   }
 
-  // --- دالة التهيئة الرئيسية (المعدلة) ---
+  /**
+   * دالة التهيئة الرئيسية (المعدلة)
+   * @return {void}
+   */
   function init() {
     // 2. تعيين العناصر هنا فقط بعد تحميل الصفحة لضمان وجودها
     elements = {
@@ -248,7 +315,7 @@
     // ربط مع المؤقت إذا كان موجوداً
     if (window.studyTimerEnhanced) {
       const originalOnStateChange = window.studyTimerEnhanced.onStateChange
-      window.studyTimerEnhanced.onStateChange = function (state) {
+      window.studyTimerEnhanced.onStateChange = (state) => {
         if (originalOnStateChange) originalOnStateChange(state)
         if (state === 'completed') checkAchievements()
       }

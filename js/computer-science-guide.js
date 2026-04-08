@@ -1,9 +1,12 @@
-;(function () {
+;(() => {
   'use strict'
 
   let currentCard = 0
   const totalCards = 5
 
+  /**
+   * @return {void}
+   */
   function updateDots() {
     const dots = document.querySelectorAll('.navigation-dots .dot')
     dots.forEach((dot, index) => {
@@ -11,6 +14,9 @@
     })
   }
 
+  /**
+   * @return {void}
+   */
   function updateTOC() {
     const tocItems = document.querySelectorAll('.toc-item')
     tocItems.forEach((item, index) => {
@@ -18,6 +24,10 @@
     })
   }
 
+  /**
+   * @param {number} index
+   * @return {void}
+   */
   function scrollToCard(index) {
     if (index < 0 || index >= totalCards) return
 

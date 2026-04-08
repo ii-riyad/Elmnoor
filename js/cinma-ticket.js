@@ -1,20 +1,26 @@
-;(function () {
+;(() => {
   'use strict'
 
   document.addEventListener('DOMContentLoaded', function () {
     initializeTicketId()
     setupImageFallbacks()
-    loadVotes()
+    updateVoteCounts()
   })
 
+  /**
+   * @return {void}
+   */
   function initializeTicketId() {
     const ticketIdEl = document.querySelector('.ticket-id')
     if (ticketIdEl) ticketIdEl.textContent = '#' + String(Math.floor(Math.random() * 900000 + 100000))
   }
 
+  /**
+   * @return {void}
+   */
   function setupImageFallbacks() {
     document.querySelectorAll('.movie-image').forEach((img) => {
-      img.addEventListener('error', function () {
+      img.addEventListener('error', () => {
         const fallback = this.parentElement.querySelector('.poster-fallback')
         if (fallback) {
           fallback.style.display = 'flex'
@@ -24,6 +30,12 @@
     })
   }
 
+  /**
+   * @param {string} movieId
+   * @param {string} movieTitle
+   * @param {HTMLElement} btn
+   * @return {void}
+   */
   function voteMovie(movieId, movieTitle, btn) {
     document.querySelectorAll('.movie-card').forEach((card) => card.classList.remove('voted'))
     document.querySelectorAll('.vote-btn').forEach((button) => {
@@ -48,10 +60,9 @@
     }, 300)
   }
 
-  function loadVotes() {
-    updateVoteCounts()
-  }
-
+  /**
+   * @return {void}
+   */
   function updateVoteCounts() {
     const votes = JSON.parse(localStorage.getItem('movieVotes') || '{}')
     document.querySelectorAll('.movie-card').forEach((card) => {
@@ -62,6 +73,9 @@
     })
   }
 
+  /**
+   * @return {Promise<void>}
+   */
   async function sendTicket() {
     const nameEl = document.getElementById('studentName')
     const emailEl = document.getElementById('studentEmail')

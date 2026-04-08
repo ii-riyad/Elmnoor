@@ -1,4 +1,4 @@
-;(function () {
+;(() => {
   'use strict'
 
   const form = document.getElementById('contactForm')
@@ -7,7 +7,7 @@
 
   if (!form || !successMessage || !errorMessage || !window.EmailSender) return
 
-  form.addEventListener('submit', async function (e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     const submitBtn = form.querySelector('.form-submit')

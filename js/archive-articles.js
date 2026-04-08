@@ -1,6 +1,9 @@
-;(function () {
+;(() => {
   'use strict'
 
+  /**
+   * @returns {void}
+   */
   function initMLLink() {
     var mlBtn = document.getElementById('ml-read-more-btn')
     if (!mlBtn) {
@@ -13,7 +16,7 @@
 
     newBtn.addEventListener(
       'click',
-      function (e) {
+      (e) => {
         e.preventDefault()
         e.stopImmediatePropagation()
         e.stopPropagation()

@@ -1,4 +1,4 @@
-;(function () {
+;(() => {
   'use strict'
   const elements = {
     timerDisplay: document.getElementById('timerDisplay'),
@@ -20,14 +20,26 @@
     isRunning = false,
     isPaused = false,
     timerInterval = null
+
+  /**
+   * @returns {void}
+   */
   function getTimerState() {
     return { isRunning: isRunning, isPaused: isPaused, currentTime: currentTime, totalTime: totalTime }
   }
+
+  /**
+   * @returns {void}
+   */
   function initCircularTimer() {
     if (!elements.timerCircle) return
     elements.timerCircle.style.strokeDasharray = CIRCUMFERENCE
     updateCircularProgress()
   }
+
+  /**
+   * @returns {void}
+   */
   function updateCircularProgress() {
     if (!elements.timerCircle) return
     const percentage = (currentTime / totalTime) * 100
@@ -37,16 +49,30 @@
     if (percentage <= 20) elements.timerCircle.classList.add('danger')
     else if (percentage <= 50) elements.timerCircle.classList.add('warning')
   }
+
+  /**
+   * Formats seconds into MM:SS format
+   * @param {number} seconds
+   * @returns {string}
+   */
   function formatTime(seconds) {
     const mins = Math.floor(seconds / 60),
       secs = seconds % 60
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
+
+  /**
+   * @returns {void}
+   */
   function updateDisplay() {
     if (elements.timerDisplay) elements.timerDisplay.textContent = formatTime(currentTime)
     updateCircularProgress()
     updateCharacterState()
   }
+
+  /**
+   * @returns {void}
+   */
   function updateCharacterState() {
     if (!elements.character) return
     const percentage = (currentTime / totalTime) * 100
@@ -56,6 +82,10 @@
     else if (percentage > 25) elements.character.classList.add('happy')
     else elements.character.classList.add('encouraging')
   }
+
+  /**
+   * @returns {void}
+   */
   function tick() {
     if (!isRunning || isPaused) return
     currentTime--
@@ -71,6 +101,10 @@
       showAlmostDoneMessage()
     }
   }
+
+  /**
+   * @returns {void}
+   */
   function showAlmostDoneMessage() {
     const speechBubble = document.getElementById('speechBubble'),
       speechText = document.getElementById('speechText')
@@ -90,6 +124,10 @@
     speechBubble.classList.add('show')
     setTimeout(() => speechBubble.classList.remove('show'), 5000)
   }
+
+  /**
+   * @returns {void}
+   */
   function startTimer() {
     if (isRunning && !isPaused) return
     if (timerInterval) clearInterval(timerInterval)
@@ -108,6 +146,10 @@
       window.studyInteractions.createParticles(15)
     }
   }
+
+  /**
+   * @returns {void}
+   */
   function pauseTimer() {
     if (!isRunning) return
     isPaused = true
@@ -116,6 +158,10 @@
     timerInterval = null
     updateButtons()
   }
+
+  /**
+   * @returns {void}
+   */
   function stopTimer() {
     isRunning = false
     isPaused = false
@@ -132,6 +178,10 @@
     updateButtons()
     updateDisplay()
   }
+
+  /**
+   * @returns {void}
+   */
   function completeSession() {
     if (timerInterval) {
       clearInterval(timerInterval)
@@ -151,6 +201,10 @@
       if (!isRunning && !isPaused) startBreak()
     }, 3000)
   }
+
+  /**
+   * @returns {void}
+   */
   function startBreak() {
     if (timerInterval) clearInterval(timerInterval)
     totalTime = parseInt(elements.breakDuration?.value || 5) * 60
@@ -185,6 +239,11 @@
       updateDisplay()
     }, 1000)
   }
+
+  /**
+   * @param {number} percentage
+   * @returns {void}
+   */
   function showMilestone(percentage) {
     const messages = {
       25: { icon: '🎯', msg: '25% مكتمل!', sub: 'استمر في التركيز!' },
@@ -198,11 +257,19 @@
       if (percentage === 50) window.studyInteractions.createParticles(20)
     }
   }
+
+  /**
+   * @returns {void}
+   */
   function updateButtons() {
     if (elements.startBtn) elements.startBtn.style.display = isRunning && !isPaused ? 'none' : 'block'
     if (elements.pauseBtn) elements.pauseBtn.style.display = isRunning && !isPaused ? 'block' : 'none'
     if (elements.stopBtn) elements.stopBtn.style.display = isRunning ? 'block' : 'none'
   }
+
+  /**
+   * @returns {void}
+   */
   function updateStats() {
     const sessionsEl = document.getElementById('sessionsToday'),
       minutesEl = document.getElementById('minutesToday')
@@ -216,6 +283,10 @@
       localStorage.setItem('shihabStats', JSON.stringify({ sessions, minutes, date: new Date().toDateString() }))
     }
   }
+
+  /**
+   * @returns {void}
+   */
   function loadStats() {
     const saved = localStorage.getItem('shihabStats')
     if (saved) {
@@ -233,6 +304,10 @@
       }
     }
   }
+
+  /**
+   * @returns {void}
+   */
   function initCharacterInteractions() {
     if (elements.character) {
       elements.character.addEventListener('click', () => {
@@ -249,6 +324,10 @@
       })
     }
   }
+
+  /**
+   * @returns {void}
+   */
   function init() {
     initCircularTimer()
     updateDisplay()

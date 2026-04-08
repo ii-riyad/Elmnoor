@@ -20,7 +20,10 @@ let touchStartY = 0
 let isDragging = false
 let currentTranslate = 0
 
-// دالة فتح القائمة الجانبية
+/**
+ * دالة فتح القائمة الجانبية
+ * @return {void}
+ */
 function openGpaSidebar() {
   const sidebar = document.getElementById('gpa-sidebar')
   const overlay = document.getElementById('gpa-overlay')
@@ -39,7 +42,10 @@ function openGpaSidebar() {
   }
 }
 
-// دالة إغلاق القائمة الجانبية
+/**
+ * دالة إغلاق القائمة الجانبية
+ * @return {void}
+ */
 function closeGpaSidebar() {
   const sidebar = document.getElementById('gpa-sidebar')
   const overlay = document.getElementById('gpa-overlay')
@@ -53,7 +59,10 @@ function closeGpaSidebar() {
   }
 }
 
-// دالة إضافة صف جديد للجدول
+/**
+ * دالة إضافة صف جديد للجدول
+ * @return {void}
+ */
 function addCourseRow() {
   const coursesBody = document.getElementById('courses-body')
   if (!coursesBody) return
@@ -83,7 +92,10 @@ function addCourseRow() {
   updateShahabMessageForGPA('add')
 }
 
-// دالة حذف الصف
+/**
+ * دالة حذف الصف
+ * @return {void}
+ */
 function deleteCourseRow(button) {
   const row = button.parentNode.parentNode
   if (row && row.parentNode) {
@@ -93,7 +105,10 @@ function deleteCourseRow(button) {
   }
 }
 
-// دالة حساب المعدل الرئيسية
+/**
+ * دالة حساب المعدل الرئيسية
+ * @return {void}
+ */
 function calculateGPA() {
   const coursesBody = document.getElementById('courses-body')
   if (!coursesBody) return
@@ -135,7 +150,10 @@ function calculateGPA() {
   updateShahabMessage(gpa)
 }
 
-// دالة تحديث الرسالة التحفيزية
+/**
+ * دالة تحديث الرسالة التحفيزية
+ * @return {void}
+ */
 function updateShahabMessage(cgpa) {
   const messageDiv = document.getElementById('shahab-message')
   if (!messageDiv) return
@@ -159,30 +177,26 @@ function updateShahabMessage(cgpa) {
         : '🎉 Outstanding performance! Keep excelling to achieve a perfect 4.0!'
   } else if (cgpaNumber >= 3.0) {
     messageText =
-      lang === 'ar'
-        ? '👍 أداؤك جيد جداً! استمر في العمل الجاد!'
-        : '👍 Great performance! Keep up the hard work!'
+      lang === 'ar' ? '👍 أداؤك جيد جداً! استمر في العمل الجاد!' : '👍 Great performance! Keep up the hard work!'
   } else if (cgpaNumber >= 2.0) {
     messageText =
-      lang === 'ar'
-        ? '💪 أنت على الطريق الصحيح! استمر في التحسين!'
-        : "💪 You're on the right track! Keep improving!"
+      lang === 'ar' ? '💪 أنت على الطريق الصحيح! استمر في التحسين!' : "💪 You're on the right track! Keep improving!"
   } else if (cgpaNumber > 0) {
     messageText =
-      lang === 'ar'
-        ? '📚 لا تستسلم! العمل الجاد سيحسن معدلك!'
-        : "📚 Don's give up! Hard work will improve your GPA!"
+      lang === 'ar' ? '📚 لا تستسلم! العمل الجاد سيحسن معدلك!' : "📚 Don's give up! Hard work will improve your GPA!"
   } else {
     messageText =
-      lang === 'ar'
-        ? '🎯 ابدأ بإدخال موادك واحسب معدلك!'
-        : '🎯 Start adding your courses and calculate your GPA!'
+      lang === 'ar' ? '🎯 ابدأ بإدخال موادك واحسب معدلك!' : '🎯 Start adding your courses and calculate your GPA!'
   }
 
   messageDiv.textContent = messageText
 }
 
-// دالة تحديث الرسالة عند فتح/إضافة/حذف
+/**
+ * دالة تحديث الرسالة عند فتح/إضافة/حذف
+ * @param {string} action
+ * @return {void}
+ */
 function updateShahabMessageForGPA(action) {
   const speechBubble = document.getElementById('speechBubble')
   const speechText = document.getElementById('speechText')
@@ -209,7 +223,11 @@ function updateShahabMessageForGPA(action) {
   }
 }
 
-// وظائف السحب (Swipe) - محسّنة للأداء
+/**
+ * وظائف السحب (Swipe) - محسّنة للأداء
+ * @param {TouchEvent} e
+ * @return {void}
+ */
 function handleTouchStart(e) {
   const sidebar = document.getElementById('gpa-sidebar')
   if (!sidebar || !sidebar.classList.contains('open')) return
@@ -220,6 +238,10 @@ function handleTouchStart(e) {
   sidebar.style.transition = 'none'
 }
 
+/**
+ * @param {TouchEvent} e
+ * @return {void}
+ */
 function handleTouchMove(e) {
   if (!isDragging) {
     e.preventDefault()
@@ -253,6 +275,9 @@ function handleTouchMove(e) {
   }
 }
 
+/**
+ * @return {void}
+ */
 function handleTouchEnd() {
   if (!isDragging) return
 
@@ -270,7 +295,10 @@ function handleTouchEnd() {
   }
 }
 
-// تهيئة الأحداث عند تحميل الصفحة
+/**
+ * تهيئة الأحداث عند تحميل الصفحة
+ * @return {void}
+ */
 ;(function initGPACalculator() {
   const init = () => {
     const sidebar = document.getElementById('gpa-sidebar')
@@ -281,7 +309,7 @@ function handleTouchEnd() {
 
     // Event listeners للسحب
     let touchHandlerAdded = false
-    function addTouchHandlers() {
+    const addTouchHandlers = () => {
       if (touchHandlerAdded) return
       sidebar.addEventListener('touchstart', handleTouchStart, { passive: true })
       sidebar.addEventListener('touchmove', handleTouchMove, { passive: false })
@@ -290,18 +318,18 @@ function handleTouchEnd() {
     }
 
     const originalOpen = window.openGpaSidebar || openGpaSidebar
-    window.openGpaSidebar = function () {
+    window.openGpaSidebar = () => {
       addTouchHandlers()
       originalOpen()
     }
 
     overlay.addEventListener('click', closeGpaSidebar)
-    sidebar.addEventListener('click', function (e) {
+    sidebar.addEventListener('click', (e) => {
       e.stopPropagation()
     })
 
     if (gpaToggleBtn) {
-      gpaToggleBtn.addEventListener('click', function (e) {
+      gpaToggleBtn.addEventListener('click', (e) => {
         e.preventDefault()
         openGpaSidebar()
       })
@@ -329,7 +357,7 @@ function handleTouchEnd() {
 
 // دعم اللغة
 if (window.i18nUpdateElements) {
-  document.addEventListener('langChanged', function () {
+  document.addEventListener('langChanged', () => {
     calculateGPA()
   })
 }

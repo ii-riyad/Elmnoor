@@ -1,9 +1,12 @@
-;(function () {
+;(() => {
   'use strict'
 
   var d = document
   var w = window
 
+  /**
+   * @return {void}
+   */
   function loadFA() {
     var link = d.querySelector('link[href*="font-awesome"]')
     if (!link || !link.sheet) {
@@ -20,7 +23,7 @@
   if (d.readyState === 'complete') {
     setTimeout(loadFA, 100)
   } else {
-    w.addEventListener('load', function () {
+    w.addEventListener('load', () => {
       setTimeout(loadFA, 100)
     })
   }

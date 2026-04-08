@@ -1,4 +1,4 @@
-;(function () {
+;(() => {
   'use strict'
 
   const handle = document.getElementById('mmuPricingHandle')
@@ -7,6 +7,9 @@
   const closeBtn = document.getElementById('mmuPricingClose')
   const content = document.getElementById('mmuPricingContent')
 
+  /**
+   * @returns {void}
+   */
   function openDrawer() {
     if (!drawer || !overlay || !handle) return
     drawer.classList.add('open')
@@ -15,6 +18,9 @@
     drawer.setAttribute('aria-hidden', 'false')
   }
 
+  /**
+   * @returns {void}
+   */
   function closeDrawer() {
     if (!drawer || !overlay || !handle) return
     drawer.classList.remove('open')

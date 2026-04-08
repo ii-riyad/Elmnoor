@@ -1,10 +1,4 @@
-/**
- * Welcome Song Manager
- * - Auto-plays once for first-time visitors
- * - Provides a fixed play/pause toggle button for manual control
- */
-
-;(function () {
+;(() => {
   'use strict'
 
   const STORAGE_KEY = 'elmnoor_song_played'
@@ -18,6 +12,9 @@
   const icon = toggleBtn.querySelector('i')
   const text = toggleBtn.querySelector('.replay-text')
 
+  /**
+   * @returns {boolean}
+   */
   function hasSongBeenPlayed() {
     try {
       return localStorage.getItem(STORAGE_KEY) === 'true'
@@ -26,6 +23,9 @@
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function markSongAsPlayed() {
     try {
       localStorage.setItem(STORAGE_KEY, 'true')
@@ -34,6 +34,10 @@
     }
   }
 
+  /**
+   * @param {boolean} isPlaying
+   * @returns {void}
+   */
   function updateButtonUI(isPlaying) {
     if (!(icon instanceof HTMLElement) || !(text instanceof HTMLElement)) {
       return
@@ -56,6 +60,9 @@
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function playSong() {
     audio.volume = 0.7
     audio.muted = false
@@ -65,11 +72,17 @@
     })
   }
 
+  /**
+   * @returns {void}
+   */
   function pauseSong() {
     audio.pause()
     updateButtonUI(false)
   }
 
+  /**
+   * @returns {void}
+   */
   function togglePlayPause() {
     if (audio.paused) {
       playSong().catch(() => {
@@ -80,6 +93,9 @@
     }
   }
 
+  /**
+   * @returns {void}
+   */
   function initFirstVisitAutoPlay() {
     if (hasSongBeenPlayed()) {
       return
@@ -124,6 +140,9 @@
     document.addEventListener('keydown', playOnFirstInteraction, { once: true, capture: true })
   }
 
+  /**
+   * @returns {void}
+   */
   function init() {
     updateButtonUI(false)
 
