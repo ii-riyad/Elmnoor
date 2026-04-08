@@ -20,7 +20,7 @@
         e.preventDefault()
         e.stopImmediatePropagation()
         e.stopPropagation()
-        window.location.href = 'machine-learning-malaysia.html'
+        window.location.assign('machine-learning-malaysia.html')
         return false
       },
       true
