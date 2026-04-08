@@ -37,8 +37,6 @@ ErrorDocument 404 /404.html
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 6 months"
-  ExpiresByType image/png  "access plus 6 months"
-  ExpiresByType image/jpeg "access plus 6 months"
   ExpiresByType image/svg+xml "access plus 6 months"
   ExpiresByType text/css   "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
