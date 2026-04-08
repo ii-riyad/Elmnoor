@@ -5,13 +5,13 @@
    * @returns {void}
    */
   function initMLLink() {
-    var mlBtn = document.getElementById('ml-read-more-btn')
+    const mlBtn = document.getElementById('ml-read-more-btn')
     if (!mlBtn) {
       setTimeout(initMLLink, 100)
       return
     }
 
-    var newBtn = mlBtn.cloneNode(true)
+    const newBtn = mlBtn.cloneNode(true)
     mlBtn.parentNode.replaceChild(newBtn, mlBtn)
 
     newBtn.addEventListener(
