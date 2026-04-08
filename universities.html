@@ -83,34 +83,23 @@
     <div class="container">
       <div class="nav-content">
         <div class="logo-group">
-          <a class="logo" href="index.html">
-            <i class="fas fa-graduation-cap"></i>
-            <span class="logo-text" data-ar="علم ونور" data-en="Elm w Noor">علم ونور</span>
-          </a>
+          <a href="index.html" class="logo"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span
+              class="logo-text" data-ar="علم ونور" data-en="Elm w Noor">علم ونور</span></a>
           <p class="logo-tagline" data-ar="اِسأل مجرب ولا تنسى الطبيب"
             data-en="Ask the Experienced, Don't Forget the Doctor">اِسأل مجرب ولا تنسى الطبيب</p>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة" data-ar-aria-label="فتح القائمة"
-          data-en-aria-label="Open menu" data-label-open-ar="فتح القائمة" data-label-open-en="Open menu"
-          data-label-close-ar="إغلاق القائمة" data-label-close-en="Close menu" aria-expanded="false"
-          aria-controls="navLinks">
-          <i class="fas fa-bars"></i>
-        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة" aria-expanded="false"
+          aria-controls="navLinks" data-ar-aria-label="فتح القائمة" data-en-aria-label="Open menu"><i
+            class="fas fa-bars"></i></button>
         <div class="nav-links" id="navLinks">
-          <a class="nav-link" data-ar="الرئيسية" data-en="Home" href="index.html">الرئيسية</a>
-          <a class="nav-link" data-ar="التخصصات" data-en="Majors" href="index.html#majors">التخصصات</a>
-          <a class="nav-link active" data-ar="الجامعات" data-en="Universities" href="universities.html">الجامعات</a>
-          <a class="nav-link" data-ar="الخدمات" data-en="Services" href="services.html">الخدمات</a>
-          <a class="nav-link" data-ar="المقالات" data-en="Articles" href="articles.html">المقالات</a>
-          <a class="nav-link" data-ar="الدليل" data-en="Guide" href="life-in-malaysia-student-guide.html">الدليل</a>
-          <a class="nav-link" data-ar="شِهاب" data-en="Shihab" href="study-with-shihab.html"
-            style="color: #00A99D; font-weight: bold;">شِهاب</a>
-          <a class="nav-link" data-ar="اتصل بنا" data-en="Contact" href="contact.html">اتصل بنا</a>
+          <a href="index.html" class="nav-link" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+          <a href="index.html#majors" class="nav-link" data-ar="التخصصات" data-en="Majors">التخصصات</a>
+          <a href="universities.html" class="nav-link active" data-ar="الجامعات" data-en="Universities">الجامعات</a>
+          <a href="services.html" class="nav-link" data-ar="الخدمات" data-en="Services">الخدمات</a>
+          <a href="life-in-malaysia-student-guide.html" class="nav-link" data-ar="الدليل" data-en="Guide">الدليل</a>
+          <a href="articles.html" class="nav-link" data-ar="المقالات" data-en="Articles">المقالات</a>
           <button class="lang-btn" id="langToggleBtn" aria-label="تبديل اللغة" data-ar-aria-label="تبديل اللغة"
-            data-en-aria-label="Change language">
-            <i class="fas fa-globe"></i>
-            <span>English</span>
-          </button>
+            data-en-aria-label="Change language"><i class="fas fa-globe"></i><span>English</span></button>
         </div>
       </div>
     </div>
@@ -1031,7 +1020,7 @@
         تواصل معنا الآن واحصل على استشارة مجانية لاختيار الجامعة والتخصص الأنسب لمستقبلك الأكاديمي والمهني
       </p>
       <div class="cta-buttons-group">
-        <a class="btn btn-cta cta-btn-main" href="contact.html">
+        <a class="btn btn-cta cta-btn-main" href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-paper-plane"></i>
           <span data-ar="ابدأ التقديم الآن - مجاناً" data-en="Start Application Now - Free">ابدأ التقديم الآن
             - مجاناً</span>
@@ -1128,6 +1117,13 @@
       }
     })();
   </script>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+    aria-label="تواصل معنا عبر واتساب" data-ar-aria-label="تواصل معنا عبر واتساب"
+    data-en-aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
   <script>
     /* Ensure Font Awesome loads - fallback if async loading fails */
     (function () { var d = document; var w = window; function loadFA() { var link = d.querySelector('link[href*="font-awesome"]'); if (!link || !link.sheet) { var fa = d.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'; fa.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; fa.crossOrigin = 'anonymous'; fa.referrerPolicy = 'no-referrer'; d.head.appendChild(fa) } } if (d.readyState === 'complete') { setTimeout(loadFA, 100) } else { w.addEventListener('load', function () { setTimeout(loadFA, 100) }) } })();

@@ -12,26 +12,26 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>علم ونور | مجموعة طلاب في ماليزيا ننقل تجاربنا للطلاب الجدد | تسجيل جامعات وتأشيرات</title>
+  <title>علم ونور | ابنك في أيدٍ أمينة | تسجيل جامعات ماليزيا ورعاية شاملة</title>
   <link rel="canonical" href="https://elmnoor.com/">
   <meta name="description"
-    content="خايف من الجامعة؟ علم ونور مجموعة طلاب في ماليزيا عانينا في الجامعة ونقرر ننقل تجاربنا لكل طالب جديد. نوفر التسجيل، التأشيرة، الاستقبال من المطار، السكن، ومجتمعات عربية للطلاب من الإمارات والسعودية والخليج.">
+    content="ابنك في أيدٍ أمينة مع علم ونور. نرعى أبناءكم في الغربة خطوة بخطوة: تسجيل الجامعات، استخراج التأشيرة، الاستقبال من المطار، والسكن الآمن. حماية من الاستغلال وبيئة صالحة للنجاح. للطلاب من الإمارات والسعودية والخليج.">
   <meta name="keywords"
-    content="طلاب ماليزيا, تجارب طلاب ماليزيا, الدراسة في ماليزيا, تسجيل جامعات ماليزيا, تأشيرة طالب ماليزيا, الغربة في ماليزيا, استقبال مطار ماليزيا, سكن طلاب ماليزيا, مجتمع عربي ماليزيا, طلاب عرب ماليزيا, نصائح الدراسة في ماليزيا, خدمات الطلاب ماليزيا, حياة الطالب في ماليزيا, دليل الطلاب ماليزيا">
+    content="علم ونور, الدراسة في ماليزيا, تسجيل جامعات ماليزيا, رعاية الطلاب في ماليزيا, تأشيرة طلاب ماليزيا, سكن طلاب ماليزيا, استقبال مطار ماليزيا, الغربة في ماليزيا, جامعات ماليزيا للعرب, طلاب عرب في ماليزيا, إرشاد أكاديمي ماليزيا, خدمات طلابية ماليزيا, دليل الدراسة في ماليزيا">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Elm w Noor">
-  <meta property="og:title" content="علم ونور | مجموعة طلاب في ماليزيا ننقل تجاربنا للطلاب الجدد">
+  <meta property="og:title" content="علم ونور | ابنك في أيدٍ أمينة | تسجيل جامعات ماليزيا">
   <meta property="og:description"
-    content="خايف من الجامعة؟ احنا طلاب عانينا في ماليزيا وقررنا ننقل تجاربنا. نوفر التسجيل، التأشيرة، الاستقبال، السكن، ومجتمعات عربية.">
+    content="ابنك في أيدٍ أمينة مع علم ونور. نرعى أبناءكم خطوة بخطوة: تسجيل الجامعات، استخراج التأشيرة، الاستقبال من المطار، والسكن الآمن. حماية من الاستغلال وبيئة صالحة">
   <meta property="og:url" content="https://elmnoor.com/">
   <meta property="og:image" content="https://elmnoor.com/images/og-cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="علم ونور - Elm w Noor - دليلك للدراسة في ماليزيا">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="علم ونور | مجموعة طلاب في ماليزيا ننقل تجاربنا للطلاب الجدد">
+  <meta name="twitter:title" content="علم ونور | ابنك في أيدٍ أمينة | تسجيل جامعات ماليزيا">
   <meta name="twitter:description"
-    content="خايف من الجامعة؟ احنا طلاب عانينا في ماليزيا وقررنا ننقل تجاربنا. نوفر التسجيل، التأشيرة، الاستقبال، السكن، ومجتمعات عربية.">
+    content="ابنك في أيدٍ أمينة مع علم ونور. نرعى أبناءكم خطوة بخطوة: تسجيل الجامعات، استخراج التأشيرة، الاستقبال من المطار، والسكن الآمن. حماية من الاستغلال">
   <meta name="twitter:image" content="https://elmnoor.com/images/og-cover.png">
   <meta name="twitter:image:alt" content="علم ونور - Elm w Noor - دليلك للدراسة في ماليزيا">
   <link rel="image_src" href="https://elmnoor.com/images/og-cover.png">
@@ -97,7 +97,16 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#maincontent">تخطي إلى المحتوى</a>
+  <!-- Welcome Song Audio -->
+  <audio id="welcomeSong" preload="auto">
+    <source src="audio/elmnoor-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <button id="replaySongBtn" class="replay-song-btn" aria-label="تشغيل الأغنية" title="تشغيل الأغنية">
+    <i class="fas fa-music" aria-hidden="true"></i>
+    <span class="replay-text" data-ar="تشغيل" data-en="Play">تشغيل</span>
+  </button>
 
   <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true">
     <div class="scroll-progress-bar-fill" role="presentation"></div>
@@ -112,21 +121,18 @@
           <p class="logo-tagline" data-ar="اِسأل مجرب ولا تنسى الطبيب"
             data-en="Ask the Experienced, Don't Forget the Doctor">اِسأل مجرب ولا تنسى الطبيب</p>
         </div>
-
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة" aria-expanded="false"
-          aria-controls="navLinks"><i class="fas fa-bars" aria-hidden="true"></i></button>
-
+          aria-controls="navLinks" data-ar-aria-label="فتح القائمة" data-en-aria-label="Open menu"><i
+            class="fas fa-bars"></i></button>
         <div class="nav-links" id="navLinks">
           <a href="index.html" class="nav-link active" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-          <a href="#majors" class="nav-link" data-ar="التخصصات" data-en="Majors">التخصصات</a>
+          <a href="index.html#majors" class="nav-link" data-ar="التخصصات" data-en="Majors">التخصصات</a>
           <a href="universities.html" class="nav-link" data-ar="الجامعات" data-en="Universities">الجامعات</a>
           <a href="services.html" class="nav-link" data-ar="الخدمات" data-en="Services">الخدمات</a>
-          <a href="articles.html" class="nav-link" data-ar="المقالات" data-en="Articles">المقالات</a>
           <a href="life-in-malaysia-student-guide.html" class="nav-link" data-ar="الدليل" data-en="Guide">الدليل</a>
-          <a href="study-with-shihab.html" class="nav-link nav-link-featured" data-ar="شِهاب" data-en="Shihab">شِهاب</a>
-          <a href="contact.html" class="nav-link" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
-
-          <button class="lang-btn" id="langToggleBtn" aria-label="تبديل اللغة"><span>English</span></button>
+          <a href="articles.html" class="nav-link" data-ar="المقالات" data-en="Articles">المقالات</a>
+          <button class="lang-btn" id="langToggleBtn" aria-label="تبديل اللغة" data-ar-aria-label="تبديل اللغة"
+            data-en-aria-label="Change language"><i class="fas fa-globe"></i><span>English</span></button>
         </div>
       </div>
     </div>
@@ -138,13 +144,15 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1 id="heroTitle" class="hero-title" data-ar="لحالك في ماليزيا؟" data-en="Alone in Malaysia?">لحالك في
-              ماليزيا؟</h1>
+            <h1 id="heroTitle" class="hero-title" data-ar="ابنك في أيدٍ أمينة" data-en="Your child is in safe hands">
+              ابنك في أيدٍ أمينة</h1>
+            <br>
             <p class="hero-subtitle"
-              data-ar="علم ونور مجموعة طلاب في ماليزيا عانينا في الجامعة كثيير وقررنا ننقل تجاربنا لكل طالب جديد على الغربة والدراسة وحاس انه ضايع ومش عارف شو يختار"
-              data-en="Elm w Noor is a group of students in Malaysia. We struggled a lot at university and decided to share our experiences with every new student facing the challenges of studying abroad, feeling lost and unsure what to choose">
-              علم ونور مجموعة طلاب في ماليزيا عانينا في الجامعة كثيير وقررنا ننقل تجاربنا لكل طالب جديد على الغربة
-              والدراسة وحاس انه ضايع ومش عارف شو يختار
+              data-ar="الغربة ممكن تسبب ضيق وخوف لأولادكم وهم بعاد عنكم. عشان هيك بنكون معهم خطوة بخطوة من وصولهم إلى عودتهم .مجهزين بيئة صالحة تساعدهم يركزوا وتحفزهم ينجحوا. هدفنا الحفاظ عليهم  وحمايتهم من الأستغلال حتى تكونوا مطمنين ومرتاحين البال."
+              data-en="Being abroad can cause stress and fear for your children while they are away from you. That's why we'll be with them step by step from their arrival to their return. Providing a healthy environment that helps them focus and motivates them to succeed. Our goal is to preserve them and protect them from exploitation so you can be assured and at peace.">
+              الغربة ممكن تسبب ضيق وخوف لأولادكم وهم بعاد عنكم. عشان هيك بنكون معهم خطوة بخطوة من وصولهم إلى عودتهم
+              .مجهزين بيئة صالحة تساعدهم يركزوا وتحفزهم ينجحوا. هدفنا الحفاظ عليهم وحمايتهم من الأستغلال حتى تكونوا
+              مطمنين ومرتاحين البال.
             </p>
 
             <div class="hero-buttons" role="group" aria-label="روابط سريعة">
@@ -152,28 +160,19 @@
                 data-en="Explore Universities">استكشف الجامعات</a>
               <a href="life-in-malaysia-student-guide.html" class="btn btn-primary" data-ar="دليل الغربة"
                 data-en="Life Guide">دليل الغربة</a>
-              <a href="study-with-shihab.html" class="btn btn-secondary btn-shihab" data-ar="ادرس معي – شِهاب"
-                data-en="Study with Shihab">ادرس معي – شِهاب</a>
-              <a href="cinma-ticket.html" class="btn btn-cinema" data-ar="تذكرة السينما" data-en="Cinema Ticket">تذكرة
-                السينما</a>
             </div>
           </div>
 
           <div class="hero-image-wrapper" aria-hidden="false">
             <div class="hero-image" role="presentation" aria-hidden="true">
-              <!-- Restored hero video -->
-              <video class="hero-video" autoplay loop muted playsinline preload="auto" width="960" height="640"
-                aria-label="مرشد الدراسة" disablePictureInPicture controlsList="nodownload">
-                <source src="images/1764723161501.mp4" type="video/mp4">
-                <p>فيديو ترحيبي — يتم تشغيله في المتصفحات التي تدعم العنصر.</p>
-              </video>
+              <img class="hero-video" src="images/anim.webp" alt="Elm w Noor - علم ونور">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="services-section fade-in-section" style="content-visibility:auto;contain-intrinsic-size:500px"
+    <section class="services-section" style="content-visibility:auto;contain-intrinsic-size:500px"
       aria-labelledby="servicesTitle">
       <div class="container">
         <div class="section-header">
@@ -187,8 +186,22 @@
         </div>
 
         <div class="services-grid" role="list">
-          <div class="service-card" role="listitem">
-            <div class="service-icon" aria-hidden="true"><i class="fas fa-globe-asia" aria-hidden="true"></i></div>
+          <!-- Integrated Environment -->
+          <div class="service-card service-card-special" role="listitem">
+            <div class="service-icon service-icon-special" aria-hidden="true"><i class="fas fa-heartbeat"
+                aria-hidden="true"></i></div>
+            <h3 class="service-title" data-ar="بيئة متكاملة للطالب" data-en="Integrated Environment for Students">بيئة
+              متكاملة للطالب</h3>
+            <p class="service-desc"
+              data-ar="نوفر له بيئة دينية وصحية ورياضية متكاملة، ونساعده على الاندماج في الغربة عبر مجتمعات عربية تنشط بالفعاليات والرحلات الممتعة"
+              data-en="We provide an integrated religious, health, and sports environment, and help you integrate into expat life through active Arabic communities with events and enjoyable trips">
+              نوفر له بيئة دينية وصحية ورياضية متكاملة، ونساعده على الاندماج في الغربة عبر مجتمعات عربية تنشط
+              بالفعاليات والرحلات الممتعة</p>
+          </div>
+
+          <div class="service-card service-card-featured" role="listitem">
+            <div class="service-icon service-icon-featured" aria-hidden="true"><i class="fas fa-globe-asia"
+                aria-hidden="true"></i></div>
             <h3 class="service-title" data-ar="دليل الغربة في ماليزيا" data-en="Life in Malaysia Guide">دليل الغربة في
               ماليزيا</h3>
             <p class="service-desc"
@@ -196,22 +209,9 @@
               data-en="Complete guide to life in Malaysia: cultural adaptation, budget management, housing and transport, and balancing studies with social life from former students' experiences">
               دليل شامل للحياة في ماليزيا: التأقلم الثقافي، إدارة المصاريف، السكن والتنقل، والموازنة بين الدراسة والحياة
               الاجتماعية من خبرات طلاب سابقين</p>
-            <a href="life-in-malaysia-student-guide.html" class="btn btn-primary"
-              style="margin-top:1rem;font-size:16px;height:45px;" data-ar="اقرأ الدليل" data-en="Read Guide">اقرأ
+            <a href="life-in-malaysia-student-guide.html" class="btn btn-primary btn-service-featured"
+              data-ar="اقرأ الدليل" data-en="Read Guide">اقرأ
               الدليل</a>
-          </div>
-
-          <div class="service-card service-card-featured" role="listitem">
-            <div class="service-icon service-icon-featured" aria-hidden="true"><i class="fas fa-star"
-                aria-hidden="true"></i></div>
-            <h3 class="service-title" data-ar="ادرس معي – شِهاب" data-en="Study with Shihab">ادرس معي – شِهاب</h3>
-            <p class="service-desc"
-              data-ar="أدوات دراسة متكاملة: مؤقت بومودورو، حاسبة المعدل GPA، قائمة مهام، ملاحظات، وأصوات محيطة. أدوات مجانية لتنظيم دراستك!"
-              data-en="Complete study tools: Pomodoro timer, GPA calculator, to-do list, notes, and ambient sounds. Free tools to organize your study!">
-              أدوات دراسة متكاملة: مؤقت بومودورو، حاسبة المعدل GPA، قائمة مهام، ملاحظات، وأصوات محيطة. أدوات مجانية
-              لتنظيم دراستك!</p>
-            <a href="study-with-shihab.html" class="btn btn-primary btn-service-featured" data-ar="جرب الآن"
-              data-en="Try Now">جرب الآن</a>
           </div>
 
           <div class="service-card" role="listitem">
@@ -257,6 +257,175 @@
       </div>
     </section>
 
+    <!-- Student Feedback Section -->
+    <section class="feedback-section" aria-labelledby="feedbackTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="feedbackTitle" class="section-title">
+            <span data-ar="آراء طلابنا" data-en="Student Feedback">آراء طلابنا</span>
+          </h2>
+          <p class="section-subtitle" data-ar="تجارب حقيقية من الطلاب الذين انضموا لفعالياتنا ورحلاتنا"
+            data-en="Real experiences from students who joined our activities and trips">
+            تجارب حقيقية من الطلاب الذين انضموا لفعالياتنا ورحلاتنا
+          </p>
+        </div>
+
+        <div class="feedback-grid">
+          <!-- Feedback Card 1 -->
+          <div class="feedback-card">
+            <div class="feedback-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="feedback-content">
+              <p class="feedback-text"
+                data-ar="النزهة كانت جميلة وهادية، تعرفت على شباب جدد، لعبنا وضحكنا وأكلنا وشعرت بإحساس المودة والمحبة والصداقة. أتمنى لو أكررها مرة أخرى."
+                data-en="The trip was beautiful and peaceful. I met new people, we played, laughed, and ate together. I felt a sense of affection, love, and friendship. I wish I could do it again.">
+                النزهة كانت جميلة وهادية، تعرفت على شباب جدد، لعبنا وضحكنا وأكلنا وشعرت بإحساس المودة والمحبة والصداقة.
+                أتمنى لو أكررها مرة أخرى.
+              </p>
+              <div class="feedback-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feedback Card 2 -->
+          <div class="feedback-card">
+            <div class="feedback-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="feedback-content">
+              <p class="feedback-text"
+                data-ar="والله شخصياً استمتعت الحمد لله، بالنسبة لي ولا غلطة سبحان الله حتى الجو كان جميل. عموماً تقييمي للنزهة 10/10."
+                data-en="Personally, I really enjoyed it, thank God. For me, there were no mistakes at all, even the weather was beautiful. Overall, my rating for the trip is 10/10.">
+                والله شخصياً استمتعت الحمد لله، بالنسبة لي ولا غلطة سبحان الله حتى الجو كان جميل. عموماً تقييمي للنزهة
+                <strong>10/10</strong>.
+              </p>
+              <div class="feedback-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feedback Card 3 -->
+          <div class="feedback-card">
+            <div class="feedback-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="feedback-content">
+              <p class="feedback-text" data-ar="النزهة جميلة جداً والشباب طيبين ما شاء الله ومنعيدها."
+                data-en="The trip was very nice and the people were kind, God bless them. We'll do it again.">
+                النزهة جميلة جداً والشباب طيبين ما شاء الله ومنعيدها.
+              </p>
+              <div class="feedback-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trip Section - Bento Grid -->
+    <section class="trip-section" aria-labelledby="tripTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="tripTitle" class="section-title">
+            <span data-ar="رحلة صفاء وأخوة في Taman Tasik" data-en="Serenity and Brotherhood Trip at Taman Tasik">رحلة
+              صفاء وأخوة في Taman Tasik</span>
+          </h2>
+          <p class="section-subtitle" data-ar="من فعالياتنا ورحلاتنا الممتعة - نجمع طلابنا في أجواء إيمانية وترفيهية"
+            data-en="From our activities and enjoyable trips - We gather our students in faith-based and recreational atmospheres">
+            من فعالياتنا ورحلاتنا الممتعة - نجمع طلابنا في أجواء إيمانية وترفيهية
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Large Image - Main View -->
+          <div class="bento-item bento-large">
+            <img src="images/the view of the place.jpeg" alt="منظر عام للبحيرة في Taman Tasik" loading="lazy">
+            <div class="bento-overlay">
+              <span data-ar="منظر عام للبحيرة" data-en="Lake View">منظر عام للبحيرة</span>
+            </div>
+          </div>
+
+          <!-- Schedule Card -->
+          <div class="bento-item bento-schedule">
+            <h3 class="bento-title" data-ar="جدول الرحلة" data-en="Trip Schedule">جدول الرحلة</h3>
+            <ul class="trip-schedule">
+              <li>
+                <i class="fas fa-dice"></i>
+                <div>
+                  <strong data-ar="كسر الجليد" data-en="Ice Breaking">كسر الجليد</strong>
+                  <p data-ar="تعارف شبابي وألعاب تفاعلية" data-en="Youth interaction and interactive games">تعارف شبابي
+                    وألعاب تفاعلية</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-utensils"></i>
+                <div>
+                  <strong data-ar="مأدبة الغداء" data-en="Lunch Feast">مأدبة الغداء</strong>
+                  <p data-ar="مقلوبة فلسطينية أصيلة" data-en="Authentic Palestinian Maqluba">مقلوبة فلسطينية أصيلة</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-mug-hot"></i>
+                <div>
+                  <strong data-ar="استراحة شاي" data-en="Tea Break">استراحة شاي</strong>
+                  <p data-ar="جلسة سمر وشاي في الهواء الطلق" data-en="Outdoor tea and conversation">جلسة سمر وشاي في
+                    الهواء الطلق</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-leaf"></i>
+                <div>
+                  <strong data-ar="غذاء الروح" data-en="Spiritual Nourishment">غذاء الروح</strong>
+                  <p data-ar="فقرة تزكية عن تطور الإنسان" data-en="Spiritual talk on human development">فقرة تزكية عن
+                    تطور الإنسان</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Picnic Equipment -->
+          <div class="bento-item bento-medium">
+            <img src="images/Picnic equipment.jpeg" alt="دلة الشاي ومعدات النزهة" loading="lazy">
+            <div class="bento-overlay">
+              <span data-ar="معدات النزهة" data-en="Picnic Equipment">معدات النزهة</span>
+            </div>
+          </div>
+
+          <!-- The Place -->
+          <div class="bento-item bento-tall">
+            <img src="images/the place.jpeg" alt="لقطة للبحيرة نهاراً" loading="lazy">
+            <div class="bento-overlay">
+              <span data-ar="لقطة للبحيرة نهاراً" data-en="Daylight Lake View">لقطة للبحيرة نهاراً</span>
+            </div>
+          </div>
+
+          <!-- The Street -->
+          <div class="bento-item bento-wide">
+            <img src="images/the street.jpeg" alt="طريق تامان تاسيك" loading="lazy">
+            <div class="bento-overlay">
+              <span data-ar="الطريق إلى البحيرة" data-en="Path to the Lake">الطريق إلى البحيرة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="majors" class="majors-section" style="content-visibility:auto;contain-intrinsic-size:600px"
       aria-labelledby="majorsTitle">
       <div class="container">
@@ -284,6 +453,9 @@
               data-en="Software, AI, Cybersecurity, Data Science. Highly in-demand with excellent salaries and opportunities in tech and finance.">
               برمجيات، ذكاء اصطناعي، أمن سيبراني، علوم البيانات. تخصص مطلوب برواتب عالية وفرص عمل في الشركات التقنية
               والبنوك.</p>
+            <a href="computer-science-guide.html" class="btn btn-primary"
+              style="margin-top:1rem;font-size:16px;height:45px;" data-ar="دليل التخصص" data-en="Major Guide">دليل
+              التخصص</a>
           </div>
 
           <div class="major-card" role="listitem">
@@ -368,7 +540,8 @@
         </p>
 
         <div class="cta-buttons-group" role="group" aria-label="دعوات لاتخاذ إجراء">
-          <a href="contact.html" class="btn btn-cta cta-btn-main" aria-label="احصل على استشارة مجانية">
+          <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="btn btn-cta cta-btn-main"
+            aria-label="احصل على استشارة مجانية">
             <span data-ar="احصل على استشارة مجانية" data-en="Get Free Consultation">احصل على استشارة مجانية</span>
             <small data-ar="ابدأ رحلتك الآن" data-en="Start your journey now">ابدأ رحلتك الآن</small>
           </a>
@@ -400,6 +573,7 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/i18n.js" defer></script>
+  <script src="js/welcome-song.js" defer></script>
   <script>
     /* Ensure Font Awesome loads - fallback if async loading fails */
     (function () {
@@ -439,6 +613,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+    aria-label="تواصل معنا عبر واتساب" data-ar-aria-label="تواصل معنا عبر واتساب"
+    data-en-aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
 
 </body>
 

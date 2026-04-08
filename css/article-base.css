@@ -338,6 +338,474 @@
   box-shadow: 4px 4px 0 0 var(--shadow-color)
 }
 
+.university-card {
+  background: var(--article-bg);
+  border: 4px solid var(--shadow-color);
+  border-radius: 0;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  box-shadow: 6px 6px 0 0 var(--shadow-color);
+  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp .6s ease-out
+}
+
+.university-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 0 var(--shadow-color)
+}
+
+.university-card h4 {
+  font-family: var(--font-comic-ar);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--article-primary-dark);
+  margin-bottom: 1rem;
+  line-height: 1.35;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: all .3s;
+  text-shadow: 1px 1px 0 rgba(0, 191, 165, 0.2)
+}
+
+.university-card:hover h4 {
+  color: var(--article-primary)
+}
+
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin: 2.5rem 0;
+  list-style: none;
+  padding: 0
+}
+
+.jobs-list li {
+  background: var(--article-bg);
+  padding: clamp(1rem, 3vw, 1.25rem);
+  border-radius: 0;
+  border: 4px solid var(--shadow-color);
+  border-left: 5px solid var(--article-primary);
+  color: var(--article-text);
+  list-style: none;
+  transition: all .3s ease;
+  font-size: clamp(.95rem, 2.5vw, 1.05rem);
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+  animation: slideInRight .6s ease-out;
+  box-shadow: 3px 3px 0 0 var(--shadow-color)
+}
+
+.jobs-list li:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 var(--shadow-color);
+  border-left-width: 6px
+}
+
+.jobs-list li i {
+  margin-left: .5rem;
+  color: var(--article-primary);
+  display: inline-block;
+  transition: all .3s ease
+}
+
+.jobs-list li:hover i {
+  transform: rotate(15deg) scale(1.2)
+}
+
+.article-card,
+.cloud-type-card,
+.service-card,
+.cert-card,
+.language-card {
+  background: var(--article-bg);
+  border: 4px solid var(--shadow-color);
+  border-radius: 0;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  box-shadow: 6px 6px 0 0 var(--shadow-color);
+  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp .6s ease-out
+}
+
+.article-card:hover,
+.cloud-type-card:hover,
+.service-card:hover,
+.cert-card:hover,
+.language-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 0 var(--shadow-color)
+}
+
+.article-card h4,
+.cloud-type-card h4,
+.service-card h4,
+.cert-card h4,
+.language-card h4 {
+  font-family: var(--font-comic-ar);
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  color: var(--article-primary-dark);
+  margin-bottom: 1rem;
+  line-height: 1.35;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: all .3s;
+  text-shadow: 1px 1px 0 rgba(0, 191, 165, 0.2)
+}
+
+.article-card:hover h4,
+.cloud-type-card:hover h4,
+.service-card:hover h4,
+.cert-card:hover h4,
+.language-card:hover h4 {
+  color: var(--article-primary)
+}
+
+.article-table,
+.salary-table,
+.curriculum-table,
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 3rem 0;
+  background: var(--article-bg);
+  border: 4px solid var(--shadow-color);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 0 var(--shadow-color)
+}
+
+.article-table th,
+.salary-table th,
+.curriculum-table th,
+.comparison-table th {
+  background: linear-gradient(90deg, var(--gradient-dark) 0%, var(--gradient-light) 100%);
+  color: var(--article-bg);
+  padding: clamp(1rem, 3vw, 1.25rem);
+  text-align: center;
+  font-family: var(--font-comic-ar);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  border: 2px solid var(--shadow-color);
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 2px 2px 0 var(--shadow-color)
+}
+
+.article-table td,
+.salary-table td,
+.curriculum-table td,
+.comparison-table td {
+  padding: clamp(.875rem, 2.5vw, 1.125rem);
+  text-align: center;
+  border: 2px solid var(--shadow-color);
+  color: var(--article-text);
+  font-size: clamp(.95rem, 2.5vw, 1.05rem);
+  line-height: 1.5;
+  transition: all .3s ease
+}
+
+.article-table tr:nth-child(even),
+.salary-table tr:nth-child(even),
+.curriculum-table tr:nth-child(even),
+.comparison-table tr:nth-child(even) {
+  background: rgba(0, 191, 165, 0.05)
+}
+
+.article-table tr,
+.salary-table tr,
+.curriculum-table tr,
+.comparison-table tr {
+  transition: all .3s ease
+}
+
+.article-table tr:hover,
+.salary-table tr:hover,
+.curriculum-table tr:hover,
+.comparison-table tr:hover {
+  background: rgba(0, 191, 165, 0.08)
+}
+
+.article-table tr:hover td,
+.salary-table tr:hover td,
+.curriculum-table tr:hover td,
+.comparison-table tr:hover td {
+  color: var(--article-text-dark);
+  font-weight: 500
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile Optimization
+   ============================================ */
+
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .article-hero {
+    padding: 2rem 0.8rem 1.5rem;
+  }
+
+  .article-hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .article-hero p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .article-container {
+    padding: 1.8rem 0.6rem;
+  }
+
+  .article-content {
+    padding: 1.3rem 1rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.3rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .article-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-right: 1.3rem;
+  }
+
+  html[lang="en"] .article-content ul,
+  html[lang="en"] .article-content ol {
+    padding-right: 0;
+    padding-left: 1.3rem;
+  }
+
+  .highlight-box {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .highlight-box h3 {
+    font-size: 1.05rem;
+  }
+
+  .jobs-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .article-table,
+  .salary-table,
+  .curriculum-table,
+  .comparison-table {
+    font-size: 0.75rem;
+  }
+
+  .article-table th,
+  .article-table td,
+  .salary-table th,
+  .salary-table td,
+  .curriculum-table th,
+  .curriculum-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Small Mobile (375px - 413px) */
+@media (min-width: 375px) and (max-width: 413px) {
+  .article-hero {
+    padding: 2.2rem 0.9rem 1.7rem;
+  }
+
+  .article-hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .article-container {
+    padding: 1.9rem 0.7rem;
+  }
+
+  .article-content {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.35rem;
+    margin-top: 1.9rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .article-content p {
+    font-size: 0.92rem;
+  }
+
+  .highlight-box {
+    padding: 1.3rem;
+  }
+
+  .article-table,
+  .salary-table,
+  .curriculum-table,
+  .comparison-table {
+    font-size: 0.78rem;
+  }
+
+  .article-table th,
+  .article-table td,
+  .salary-table th,
+  .salary-table td,
+  .curriculum-table th,
+  .curriculum-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.65rem 0.45rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* Medium Mobile (414px - 479px) */
+@media (min-width: 414px) and (max-width: 479px) {
+  .article-hero {
+    padding: 2.3rem 1rem 1.8rem;
+  }
+
+  .article-hero h1 {
+    font-size: 1.65rem;
+  }
+
+  .article-container {
+    padding: 2rem 0.75rem;
+  }
+
+  .article-content {
+    padding: 1.45rem 1.15rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.18rem;
+  }
+
+  .article-content p {
+    font-size: 0.94rem;
+  }
+
+  .highlight-box {
+    padding: 1.4rem;
+  }
+
+  .article-table,
+  .salary-table,
+  .curriculum-table,
+  .comparison-table {
+    font-size: 0.8rem;
+  }
+
+  .article-table th,
+  .article-table td,
+  .salary-table th,
+  .salary-table td,
+  .curriculum-table th,
+  .curriculum-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.7rem 0.48rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Standard Mobile (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .article-hero {
+    padding: 2.4rem 1.2rem 1.9rem;
+  }
+
+  .article-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .article-container {
+    padding: 2.2rem 0.85rem;
+  }
+
+  .article-content {
+    padding: 1.6rem 1.25rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.45rem;
+    margin-top: 2.2rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.22rem;
+  }
+
+  .article-content p {
+    font-size: 0.96rem;
+  }
+
+  .highlight-box {
+    padding: 1.5rem;
+    margin: 1.7rem 0;
+  }
+
+  .article-table,
+  .salary-table,
+  .curriculum-table,
+  .comparison-table {
+    font-size: 0.83rem;
+  }
+
+  .article-table th,
+  .article-table td,
+  .salary-table th,
+  .salary-table td,
+  .curriculum-table th,
+  .curriculum-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem 0.52rem;
+    font-size: 0.83rem;
+  }
+}
+
+/* Tablet and Mobile (768px and below) */
 @media (max-width:768px) {
   .article-hero {
     padding: 3rem 1.5rem 2.5rem
@@ -373,8 +841,32 @@
     padding: 1.75rem;
     margin: 2rem 0
   }
+
+  .jobs-list {
+    grid-template-columns: 1fr;
+    gap: 1.25rem
+  }
+
+  .article-table,
+  .salary-table,
+  .curriculum-table,
+  .comparison-table {
+    font-size: .875rem
+  }
+
+  .article-table th,
+  .article-table td,
+  .salary-table th,
+  .salary-table td,
+  .curriculum-table th,
+  .curriculum-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: .875rem .625rem
+  }
 }
 
+/* Legacy 480px support - kept for backward compatibility */
 @media (max-width:480px) {
   .article-hero {
     padding: 2.5rem 1rem 2rem
@@ -395,5 +887,17 @@
 
   .highlight-box {
     padding: 1.5rem
+  }
+
+  .article-table th,
+  .article-table td,
+  .salary-table th,
+  .salary-table td,
+  .curriculum-table th,
+  .curriculum-table td,
+  .comparison-table th,
+  .comparison-table td {
+    padding: .75rem .5rem;
+    font-size: .8rem
   }
 }

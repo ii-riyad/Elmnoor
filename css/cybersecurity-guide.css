@@ -22,33 +22,6 @@
   margin: 3rem 0
 }
 
-.cert-card {
-  background: var(--article-bg);
-  border: 4px solid var(--shadow-color);
-  border-radius: 0;
-  padding: clamp(1.5rem, 4vw, 2rem);
-  box-shadow: 6px 6px 0 0 var(--shadow-color);
-  transition: all .3s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem
-}
-
-.cert-card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 0 var(--shadow-color)
-}
-
-.cert-card h4 {
-  font-family: var(--font-comic-ar);
-  font-size: clamp(1.2rem, 3vw, 1.4rem);
-  color: var(--article-primary-dark);
-  margin-bottom: 1rem;
-  line-height: 1.35;
-  font-weight: 600;
-  text-shadow: 1px 1px 0 rgba(0, 191, 165, 0.2)
-}
-
 .cert-card .info {
   background: rgba(0, 191, 165, 0.08);
   padding: clamp(.75rem, 2vw, 1rem);
@@ -87,58 +60,9 @@
   text-shadow: 1px 1px 0 rgba(0, 191, 165, 0.2)
 }
 
-.salary-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 3rem 0;
-  background: var(--article-bg);
-  border: 4px solid var(--shadow-color);
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: 6px 6px 0 0 var(--shadow-color)
-}
-
-.salary-table th {
-  background: linear-gradient(90deg, var(--gradient-dark) 0%, var(--gradient-light) 100%);
-  color: var(--article-bg);
-  padding: clamp(1rem, 3vw, 1.25rem);
-  text-align: center;
-  font-family: var(--font-comic-ar);
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
-  border: 2px solid var(--shadow-color);
-  font-weight: 600;
-  line-height: 1.4;
-  text-shadow: 2px 2px 0 var(--shadow-color)
-}
-
-.salary-table td {
-  padding: clamp(.875rem, 2.5vw, 1.125rem);
-  text-align: center;
-  border: 2px solid var(--shadow-color);
-  color: var(--article-text);
-  font-size: clamp(.95rem, 2.5vw, 1.05rem);
-  line-height: 1.5;
-  transition: all .3s ease
-}
-
-.salary-table tr:nth-child(even) {
-  background: rgba(0, 191, 165, 0.05)
-}
-
-.salary-table tr {
-  transition: all .3s ease
-}
-
 .salary-table tr:hover {
-  background: rgba(0, 169, 157, 0.08);
   transform: scale(1.02);
   box-shadow: 0 2px 8px rgba(95, 39, 205, 0.15)
-}
-
-.salary-table tr:hover td {
-  color: #2C3E50;
-  font-weight: 500
 }
 
 @media (max-width:768px) {

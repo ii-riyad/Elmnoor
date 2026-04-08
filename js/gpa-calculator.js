@@ -135,7 +135,7 @@ function calculateGPA() {
   updateShahabMessage(gpa)
 }
 
-// دالة تحديث رسالة شهاب
+// دالة تحديث الرسالة التحفيزية
 function updateShahabMessage(cgpa) {
   const messageDiv = document.getElementById('shahab-message')
   if (!messageDiv) return
@@ -155,34 +155,34 @@ function updateShahabMessage(cgpa) {
   } else if (cgpaNumber >= 3.7) {
     messageText =
       lang === 'ar'
-        ? '🎉 شهاب يقول: أداؤك مذهل! استمر في التفوق لتحقق الـ 4.0 الكاملة!'
-        : '🎉 Shihab says: Outstanding performance! Keep excelling to achieve a perfect 4.0!'
+        ? '🎉 أداؤك مذهل! استمر في التفوق لتحقق الـ 4.0 الكاملة!'
+        : '🎉 Outstanding performance! Keep excelling to achieve a perfect 4.0!'
   } else if (cgpaNumber >= 3.0) {
     messageText =
       lang === 'ar'
-        ? '👍 شهاب يقول: أداؤك جيد جداً! استمر في العمل الجاد!'
-        : '👍 Shihab says: Great performance! Keep up the hard work!'
+        ? '👍 أداؤك جيد جداً! استمر في العمل الجاد!'
+        : '👍 Great performance! Keep up the hard work!'
   } else if (cgpaNumber >= 2.0) {
     messageText =
       lang === 'ar'
-        ? '💪 شهاب يقول: أنت على الطريق الصحيح! استمر في التحسين!'
-        : "💪 Shihab says: You're on the right track! Keep improving!"
+        ? '💪 أنت على الطريق الصحيح! استمر في التحسين!'
+        : "💪 You're on the right track! Keep improving!"
   } else if (cgpaNumber > 0) {
     messageText =
       lang === 'ar'
-        ? '📚 شهاب يقول: لا تستسلم! العمل الجاد سيحسن معدلك!'
-        : "📚 Shihab says: Don's give up! Hard work will improve your GPA!"
+        ? '📚 لا تستسلم! العمل الجاد سيحسن معدلك!'
+        : "📚 Don's give up! Hard work will improve your GPA!"
   } else {
     messageText =
       lang === 'ar'
-        ? '🎯 شهاب يقول: ابدأ بإدخال موادك واحسب معدلك!'
-        : '🎯 Shihab says: Start adding your courses and calculate your GPA!'
+        ? '🎯 ابدأ بإدخال موادك واحسب معدلك!'
+        : '🎯 Start adding your courses and calculate your GPA!'
   }
 
   messageDiv.textContent = messageText
 }
 
-// دالة تحديث رسالة شهاب عند فتح/إضافة/حذف
+// دالة تحديث الرسالة عند فتح/إضافة/حذف
 function updateShahabMessageForGPA(action) {
   const speechBubble = document.getElementById('speechBubble')
   const speechText = document.getElementById('speechText')

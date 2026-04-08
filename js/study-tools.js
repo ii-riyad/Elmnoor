@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setFlipDigit(els.flipM2, mm[1])
     setFlipDigit(els.flipS1, ss[0])
     setFlipDigit(els.flipS2, ss[1])
-    document.title = `${timeText} - شهاب`
+    document.title = `${timeText} - Study Timer`
 
     if (els.timerCircle) {
       const radius = 45

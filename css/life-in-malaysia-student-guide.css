@@ -14,7 +14,8 @@
 
 html {
   font-size: 16px;
-  overflow-x: hidden
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 body {
@@ -22,7 +23,8 @@ body {
   line-height: 1.6;
   color: #2C3E50;
   background: #FDFCF5;
-  overflow-x: hidden
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch
 }
 
 .fonts-loaded body {
@@ -80,6 +82,16 @@ body {
   text-decoration: none;
   white-space: nowrap;
   font-weight: bold
+}
+
+.logo-tagline {
+  margin: 0;
+  font-size: .75rem;
+  color: #00A99D;
+  font-weight: bold;
+  letter-spacing: .5px;
+  font-style: italic;
+  white-space: nowrap
 }
 
 .nav-links {
@@ -165,30 +177,8 @@ body {
   background: #009185
 }
 
-.page-hero {
-  background: #2C3E50;
-  background-image: radial-gradient(rgba(0, 0, 0, .08) 1.5px, transparent 1.5px);
-  background-size: 10px 10px;
-  color: #FDFCF5;
-  padding: 4rem 0 2rem;
-  text-align: center;
-  border-bottom: 5px solid #000
-}
-
-.page-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 4px 4px 0 #000;
-  font-weight: bold;
-  font-family: 'Changa', cursive
-}
-
-.page-hero p {
-  font-size: 1.2rem;
-  opacity: .9;
-  max-width: 800px;
-  margin: 0 auto
-}
+/* Hero Section - Now uses unified style from style.css */
+/* Removed old styles - using global hero styles */
 
 .accordion-container {
   margin: 2rem 0
@@ -690,20 +680,23 @@ body {
   background: #F5F5F5;
   background-image: radial-gradient(rgba(0, 0, 0, .08) 1.5px, transparent 1.5px);
   background-size: 10px 10px;
-  padding: 3rem 0;
+  padding: 5rem 0 3rem;
   position: relative;
-  overflow: hidden
+  overflow: visible
 }
 
 .cards-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
-  height: 700px;
+  height: 750px;
   margin-bottom: 3rem;
+  margin-top: 2rem;
+  padding-top: 3rem;
   touch-action: pan-y;
-  padding-bottom: 4rem
+  padding-bottom: 4rem;
+  -webkit-overflow-scrolling: touch
 }
 
 .swipeable-card,
@@ -720,9 +713,9 @@ body {
 
 .swipeable-card {
   position: absolute;
-  width: 95%;
-  max-width: 1000px;
-  height: 620px;
+  width: 100%;
+  max-width: 1400px;
+  height: 650px;
   background: #fff;
   border: 5px solid #000;
   border-radius: 20px;
@@ -733,10 +726,12 @@ body {
   transition: all .4s cubic-bezier(.68, -.55, .265, 1.55);
   cursor: grab;
   user-select: none;
-  padding: 2.5rem;
+  padding: 3rem;
   overflow-y: auto;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch
 }
 
 .swipeable-card.active {
@@ -766,8 +761,8 @@ body {
 }
 
 .swipeable-card h2 {
-  font-size: 1.7rem;
-  margin-bottom: 1.2rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.3rem;
   color: #1a1a1a;
   font-family: 'Changa', cursive;
   font-weight: bold;
@@ -780,33 +775,51 @@ body {
   overflow-y: auto;
   padding-right: .5rem;
   scrollbar-width: none;
-  -ms-overflow-style: none
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch
 }
 
 .card-content p {
-  margin-bottom: .8rem;
-  line-height: 1.8;
+  margin-bottom: .9rem;
+  line-height: 2;
   color: #1a1a1a;
-  font-size: 1rem
+  font-size: 1.15rem
 }
 
 .card-content h4 {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   color: #008c7d;
-  margin-top: 1rem;
-  margin-bottom: .5rem;
+  margin-top: 1.2rem;
+  margin-bottom: .6rem;
   font-weight: bold
 }
 
 .cards-navigation {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  direction: ltr;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
+}
+
+.nav-dots-container {
+  display: flex;
+  justify-content: center;
   gap: .8rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 101;
-  margin-top: -2rem
+  direction: rtl;
+  flex-direction: row-reverse;
 }
 
 .nav-dot {
@@ -830,46 +843,133 @@ body {
 }
 
 .card-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  position: static;
+  width: 40px;
+  height: 40px;
   border: 4px solid #000;
   background: #00A99D;
   color: #fff;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all .3s ease;
-  z-index: 5;
-  box-shadow: 4px 4px 0 0 #000
+  z-index: 150;
+  box-shadow: 4px 4px 0 0 #000;
+  flex-shrink: 0;
 }
 
 .card-nav-btn:hover {
   background: #009185;
-  transform: translateY(-50%) scale(1.1)
+  transform: scale(1.1)
 }
 
 .card-nav-prev {
-  left: 20px
+  order: -1;
 }
 
 .card-nav-next {
-  right: 20px
+  order: 1;
 }
 
 .card-nav-btn:active {
   box-shadow: 2px 2px 0 0 #000
 }
 
+.card-scroll-hint {
+  position: sticky;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 169, 157, 0.15);
+  border: 2px solid rgba(0, 169, 157, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-top: 1.5rem;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  animation: scrollBounce 2s infinite ease-in-out
+}
+
+.card-content:hover .card-scroll-hint {
+  opacity: 0.3
+}
+
+.card-scroll-hint i {
+  color: #00A99D;
+  font-size: 1.2rem
+}
+
+@keyframes scrollBounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0)
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(5px)
+  }
+}
+
 .footer {
   padding: 2rem 0
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - Mobile Optimization
+   ============================================ */
+
+/* General Mobile Card Height Fix */
+@media (max-width: 767px) {
+  .swipeable-section {
+    min-height: auto !important;
+    padding: 2rem 0;
+  }
+
+  .cards-wrapper {
+    height: auto !important;
+    min-height: 450px;
+    max-height: 70vh;
+  }
+
+  .swipeable-card {
+    height: auto !important;
+    max-height: 65vh !important;
+    min-height: 400px;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain;
+  }
+
+  .card-inner {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .card-content {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+}
+
+/* Tall Screens Fix (like S24 Ultra) */
+@media (max-width: 767px) and (min-height: 900px) {
+  .swipeable-card {
+    max-height: 70vh !important;
+  }
+}
+
+/* Tablet and below (1024px) */
 @media(max-width:1024px) {
   .swipeable-card {
     max-width: 90%;
@@ -881,6 +981,277 @@ body {
   }
 }
 
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  html {
+    font-size: 13px;
+  }
+
+  .page-hero {
+    padding: 1.2rem 0 0.8rem;
+  }
+
+  .page-hero h1 {
+    font-size: 1.15rem;
+    line-height: 1.25;
+    padding: 0 12px;
+  }
+
+  .page-hero p {
+    font-size: 0.8rem;
+    padding: 0 12px;
+    line-height: 1.4;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .swipeable-card {
+    max-width: 97%;
+    width: 97%;
+    margin: 0 1.5%;
+    padding: 0.9rem 0.9rem 1.3rem;
+    border-width: 3px;
+    font-size: 0.85rem;
+  }
+
+  .swipeable-card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .card-icon-large {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.45rem;
+  }
+
+  .card-content h4 {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .tip-box,
+  .alert-box,
+  .success-box {
+    padding: 0.6rem;
+    margin: 0.6rem 0;
+    border-width: 2px;
+    border-right-width: 3px;
+  }
+
+  .tip-box h5,
+  .alert-box h5,
+  .success-box h5 {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .tip-box p,
+  .alert-box p,
+  .success-box p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-top: 0.2rem;
+  }
+
+  .card-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .nav-dot {
+    width: 9px;
+    height: 9px;
+    border-width: 2px;
+  }
+
+  .cards-navigation {
+    gap: 0.35rem;
+    padding: 6px 10px;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 200;
+  }
+
+  .conclusion-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .conclusion-section p {
+    font-size: 0.85rem;
+    padding: 0 12px;
+  }
+
+  .btn {
+    height: 42px;
+    font-size: 13px;
+    padding: 0 0.9rem;
+  }
+
+  .toc-toggle-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .scroll-to-top-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    bottom: 75px;
+  }
+}
+
+/* Small Mobile (375px - 413px) */
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 13.5px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .page-hero p {
+    font-size: 0.82rem;
+  }
+
+  .swipeable-card {
+    max-width: 96%;
+    width: 96%;
+    margin: 0 2%;
+    padding: 0.95rem 0.95rem 1.4rem;
+  }
+
+  .swipeable-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card-icon-large {
+    font-size: 1.7rem;
+  }
+
+  .card-content p {
+    font-size: 0.82rem;
+  }
+
+  .card-content h4 {
+    font-size: 0.88rem;
+  }
+}
+
+/* Medium Mobile (414px - 479px) */
+@media (min-width: 414px) and (max-width: 479px) {
+  html {
+    font-size: 14px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.25rem;
+  }
+
+  .page-hero p {
+    font-size: 0.85rem;
+  }
+
+  .swipeable-card {
+    max-width: 95%;
+    width: 95%;
+    margin: 0 2.5%;
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  .swipeable-card h2 {
+    font-size: 1.13rem;
+  }
+
+  .card-icon-large {
+    font-size: 1.75rem;
+  }
+
+  .card-content p {
+    font-size: 0.84rem;
+  }
+
+  .card-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .card-nav-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Standard Mobile (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  html {
+    font-size: 14.5px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .page-hero p {
+    font-size: 0.88rem;
+  }
+
+  .swipeable-card {
+    max-width: 94%;
+    width: 94%;
+    margin: 0 3%;
+    padding: 1.1rem 1.1rem 1.6rem;
+  }
+
+  .swipeable-card h2 {
+    font-size: 1.18rem;
+  }
+
+  .card-icon-large {
+    font-size: 1.85rem;
+  }
+
+  .card-content p {
+    font-size: 0.87rem;
+  }
+
+  .card-content h4 {
+    font-size: 0.93rem;
+  }
+
+  .card-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .conclusion-section h2 {
+    font-size: 1.35rem;
+  }
+
+  .conclusion-section p {
+    font-size: 0.92rem;
+  }
+
+  .btn {
+    height: 46px;
+    font-size: 14.5px;
+  }
+}
+
+/* Tablet and Mobile (768px and below) */
 @media(max-width:768px) {
   html {
     font-size: 15px
@@ -954,26 +1325,10 @@ body {
     transform: scale(1) translateX(0)
   }
 
-  .card-nav-prev,
-  .card-nav-next {
-    display: flex;
-    width: 42px;
-    height: 42px;
-    border-width: 3px;
-    font-size: 1rem;
-    top: auto;
-    bottom: 120px;
-    transform: none;
-    box-shadow: 3px 3px 0 0 #000;
-    z-index: 100
-  }
-
-  .card-nav-prev {
-    left: 15px
-  }
-
-  .card-nav-next {
-    right: 15px
+  .card-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
   }
 
   .card-nav-btn:hover {
@@ -1036,11 +1391,11 @@ body {
 
   .cards-navigation {
     gap: .5rem;
-    padding: 0 15px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 101
+    padding: 6px 10px;
+    bottom: 25px;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 200
   }
 
   .nav-dot {
@@ -1148,6 +1503,7 @@ body {
   }
 }
 
+/* Legacy 480px support - kept for backward compatibility */
 @media(max-width:480px) {
   html {
     font-size: 14px
@@ -1172,24 +1528,16 @@ body {
     width: 96%;
     margin: 0 2%;
     border-width: 3px;
-    max-height: 50vh
+    max-height: 80vh;
+    height: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch
   }
 
-  .card-nav-prev,
-  .card-nav-next {
-    width: 38px;
-    height: 38px;
-    font-size: .9rem;
-    bottom: 100px;
-    z-index: 100
-  }
-
-  .card-nav-prev {
-    left: 10px
-  }
-
-  .card-nav-next {
-    right: 10px
+  .card-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.88rem;
   }
 
   .card-icon-large {
@@ -1246,7 +1594,10 @@ body {
   }
 
   .cards-navigation {
-    gap: .4rem
+    gap: .4rem;
+    padding: 5px 8px;
+    bottom: 20px;
+    transform: translateX(-50%)
   }
 
   .conclusion-section h2 {

@@ -207,7 +207,9 @@ document.addEventListener(
     button.setAttribute('aria-label', 'الرجوع لأعلى الصفحة')
     button.setAttribute('data-ar-aria-label', 'الرجوع لأعلى الصفحة')
     button.setAttribute('data-en-aria-label', 'Back to top')
-    button.innerHTML = '<i class="fas fa-arrow-up"></i>'
+    const icon = document.createElement('i')
+    icon.className = 'fas fa-arrow-up'
+    button.appendChild(icon)
     document.body.appendChild(button)
     return button
   }

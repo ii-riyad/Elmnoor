@@ -77,11 +77,6 @@
           <a href="index.html#majors" class="nav-link" data-ar="التخصصات" data-en="Majors">التخصصات</a>
           <a href="universities.html" class="nav-link" data-ar="الجامعات" data-en="Universities">الجامعات</a>
           <a href="services.html" class="nav-link" data-ar="الخدمات" data-en="Services">الخدمات</a>
-          <a href="articles.html" class="nav-link active" data-ar="مقالات AI" data-en="AI Articles">مقالات
-            AI</a>
-          <a href="study-with-shihab.html" class="nav-link nav-link-featured" data-ar="ادرس معي – شِهاب"
-            data-en="Study with Shihab">ادرس معي – شِهاب</a>
-          <a href="contact.html" class="nav-link" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
           <button class="lang-btn" id="langToggleBtn" aria-label="تبديل اللغة" data-ar-aria-label="تبديل اللغة"
             data-en-aria-label="Change language">
             <i class="fas fa-globe"></i>
@@ -336,10 +331,10 @@
       </p>
 
       <div style="text-align: center; margin-top: 3rem;">
-        <a href="contact.html" class="cta-button" data-ar="تواصل معنا للمزيد من المعلومات"
-          data-en="Contact us for more information">
-          <i class="fas fa-envelope"></i> <span data-ar="تواصل معنا للمزيد من المعلومات"
-            data-en="Contact us for more information">تواصل معنا للمزيد من المعلومات</span>
+        <a href="contact.html" class="btn btn-primary cta-btn-main">
+          <i class="fas fa-envelope"></i>
+          <span data-ar="تواصل معنا للمزيد من المعلومات" data-en="Contact us for more information">تواصل معنا للمزيد من
+            المعلومات</span>
         </a>
       </div>
     </div>
@@ -364,6 +359,13 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/i18n.js" defer></script>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+    aria-label="تواصل معنا عبر واتساب" data-ar-aria-label="تواصل معنا عبر واتساب"
+    data-en-aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
   <script>
     /* Ensure Font Awesome loads - fallback if async loading fails */
     (function () { var d = document; var w = window; function loadFA() { var link = d.querySelector('link[href*="font-awesome"]'); if (!link || !link.sheet) { var fa = d.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'; fa.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; fa.crossOrigin = 'anonymous'; fa.referrerPolicy = 'no-referrer'; d.head.appendChild(fa) } } if (d.readyState === 'complete') { setTimeout(loadFA, 100) } else { w.addEventListener('load', function () { setTimeout(loadFA, 100) }) } })();
