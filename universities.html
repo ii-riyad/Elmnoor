@@ -1069,54 +1069,7 @@
   </footer>
   <script defer src="js/main.js"></script>
   <script src="js/i18n.js" defer></script>
-  <script>
-    // MMU Pricing Drawer interactions: click/drag to open, move pricing content into drawer
-    (function () {
-      const handle = document.getElementById('mmuPricingHandle');
-      const drawer = document.getElementById('mmuPricingDrawer');
-      const overlay = document.getElementById('mmuPricingOverlay');
-      const closeBtn = document.getElementById('mmuPricingClose');
-      const content = document.getElementById('mmuPricingContent');
-
-      function openDrawer() {
-        drawer.classList.add('open');
-        overlay.classList.add('show');
-        handle.setAttribute('aria-expanded', 'true');
-        drawer.setAttribute('aria-hidden', 'false');
-      }
-      function closeDrawer() {
-        drawer.classList.remove('open');
-        overlay.classList.remove('show');
-        handle.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-      }
-
-      if (handle) handle.addEventListener('click', openDrawer);
-      if (overlay) overlay.addEventListener('click', closeDrawer);
-      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-
-      // Simple drag-to-open: if user drags handle to the right > 40px
-      let startX = null, opened = false;
-      if (handle) {
-        handle.addEventListener('pointerdown', (e) => { startX = e.clientX; opened = false; handle.setPointerCapture(e.pointerId); });
-        handle.addEventListener('pointermove', (e) => {
-          if (startX !== null && !opened) {
-            const dx = e.clientX - startX;
-            if (dx > 40) { openDrawer(); opened = true; }
-          }
-        });
-        handle.addEventListener('pointerup', () => { startX = null; opened = false; });
-      }
-
-      // Move existing pricing note + accordion into the drawer
-      const note = document.querySelector('.pricing-note');
-      const accordion = document.querySelector('.pricing-accordion');
-      if (content && accordion) {
-        if (note) { content.appendChild(note); }
-        content.appendChild(accordion);
-      }
-    })();
-  </script>
+  <script src="js/universities-drawer.js" defer></script>
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
     aria-label="تواصل معنا عبر واتساب" data-ar-aria-label="تواصل معنا عبر واتساب"
@@ -1124,10 +1077,7 @@
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
-  <script>
-    /* Ensure Font Awesome loads - fallback if async loading fails */
-    (function () { var d = document; var w = window; function loadFA() { var link = d.querySelector('link[href*="font-awesome"]'); if (!link || !link.sheet) { var fa = d.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'; fa.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; fa.crossOrigin = 'anonymous'; fa.referrerPolicy = 'no-referrer'; d.head.appendChild(fa) } } if (d.readyState === 'complete') { setTimeout(loadFA, 100) } else { w.addEventListener('load', function () { setTimeout(loadFA, 100) }) } })();
-  </script>
+  <script src="js/fa-fallback.js" defer></script>
 </body>
 
 </html>
