@@ -50,7 +50,7 @@ body {
   line-height: 1.6;
   color: var(--color-dark);
   background-color: var(--color-beige);
-  cursor: url('images/micky.PNG'), auto
+  cursor: url('images/micky.webp'), auto
 }
 
 html[lang="ar"] body {
