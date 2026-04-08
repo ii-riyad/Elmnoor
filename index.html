@@ -53,6 +53,7 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
   <!-- Video poster used to reserve visual space and avoid large automatic payloads -->
+  <link rel="preload" href="images/anim.webp" as="image" fetchpriority="high">
   <link rel="preload" href="images/og-cover.webp" as="image">
 
   <!-- Load CSS asynchronously to improve FCP -->
@@ -98,7 +99,7 @@
 
 <body>
   <!-- Welcome Song Audio -->
-  <audio id="welcomeSong" preload="auto">
+  <audio id="welcomeSong" preload="metadata">
     <source src="audio/elmnoor-song.opus" type="audio/opus">
     <source src="audio/elmnoor-song.aac" type="audio/aac">
   </audio>
@@ -162,7 +163,7 @@
 
           <div class="hero-image-wrapper" aria-hidden="false">
             <div class="hero-image" role="presentation" aria-hidden="true">
-              <img class="hero-video" src="images/anim.webp" alt="Elm w Noor - علم ونور">
+              <img class="hero-video" src="images/anim.webp" alt="Elm w Noor - علم ونور" fetchpriority="high">
             </div>
           </div>
         </div>
