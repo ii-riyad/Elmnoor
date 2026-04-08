@@ -28,8 +28,8 @@ elm-w-noor-final/
 ├── js/
 │   └── main.js        # الوظائف (الترجمة، القائمة، النماذج)
 ├── images/
-│   ├── guide-welcome.png  # شخصية المرشد
-│   └── guide-poses.png    # أوضاع المرشد
+│   ├── guide-welcome.webp  # شخصية المرشد
+│   └── guide-poses.webp    # أوضاع المرشد
 └── README.md          # هذا الملف
 ```
 
@@ -75,8 +75,8 @@ public_html/
 ├── js/
 │   └── main.js
 └── images/
-    ├── guide-welcome.png
-    └── guide-poses.png
+    ├── guide-welcome.webp
+    └── guide-poses.webp
 ```
 
 ### الخطوة 6: اختبار الموقع
@@ -136,7 +136,7 @@ public_html/
 
 ### الصور لا تظهر
 - تأكد من رفع مجلد `images/` كاملاً
-- تحقق من الأسماء: `guide-welcome.png` و `guide-poses.png`
+- تحقق من الأسماء: `guide-welcome.webp` و `guide-poses.webp`
 
 ### الترجمة لا تعمل
 - تأكد من رفع ملف `js/main.js`
