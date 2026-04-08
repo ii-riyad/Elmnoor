@@ -265,12 +265,14 @@
    */
   function initButtonEffects() {
     document.querySelectorAll('.btn-study').forEach((btn) => {
-      btn.addEventListener('click', (/** @type {MouseEvent} */ e) => {
+      btn.addEventListener('click', (e) => {
+        const mouseEvent = /** @type {MouseEvent} */ (e)
+        const button = /** @type {HTMLElement} */ (btn)
         const ripple = document.createElement('span'),
-          rect = this.getBoundingClientRect(),
+          rect = button.getBoundingClientRect(),
           size = Math.max(rect.width, rect.height),
-          x = e.clientX - rect.left - size / 2,
-          y = e.clientY - rect.top - size / 2
+          x = mouseEvent.clientX - rect.left - size / 2,
+          y = mouseEvent.clientY - rect.top - size / 2
         ripple.style.width = ripple.style.height = size + 'px'
         ripple.style.left = x + 'px'
         ripple.style.top = y + 'px'
@@ -280,9 +282,9 @@
         ripple.style.transform = 'scale(0)'
         ripple.style.animation = 'ripple 0.6s ease-out'
         ripple.style.pointerEvents = 'none'
-        this.style.position = 'relative'
-        this.style.overflow = 'hidden'
-        this.appendChild(ripple)
+        button.style.position = 'relative'
+        button.style.overflow = 'hidden'
+        button.appendChild(ripple)
         setTimeout(() => ripple.remove(), 600)
       })
     })

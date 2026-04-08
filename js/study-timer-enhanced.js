@@ -139,7 +139,8 @@
     if (isPaused) {
       isPaused = false
     } else {
-      totalTime = parseInt(elements.sessionDuration?.value || 25) * 60
+      const sessionDuration = /** @type {HTMLInputElement | null} */ (elements.sessionDuration)
+      totalTime = parseInt(sessionDuration?.value || '25') * 60
       currentTime = totalTime
     }
     isRunning = true
@@ -174,7 +175,8 @@
       clearInterval(timerInterval)
       timerInterval = undefined
     }
-    totalTime = parseInt(elements.sessionDuration?.value || 25) * 60
+    const sessionDuration = /** @type {HTMLInputElement | null} */ (elements.sessionDuration)
+    totalTime = parseInt(sessionDuration?.value || '25') * 60
     currentTime = totalTime
     if (elements.timerLabel) {
       const lang = document.documentElement.getAttribute('lang') || 'ar'
@@ -212,7 +214,8 @@
    */
   function startBreak() {
     if (timerInterval) clearInterval(timerInterval)
-    totalTime = parseInt(elements.breakDuration?.value || 5) * 60
+    const breakDuration = /** @type {HTMLInputElement | null} */ (elements.breakDuration)
+    totalTime = parseInt(breakDuration?.value || '5') * 60
     currentTime = totalTime
     isRunning = true
     isPaused = false
@@ -232,7 +235,8 @@
           const lang = document.documentElement.getAttribute('lang') || 'ar'
           elements.timerLabel.textContent = lang === 'en' ? 'Study Session' : 'جلسة دراسة'
         }
-        totalTime = parseInt(elements.sessionDuration?.value || 25) * 60
+        const sessionDuration = /** @type {HTMLInputElement | null} */ (elements.sessionDuration)
+        totalTime = parseInt(sessionDuration?.value || '25') * 60
         currentTime = totalTime
         isRunning = true
         isPaused = false
@@ -319,7 +323,6 @@
       elements.character.addEventListener('click', () => {
         if (window.studyInteractions) {
           window.studyInteractions.triggerCharacterReaction('happy')
-          window.studyInteractions.showRandomEncouragement()
         }
       })
     }
@@ -345,15 +348,16 @@
     if (elements.pauseBtn) elements.pauseBtn.addEventListener('click', pauseTimer)
     if (elements.stopBtn) elements.stopBtn.addEventListener('click', stopTimer)
 
-    document.querySelectorAll('.preset-btn[data-duration]').forEach((btn) => {
+    /** @type {NodeListOf<HTMLButtonElement>} */const presetBtns = document.querySelectorAll('.preset-btn[data-duration]')
+    presetBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         if (elements.sessionDuration) {
-          elements.sessionDuration.value = btn.dataset.duration
-          document
-            .querySelectorAll('.preset-btn[data-duration]')
-            .forEach((b) => b.classList.toggle('active', b === btn))
+          const sessionDuration = /** @type {HTMLInputElement} */ (elements.sessionDuration)
+          const duration = /** @type {HTMLButtonElement} */ (btn).dataset.duration || '25'
+          sessionDuration.value = duration
+          presetBtns.forEach((b) => b.classList.toggle('active', b === btn))
           if (!isRunning) {
-            totalTime = parseInt(btn.dataset.duration) * 60
+            totalTime = parseInt(/** @type {HTMLButtonElement} */ (btn).dataset.duration || '25') * 60
             currentTime = totalTime
             updateDisplay()
           }
@@ -361,11 +365,12 @@
       })
     })
 
-    const buttons = document.querySelectorAll('.preset-btn[data-break]')
+    const buttons = /** @type {NodeListOf<HTMLButtonElement>} */ (document.querySelectorAll('.preset-btn[data-break]'))
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         if (elements.breakDuration) {
-          elements.breakDuration.value = btn.dataset.break
+          const breakDuration = /** @type {HTMLInputElement} */ (elements.breakDuration)
+          breakDuration.value = btn.dataset.break || '5'
           document.querySelectorAll('.preset-btn[data-break]').forEach((b) => b.classList.toggle('active', b === btn))
         }
       })

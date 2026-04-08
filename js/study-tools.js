@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
       timeLeft: 25 * 60,
       originalTime: 25 * 60,
       isRunning: false,
-      interval: null
+      /** @type {number | undefined} */
+      interval: undefined
     },
     flashcards: cardsStr ? JSON.parse(cardsStr) : [],
     cardIndex: 0,
     todos: todosStr ? JSON.parse(todosStr) : [],
+    /** @type {HTMLAudioElement | null} */
     audio: null
   }
 
@@ -77,8 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
        =========================================================== */
   document.addEventListener('click', (e) => {
     // البحث عن العنصر المضغوط أو أقرب زر (في حال ضغطت على الأيقونة)
-    const target = e.target
-    const btn = target.closest('button') || target
+    const target = /** @type {HTMLElement | null} */ (e.target)
+    if (!target) return
+    const btn = /** @type {HTMLElement} */ (target.closest('button') || target)
     const id = btn.id
 
     // --- أزرار المؤقت ---
@@ -130,8 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
       triggerBubble('flashPrev')
     }
     if (id === 'backToCreatorBtn') {
-      els.studySection.style.display = 'none'
-      els.creatorSection.style.display = 'block'
+      if (els.studySection && els.creatorSection) {
+        els.studySection.style.display = 'none'
+        els.creatorSection.style.display = 'block'
+      }
       triggerBubble('flashBackToCreator')
     }
     if (id === 'resetDeckBtn') {
@@ -153,13 +158,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- أزرار الحاسبة (GPA) ---
     if (id === 'gpaToggleBtn') {
-      els.gpaSidebar.classList.add('open')
-      els.gpaOverlay.classList.add('show')
+      if (els.gpaSidebar && els.gpaOverlay) {
+        els.gpaSidebar.classList.add('open')
+        els.gpaOverlay.classList.add('show')
+      }
       triggerBubble('gpaOpen')
     }
     if (id === 'closeGpaBtn' || target.id === 'gpa-overlay') {
-      els.gpaSidebar.classList.remove('open')
-      els.gpaOverlay.classList.remove('show')
+      if (els.gpaSidebar && els.gpaOverlay) {
+        els.gpaSidebar.classList.remove('open')
+        els.gpaOverlay.classList.remove('show')
+      }
       triggerBubble('gpaClose')
     }
     if (id === 'addCourseBtn') {
@@ -167,7 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
       triggerBubble('gpaAddCourse')
     }
     if (target.classList.contains('delete-course-btn') || btn.classList.contains('delete-course-btn')) {
-      ;(target.closest('tr') || btn.closest('tr')).remove()
+      const row = target.closest('tr') || btn.closest('tr')
+      if (row) row.remove()
       calcGPA()
       triggerBubble('gpaDeleteCourse')
     }
@@ -190,23 +200,29 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.tool-content').forEach((c) => c.classList.remove('active'))
       btn.classList.add('active')
       const contentId = btn.dataset.tab + 'Content'
-      document.getElementById(contentId).classList.add('active')
+      const contentEl = document.getElementById(contentId)
+      if (contentEl) contentEl.classList.add('active')
+      /** @type {Record<string, string>} */
       const tabKeyMap = { todo: 'tabTodo', notes: 'tabNotes', flashcards: 'tabFlash', sounds: 'tabSounds' }
-      triggerBubble(tabKeyMap[btn.dataset.tab] || 'tabTodo')
+      const tabKey = (btn.dataset.tab && tabKeyMap[btn.dataset.tab]) || 'tabTodo'
+      triggerBubble(tabKey)
     }
 
     // --- أزرار الأصوات ---
     if (btn.classList.contains('sound-btn')) {
       document.querySelectorAll('.sound-btn').forEach((b) => b.classList.remove('active'))
       btn.classList.add('active')
-      playSound(btn.dataset.sound)
+      const soundType = btn.dataset.sound || 'none'
+      playSound(soundType)
+      /** @type {Record<string, string>} */
       const soundKeyMap = { none: 'soundNone', rain: 'soundRain', ocean: 'soundOcean', fire: 'soundFire' }
-      triggerBubble(soundKeyMap[btn.dataset.sound] || 'soundNone')
+      const soundKey = (soundKeyMap[soundType]) || 'soundNone'
+      triggerBubble(soundKey)
     }
 
     // --- إغلاق نافذة الاحتفال ---
     if (id === 'closeCelebrationBtn') {
-      els.celebration.classList.remove('show')
+      if (els.celebration) els.celebration.classList.remove('show')
       triggerBubble('celebrationClose')
     }
   })
@@ -220,18 +236,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- مستمع خاص لقلب البطاقة (عند النقر عليها) ---
   if (els.cardElement) {
     els.cardElement.addEventListener('click', () => {
-      els.cardElement.classList.toggle('is-flipped')
+      els.cardElement?.classList.toggle('is-flipped')
     })
   }
 
   // --- مستمع لتحديث المعدل عند تغيير القيم ---
   document.addEventListener('change', (e) => {
-    if (e.target.classList.contains('gpa-select')) {
+    const target = /** @type {HTMLElement | null} */ (e.target)
+    if (!target) return
+    if (target.classList.contains('gpa-select')) {
       calcGPA()
     }
     // حفظ الملاحظات
-    if (e.target.id === 'notesTextarea') {
-      localStorage.setItem('shihabNotes', e.target.value)
+    if (target.id === 'notesTextarea') {
+      const textArea = /** @type {HTMLTextAreaElement | null} */ (target)
+      if (textArea?.value) {
+        localStorage.setItem('shihabNotes', textArea.value)
+      }
     }
   })
 
@@ -274,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * @returns {void}
    */
   function pauseTimer() {
-    clearInterval(state.timer.interval)
+    if (state.timer.interval) clearInterval(state.timer.interval)
     state.timer.isRunning = false
     updateControls('paused')
     // Show break message when paused
@@ -285,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * @returns {void}
    */
   function resetTimer() {
-    clearInterval(state.timer.interval)
+    if (state.timer.interval) clearInterval(state.timer.interval)
     state.timer.isRunning = false
     state.timer.timeLeft = state.timer.originalTime
     updateTimerUI()
@@ -297,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function finishTimer() {
     resetTimer()
-    els.celebration.classList.add('show')
+    if (els.celebration) els.celebration.classList.add('show')
     playSound('celebration') // Optional sound
     // Show completion message
     triggerBubble('timerComplete')
@@ -309,19 +330,19 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function updateControls(status) {
     if (status === 'running') {
-      els.startBtn.style.display = 'none'
-      els.pauseBtn.style.display = 'inline-flex'
-      els.stopBtn.style.display = 'inline-flex'
+      if (els.startBtn) els.startBtn.style.display = 'none'
+      if (els.pauseBtn) els.pauseBtn.style.display = 'inline-flex'
+      if (els.stopBtn) els.stopBtn.style.display = 'inline-flex'
     } else if (status === 'paused') {
-      els.startBtn.style.display = 'inline-flex'
-      els.startBtn.innerHTML = '<i class="fas fa-play"></i> استئناف'
-      els.pauseBtn.style.display = 'none'
+      if (els.startBtn) els.startBtn.style.display = 'inline-flex'
+      if (els.startBtn) els.startBtn.innerHTML = '<i class="fas fa-play"></i> استئناف'
+      if (els.pauseBtn) els.pauseBtn.style.display = 'none'
     } else {
       // stopped
-      els.startBtn.style.display = 'inline-flex'
-      els.startBtn.innerHTML = '<i class="fas fa-play"></i> ابدأ الجلسة'
-      els.pauseBtn.style.display = 'none'
-      els.stopBtn.style.display = 'none'
+      if (els.startBtn) els.startBtn.style.display = 'inline-flex'
+      if (els.startBtn) els.startBtn.innerHTML = '<i class="fas fa-play"></i> ابدأ الجلسة'
+      if (els.pauseBtn) els.pauseBtn.style.display = 'none'
+      if (els.stopBtn) els.stopBtn.style.display = 'none'
     }
   }
 
@@ -368,10 +389,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeText = `${mm}:${ss}`
 
     if (els.timerDisplay) els.timerDisplay.innerText = timeText
-    setFlipDigit(els.flipM1, mm[0])
-    setFlipDigit(els.flipM2, mm[1])
-    setFlipDigit(els.flipS1, ss[0])
-    setFlipDigit(els.flipS2, ss[1])
+    const flipM1 = /** @type {HTMLElement | null} */ (els.flipM1)
+    const flipM2 = /** @type {HTMLElement | null} */ (els.flipM2)
+    const flipS1 = /** @type {HTMLElement | null} */ (els.flipS1)
+    const flipS2 = /** @type {HTMLElement | null} */ (els.flipS2)
+    if (flipM1) setFlipDigit(flipM1, mm[0])
+    if (flipM2) setFlipDigit(flipM2, mm[1])
+    if (flipS1) setFlipDigit(flipS1, ss[0])
+    if (flipS2) setFlipDigit(flipS2, ss[1])
     document.title = `${timeText} - Study Timer`
 
     if (els.timerCircle) {
@@ -381,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const offset = circumference - percent * circumference
 
       els.timerCircle.style.strokeDasharray = `${circumference} ${circumference}`
-      els.timerCircle.style.strokeDashoffset = offset
+      els.timerCircle.style.strokeDashoffset = String(offset)
     }
   }
 
@@ -391,14 +416,17 @@ document.addEventListener('DOMContentLoaded', () => {
    * @returns {void}
    */
   function addFlashcard() {
-    const front = els.fcFront.value.trim()
-    const back = els.fcBack.value.trim()
+    const fcFrontEl = /** @type {HTMLInputElement | null} */ (els.fcFront)
+    const fcBackEl = /** @type {HTMLInputElement | null} */ (els.fcBack)
+    if (!fcFrontEl || !fcBackEl) return
+    const front = fcFrontEl.value.trim()
+    const back = fcBackEl.value.trim()
     if (front && back) {
       state.flashcards.push({ front, back })
       saveCards()
-      els.fcFront.value = ''
-      els.fcBack.value = ''
-      els.fcFront.focus()
+      fcFrontEl.value = ''
+      fcBackEl.value = ''
+      fcFrontEl.focus()
       updateFlashcardUI()
     } else {
       alert('الرجاء كتابة السؤال والجواب')
@@ -413,8 +441,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('أضف بطاقات أولاً!')
       return
     }
-    els.creatorSection.style.display = 'none'
-    els.studySection.style.display = 'block'
+    if (els.creatorSection) els.creatorSection.style.display = 'none'
+    if (els.studySection) els.studySection.style.display = 'block'
     state.cardIndex = 0
     showCard(0)
   }
@@ -429,8 +457,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Timeout small delay to allow flip reset if needed visually
     setTimeout(() => {
-      els.cardFront.innerText = state.flashcards[index].front
-      els.cardBack.innerText = state.flashcards[index].back
+      if (els.cardFront && state.flashcards[index]) {
+        els.cardFront.innerText = state.flashcards[index].front
+      }
+      if (els.cardBack && state.flashcards[index]) {
+        els.cardBack.innerText = state.flashcards[index].back
+      }
     }, 150)
   }
 
@@ -467,8 +499,8 @@ document.addEventListener('DOMContentLoaded', () => {
       state.flashcards.splice(state.cardIndex, 1)
       saveCards()
       if (state.flashcards.length === 0) {
-        els.studySection.style.display = 'none'
-        els.creatorSection.style.display = 'block'
+        if (els.studySection) els.studySection.style.display = 'none'
+        if (els.creatorSection) els.creatorSection.style.display = 'block'
       } else {
         if (state.cardIndex >= state.flashcards.length) state.cardIndex--
         showCard(state.cardIndex)
@@ -481,11 +513,13 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function editCurrentCard() {
     const card = state.flashcards[state.cardIndex]
-    els.fcFront.value = card.front
-    els.fcBack.value = card.back
+    const fcFrontEl = /** @type {HTMLInputElement | null} */ (els.fcFront)
+    const fcBackEl = /** @type {HTMLInputElement | null} */ (els.fcBack)
+    if (fcFrontEl) fcFrontEl.value = card.front
+    if (fcBackEl) fcBackEl.value = card.back
     deleteCurrentCard() // Remove old one so updated one is added new
-    els.studySection.style.display = 'none'
-    els.creatorSection.style.display = 'block'
+    if (els.studySection) els.studySection.style.display = 'none'
+    if (els.creatorSection) els.creatorSection.style.display = 'block'
   }
 
   /**
@@ -545,8 +579,10 @@ document.addEventListener('DOMContentLoaded', () => {
       totalCrs = 0
 
     rows.forEach((r) => {
-      const cr = parseFloat(r.querySelector('.cr').value)
-      const gr = parseFloat(r.querySelector('.gr').value)
+      const crEl = /** @type {HTMLInputElement | null} */ (r.querySelector('.cr'))
+      const grEl = /** @type {HTMLInputElement | null} */ (r.querySelector('.gr'))
+      const cr = crEl ? parseFloat(crEl.value) : NaN
+      const gr = grEl ? parseFloat(grEl.value) : NaN
       if (!isNaN(cr) && !isNaN(gr)) {
         totalPts += cr * gr
         totalCrs += cr
@@ -559,7 +595,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update Credits Display if exists
     const credEl = document.getElementById('total-credits')
-    if (credEl) credEl.innerText = totalCrs
+    if (credEl) credEl.innerText = Math.round(totalCrs).toString()
   }
 
   // --- To-Do Logic ---
@@ -568,12 +604,14 @@ document.addEventListener('DOMContentLoaded', () => {
    * @returns {boolean} - Returns true if a new to-do was added, false otherwise
    */
   function addTodo() {
-    const text = els.todoInput.value.trim()
+    const todoInputEl = /** @type {HTMLInputElement | null} */ (els.todoInput)
+    if (!todoInputEl) return false
+    const text = todoInputEl.value.trim()
     if (text) {
       state.todos.push({ text: text, completed: false })
       saveTodos()
       renderTodos()
-      els.todoInput.value = ''
+      todoInputEl.value = ''
       return true
     }
     return false
@@ -585,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderTodos() {
     if (!els.todoList) return
     els.todoList.innerHTML = ''
-    state.todos.forEach((t, i) => {
+    state.todos.forEach((/** @type {any} */ t, /** @type {number} */ i) => {
       const div = document.createElement('div')
       div.className = `todo-item ${t.completed ? 'completed' : ''}`
       div.innerHTML = `
@@ -593,13 +631,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="fas fa-trash delete-todo-btn" data-index="${i}" style="color:#ef4444; cursor:pointer; margin-right:auto;"></i>
             `
       div.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('delete-todo-btn')) {
+        const target = /** @type {HTMLElement | null} */ (e.target)
+        if (target && !target.classList.contains('delete-todo-btn')) {
           state.todos[i].completed = !state.todos[i].completed
           saveTodos()
           renderTodos()
         }
       })
-      els.todoList.appendChild(div)
+      if (els.todoList) els.todoList.appendChild(div)
     })
   }
 
@@ -622,18 +661,18 @@ document.addEventListener('DOMContentLoaded', () => {
       state.audio = null
     }
 
-    const sounds = {
+    const sounds = /** @type {Record<string, string>} */ ({
       rain: 'https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg',
       ocean: 'https://actions.google.com/sounds/v1/water/waves_crashing_on_rock_beach.ogg',
       fire: 'https://cdn.jsdelivr.net/gh/prof3ssorSt3v3/media-sample-files@master/fireplace.mp3',
       forest: 'https://actions.google.com/sounds/v1/relax/forest_sounds.ogg',
       cafe: 'https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg'
-    }
+    })
 
     if (type !== 'none' && sounds[type]) {
       state.audio = new Audio(sounds[type])
       state.audio.loop = true
-      state.audio.play().catch((e) => console.log('Audio play error:', e))
+      state.audio.play().catch((/** @type {any} */ e) => console.log('Audio play error:', e))
     }
   }
 
@@ -648,7 +687,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load saved notes
   const savedNotes = localStorage.getItem('shihabNotes')
-  if (savedNotes && document.getElementById('notesTextarea')) {
-    document.getElementById('notesTextarea').value = savedNotes
+  if (savedNotes) {
+    const notesEl = /** @type {HTMLInputElement | null} */ (document.getElementById('notesTextarea'))
+    if (notesEl) notesEl.value = savedNotes
   }
 })

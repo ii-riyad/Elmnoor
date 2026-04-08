@@ -20,14 +20,31 @@
     }
 
     init() {
-      this.wrapper.addEventListener('touchstart', (e) => this.handleStart(e), false)
-      this.wrapper.addEventListener('touchmove', (e) => this.handleMove(e), false)
-      this.wrapper.addEventListener('touchend', (e) => this.handleEnd(e), false)
+      if (!this.wrapper) return
+      this.wrapper.addEventListener(
+        'touchstart',
+        (e) => this.handleStart(/** @type {TouchEvent | MouseEvent} */ (e)),
+        false
+      )
+      this.wrapper.addEventListener(
+        'touchmove',
+        (e) => this.handleMove(/** @type {TouchEvent | MouseEvent} */ (e)),
+        false
+      )
+      this.wrapper.addEventListener('touchend', () => this.handleEnd(), false)
 
-      this.wrapper.addEventListener('mousedown', (e) => this.handleStart(e), false)
-      this.wrapper.addEventListener('mousemove', (e) => this.handleMove(e), false)
-      this.wrapper.addEventListener('mouseup', (e) => this.handleEnd(e), false)
-      this.wrapper.addEventListener('mouseleave', (e) => this.handleEnd(e), false)
+      this.wrapper.addEventListener(
+        'mousedown',
+        (e) => this.handleStart(/** @type {TouchEvent | MouseEvent} */ (e)),
+        false
+      )
+      this.wrapper.addEventListener(
+        'mousemove',
+        (e) => this.handleMove(/** @type {TouchEvent | MouseEvent} */ (e)),
+        false
+      )
+      this.wrapper.addEventListener('mouseup', () => this.handleEnd(), false)
+      this.wrapper.addEventListener('mouseleave', () => this.handleEnd(), false)
 
       if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.goToPrevious())
       if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.goToNext())
@@ -39,22 +56,36 @@
       this.updateCards()
     }
 
-    handleStart(e) {
+    handleStart(/** @type {TouchEvent | MouseEvent} */ e) {
       this.isDragging = true
-      this.startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX
+      const event = /** @type {TouchEvent | MouseEvent} */ (e)
+      const clientX = event.type.includes('mouse')
+        ? /** @type {MouseEvent} */ (event).clientX
+        : /** @type {TouchEvent} */ (event).touches[0].clientX
+      this.startX = clientX
       this.currentX = this.startX
-      this.wrapper.style.cursor = 'grabbing'
+      if (this.wrapper) {
+        const wrapperEl = /** @type {HTMLElement} */ (this.wrapper)
+        wrapperEl.style.cursor = 'grabbing'
+      }
     }
 
-    handleMove(e) {
+    handleMove(/** @type {TouchEvent | MouseEvent} */ e) {
       if (!this.isDragging) return
-      this.currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX
+      const event = /** @type {TouchEvent | MouseEvent} */ (e)
+      const clientX = event.type.includes('mouse')
+        ? /** @type {MouseEvent} */ (event).clientX
+        : /** @type {TouchEvent} */ (event).touches[0].clientX
+      this.currentX = clientX
     }
 
     handleEnd() {
       if (!this.isDragging) return
       this.isDragging = false
-      this.wrapper.style.cursor = 'grab'
+      if (this.wrapper) {
+        const wrapperEl = /** @type {HTMLElement} */ (this.wrapper)
+        wrapperEl.style.cursor = 'grab'
+      }
 
       const diff = this.currentX - this.startX
       if (Math.abs(diff) <= this.threshold) return
@@ -77,7 +108,7 @@
       }
     }
 
-    goToCard(index) {
+    goToCard(/** @type {number} */ index) {
       if (index < 0 || index >= this.totalCards) return
       this.currentCard = index
       this.updateCards()
@@ -140,7 +171,8 @@
     })
 
     document.addEventListener('click', (e) => {
-      if (!tocSidebar.contains(e.target) && !tocToggleBtn.contains(e.target)) {
+      const target = /** @type {Node | null} */ (e.target)
+      if (target && !tocSidebar.contains(target) && !tocToggleBtn.contains(target)) {
         tocSidebar.classList.remove('active')
         tocToggleBtn.classList.remove('active')
       }
@@ -154,7 +186,8 @@
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', (e) => {
         e.preventDefault()
-        const target = document.querySelector(this.getAttribute('href'))
+        const href = anchor.getAttribute('href')
+        const target = href ? document.querySelector(href) : null
         if (target) target.scrollIntoView({ behavior: 'smooth' })
       })
     })
