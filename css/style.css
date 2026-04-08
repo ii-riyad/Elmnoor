@@ -2113,13 +2113,6 @@ html[lang="en"] .back-to-top {
   will-change: transform
 }
 
-.scroll-progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-primary) 0%, #009185 100%);
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 169, 157, .5)
-}
-
 html[lang="en"] .scroll-progress-bar {
   transform-origin: left
 }

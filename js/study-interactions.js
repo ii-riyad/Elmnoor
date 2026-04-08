@@ -149,9 +149,9 @@
     else if (percentage <= 50) elements.progressBar.classList.add('warning')
   }
   function initTimerIntegration() {
-    const originalUpdateTimer = window.shihabTimer?.updateTimer
-    if (window.shihabTimer) {
-      window.shihabTimer.updateTimer = function (time, total) {
+    const originalUpdateTimer = window.studyTimerEnhanced?.updateTimer
+    if (window.studyTimerEnhanced) {
+      window.studyTimerEnhanced.updateTimer = function (time, total) {
         if (originalUpdateTimer) originalUpdateTimer(time, total)
         const percentage = ((total - time) / total) * 100
         updateProgressBarStyle(percentage)
@@ -167,9 +167,9 @@
         }
       }
     }
-    const originalOnStateChange = window.shihabTimer?.onStateChange
-    if (window.shihabTimer) {
-      window.shihabTimer.onStateChange = function (timerState) {
+    const originalOnStateChange = window.studyTimerEnhanced?.onStateChange
+    if (window.studyTimerEnhanced) {
+      window.studyTimerEnhanced.onStateChange = function (timerState) {
         if (originalOnStateChange) originalOnStateChange(timerState)
         if (timerState === 'completed') {
           addXP(state.xpPerSession)

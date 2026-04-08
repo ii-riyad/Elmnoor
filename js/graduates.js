@@ -246,9 +246,9 @@
     loadAchievements()
 
     // ربط مع المؤقت إذا كان موجوداً
-    if (window.shihabTimer) {
-      const originalOnStateChange = window.shihabTimer.onStateChange
-      window.shihabTimer.onStateChange = function (state) {
+    if (window.studyTimerEnhanced) {
+      const originalOnStateChange = window.studyTimerEnhanced.onStateChange
+      window.studyTimerEnhanced.onStateChange = function (state) {
         if (originalOnStateChange) originalOnStateChange(state)
         if (state === 'completed') checkAchievements()
       }
