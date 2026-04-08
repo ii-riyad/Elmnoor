@@ -1,6 +1,7 @@
 ;(() => {
   'use strict'
-  const elements = {
+
+  const elements = Object.freeze({
     timerDisplay: document.getElementById('timerDisplay'),
     timerLabel: document.getElementById('timerLabel'),
     timerCircle: document.getElementById('timerCircle'),
@@ -13,19 +14,22 @@
     characterArea: document.getElementById('characterArea'),
     speechBubble: document.getElementById('speechBubble'),
     speechText: document.getElementById('speechText')
-  }
+  })
+
   const CIRCUMFERENCE = 2 * Math.PI * 45
+
   let currentTime = 25 * 60,
     totalTime = 25 * 60,
     isRunning = false,
     isPaused = false,
-    timerInterval = null
+    /** @type {number | undefined} */
+    timerInterval
 
   /**
-   * @returns {void}
+   * @returns {{ isRunning: boolean, isPaused: boolean, currentTime: number, totalTime: number }}
    */
   function getTimerState() {
-    return { isRunning: isRunning, isPaused: isPaused, currentTime: currentTime, totalTime: totalTime }
+    return { isRunning, isPaused, currentTime, totalTime }
   }
 
   /**
@@ -33,7 +37,7 @@
    */
   function initCircularTimer() {
     if (!elements.timerCircle) return
-    elements.timerCircle.style.strokeDasharray = CIRCUMFERENCE
+    elements.timerCircle.style.strokeDasharray = CIRCUMFERENCE.toString()
     updateCircularProgress()
   }
 
@@ -44,7 +48,7 @@
     if (!elements.timerCircle) return
     const percentage = (currentTime / totalTime) * 100
     const offset = CIRCUMFERENCE - (percentage / 100) * CIRCUMFERENCE
-    elements.timerCircle.style.strokeDashoffset = offset
+    elements.timerCircle.style.strokeDashoffset = offset.toString()
     elements.timerCircle.classList.remove('warning', 'danger')
     if (percentage <= 20) elements.timerCircle.classList.add('danger')
     else if (percentage <= 50) elements.timerCircle.classList.add('warning')
@@ -109,7 +113,8 @@
     const speechBubble = document.getElementById('speechBubble'),
       speechText = document.getElementById('speechText')
     if (!speechBubble || !speechText) return
-    const lang = document.documentElement.getAttribute('lang') || 'ar'
+    const lang = /** @type {'ar'|'en'} */ (document.documentElement.getAttribute('lang') || 'ar')
+    /** @type {Record<'ar'|'en', string[]>} */
     const messages = {
       ar: ['بقي دقائق قليلة! استمر! ⏰', 'أنت قريب من النهاية! لا تستسلم! 🏁', 'آخر دقائق! احفظ عملك وسلّمه! 💪'],
       en: [
@@ -155,7 +160,7 @@
     isPaused = true
     isRunning = false
     clearInterval(timerInterval)
-    timerInterval = null
+    timerInterval = undefined
     updateButtons()
   }
 
@@ -167,7 +172,7 @@
     isPaused = false
     if (timerInterval) {
       clearInterval(timerInterval)
-      timerInterval = null
+      timerInterval = undefined
     }
     totalTime = parseInt(elements.sessionDuration?.value || 25) * 60
     currentTime = totalTime
@@ -185,7 +190,7 @@
   function completeSession() {
     if (timerInterval) {
       clearInterval(timerInterval)
-      timerInterval = null
+      timerInterval = undefined
     }
     isRunning = false
     isPaused = false
@@ -222,7 +227,7 @@
       currentTime--
       if (currentTime <= 0) {
         clearInterval(timerInterval)
-        timerInterval = null
+        timerInterval = undefined
         if (elements.timerLabel) {
           const lang = document.documentElement.getAttribute('lang') || 'ar'
           elements.timerLabel.textContent = lang === 'en' ? 'Study Session' : 'جلسة دراسة'
@@ -245,6 +250,7 @@
    * @returns {void}
    */
   function showMilestone(percentage) {
+    /** @type {Record<number, { icon: string, msg: string, sub: string }>} */
     const messages = {
       25: { icon: '🎯', msg: '25% مكتمل!', sub: 'استمر في التركيز!' },
       50: { icon: '💪', msg: 'نصف الطريق!', sub: 'أنت تقوم بعمل رائع!' },
@@ -271,15 +277,15 @@
    * @returns {void}
    */
   function updateStats() {
-    const sessionsEl = document.getElementById('sessionsToday'),
-      minutesEl = document.getElementById('minutesToday')
+    const sessionsEl = /** @type {HTMLElement} */ (document.getElementById('sessionsToday')),
+      minutesEl = /** @type {HTMLElement} */ (document.getElementById('minutesToday'))
     if (sessionsEl && minutesEl) {
       let sessions = parseInt(sessionsEl.textContent) || 0,
         minutes = parseInt(minutesEl.textContent) || 0
       sessions++
       minutes += Math.floor(totalTime / 60)
-      sessionsEl.textContent = sessions
-      minutesEl.textContent = minutes
+      sessionsEl.textContent = sessions.toString()
+      minutesEl.textContent = minutes.toString()
       localStorage.setItem('shihabStats', JSON.stringify({ sessions, minutes, date: new Date().toDateString() }))
     }
   }
@@ -294,10 +300,10 @@
         const stats = JSON.parse(saved),
           today = new Date().toDateString()
         if (stats.date === today) {
-          const sessionsEl = document.getElementById('sessionsToday'),
-            minutesEl = document.getElementById('minutesToday')
-          if (sessionsEl) sessionsEl.textContent = stats.sessions || 0
-          if (minutesEl) minutesEl.textContent = stats.minutes || 0
+          const sessionsEl = /** @type {HTMLElement} */ (document.getElementById('sessionsToday')),
+            minutesEl = /** @type {HTMLElement} */ (document.getElementById('minutesToday'))
+          if (sessionsEl) sessionsEl.textContent = (stats.sessions || 0).toString()
+          if (minutesEl) minutesEl.textContent = (stats.minutes || 0).toString()
         }
       } catch (e) {
         console.error('Error loading stats:', e)
@@ -319,7 +325,8 @@
     }
     if (elements.characterArea) {
       elements.characterArea.addEventListener('click', (e) => {
-        if (e.target === elements.characterArea || e.target.closest('.character-interactive-area'))
+        const node = /** @type {HTMLElement} */ (e.target)
+        if (e.target === elements.characterArea || node.closest('.character-interactive-area'))
           if (window.studyInteractions) window.studyInteractions.createParticles(10)
       })
     }
@@ -337,6 +344,7 @@
     if (elements.startBtn) elements.startBtn.addEventListener('click', startTimer)
     if (elements.pauseBtn) elements.pauseBtn.addEventListener('click', pauseTimer)
     if (elements.stopBtn) elements.stopBtn.addEventListener('click', stopTimer)
+
     document.querySelectorAll('.preset-btn[data-duration]').forEach((btn) => {
       btn.addEventListener('click', () => {
         if (elements.sessionDuration) {
@@ -352,7 +360,9 @@
         }
       })
     })
-    document.querySelectorAll('.preset-btn[data-break]').forEach((btn) => {
+
+    const buttons = document.querySelectorAll('.preset-btn[data-break]')
+    buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         if (elements.breakDuration) {
           elements.breakDuration.value = btn.dataset.break
@@ -360,7 +370,9 @@
         }
       })
     })
-    document.querySelectorAll('.tool-tab').forEach((tab) => {
+
+    const tabs = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.tool-tab'))
+    tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         const tabName = tab.dataset.tab
         document.querySelectorAll('.tool-tab').forEach((t) => t.classList.toggle('active', t === tab))

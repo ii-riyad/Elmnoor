@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- To-Do Logic ---
 
   /**
-   * @returns {void}
+   * @returns {boolean} - Returns true if a new to-do was added, false otherwise
    */
   function addTodo() {
     const text = els.todoInput.value.trim()

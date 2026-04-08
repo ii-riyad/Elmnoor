@@ -1,5 +1,6 @@
 // نظام النقاط الماليزي المحدث
-const updatedGradePoints = {
+/** @type {Record<string, number>} */
+const updatedGradePoints = Object.freeze({
   'A+': 4.0,
   A: 4.0,
   'A-': 3.67,
@@ -12,7 +13,7 @@ const updatedGradePoints = {
   'D+': 1.33,
   D: 1.0,
   F: 0.0
-}
+})
 
 // متغيرات السحب (Swipe)
 let touchStartX = 0
@@ -64,7 +65,7 @@ function closeGpaSidebar() {
  * @return {void}
  */
 function addCourseRow() {
-  const coursesBody = document.getElementById('courses-body')
+  const coursesBody = /** @type {HTMLTableSectionElement} */ (document.getElementById('courses-body'))
   if (!coursesBody) return
 
   const newRow = coursesBody.insertRow()
@@ -87,17 +88,19 @@ function addCourseRow() {
         <td><button class="delete-btn" onclick="deleteCourseRow(this)"><i class="fas fa-trash"></i> ${deleteBtn}</button></td>
     `
 
-  newRow.querySelector('select').value = 'A'
+  const newSelect = newRow.querySelector('select')
+  if (newSelect) newSelect.value = 'A'
   calculateGPA()
   updateShahabMessageForGPA('add')
 }
 
 /**
  * دالة حذف الصف
+ * @param {HTMLButtonElement} button
  * @return {void}
  */
 function deleteCourseRow(button) {
-  const row = button.parentNode.parentNode
+  const row = button.parentNode?.parentNode
   if (row && row.parentNode) {
     row.parentNode.removeChild(row)
     calculateGPA()
@@ -110,7 +113,7 @@ function deleteCourseRow(button) {
  * @return {void}
  */
 function calculateGPA() {
-  const coursesBody = document.getElementById('courses-body')
+  const coursesBody = /** @type {HTMLTableSectionElement} */ (document.getElementById('courses-body'))
   if (!coursesBody) return
 
   let totalCreditHours = 0
@@ -118,8 +121,8 @@ function calculateGPA() {
 
   for (let i = 0; i < coursesBody.rows.length; i++) {
     const row = coursesBody.rows[i]
-    const creditInput = row.cells[1]?.querySelector('.credit-input')
-    const gradeSelect = row.cells[2]?.querySelector('select')
+    const creditInput = /** @type {HTMLInputElement} */ (row.cells[1]?.querySelector('input'))
+    const gradeSelect = /** @type {HTMLSelectElement} */ (row.cells[2]?.querySelector('select'))
 
     if (!creditInput || !gradeSelect) continue
 
@@ -134,12 +137,12 @@ function calculateGPA() {
 
   const gpa = totalCreditHours > 0 ? (totalGradePoints / totalCreditHours).toFixed(2) : '0.00'
 
-  const totalCreditsEl = document.getElementById('total-credits')
-  const calculatedGpaEl = document.getElementById('calculated-gpa')
+  const totalCreditsEl = /** @type {HTMLSpanElement} */ (document.getElementById('total-credits'))
+  const calculatedGpaEl = /** @type {HTMLSpanElement} */ (document.getElementById('calculated-gpa'))
 
   if (totalCreditsEl) {
-    totalCreditsEl.textContent = Math.round(totalCreditHours)
-    totalCreditsEl.innerHTML = Math.round(totalCreditHours)
+    totalCreditsEl.textContent = Math.round(totalCreditHours).toString()
+    totalCreditsEl.innerHTML = Math.round(totalCreditHours).toString()
   }
 
   if (calculatedGpaEl) {
@@ -152,14 +155,15 @@ function calculateGPA() {
 
 /**
  * دالة تحديث الرسالة التحفيزية
+ * @param {string} cgpa
  * @return {void}
  */
 function updateShahabMessage(cgpa) {
-  const messageDiv = document.getElementById('shahab-message')
+  const messageDiv = /** @type {HTMLDivElement} */ (document.getElementById('shahab-message'))
   if (!messageDiv) return
 
   const cgpaNumber = parseFloat(cgpa)
-  const coursesBody = document.getElementById('courses-body')
+  const coursesBody = /** @type {HTMLTableSectionElement} */ (document.getElementById('courses-body'))
   const rowCount = coursesBody ? coursesBody.rows.length : 0
 
   const lang = document.documentElement.getAttribute('lang') || 'ar'
@@ -336,7 +340,7 @@ function handleTouchEnd() {
     }
 
     // إضافة صف افتراضي فقط عند فتح القائمة لأول مرة
-    const coursesBody = document.getElementById('courses-body')
+    const coursesBody = /** @type {HTMLTableSectionElement} */ (document.getElementById('courses-body'))
     if (coursesBody && coursesBody.rows.length === 0) {
       addCourseRow()
     }

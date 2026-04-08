@@ -12,7 +12,7 @@
     }
 
     const newBtn = mlBtn.cloneNode(true)
-    mlBtn.parentNode.replaceChild(newBtn, mlBtn)
+    mlBtn.parentNode?.replaceChild(newBtn, mlBtn)
 
     newBtn.addEventListener(
       'click',

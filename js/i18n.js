@@ -6,13 +6,14 @@
     VER_KEY = 'i18nVer',
     VER = '4'
 
-  const DICT = {
+  /** @type {Readonly<Record<string, string>>} */
+  const DICT = Object.freeze({
     الرئيسية: 'Home',
     التخصصات: 'Majors',
     الجامعات: 'Universities',
     الخدمات: 'Services',
     خدماتنا: 'Our Services',
-    'اتصل بنا': 'Contact',
+    'اتصل بنا': 'Contact Us',
     'علم ونور': 'Elm & Noor',
     'Elm w Noor': 'Elm & Noor',
     'ادرس في ماليزيا!': 'Study in Malaysia!',
@@ -25,7 +26,6 @@
       'Join thousands of students achieving their dreams in Malaysia!',
     'تصفح الجامعات': 'Browse Universities',
     'استكشف الجامعات': 'Explore Universities',
-    'اتصل بنا': 'Contact Us',
     'التسجيل في الجامعات': 'University Applications',
     'الإرشاد الأكاديمي': 'Academic Guidance',
     'الاستقبال من المطار': 'Airport Pickup',
@@ -48,7 +48,7 @@
     'تصميم جرافيك، رسوم متحركة، عمارة': 'Graphic Design, Animation, Architecture',
     'قانون، علوم سياسية، علم نفس': 'Law, Political Science, Psychology',
     'تعليم، لغات، تربية خاصة': 'Teaching, Languages, Special Education'
-  }
+  })
 
   const ORIG = new WeakMap()
 
@@ -94,7 +94,7 @@
         const skip = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME']
         if (skip.includes(p.tagName)) return NodeFilter.FILTER_REJECT
         if (p.hasAttribute('data-ar') || p.hasAttribute('data-en')) return NodeFilter.FILTER_REJECT
-        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+        return node.nodeValue?.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
       }
     })
     let n
@@ -108,17 +108,19 @@
   function applyDict(lang) {
     walkTextNodes(document.body, (node) => {
       if (!ORIG.has(node)) ORIG.set(node, node.nodeValue)
-      const original = ORIG.get(node).trim()
+      const original = /** @type {string} */ (ORIG.get(node))
       if (lang === 'en' && DICT[original]) node.nodeValue = DICT[original]
       else if (lang === 'ar') node.nodeValue = ORIG.get(node)
     })
   }
 
   /**
-   * @param {string} lang
+   * @param {'ar'|'en'} lang
    * @return {void}
    */
   function applyPlaceholders(lang) {
+    /** @typedef {'email'|'name'|'phone'|'message'} PlaceholderKey */
+    /** @type {Record<'ar'|'en', Record<PlaceholderKey, string>>} */
     const map = {
       ar: { email: 'البريد الإلكتروني', name: 'الاسم', phone: 'رقم الهاتف', message: 'رسالتك' },
       en: { email: 'Email', name: 'Name', phone: 'Phone number', message: 'Your message' }
@@ -126,13 +128,13 @@
     document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach((el) => {
       const name = (el.getAttribute('name') || '').toLowerCase(),
         type = (el.getAttribute('type') || '').toLowerCase(),
-        key = name || (type === 'email' ? 'email' : '')
+        key = /** @type {PlaceholderKey} */ (name || (type === 'email' ? 'email' : ''))
       if (key && map[lang][key]) el.setAttribute('placeholder', map[lang][key])
     })
   }
 
   /**
-   * @param {string} lang
+   * @param {'ar'|'en'} lang
    * @return {void}
    */
   function updateToggleLabel(lang) {
@@ -148,7 +150,7 @@
 
   /**
    * Schedule heavy text/placeholder work so it doesn't block initial paint
-   * @param {string} lang
+   * @param {'ar'|'en'} lang
    * @return {void}
    */
   function scheduleEnhancements(lang) {
@@ -164,7 +166,7 @@
   }
 
   /**
-   * @param {string} lang
+   * @param {'ar'|'en'} lang
    * @return {void}
    */
   function setLang(lang) {
@@ -185,7 +187,7 @@
       localStorage.removeItem(STORAGE_KEY)
       localStorage.setItem(VER_KEY, VER)
     }
-    const initialLang = localStorage.getItem(STORAGE_KEY) || 'ar'
+    const initialLang = /** @type {'ar'|'en'} */ (localStorage.getItem(STORAGE_KEY) || 'ar')
     setDirLang(initialLang)
     applyDataAttributes(initialLang)
     updateToggleLabel(initialLang)
@@ -199,11 +201,14 @@
   } else {
     init()
   }
+
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest && e.target.closest('#langToggleBtn')
+    const node = /** @type {HTMLElement} */ (e.target)
+    const btn = node.closest && node.closest('#langToggleBtn')
     if (!btn) return
-    const current = localStorage.getItem(STORAGE_KEY) || 'ar'
-    setLang(current === 'ar' ? 'en' : 'ar')
+    const currLang = /** @type {'ar'|'en'} */ (localStorage.getItem(STORAGE_KEY) || 'ar')
+    setLang(currLang === 'ar' ? 'en' : 'ar')
   })
+
   window.setSiteLang = setLang
 })()

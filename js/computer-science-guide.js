@@ -89,11 +89,8 @@
   })
 
   document.addEventListener('click', (e) => {
-    if (
-      tocSidebar?.classList.contains('active') &&
-      !tocSidebar.contains(e.target) &&
-      !tocToggleBtn?.contains(e.target)
-    ) {
+    const node = /** @type {Node} */ (e.target)
+    if (tocSidebar?.classList.contains('active') && !tocSidebar.contains(node) && !tocToggleBtn?.contains(node)) {
       tocSidebar.classList.remove('active')
     }
   })

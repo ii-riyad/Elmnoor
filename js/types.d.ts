@@ -11,7 +11,7 @@ interface Window {
   }
 
   // Cinema Ticket Booking
-  voteMovie: (movieId: string, movieTitle: string, btn: HTMLElement) => void
+  voteMovie: (movieId: string, movieTitle: string, btn: HTMLButtonElement) => void
   sendTicket: () => Promise<void>
 
   // Navigation & Scrolling
@@ -21,7 +21,7 @@ interface Window {
   openGpaSidebar: () => void
   closeGpaSidebar: () => void
   addCourseRow: () => void
-  deleteCourseRow: (button: HTMLElement) => void
+  deleteCourseRow: (button: HTMLButtonElement) => void
   calculateGPA: () => void
 
   // Study Tools Suite
@@ -48,7 +48,7 @@ interface Window {
       currentTime: number
       totalTime: number
     }
-    onStateChange?: (state: string) => void
+    onStateChange?: (state: 'running' | 'paused' | 'stopped') => void
     updateTimer?: (time: number, total: number) => void
   }
 
@@ -63,7 +63,7 @@ interface Window {
   closeCelebration: () => void
 
   // Internationalization
-  setSiteLang: (lang: string) => void
+  setSiteLang: (lang: 'ar' | 'en') => void
   i18nUpdateElements?: boolean
 
   // Study Tools (alternative reference)

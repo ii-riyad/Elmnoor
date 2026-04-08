@@ -70,7 +70,7 @@
     showCelebration('🎉', 'تهانينا!', `لقد وصلت للمستوى ${state.level}!`)
     if (elements.xpBarFill) {
       elements.xpBarFill.classList.add('level-up')
-      setTimeout(() => elements.xpBarFill.classList.remove('level-up'), 500)
+      setTimeout(() => elements.xpBarFill?.classList.remove('level-up'), 500)
     }
   }
 
@@ -81,9 +81,9 @@
     if (!elements.userLevel || !elements.currentXP || !elements.nextLevelXP || !elements.xpBarFill) return
     const xpNeeded = calculateXPForLevel(state.level),
       percentage = (state.xp / xpNeeded) * 100
-    elements.userLevel.textContent = state.level
-    elements.currentXP.textContent = Math.floor(state.xp)
-    elements.nextLevelXP.textContent = Math.floor(xpNeeded)
+    elements.userLevel.textContent = state.level.toString()
+    elements.currentXP.textContent = Math.floor(state.xp).toString()
+    elements.nextLevelXP.textContent = Math.floor(xpNeeded).toString()
     elements.xpBarFill.style.width = percentage + '%'
   }
 
@@ -97,9 +97,9 @@
       showRandomEncouragement()
     })
     elements.character.addEventListener('mouseenter', () => {
-      if (!elements.character.classList.contains('celebrating')) elements.character.classList.add('encouraging')
+      if (!elements.character?.classList.contains('celebrating')) elements.character?.classList.add('encouraging')
     })
-    elements.character.addEventListener('mouseleave', () => elements.character.classList.remove('encouraging'))
+    elements.character.addEventListener('mouseleave', () => elements.character?.classList.remove('encouraging'))
   }
 
   /**
@@ -110,8 +110,8 @@
     if (!elements.character) return
     elements.character.classList.remove('celebrating', 'happy', 'encouraging')
     setTimeout(() => {
-      elements.character.classList.add(type)
-      setTimeout(() => elements.character.classList.remove(type), 1000)
+      elements.character?.classList.add(type)
+      setTimeout(() => elements.character?.classList.remove(type), 1000)
     }, 10)
   }
 
@@ -146,7 +146,7 @@
         particle.style.top = '100%'
         particle.style.background = colors[Math.floor(Math.random() * colors.length)]
         particle.style.animationDelay = Math.random() * 0.5 + 's'
-        elements.particlesContainer.appendChild(particle)
+        elements.particlesContainer?.appendChild(particle)
         setTimeout(() => particle.remove(), 3000)
       }, i * 50)
     }
@@ -265,7 +265,7 @@
    */
   function initButtonEffects() {
     document.querySelectorAll('.btn-study').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', (/** @type {MouseEvent} */ e) => {
         const ripple = document.createElement('span'),
           rect = this.getBoundingClientRect(),
           size = Math.max(rect.width, rect.height),

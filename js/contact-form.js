@@ -1,16 +1,16 @@
 ;(() => {
   'use strict'
 
-  const form = document.getElementById('contactForm')
-  const successMessage = document.getElementById('successMessage')
-  const errorMessage = document.getElementById('errorMessage')
+  const form = /** @type {HTMLFormElement} */ (document.getElementById('contactForm'))
+  const successMessage = /** @type {HTMLDivElement} */ document.getElementById('successMessage')
+  const errorMessage = /** @type {HTMLDivElement} */ document.getElementById('errorMessage')
 
   if (!form || !successMessage || !errorMessage || !window.EmailSender) return
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
-    const submitBtn = form.querySelector('.form-submit')
+    const submitBtn = /** @type {HTMLButtonElement} */ (form.querySelector('.form-submit'))
     const originalText = submitBtn ? submitBtn.textContent : ''
     if (submitBtn) {
       submitBtn.disabled = true

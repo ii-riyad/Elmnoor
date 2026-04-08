@@ -7,8 +7,8 @@
    * @returns {void}
    */
   function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn')
-    const navLinks = document.getElementById('navLinks')
+    const mobileMenuBtn = /** @type {HTMLButtonElement} */ (document.getElementById('mobileMenuBtn'))
+    const navLinks = /** @type {HTMLDivElement} */ (document.getElementById('navLinks'))
 
     if (!mobileMenuBtn || !navLinks) return
 
@@ -38,7 +38,7 @@
         }
       }
 
-      mobileMenuBtn.setAttribute('aria-expanded', isOpen)
+      mobileMenuBtn.setAttribute('aria-expanded', String(isOpen))
       const lang = document.documentElement.getAttribute('lang') || 'ar'
       const openLabel =
         lang === 'en'
@@ -98,7 +98,8 @@
 
     // Close mobile menu when clicking on any nav link
     navLinks.addEventListener('click', (e) => {
-      const clickedLink = e.target.closest('.nav-link')
+      const node = /** @type {HTMLElement} */ (e.target)
+      const clickedLink = /** @type {HTMLAnchorElement} */ (node.closest('.nav-link'))
       if (clickedLink) {
         if (navLinks.classList.contains('active')) {
           navLinks.classList.remove('active')
@@ -120,8 +121,9 @@
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
+      const node = /** @type {HTMLElement} */ (e.target)
       if (navLinks.classList.contains('active')) {
-        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        if (!navLinks.contains(node) && !mobileMenuBtn.contains(node)) {
           navLinks.classList.remove('active')
           const icon = mobileMenuBtn.querySelector('i')
           if (icon) {
@@ -157,7 +159,14 @@
 })()
 
 // Other initialization
-const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+/**
+ * Validates an email address
+ * @param {string} email
+ * @returns {boolean}
+ */
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
 
 /**
  * Set active nav link - wait for DOM
@@ -180,7 +189,8 @@ if (document.readyState === 'loading') {
 document.addEventListener(
   'click',
   (e) => {
-    const a = e.target.closest('a.visit-btn')
+    const node = /** @type {HTMLElement} */ (e.target)
+    const a = /** @type {HTMLAnchorElement} */ (node.closest('a.visit-btn'))
     if (a && a.href && /^https?:\/\//i.test(a.href)) return
   },
   true
@@ -236,8 +246,9 @@ document.addEventListener(
    * @returns {void}
    */
   function initScrollFeatures() {
-    const backToTopBtn = document.querySelector('.back-to-top') || createBackToTopButton()
-    const progressBar = document.getElementById('scrollProgressBar')
+    const backToTopBtn = /** @type {HTMLButtonElement} */ (
+      document.querySelector('.back-to-top') || createBackToTopButton()
+    )
 
     /**
      * Combined scroll handler - runs once per frame
@@ -245,19 +256,12 @@ document.addEventListener(
      */
     function handleScroll() {
       const scrollY = window.pageYOffset
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
 
       // Back to Top Button
       if (scrollY > 300) {
         backToTopBtn.classList.add('show')
       } else {
         backToTopBtn.classList.remove('show')
-      }
-
-      // Progress Bar
-      if (progressBar && windowHeight > 0) {
-        const scrolled = (scrollY / windowHeight) * 100
-        progressBar.style.transform = 'scaleX(' + scrolled / 100 + ')'
       }
 
       lastScrollY = scrollY
@@ -286,7 +290,7 @@ document.addEventListener(
      * @returns {void}
      */
     function updateAriaLabel() {
-      const lang = document.documentElement.getAttribute('lang') || 'ar'
+      const lang = /** @type {'ar'|'en'} */ (document.documentElement.getAttribute('lang') || 'ar')
       const label =
         lang === 'en'
           ? backToTopBtn.dataset.enAriaLabel || 'Back to top'
