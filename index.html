@@ -572,25 +572,7 @@
   <script src="js/main.js" defer></script>
   <script src="js/i18n.js" defer></script>
   <script src="js/welcome-song.js" defer></script>
-  <script>
-    /* Ensure Font Awesome loads - fallback if async loading fails */
-    (function () {
-      var d = document, w = window;
-      function loadFA() {
-        var link = d.querySelector('link[href*="font-awesome"]');
-        if (!link || !link.sheet) {
-          var fa = d.createElement('link');
-          fa.rel = 'stylesheet';
-          fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-          fa.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==';
-          fa.crossOrigin = 'anonymous';
-          fa.referrerPolicy = 'no-referrer';
-          d.head.appendChild(fa);
-        }
-      }
-      if (d.readyState === 'complete') { setTimeout(loadFA, 100) } else { w.addEventListener('load', function () { setTimeout(loadFA, 100) }) }
-    })();
-  </script>
+  <script src="js/fa-fallback.js" defer></script>
 
   <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://elmnoor.com/#organization","name":"Elm & Noor","@alternateName":"علم ونور","url":"https://elmnoor.com/","logo":{"@type":"ImageObject","url":"https://elmnoor.com/images/icon-512.webp","width":512,"height":512,"caption":"علم ونور - Elm w Noor"},"image":{"@type":"ImageObject","url":"https://elmnoor.com/images/og-cover.webp","width":1200,"height":630,"caption":"علم ونور - دليلك للدراسة في ماليزيا"},"description":"Elm & Noor helps students across the Arab world plan their higher education journey in Malaysia with university admissions, visa guidance, and student services.","sameAs":["https://www.instagram.com/elmnooor/"],"contactPoint":[{"@type":"ContactPoint","contactType":"Customer Support","email":"contactme@elmnoor.com","availableLanguage":["Arabic","English"],"areaServed":"Worldwide"}],"founder":{"@type":"Person","name":"Elm & Noor Team"}},{"@type":"WebSite","@id":"https://elmnoor.com/#website","url":"https://elmnoor.com/","name":"Elm & Noor","@alternateName":"علم ونور","inLanguage":"ar","publisher":{"@id":"https://elmnoor.com/#organization"},"logo":{"@type":"ImageObject","url":"https://elmnoor.com/images/icon-512.webp","width":512,"height":512},"potentialAction":{"@type":"SearchAction","target":"https://elmnoor.com/search?q={search_term}","query-input":"required name=search_term"}},{"@type":"FAQPage","@id":"https://elmnoor.com/#faq","url":"https://elmnoor.com/","mainEntity":[{"@type":"Question","name":"ما الخدمات التي يقدمها Elm & Noor للطلبة الراغبين بالدراسة في ماليزيا؟","acceptedAnswer":{"@type":"Answer","text":"نساعدك في اختيار الجامعة والتخصص المناسب، تجهيز طلب القبول، استخراج التأشيرة، الاستقبال في المطار، وإيجاد سكن مناسب إضافة إلى الإرشاد الأكاديمي طوال رحلتك."}},{"@type":"Question","name":"هل يمكنني التقديم على أكثر من جامعة عبر Elm & Noor؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نوفر لك خطة تقديم أين ما كنت تمكّنك من التقديم على عدة جامعات ماليزية مع متابعة حالة طلبك خطوة بخطوة حتى الحصول على القبول النهائي."}},{"@type":"Question","name":"ما هي اللغات التي يدعمها فريق الدعم؟","acceptedAnswer":{"@type":"Answer","text":"فريق Elm & Noor يتواصل مع الطلبة باللغة العربية والإنجليزية لضمان تجربة مريحة وواضحة للجميع."}},{"@type":"Question","name":"ما هي أدوات الدراسة المتوفرة في صفحة ادرس معي – شِهاب؟","acceptedAnswer":{"@type":"Answer","text":"صفحة ادرس معي – شِهاب تتضمن: مؤقت بومودورو للتركيز، حاسبة المعدل التراكمي GPA للجامعات الماليزية، قائمة مهام تفاعلية، ملاحظات دراسية، أصوات محيطة للتركيز، وإحصائيات الدراسة اليومية. جميع الأدوات مجانية وسهلة الاستخدام."}}]}]}

@@ -304,48 +304,7 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/email-send.js"></script>
-  <script>
-    // Handle form submission
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-
-      const submitBtn = form.querySelector('.form-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = document.documentElement.lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
-
-      // Hide previous messages
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-
-      try {
-        const formData = new FormData(form);
-        const { ok, data } = await EmailSender.sendEmail(formData);
-
-        if (ok) {
-          successMessage.style.display = 'block';
-          form.reset();
-          setTimeout(() => {
-            successMessage.style.display = 'none';
-          }, 5000);
-        } else {
-          const msg = data.error || data.detail || (document.documentElement.lang === 'ar' ? 'فشل الإرسال، حاول لاحقاً.' : 'Send failed, please try later.');
-          errorMessage.querySelector('span').textContent = msg;
-          errorMessage.style.display = 'block';
-        }
-      } catch (error) {
-        errorMessage.querySelector('span').textContent = document.documentElement.lang === 'ar' ? 'تعذر الاتصال بالخادم.' : 'Could not reach server.';
-        errorMessage.style.display = 'block';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }
-    });
-  </script>
+  <script src="../js/contact-form.js" defer></script>
   <script src="js/i18n.js" defer></script>
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
@@ -354,10 +313,7 @@
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
-  <script>
-    /* Ensure Font Awesome loads - fallback if async loading fails */
-    (function () { var d = document; var w = window; function loadFA() { var link = d.querySelector('link[href*="font-awesome"]'); if (!link || !link.sheet) { var fa = d.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'; fa.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; fa.crossOrigin = 'anonymous'; fa.referrerPolicy = 'no-referrer'; d.head.appendChild(fa) } } if (d.readyState === 'complete') { setTimeout(loadFA, 100) } else { w.addEventListener('load', function () { setTimeout(loadFA, 100) }) } })();
-  </script>
+  <script src="../js/fa-fallback.js" defer></script>
 </body>
 
 </html>

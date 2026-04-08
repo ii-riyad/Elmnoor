@@ -865,40 +865,8 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/i18n.js" defer></script>
-  <script>
-    /* Ensure Font Awesome loads - fallback if async loading fails */
-    (function () { var d = document; var w = window; function loadFA() { var link = d.querySelector('link[href*="font-awesome"]'); if (!link || !link.sheet) { var fa = d.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'; fa.integrity = 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='; fa.crossOrigin = 'anonymous'; fa.referrerPolicy = 'no-referrer'; d.head.appendChild(fa) } } if (d.readyState === 'complete') { setTimeout(loadFA, 100) } else { w.addEventListener('load', function () { setTimeout(loadFA, 100) }) } })();
-
-    /* Fix for machine-learning article link - ensure it navigates correctly */
-    (function () {
-      function initMLLink() {
-        var mlBtn = document.getElementById('ml-read-more-btn');
-        if (!mlBtn) {
-          setTimeout(initMLLink, 100);
-          return;
-        }
-
-        // Remove all existing event listeners by cloning the element
-        var newBtn = mlBtn.cloneNode(true);
-        mlBtn.parentNode.replaceChild(newBtn, mlBtn);
-
-        // Add a definitive click handler
-        newBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-          e.stopPropagation();
-          window.location.href = 'machine-learning-malaysia.html';
-          return false;
-        }, true);
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMLLink);
-      } else {
-        initMLLink();
-      }
-    })();
-  </script>
+  <script src="../js/fa-fallback.js" defer></script>
+  <script src="../js/archive-articles.js" defer></script>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"

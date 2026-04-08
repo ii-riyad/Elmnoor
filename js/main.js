@@ -1,17 +1,23 @@
 // Wait for DOM to be ready before initializing mobile menu
-;(function () {
+;(() => {
   'use strict'
 
-  // Mobile menu functionality
+  /**
+   * Mobile menu functionality
+   * @returns {void}
+   */
   function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn')
-    const navLinks = document.getElementById('navLinks')
+    const mobileMenuBtn = /** @type {HTMLButtonElement} */ (document.getElementById('mobileMenuBtn'))
+    const navLinks = /** @type {HTMLDivElement} */ (document.getElementById('navLinks'))
 
     if (!mobileMenuBtn || !navLinks) return
 
     let touchHandled = false
 
-    // Function to toggle menu
+    /**
+     * Function to toggle menu
+     * @returns {void}
+     */
     function toggleMenu() {
       const isCurrentlyActive = navLinks.classList.contains('active')
       if (isCurrentlyActive) {
@@ -32,7 +38,7 @@
         }
       }
 
-      mobileMenuBtn.setAttribute('aria-expanded', isOpen)
+      mobileMenuBtn.setAttribute('aria-expanded', String(isOpen))
       const lang = document.documentElement.getAttribute('lang') || 'ar'
       const openLabel =
         lang === 'en'
@@ -45,20 +51,20 @@
       mobileMenuBtn.setAttribute('aria-label', isOpen ? closeLabel : openLabel)
     }
 
-    mobileMenuBtn.addEventListener('click', function (e) {
+    mobileMenuBtn.addEventListener('click', (e) => {
       e.preventDefault()
       e.stopPropagation()
       toggleMenu()
     })
 
     // Add touch event for better mobile support (with duplicate prevention)
-    mobileMenuBtn.addEventListener('touchend', function (e) {
+    mobileMenuBtn.addEventListener('touchend', (e) => {
       e.preventDefault()
       e.stopPropagation()
       if (!touchHandled) {
         touchHandled = true
         toggleMenu()
-        setTimeout(function () {
+        setTimeout(() => {
           touchHandled = false
         }, 300)
       }
@@ -66,9 +72,10 @@
 
     // Close mobile menu when clicking on anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault()
-        const target = document.querySelector(this.getAttribute('href'))
+        const href = anchor.getAttribute('href')
+        const target = href ? document.querySelector(href) : null
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' })
           if (navLinks.classList.contains('active')) {
@@ -91,8 +98,9 @@
     })
 
     // Close mobile menu when clicking on any nav link
-    navLinks.addEventListener('click', function (e) {
-      const clickedLink = e.target.closest('.nav-link')
+    navLinks.addEventListener('click', (e) => {
+      const node = /** @type {HTMLElement} */ (e.target)
+      const clickedLink = /** @type {HTMLAnchorElement} */ (node.closest('.nav-link'))
       if (clickedLink) {
         if (navLinks.classList.contains('active')) {
           navLinks.classList.remove('active')
@@ -113,9 +121,10 @@
     })
 
     // Close menu when clicking outside
-    document.addEventListener('click', function (e) {
+    document.addEventListener('click', (e) => {
+      const node = /** @type {HTMLElement} */ (e.target)
       if (navLinks.classList.contains('active')) {
-        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        if (!navLinks.contains(node) && !mobileMenuBtn.contains(node)) {
           navLinks.classList.remove('active')
           const icon = mobileMenuBtn.querySelector('i')
           if (icon) {
@@ -134,7 +143,10 @@
     })
   }
 
-  // Initialize mobile menu when DOM is ready
+  /**
+   * Initialize mobile menu when DOM is ready
+   * @returns {void}
+   */
   function init() {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initMobileMenu)
@@ -148,9 +160,19 @@
 })()
 
 // Other initialization
-const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+/**
+ * Validates an email address
+ * @param {string} email
+ * @returns {boolean}
+ */
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
 
-// Set active nav link - wait for DOM
+/**
+ * Set active nav link - wait for DOM
+ * @returns {void}
+ */
 function initNavLinks() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html'
   document.querySelectorAll('.nav-link').forEach((link) => {
@@ -168,14 +190,18 @@ if (document.readyState === 'loading') {
 document.addEventListener(
   'click',
   (e) => {
-    const a = e.target.closest('a.visit-btn')
+    const node = /** @type {HTMLElement} */ (e.target)
+    const a = /** @type {HTMLAnchorElement} */ (node.closest('a.visit-btn'))
     if (a && a.href && /^https?:\/\//i.test(a.href)) return
   },
   true
 )
 
 // Page Visibility API - Pause animations when page is hidden
-;(function () {
+;(() => {
+  /**
+   * @returns {void}
+   */
   function handleVisibilityChange() {
     if (document.hidden) {
       document.documentElement.setAttribute('data-visible', 'false')
@@ -194,13 +220,16 @@ document.addEventListener(
 })()
 
 // Combined Scroll Handlers (Back to Top + Progress Bar) - Optimized
-;(function () {
+;(() => {
   'use strict'
 
   let scrollTicking = false
   let lastScrollY = 0
 
-  // Create Back to Top Button
+  /**
+   * Create Back to Top Button
+   * @returns {HTMLButtonElement}
+   */
   function createBackToTopButton() {
     const button = document.createElement('button')
     button.className = 'back-to-top'
@@ -214,26 +243,26 @@ document.addEventListener(
     return button
   }
 
+  /**
+   * @returns {void}
+   */
   function initScrollFeatures() {
-    const backToTopBtn = document.querySelector('.back-to-top') || createBackToTopButton()
-    const progressBar = document.getElementById('scrollProgressBar')
+    const backToTopBtn = /** @type {HTMLButtonElement} */ (
+      document.querySelector('.back-to-top') || createBackToTopButton()
+    )
 
-    // Combined scroll handler - runs once per frame
+    /**
+     * Combined scroll handler - runs once per frame
+     * @returns {void}
+     */
     function handleScroll() {
       const scrollY = window.pageYOffset
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
 
       // Back to Top Button
       if (scrollY > 300) {
         backToTopBtn.classList.add('show')
       } else {
         backToTopBtn.classList.remove('show')
-      }
-
-      // Progress Bar
-      if (progressBar && windowHeight > 0) {
-        const scrolled = (scrollY / windowHeight) * 100
-        progressBar.style.transform = 'scaleX(' + scrolled / 100 + ')'
       }
 
       lastScrollY = scrollY
@@ -243,7 +272,7 @@ document.addEventListener(
     // Single scroll listener with throttling
     window.addEventListener(
       'scroll',
-      function () {
+      () => {
         if (!scrollTicking) {
           window.requestAnimationFrame(handleScroll)
           scrollTicking = true
@@ -253,13 +282,16 @@ document.addEventListener(
     )
 
     // Back to Top click handler
-    backToTopBtn.addEventListener('click', function () {
+    backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     })
 
-    // Update aria-label on language change
+    /**
+     * Update aria-label on language change
+     * @returns {void}
+     */
     function updateAriaLabel() {
-      const lang = document.documentElement.getAttribute('lang') || 'ar'
+      const lang = /** @type {'ar'|'en'} */ (document.documentElement.getAttribute('lang') || 'ar')
       const label =
         lang === 'en'
           ? backToTopBtn.dataset.enAriaLabel || 'Back to top'
@@ -282,7 +314,7 @@ document.addEventListener(
 })()
 
 // Scroll Animations (Fade In) - Optimized
-;(function () {
+;(() => {
   'use strict'
 
   // Check if user prefers reduced motion
@@ -290,12 +322,15 @@ document.addEventListener(
 
   if (prefersReducedMotion) {
     // If reduced motion, show all elements immediately
-    document.querySelectorAll('.fade-in-section').forEach(function (el) {
+    document.querySelectorAll('.fade-in-section').forEach((el) => {
       el.classList.add('is-visible')
     })
     return
   }
 
+  /**
+   * @returns {void}
+   */
   function initScrollAnimations() {
     const sections = document.querySelectorAll('.fade-in-section')
 
@@ -307,8 +342,8 @@ document.addEventListener(
       rootMargin: '0px 0px -100px 0px'
     }
 
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible')
           // Unobserve after animation to reduce ongoing work
@@ -317,7 +352,7 @@ document.addEventListener(
       })
     }, observerOptions)
 
-    sections.forEach(function (section) {
+    sections.forEach((section) => {
       observer.observe(section)
     })
   }

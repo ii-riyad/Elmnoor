@@ -1,18 +1,19 @@
 // i18n.js — Elm & Noor (robust)
-;(function () {
+;(() => {
   'use strict'
 
   const STORAGE_KEY = 'siteLang',
     VER_KEY = 'i18nVer',
     VER = '4'
 
-  const DICT = {
+  /** @type {Readonly<Record<string, string>>} */
+  const DICT = Object.freeze({
     الرئيسية: 'Home',
     التخصصات: 'Majors',
     الجامعات: 'Universities',
     الخدمات: 'Services',
     خدماتنا: 'Our Services',
-    'اتصل بنا': 'Contact',
+    'اتصل بنا': 'Contact Us',
     'علم ونور': 'Elm & Noor',
     'Elm w Noor': 'Elm & Noor',
     'ادرس في ماليزيا!': 'Study in Malaysia!',
@@ -25,7 +26,6 @@
       'Join thousands of students achieving their dreams in Malaysia!',
     'تصفح الجامعات': 'Browse Universities',
     'استكشف الجامعات': 'Explore Universities',
-    'اتصل بنا': 'Contact Us',
     'التسجيل في الجامعات': 'University Applications',
     'الإرشاد الأكاديمي': 'Academic Guidance',
     'الاستقبال من المطار': 'Airport Pickup',
@@ -48,15 +48,24 @@
     'تصميم جرافيك، رسوم متحركة، عمارة': 'Graphic Design, Animation, Architecture',
     'قانون، علوم سياسية، علم نفس': 'Law, Political Science, Psychology',
     'تعليم، لغات، تربية خاصة': 'Teaching, Languages, Special Education'
-  }
+  })
 
   const ORIG = new WeakMap()
+
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function setDirLang(lang) {
     const isEn = lang === 'en'
     document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar')
     document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl')
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function applyDataAttributes(lang) {
     document.querySelectorAll('[data-ar], [data-en]').forEach((el) => {
       const val = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ar')
@@ -72,6 +81,11 @@
     })
   }
 
+  /**
+   * @param {Node} root
+   * @param {function(Node): void} cb
+   * @return {void}
+   */
   function walkTextNodes(root, cb) {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -80,23 +94,33 @@
         const skip = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME']
         if (skip.includes(p.tagName)) return NodeFilter.FILTER_REJECT
         if (p.hasAttribute('data-ar') || p.hasAttribute('data-en')) return NodeFilter.FILTER_REJECT
-        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+        return node.nodeValue?.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
       }
     })
     let n
     while ((n = walker.nextNode())) cb(n)
   }
 
+  /**
+   * @param {string} lang
+   * @return {void}
+   */
   function applyDict(lang) {
     walkTextNodes(document.body, (node) => {
       if (!ORIG.has(node)) ORIG.set(node, node.nodeValue)
-      const original = ORIG.get(node).trim()
+      const original = /** @type {string} */ (ORIG.get(node))
       if (lang === 'en' && DICT[original]) node.nodeValue = DICT[original]
       else if (lang === 'ar') node.nodeValue = ORIG.get(node)
     })
   }
 
+  /**
+   * @param {'ar'|'en'} lang
+   * @return {void}
+   */
   function applyPlaceholders(lang) {
+    /** @typedef {'email'|'name'|'phone'|'message'} PlaceholderKey */
+    /** @type {Record<'ar'|'en', Record<PlaceholderKey, string>>} */
     const map = {
       ar: { email: 'البريد الإلكتروني', name: 'الاسم', phone: 'رقم الهاتف', message: 'رسالتك' },
       en: { email: 'Email', name: 'Name', phone: 'Phone number', message: 'Your message' }
@@ -104,11 +128,15 @@
     document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach((el) => {
       const name = (el.getAttribute('name') || '').toLowerCase(),
         type = (el.getAttribute('type') || '').toLowerCase(),
-        key = name || (type === 'email' ? 'email' : '')
+        key = /** @type {PlaceholderKey} */ (name || (type === 'email' ? 'email' : ''))
       if (key && map[lang][key]) el.setAttribute('placeholder', map[lang][key])
     })
   }
 
+  /**
+   * @param {'ar'|'en'} lang
+   * @return {void}
+   */
   function updateToggleLabel(lang) {
     const btn = document.getElementById('langToggleBtn')
     if (!btn) return
@@ -120,7 +148,11 @@
     span.textContent = lang === 'en' ? 'عربي' : 'English'
   }
 
-  // Schedule heavy text/placeholder work so it doesn't block initial paint
+  /**
+   * Schedule heavy text/placeholder work so it doesn't block initial paint
+   * @param {'ar'|'en'} lang
+   * @return {void}
+   */
   function scheduleEnhancements(lang) {
     const runHeavy = () => {
       applyDict(lang)
@@ -133,6 +165,10 @@
     }
   }
 
+  /**
+   * @param {'ar'|'en'} lang
+   * @return {void}
+   */
   function setLang(lang) {
     localStorage.setItem(STORAGE_KEY, lang)
     setDirLang(lang)
@@ -142,13 +178,16 @@
     updateToggleLabel(lang)
   }
 
-  // Lighter init path to improve LCP/TBT: avoid TreeWalker when staying in Arabic
+  /**
+   * Lighter init path to improve LCP/TBT: avoid TreeWalker when staying in Arabic
+   * @return {void}
+   */
   function init() {
     if (localStorage.getItem(VER_KEY) !== VER) {
       localStorage.removeItem(STORAGE_KEY)
       localStorage.setItem(VER_KEY, VER)
     }
-    const initialLang = localStorage.getItem(STORAGE_KEY) || 'ar'
+    const initialLang = /** @type {'ar'|'en'} */ (localStorage.getItem(STORAGE_KEY) || 'ar')
     setDirLang(initialLang)
     applyDataAttributes(initialLang)
     updateToggleLabel(initialLang)
@@ -162,11 +201,14 @@
   } else {
     init()
   }
-  document.addEventListener('click', function (e) {
-    const btn = e.target.closest && e.target.closest('#langToggleBtn')
+
+  document.addEventListener('click', (e) => {
+    const node = /** @type {HTMLElement} */ (e.target)
+    const btn = node.closest && node.closest('#langToggleBtn')
     if (!btn) return
-    const current = localStorage.getItem(STORAGE_KEY) || 'ar'
-    setLang(current === 'ar' ? 'en' : 'ar')
+    const currLang = /** @type {'ar'|'en'} */ (localStorage.getItem(STORAGE_KEY) || 'ar')
+    setLang(currLang === 'ar' ? 'en' : 'ar')
   })
+
   window.setSiteLang = setLang
 })()
