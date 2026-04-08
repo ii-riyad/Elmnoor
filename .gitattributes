@@ -2,3 +2,5 @@
 
 *.webp binary
 *.mp4 binary
+*.opus binary
+*.acc binary
