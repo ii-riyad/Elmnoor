@@ -19,12 +19,13 @@
    * @return {void}
    */
   function setupImageFallbacks() {
-    document.querySelectorAll('.movie-image').forEach((img) => {
+    const images = /** @type {NodeListOf<HTMLImageElement>} */ (document.querySelectorAll('.movie-image'))
+    images.forEach((img) => {
       img.addEventListener('error', () => {
-        const fallback = this.parentElement.querySelector('.poster-fallback')
+        const fallback = /** @type {HTMLElement | null} */ (img.parentElement?.querySelector('.poster-fallback'))
         if (fallback) {
           fallback.style.display = 'flex'
-          this.style.display = 'none'
+          img.style.display = 'none'
         }
       })
     })

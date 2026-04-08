@@ -1,7 +1,21 @@
 ;(() => {
   'use strict'
 
+  /**
+   * @typedef {{ text: string, completed: boolean, createdAt?: number }} Todo
+   */
+
+  /**
+   * @typedef {{
+   *   todos: Todo[],
+   *   notes: string,
+   *   currentSound: string,
+   *   achievements: string[]
+   * }} StudyState
+   */
+
   // تعريف الحالة الأولية
+  /** @type {StudyState} */
   const state = {
     todos: [],
     notes: '',
@@ -10,7 +24,36 @@
   }
 
   // 1. تعريف المتغير فارغاً في البداية لتجنب مشكلة الـ null
-  let elements = {}
+  /**
+   * @typedef {Object} Elements
+   * @property {HTMLDivElement | null} todoList
+   * @property {HTMLInputElement | null} todoInput
+   * @property {HTMLButtonElement | null} addTodoBtn
+   * @property {HTMLTextAreaElement | null} notesTextarea
+   * @property {NodeListOf<HTMLButtonElement>} soundButtons
+   * @property {NodeListOf<HTMLElement>} toolTabs
+   * @property {NodeListOf<HTMLElement>} toolContents
+   * @property {HTMLSpanElement | null} tasksCompleted
+   * @property {HTMLDivElement | null} achievementsGrid
+   */
+
+  /** @type {NodeListOf<HTMLButtonElement>} */
+  const emptyButtonList = /** @type {NodeListOf<HTMLButtonElement>} */ (document.querySelectorAll('.__no-sound-btn__'))
+  /** @type {NodeListOf<HTMLElement>} */
+  const emptyElementList = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.__no-tool-item__'))
+
+  /** @type {Elements} */
+  let elements = {
+    todoList: null,
+    todoInput: null,
+    addTodoBtn: null,
+    notesTextarea: null,
+    soundButtons: emptyButtonList,
+    toolTabs: emptyElementList,
+    toolContents: emptyElementList,
+    tasksCompleted: null,
+    achievementsGrid: null
+  }
 
   /**
    * @return {void}
@@ -41,8 +84,9 @@
   function renderTodos() {
     // حماية: عدم التنفيذ إذا لم يتم تحميل القائمة بعد
     if (!elements.todoList) return
+    const todoList = elements.todoList
 
-    elements.todoList.innerHTML = ''
+    todoList.innerHTML = ''
     if (state.todos.length === 0) {
       const emptyMsg = document.createElement('div')
       emptyMsg.className = 'todo-item'
@@ -51,7 +95,7 @@
         document.documentElement.getAttribute('lang') === 'en'
           ? 'No tasks yet. Add one!'
           : 'لا توجد مهام بعد. أضف واحدة!'
-      elements.todoList.appendChild(emptyMsg)
+      todoList.appendChild(emptyMsg)
       return
     }
 
@@ -80,26 +124,27 @@
       todoItem.appendChild(checkbox)
       todoItem.appendChild(text)
       todoItem.appendChild(deleteBtn)
-      elements.todoList.appendChild(todoItem)
+      todoList.appendChild(todoItem)
     })
     updateTasksCompleted()
   }
 
   /**
-   * @return {void}
+   * @return {boolean}
    */
   function addTodo() {
     // حماية إضافية
-    if (!elements.todoInput) return
+    if (!elements.todoInput) return false
 
     const text = elements.todoInput.value.trim()
-    if (!text) return
+    if (!text) return false
 
     state.todos.push({ text, completed: false, createdAt: Date.now() })
     elements.todoInput.value = ''
     saveTodos()
     renderTodos()
     checkAchievements()
+    return true
   }
 
   /**
@@ -129,7 +174,7 @@
   function updateTasksCompleted() {
     if (!elements.tasksCompleted) return
     const completed = state.todos.filter((t) => t.completed).length
-    elements.tasksCompleted.textContent = completed
+    elements.tasksCompleted.textContent = String(completed)
   }
 
   /**
@@ -159,11 +204,15 @@
   function initSounds() {
     if (!elements.soundButtons) return
     elements.soundButtons.forEach((btn) => {
-      btn.addEventListener('click', () => setSound(btn.dataset.sound))
+      btn.addEventListener('click', () => {
+        const sound = btn.dataset.sound
+        if (sound) setSound(sound)
+      })
     })
   }
 
   /**
+   * @param {string} sound
    * @return {void}
    */
   function setSound(sound) {
@@ -189,11 +238,15 @@
   function initTabs() {
     if (!elements.toolTabs) return
     elements.toolTabs.forEach((tab) => {
-      tab.addEventListener('click', () => switchTab(tab.dataset.tab))
+      tab.addEventListener('click', () => {
+        const tabName = tab.dataset.tab
+        if (tabName) switchTab(tabName)
+      })
     })
   }
 
   /**
+   * @param {string} tabName
    * @return {void}
    */
   function switchTab(tabName) {
@@ -230,7 +283,8 @@
   function renderAchievements() {
     if (!elements.achievementsGrid) return
     elements.achievementsGrid.querySelectorAll('.achievement-badge').forEach((badge) => {
-      const achievementId = badge.dataset.achievement
+      const achievementId = badge.getAttribute('data-achievement')
+      if (!achievementId) return
       badge.classList.toggle('unlocked', state.achievements.includes(achievementId))
     })
   }
@@ -252,7 +306,10 @@
    * @return {void}
    */
   function showAchievementNotification(achievementId) {
-    const badge = elements.achievementsGrid.querySelector(`[data-achievement="${achievementId}"]`)
+    if (!elements.achievementsGrid) return
+    const badge = /** @type {HTMLElement | null} */ (
+      elements.achievementsGrid.querySelector(`[data-achievement="${achievementId}"]`)
+    )
     if (!badge) return
     badge.style.transform = 'scale(1.2)'
     badge.style.transition = 'transform 0.3s'
@@ -263,7 +320,7 @@
    * @return {void}
    */
   function checkAchievements() {
-    const sessionsToday = parseInt(elements.tasksCompleted?.textContent || 0)
+    const sessionsToday = parseInt(elements.tasksCompleted?.textContent || '0', 10)
     if (sessionsToday > 0 && !state.achievements.includes('first-session')) unlockAchievement('first-session')
 
     const completedTasks = state.todos.filter((t) => t.completed).length
@@ -277,15 +334,15 @@
   function init() {
     // 2. تعيين العناصر هنا فقط بعد تحميل الصفحة لضمان وجودها
     elements = {
-      todoList: document.getElementById('todoList'),
-      todoInput: document.getElementById('todoInput'),
-      addTodoBtn: document.getElementById('addTodoBtn'),
-      notesTextarea: document.getElementById('notesTextarea'),
+      todoList: /** @type {HTMLDivElement | null} */ (document.getElementById('todoList')),
+      todoInput: /** @type {HTMLInputElement | null} */ (document.getElementById('todoInput')),
+      addTodoBtn: /** @type {HTMLButtonElement | null} */ (document.getElementById('addTodoBtn')),
+      notesTextarea: /** @type {HTMLTextAreaElement | null} */ (document.getElementById('notesTextarea')),
       soundButtons: document.querySelectorAll('.sound-btn'),
       toolTabs: document.querySelectorAll('.tool-tab'),
       toolContents: document.querySelectorAll('.tool-content'),
-      tasksCompleted: document.getElementById('tasksCompleted'),
-      achievementsGrid: document.getElementById('achievementsGrid')
+      tasksCompleted: /** @type {HTMLSpanElement | null} */ (document.getElementById('tasksCompleted')),
+      achievementsGrid: /** @type {HTMLDivElement | null} */ (document.getElementById('achievementsGrid'))
     }
 
     // التحقق من أن العناصر الأساسية موجودة

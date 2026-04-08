@@ -74,7 +74,8 @@
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', (e) => {
         e.preventDefault()
-        const target = document.querySelector(this.getAttribute('href'))
+        const href = anchor.getAttribute('href')
+        const target = href ? document.querySelector(href) : null
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' })
           if (navLinks.classList.contains('active')) {

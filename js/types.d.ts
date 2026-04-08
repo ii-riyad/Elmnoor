@@ -48,7 +48,7 @@ interface Window {
       currentTime: number
       totalTime: number
     }
-    onStateChange?: (state: 'running' | 'paused' | 'stopped') => void
+    onStateChange?: (state: 'started' | 'completed') => void
     updateTimer?: (time: number, total: number) => void
   }
 
