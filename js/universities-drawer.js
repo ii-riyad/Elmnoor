@@ -33,6 +33,7 @@
   if (overlay) overlay.addEventListener('click', closeDrawer)
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer)
 
+  /** @type {number|null} */
   let startX = null
   let opened = false
 

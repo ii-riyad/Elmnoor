@@ -2,8 +2,8 @@
   'use strict'
 
   const STORAGE_KEY = 'elmnoor_song_played'
-  const audio = document.getElementById('welcomeSong')
-  const toggleBtn = document.getElementById('replaySongBtn')
+  const audio = /** @type {HTMLAudioElement} */ (document.getElementById('welcomeSong'))
+  const toggleBtn = /** @type {HTMLButtonElement} */ (document.getElementById('songToggleBtn'))
 
   if (!(audio instanceof HTMLAudioElement) || !(toggleBtn instanceof HTMLButtonElement)) {
     return
@@ -61,15 +61,13 @@
   }
 
   /**
-   * @returns {void}
+   * @returns {Promise<void>}
    */
   function playSong() {
     audio.volume = 0.7
     audio.muted = false
 
-    return audio.play().then(() => {
-      updateButtonUI(true)
-    })
+    return audio.play().then(() => updateButtonUI(true))
   }
 
   /**
