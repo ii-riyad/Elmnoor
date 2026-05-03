@@ -1,0 +1,169 @@
+# Elm w Noor (علم ونور) - Student Life Agency
+
+> Elm w Noor is a bilingual (Arabic/English) web platform designed to guide and support Arab students studying in Malaysia. It provides comprehensive resources for university registration, visa procedures, accommodation, and cultural adaptation, while protecting students from exploitation and ensuring a supportive learning environment.
+
+Things to remember when working with Elm w Noor:
+
+- Elm w Noor is a **static website** built with HTML, CSS, and vanilla JavaScript; it is not a dynamic web application or API service
+- The platform is **fully bilingual** with Arabic (RTL) and English (LTR) support using a toggle mechanism; both languages must be maintained for all content and labels
+- All **educational content** is specialized for **Arabic-speaking students studying in Malaysia**, focusing on practical guidance rather than technical documentation
+- The site uses **vanilla JavaScript** for interactivity (i18n translation system, form handling, navigation) with no frontend frameworks like React, Vue, or Svelte
+- The platform includes **8 Malaysian universities** and **8 academic disciplines** (Computer Science, Engineering, Medicine, Business, Sciences, Arts, Law, Education) with detailed guides for each combination
+- **Form handling** uses Formspree (rirq2005@gmail.com) for contact submissions and is connected via POST requests; no backend processing
+- **SEO optimization** is critical with structured data (JSON-LD), meta tags for both languages, and multilingual support
+- **Performance** is prioritized with async CSS loading, preloaded images, font optimization, and lazy loading where applicable
+- **Responsive design** must work seamlessly on desktop, tablet, and mobile devices with focus on RTL layouts for Arabic content
+- Color palette uses turquoise (#0F9D92), yellow, orange, and purple accents with a welcoming, friendly tone
+
+## Key Features
+
+- Bilingual support with automatic language detection and localStorage persistence
+- University directory with 8 Malaysian institutions
+- Academic discipline guides with program details, tuition costs, and admission requirements
+- Student life guides covering accommodation, visa procedures, transportation, and cultural adaptation
+- Contact form integrated with Formspree for inquiries
+- Arabic community networking services
+- Career guidance and post-graduation resources
+- Mobile-first responsive design
+
+## Site Structure
+
+```
+index.html                             # Homepage with platform overview
+universities.html                      # University directory and details
+services.html                          # Student services and community features
+contact.html                           # Contact form (Formspree integration)
+articles.html                          # Blog/articles listing (if applicable)
+computer-science-guide.html            # Computer Science discipline guide
+life-in-malaysia-student-guide.html    # Student life guide
+css/style.css                          # Main stylesheet with RTL support
+js/main.js                             # Core JavaScript (i18n, navigation, forms)
+js/i18n.js                             # Internationalization system
+js/contact-form.js                     # Form submission handler
+images/                                # Images, icons, and brand assets
+```
+
+## Core Technologies
+
+- **HTML5** with semantic markup and accessibility features
+- **CSS3** with Flexbox/Grid for responsive layouts and RTL support
+- **Vanilla JavaScript** (no frameworks) for interactivity and i18n
+- **Font Awesome 6.4.0** for icons (via CDN)
+- **Google Fonts** (Changa font family) for Arabic and English typography
+- **Formspree** API for form submissions
+- **Google Analytics** for tracking user engagement
+
+## Internationalization (i18n) System
+
+The platform uses a custom JavaScript-based i18n system:
+
+```javascript
+// Example: Define translations
+{
+  "ar": {
+    "title": "علم ونور",
+    "description": "ابنك في أيدٍ أمينة"
+  },
+  "en": {
+    "title": "Elm w Noor",
+    "description": "Your child is in safe hands"
+  }
+}
+
+// HTML attributes for translation
+<h1 data-ar="علم ونور" data-en="Elm w Noor">علم ونور</h1>
+
+// Switch language function
+toggleLanguage() // Switches between Arabic and English
+```
+
+## Content Management Guidelines
+
+- All new content must include both Arabic and English versions
+- Use semantic HTML headings (H1, H2, H3) for proper document structure
+- Include comprehensive meta tags (description, keywords, OG tags) for both languages
+- Add JSON-LD structured data for FAQ and article pages
+- Images should be optimized (WebP format preferred) with descriptive alt text in both languages
+- Keep university and discipline information up-to-date (annually reviewed)
+- Ensure accessibility with proper ARIA labels and semantic HTML
+
+## Performance Optimization
+
+- CSS loaded asynchronously with noscript fallback
+- Images preloaded and lazy-loaded where appropriate
+- Google Fonts loaded conditionally with font-display optimization
+- Font Awesome icons delivered via CDN with offline fallback
+- localStorage used for language preference persistence
+- Optimized critical rendering path
+
+## SEO Practices
+
+- Canonical URLs for all pages
+- Multilingual meta tags (html[lang], og:locale)
+- Structured data for FAQs and articles
+- Keyword optimization for both Arabic and English search queries
+- Mobile-responsive design (mobile-first approach)
+- XML sitemap and robots.txt configured
+- Internal linking between related guides and resources
+
+## Contact & Form Integration
+
+The contact form uses Formspree for email delivery:
+
+```javascript
+// Form submission endpoint
+POST https://formspree.io/f/{form_id}
+
+// Expected data structure
+{
+  name: "Student Name",
+  email: "student@example.com",
+  subject: "Inquiry Topic",
+  message: "Message content"
+}
+
+// Response handling
+- 200: Success - Display confirmation message
+- Error: Display error message with retry option
+```
+
+## Docs & References
+
+- [HTML Structure Guide](life-in-malaysia-student-guide.html): Examples of semantic markup for educational content
+- [I18n Implementation](js/i18n.js): Custom translation system for bilingual content
+- [Formspree Integration](https://formspree.io/): Form submission and email delivery
+- [Font Awesome Documentation](https://fontawesome.com/icons): Icon library reference
+- [Malaysian Universities Database](universities.html): Details about 8 partner institutions
+
+## Development Guidelines
+
+- Use semantic HTML5 elements (nav, article, section, aside, main)
+- Apply consistent BEM naming convention for CSS classes
+- Maintain JavaScript code with clear function names and comments
+- Test all features in both Arabic (RTL) and English (LTR) modes
+- Validate HTML5 markup and CSS3 properties
+- Ensure WCAG 2.1 AA accessibility standards
+- Use localStorage for user preferences (language, theme)
+- Implement proper error handling for form submissions
+
+## Deployment & Hosting
+
+- Platform hosted on Hostinger with standard web hosting
+- Files organized in public_html directory
+- .htaccess configured for clean URLs and redirects
+- SSL certificate enabled for HTTPS
+- CDN integration for static assets (fonts, icons)
+- Email forwarding through Formspree
+
+## Optional Enhancements
+
+- Student testimonials with video support
+- Live chat support widget for real-time assistance
+- Student portal for tracking applications and documents
+- University comparison tool for side-by-side analysis
+- Scholarship and financial aid database
+- Virtual campus tours
+- Alumni network community
+- Mobile app version (PWA)
+- Multi-currency support (AED, SAR, etc.)
+- Advanced filtering for university and program search
