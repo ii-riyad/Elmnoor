@@ -131,7 +131,7 @@ $totalBookings = array_sum($stats);
         }
         th {
             background: #f7fafc;
-            font-weight: 600;
+            font-weight: bold;
             color: #2d3748;
             position: sticky;
             top: 0;
@@ -144,7 +144,7 @@ $totalBookings = array_sum($stats);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: bold;
         }
         .status-confirmed {
             background: #c6f6d5;

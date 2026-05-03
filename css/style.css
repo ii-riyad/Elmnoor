@@ -9,11 +9,8 @@
   --shihab-cream: #FDFCF5;
   --shihab-white: #FFF;
   --shihab-comic-black: #000;
-  --font-comic: 'Bangers', cursive;
-  --font-comic-ar: 'Changa', cursive;
-  --font-body: 'Comic Neue', 'Noto Sans Arabic', sans-serif;
-  --font-sans-ar: 'Tajawal', 'Almarai', 'Noto Sans Arabic', sans-serif;
-  --font-sans-en: 'Noto Sans', sans-serif;
+  --font-comic: 'Changa', cursive;
+  --font-body: 'Changa', sans-serif;
   --shadow-hard: 6px 6px 0 0 #000;
   --shadow-hard-hover: 10px 10px 0 0 #000;
   --border-std: 4px solid #000
@@ -53,11 +50,11 @@ body {
 }
 
 html[lang="ar"] body {
-  font-family: var(--font-sans-ar)
+  font-family: var(--font-body)
 }
 
 html[lang="en"] body {
-  font-family: var(--font-sans-en)
+  font-family: var(--font-body)
 }
 
 .container {
@@ -95,8 +92,8 @@ html[lang="ar"] .control-btn.primary,
 html[lang="ar"] .gpa-header h2,
 html[lang="ar"] .gpa-box h3,
 html[lang="ar"] .celebration-title {
-  font-family: var(--font-comic-ar) !important;
-  font-weight: 700
+  font-family: var(--font-comic) !important;
+  font-weight: bold
 }
 
 /* WhatsApp Floating Button - Comic Style */
@@ -182,7 +179,7 @@ html[lang="en"] .offer-title,
 html[lang="en"] .card-title,
 html[lang="en"] .btn-offer {
   font-family: var(--font-comic) !important;
-  font-weight: 400
+  font-weight: normal
 }
 
 .hero-title,
@@ -502,8 +499,8 @@ html[lang="en"] .btn-offer {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   text-shadow: 4px 4px 0 #000;
-  font-weight: 900;
-  font-family: var(--font-comic-ar);
+  font-weight: heavy;
+  font-family: var(--font-comic);
   color: var(--color-beige);
   line-height: 1.2;
 }
@@ -525,7 +522,7 @@ html[lang="en"] .services-hero h1 {
   max-width: 850px;
   margin: 0 auto;
   line-height: 2;
-  font-weight: 500;
+  font-weight: normal;
 }
 
 .hero-content {
@@ -1170,7 +1167,7 @@ html[lang="en"] .offer-badge {
 }
 
 .flip-label {
-  font-weight: 700;
+  font-weight: bold;
   color: var(--shihab-dark-blue);
   font-size: .95rem
 }
@@ -1210,7 +1207,7 @@ html[lang="en"] .offer-badge {
 
 .flip-separator {
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: heavy;
   color: var(--shihab-dark-blue);
   margin-top: 1.6rem
 }
@@ -1341,7 +1338,7 @@ html[lang="en"] .offer-badge {
   grid-column: 1/-1;
   font-size: 1.1rem;
   padding: 1rem;
-  font-weight: 900
+  font-weight: heavy
 }
 
 .control-btn.secondary {
@@ -1382,7 +1379,7 @@ html[lang="en"] .offer-badge {
 
 .tool-tab.active {
   color: var(--shihab-turquoise);
-  font-weight: 900
+  font-weight: heavy
 }
 
 .tool-tab.active::after {
@@ -1481,7 +1478,7 @@ html[lang="en"] .offer-badge {
   border: 3px solid var(--shihab-comic-black);
   border-radius: 10px;
   cursor: pointer;
-  font-weight: 900;
+  font-weight: heavy;
   box-shadow: 0 4px 0 0 var(--shihab-comic-black)
 }
 
@@ -1851,7 +1848,7 @@ html[lang="en"] #gpa-sidebar {
 #courses-table th {
   background: var(--shihab-turquoise);
   color: var(--shihab-white);
-  font-weight: 900
+  font-weight: heavy
 }
 
 .delete-btn {
@@ -1882,7 +1879,7 @@ html[lang="en"] #gpa-sidebar {
 .gpa-result {
   color: var(--shihab-turquoise);
   font-size: 2.5rem;
-  font-weight: 900;
+  font-weight: heavy;
   display: block
 }
 
@@ -1951,7 +1948,7 @@ html[lang="en"] #gpa-sidebar {
 
 .pricing-drawer-title {
   font-size: 1.4rem;
-  font-weight: 900
+  font-weight: heavy
 }
 
 .pricing-handle {
@@ -1971,7 +1968,7 @@ html[lang="en"] #gpa-sidebar {
   justify-content: center;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-weight: 900;
+  font-weight: heavy;
   cursor: pointer;
   z-index: 9997
 }
@@ -2433,7 +2430,7 @@ html[lang="en"] .scroll-progress-bar {
 
 .feedback-text strong {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .feedback-rating {
@@ -2549,7 +2546,7 @@ html[lang="en"] .scroll-progress-bar {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   padding: 1rem;
   color: #fff;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1rem;
 }
 
@@ -2558,7 +2555,7 @@ html[lang="en"] .scroll-progress-bar {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .trip-schedule {
@@ -2716,7 +2713,7 @@ html[lang="en"] .scroll-progress-bar {
 .seo-content li:before {
   content: "\f19d";
   font-family: "Changa";
-  font-weight: 900;
+  font-weight: heavy;
   color: #00A99D;
   position: absolute;
   left: 0
@@ -2840,7 +2837,7 @@ html[lang="en"] .scroll-progress-bar {
 
 .article-info-meta-line strong {
   color: #2C3E50;
-  font-weight: 700
+  font-weight: bold
 }
 
 .article-info-stats-integrated {
@@ -2855,7 +2852,7 @@ html[lang="en"] .scroll-progress-bar {
 .article-info-stats-text {
   font-size: 1.3rem;
   color: #2C3E50;
-  font-weight: 600
+  font-weight: bold
 }
 
 .article-info-stats-badge {
@@ -2876,7 +2873,7 @@ html[lang="en"] .scroll-progress-bar {
   font-size: 1rem;
   color: #555;
   margin-bottom: 1rem;
-  font-weight: 600
+  font-weight: bold
 }
 
 .article-info-tags-list {
@@ -2916,7 +2913,7 @@ html[lang="en"] .scroll-progress-bar {
   gap: .8rem;
   color: #00A99D;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1rem;
   transition: all .3s;
   padding: .8rem 1.5rem;
@@ -2982,11 +2979,11 @@ html[lang="en"] .university-desc {
 }
 
 html[lang="ar"] .university-rank {
-  font-weight: 700
+  font-weight: bold
 }
 
 html[lang="en"] .university-rank {
-  font-weight: 400
+  font-weight: normal
 }
 
 .university-location span,
@@ -3069,7 +3066,7 @@ html[lang="en"] .university-rank {
   justify-content: space-between;
   gap: .75rem;
   padding: .9rem 1rem;
-  font-weight: 900;
+  font-weight: heavy;
   color: #2C3E50;
   background: rgba(44, 62, 80, .06);
   cursor: pointer
@@ -3107,7 +3104,7 @@ html[lang="en"] .university-rank {
 .pricing-table th {
   background: #FDFCF5;
   color: #2C3E50;
-  font-weight: 900;
+  font-weight: heavy;
   border-bottom: 3px solid #2C3E50
 }
 
@@ -3336,7 +3333,7 @@ html[lang="en"] .university-rank {
   font-size: 2.8rem;
   margin-bottom: 15px;
   font-family: 'Changa', sans-serif;
-  font-weight: 700
+  font-weight: bold
 }
 
 .voting-header p {
@@ -3439,7 +3436,7 @@ html[lang="en"] .university-rank {
   font-size: 1rem;
   color: var(--dark);
   font-family: 'Changa', sans-serif;
-  font-weight: 700
+  font-weight: bold
 }
 
 .movie-info p {
