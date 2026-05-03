@@ -57,7 +57,7 @@ $totalBookings = array_sum($stats);
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Changa', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
             min-height: 100vh;

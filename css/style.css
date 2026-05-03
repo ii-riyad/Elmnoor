@@ -2400,7 +2400,7 @@ html[lang="en"] .scroll-progress-bar {
   right: 20px;
   font-size: 4rem;
   color: var(--color-primary);
-  font-family: Georgia, serif;
+  font-family: 'Changa', serif;
   line-height: 1;
   opacity: 0.3;
 }
@@ -2717,7 +2717,7 @@ html[lang="en"] .scroll-progress-bar {
 
 .seo-content li:before {
   content: "\f19d";
-  font-family: "Font Awesome 6 Free";
+  font-family: "Changa";
   font-weight: 900;
   color: #00A99D;
   position: absolute;
@@ -2966,7 +2966,7 @@ html[lang="en"] .scroll-progress-bar {
 .university-location {
   color: #4b5563;
   font-size: 1.15rem;
-  font-family: 'Comic Neue', 'Noto Sans Arabic', sans-serif !important;
+  font-family: 'Changa', sans-serif !important;
   margin-bottom: .8rem;
   line-height: 1.5;
 }
@@ -2974,13 +2974,13 @@ html[lang="en"] .scroll-progress-bar {
 html[lang="ar"] .university-location,
 html[lang="ar"] .university-rank,
 html[lang="ar"] .university-desc {
-  font-family: 'Noto Sans Arabic', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important
+  font-family: 'Changa', sans-serif !important
 }
 
 html[lang="en"] .university-location,
 html[lang="en"] .university-rank,
 html[lang="en"] .university-desc {
-  font-family: 'Noto Sans', 'Noto Sans Arabic', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important
+  font-family: 'Changa', sans-serif !important
 }
 
 html[lang="ar"] .university-rank {
@@ -3010,7 +3010,7 @@ html[lang="en"] .university-rank {
   border: 3px solid #000;
   font-weight: bold;
   margin-top: .5rem;
-  font-family: 'Comic Neue', 'Noto Sans Arabic', sans-serif !important;
+  font-family: 'Changa', sans-serif !important;
   font-size: 1.05rem;
   line-height: 1.4;
 }
@@ -3024,7 +3024,7 @@ html[lang="en"] .university-rank {
   line-height: 1.8;
   color: #4b5563;
   margin-bottom: 1.8rem;
-  font-family: 'Comic Neue', 'Noto Sans Arabic', sans-serif !important
+  font-family: 'Changa', sans-serif !important
 }
 
 .university-link {
@@ -3461,7 +3461,7 @@ html[lang="en"] .university-rank {
   font-weight: bold;
   cursor: pointer;
   transition: all .2s;
-  font-family: 'Tajawal', sans-serif;
+  font-family: 'Changa', sans-serif;
   box-shadow: 2px 2px 0 var(--dark);
   margin-top: auto
 }
@@ -3518,7 +3518,7 @@ html[lang="en"] .university-rank {
 .side-strip .ticket-id {
   writing-mode: vertical-rl;
   letter-spacing: 3px;
-  font-family: 'Courier New', monospace;
+  font-family: 'Changa', monospace;
   font-weight: bold;
   margin-top: 12px
 }
@@ -3556,7 +3556,7 @@ html[lang="en"] .university-rank {
   background: transparent;
   border: none;
   width: 100%;
-  font-family: 'Tajawal', sans-serif
+  font-family: 'Changa', sans-serif
 }
 
 @media (prefers-reduced-motion:reduce) {
