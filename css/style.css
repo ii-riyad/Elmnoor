@@ -1632,7 +1632,6 @@ html[lang="en"] .offer-badge {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
@@ -1829,7 +1828,6 @@ html[lang="en"] #gpa-sidebar {
   width: 100%;
   overflow-x: auto;
   margin-bottom: 1rem;
-  -webkit-overflow-scrolling: touch
 }
 
 #courses-table {
@@ -4495,7 +4493,6 @@ html[lang="en"] .university-rank {
   .pricing-table {
     font-size: 1rem;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .pricing-table th,
@@ -4585,12 +4582,6 @@ html[lang="en"] .university-rank {
 
   /* ===== MOBILE PERFORMANCE OPTIMIZATIONS ===== */
 
-  /* Smooth scrolling optimization */
-  * {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-  }
-
   /* Reduce transition duration for better performance */
   *,
   *::before,
@@ -4600,11 +4591,8 @@ html[lang="en"] .university-rank {
 
   /* Font rendering optimization */
   body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
     font-feature-settings: "kern" 1;
-    -webkit-text-size-adjust: 100%;
   }
 
   /* Touch optimization for better responsiveness */
@@ -4613,26 +4601,22 @@ html[lang="en"] .university-rank {
   input,
   select,
   textarea {
-    -webkit-tap-highlight-color: rgba(0, 169, 157, 0.2);
     touch-action: manipulation;
   }
 
   /* Smooth scroll for anchors */
   html {
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
   }
 
   /* Image rendering optimization */
   img {
-    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 
   /* Video optimization */
   video {
     object-fit: cover;
-    -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
 
@@ -4651,7 +4635,6 @@ html[lang="en"] .university-rank {
   .major-card,
   .article-card,
   .university-card {
-    -webkit-user-select: none;
     user-select: none;
   }
 
@@ -4669,7 +4652,6 @@ html[lang="en"] .university-rank {
   .contact-form button {
     cursor: pointer;
     user-select: none;
-    -webkit-user-select: none;
   }
 
   .btn:active,
@@ -5618,7 +5600,6 @@ html[lang="en"] .university-rank {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
 

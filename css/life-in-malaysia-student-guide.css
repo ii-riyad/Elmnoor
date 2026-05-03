@@ -3,19 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: none;
-  -ms-overflow-style: none
-}
-
-*::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none
 }
 
 html {
   font-size: 16px;
   overflow-x: hidden;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 body {
@@ -24,7 +16,6 @@ body {
   color: #2C3E50;
   background: #FDFCF5;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch
 }
 
 .fonts-loaded body {
@@ -440,25 +431,6 @@ body {
   right: 0
 }
 
-.toc-sidebar::-webkit-scrollbar {
-  width: 8px
-}
-
-.toc-sidebar::-webkit-scrollbar-track {
-  background: #F0F0F0;
-  border-radius: 10px
-}
-
-.toc-sidebar::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
-  border-radius: 10px;
-  border: 2px solid #F0F0F0
-}
-
-.toc-sidebar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #009185 0%, #007A6B 100%)
-}
-
 .toc-header {
   background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
   color: #fff;
@@ -696,19 +668,10 @@ body {
   padding-top: 3rem;
   touch-action: pan-y;
   padding-bottom: 4rem;
-  -webkit-overflow-scrolling: touch
 }
 
-.swipeable-card,
-.swipeable-card::-webkit-scrollbar,
-.card-content::-webkit-scrollbar {
+.swipeable-card {
   scrollbar-width: none;
-  -ms-overflow-style: none
-}
-
-.swipeable-card::-webkit-scrollbar,
-.card-content::-webkit-scrollbar {
-  display: none
 }
 
 .swipeable-card {
@@ -731,7 +694,6 @@ body {
   display: flex;
   flex-direction: column;
   overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch
 }
 
 .swipeable-card.active {
@@ -775,9 +737,7 @@ body {
   overflow-y: auto;
   padding-right: .5rem;
   scrollbar-width: none;
-  -ms-overflow-style: none;
   overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch
 }
 
 .card-content p {
@@ -946,7 +906,6 @@ body {
     max-height: 65vh !important;
     min-height: 400px;
     overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
     overscroll-behavior: contain;
   }
 
@@ -1317,7 +1276,6 @@ body {
     border-width: 4px;
     box-shadow: 6px 6px 0 0 rgba(0, 0, 0, .15);
     overflow-y: scroll !important;
-    -webkit-overflow-scrolling: touch
   }
 
   .swipeable-card.active,
@@ -1531,7 +1489,6 @@ body {
     max-height: 80vh;
     height: auto;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch
   }
 
   .card-nav-btn {
