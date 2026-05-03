@@ -40,10 +40,6 @@ ErrorDocument 404 /404.html
   ExpiresByType image/svg+xml "access plus 6 months"
   ExpiresByType text/css   "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType audio/mpeg "access plus 1 year"
-  ExpiresByType audio/ogg "access plus 1 year"
-  ExpiresByType audio/opus "access plus 1 year"
-  ExpiresByType audio/aac "access plus 1 year"
 </IfModule>
 
 <IfModule mod_headers.c>
