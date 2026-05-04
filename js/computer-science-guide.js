@@ -50,6 +50,14 @@
 
   window.scrollToCard = scrollToCard
 
+  document.querySelectorAll('.toc-item').forEach((item, index) => {
+    item.addEventListener('click', () => scrollToCard(index))
+  })
+
+  document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.addEventListener('click', () => scrollToCard(index))
+  })
+
   document.getElementById('navLeft')?.addEventListener('click', () => {
     scrollToCard(currentCard - 1)
   })

@@ -53,6 +53,10 @@
         dot.addEventListener('click', () => this.goToCard(index))
       })
 
+      document.querySelectorAll('.toc-item').forEach((item, index) => {
+        item.addEventListener('click', () => this.goToCard(index))
+      })
+
       this.updateCards()
     }
 
