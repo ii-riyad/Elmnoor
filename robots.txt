@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://elmnoor.com/sitemap.xml
+LLMs: https://elmnoor.com/llms.xml
