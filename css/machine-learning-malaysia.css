@@ -1,8 +1,0 @@
-@import url('article-base.css');
-@media (max-width:768px) {
-
-  .curriculum-table th,
-  .curriculum-table td {
-    padding: .75rem .5rem
-  }
-}

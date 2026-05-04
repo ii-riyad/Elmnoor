@@ -2308,7 +2308,6 @@ html[lang="en"] .scroll-progress-bar {
 .seo-content,
 .university-card,
 .service-detail-card,
-.contact-form-card,
 .contact-info-card {
   background: #FDFCF5;
   border: 4px solid #2C3E50;
@@ -2319,7 +2318,6 @@ html[lang="en"] .scroll-progress-bar {
 }
 
 .service-detail-card,
-.contact-form-card,
 .contact-info-card {
   padding: 2.5rem;
   margin-bottom: 2rem
@@ -3181,12 +3179,6 @@ html[lang="en"] .university-rank {
 .service-features i {
   color: #00A99D;
   font-size: 1.2rem
-}
-
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem
 }
 
 .form-group {
@@ -4503,46 +4495,6 @@ html[lang="en"] .university-rank {
     border-radius: 10px;
   }
 
-  /* ===== MOBILE-OPTIMIZED CONTACT PAGE ===== */
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .contact-form {
-    padding: 2rem 1.5rem;
-    border-radius: 16px;
-    border-width: 3px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.05rem;
-    padding: 1rem 1.2rem;
-    border-radius: 12px;
-    border-width: 3px;
-  }
-
-  .contact-form textarea {
-    min-height: 150px;
-  }
-
-  .contact-form button {
-    font-size: 1.08rem;
-    padding: 1rem 2rem;
-    height: 56px;
-    width: 100%;
-    border-radius: 12px;
-    border-width: 3px;
-    box-shadow: 4px 4px 0 0 #000;
-  }
-
-  .contact-form button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 0 #000;
-  }
-
   /* ===== MOBILE-OPTIMIZED STUDY WITH SHIHAB PAGE ===== */
   .study-header h1 {
     font-size: 2.2rem;
@@ -4644,8 +4596,7 @@ html[lang="en"] .university-rank {
 
   /* Improved button states for touch */
   .btn,
-  .service-card .btn,
-  .contact-form button {
+  .service-card .btn {
     cursor: pointer;
     user-select: none;
   }
@@ -4976,17 +4927,6 @@ html[lang="en"] .university-rank {
     font-size: 1.55rem;
   }
 
-  /* Contact Form */
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.03rem;
-  }
-
-  .contact-form button {
-    font-size: 1.05rem;
-    height: 54px;
-  }
-
   /* Study with Shihab */
   .study-header h1 {
     font-size: 2.15rem;
@@ -5150,17 +5090,6 @@ html[lang="en"] .university-rank {
     width: 54px;
     height: 54px;
     font-size: 1.6rem;
-  }
-
-  /* Contact Form */
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.05rem;
-  }
-
-  .contact-form button {
-    font-size: 1.08rem;
-    height: 56px;
   }
 
   /* Study with Shihab */
@@ -5389,26 +5318,6 @@ html[lang="en"] .university-rank {
     width: 56px;
     height: 56px;
     font-size: 1.65rem;
-  }
-
-  /* Contact Form */
-  .contact-form {
-    padding: 2.2rem 1.7rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.08rem;
-    padding: 1.05rem 1.3rem;
-  }
-
-  .contact-form textarea {
-    min-height: 170px;
-  }
-
-  .contact-form button {
-    font-size: 1.1rem;
-    height: 58px;
   }
 
   /* Study with Shihab */
