@@ -498,7 +498,7 @@ html[lang="en"] .btn-offer {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   text-shadow: 4px 4px 0 #000;
-  font-weight: heavy;
+  font-weight: bold;
   font-family: var(--font-comic);
   color: var(--color-beige);
   line-height: 1.2;
@@ -1206,7 +1206,7 @@ html[lang="en"] .offer-badge {
 
 .flip-separator {
   font-size: 2rem;
-  font-weight: heavy;
+  font-weight: bold;
   color: var(--shihab-dark-blue);
   margin-top: 1.6rem
 }
@@ -1337,7 +1337,7 @@ html[lang="en"] .offer-badge {
   grid-column: 1/-1;
   font-size: 1.1rem;
   padding: 1rem;
-  font-weight: heavy
+  font-weight: bold
 }
 
 .control-btn.secondary {
@@ -1378,7 +1378,7 @@ html[lang="en"] .offer-badge {
 
 .tool-tab.active {
   color: var(--shihab-turquoise);
-  font-weight: heavy
+  font-weight: bold
 }
 
 .tool-tab.active::after {
@@ -1477,7 +1477,7 @@ html[lang="en"] .offer-badge {
   border: 3px solid var(--shihab-comic-black);
   border-radius: 10px;
   cursor: pointer;
-  font-weight: heavy;
+  font-weight: bold;
   box-shadow: 0 4px 0 0 var(--shihab-comic-black)
 }
 
@@ -1847,7 +1847,7 @@ html[lang="en"] #gpa-sidebar {
 #courses-table th {
   background: var(--shihab-turquoise);
   color: var(--shihab-white);
-  font-weight: heavy
+  font-weight: bold
 }
 
 .delete-btn {
@@ -1878,7 +1878,7 @@ html[lang="en"] #gpa-sidebar {
 .gpa-result {
   color: var(--shihab-turquoise);
   font-size: 2.5rem;
-  font-weight: heavy;
+  font-weight: bold;
   display: block
 }
 
@@ -1947,7 +1947,7 @@ html[lang="en"] #gpa-sidebar {
 
 .pricing-drawer-title {
   font-size: 1.4rem;
-  font-weight: heavy
+  font-weight: bold
 }
 
 .pricing-handle {
@@ -1967,7 +1967,7 @@ html[lang="en"] #gpa-sidebar {
   justify-content: center;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-weight: heavy;
+  font-weight: bold;
   cursor: pointer;
   z-index: 9997
 }
@@ -2710,7 +2710,7 @@ html[lang="en"] .scroll-progress-bar {
 .seo-content li:before {
   content: "\f19d";
   font-family: "Changa";
-  font-weight: heavy;
+  font-weight: bold;
   color: #00A99D;
   position: absolute;
   left: 0
@@ -3063,7 +3063,7 @@ html[lang="en"] .university-rank {
   justify-content: space-between;
   gap: .75rem;
   padding: .9rem 1rem;
-  font-weight: heavy;
+  font-weight: bold;
   color: #2C3E50;
   background: rgba(44, 62, 80, .06);
   cursor: pointer
@@ -3101,7 +3101,7 @@ html[lang="en"] .university-rank {
 .pricing-table th {
   background: #FDFCF5;
   color: #2C3E50;
-  font-weight: heavy;
+  font-weight: bold;
   border-bottom: 3px solid #2C3E50
 }
 
