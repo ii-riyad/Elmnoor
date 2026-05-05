@@ -51,8 +51,6 @@
   <link crossorigin="use-credentials" href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://cdnjs.cloudflare.com" rel="preconnect">
   <link href="https://www.googletagmanager.com" rel="preconnect">
-  <!-- Video poster used to reserve visual space and avoid large automatic payloads -->
-  <link as="image" fetchpriority="high" href="/images/anim.webp" rel="preload">
   <link href="/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&amp;display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -103,9 +101,12 @@
               <a class="btn btn-primary" href="/en/life-in-malaysia-student-guide.html">Life Guide</a>
             </div>
           </div>
-          <div aria-hidden="false" class="hero-image-wrapper">
-            <div aria-hidden="true" class="hero-image" role="presentation">
-              <img alt="Elm w Noor - علم ونور" class="hero-video" fetchpriority="high" src="/images/anim.webp">
+          <div class="hero-image-wrapper" aria-hidden="false">
+            <div class="hero-image" role="presentation" aria-hidden="true">
+              <video class="hero-video" autoplay loop muted playsinline fetchpriority="high"
+                aria-label="Elm w Noor - علم ونور">
+                <source src="/images/anim.webm" type="video/webm">
+              </video>
             </div>
           </div>
         </div>

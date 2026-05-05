@@ -50,9 +50,6 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://www.googletagmanager.com">
 
-  <!-- Video poster used to reserve visual space and avoid large automatic payloads -->
-  <link rel="preload" href="/images/anim.webp" as="image" fetchpriority="high">
-
   <link href="/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -108,7 +105,10 @@
 
           <div class="hero-image-wrapper" aria-hidden="false">
             <div class="hero-image" role="presentation" aria-hidden="true">
-              <img class="hero-video" src="/images/anim.webp" alt="Elm w Noor - علم ونور" fetchpriority="high">
+              <video class="hero-video" autoplay loop muted playsinline fetchpriority="high"
+                aria-label="Elm w Noor - علم ونور">
+                <source src="/images/anim.webm" type="video/webm">
+              </video>
             </div>
           </div>
         </div>
