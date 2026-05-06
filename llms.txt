@@ -1,50 +1,38 @@
-# Elm w Noor (علم ونور) - Student Life Agency
+# Elm w Noor
 
-> Elm w Noor is a static bilingual website for Arab students studying in Malaysia. The English section in `/en/` is a small content tree built with HTML, CSS, and vanilla JavaScript, and it focuses on university guidance, student services, life in Malaysia, and long-form editorial content.
+> Bilingual (Arabic/English) education guidance website focused on studying in Malaysia, with practical student support information, university guidance, life guides, and service details for Arab students and families.
 
-Things to remember when working with Elm w Noor:
+Use this file as the primary map for understanding site content. The Arabic and English sections are parallel in structure, but some pages may contain mixed-language text. Prefer the language path that matches the user request:
 
-- The project is a **static website**, not an app or API service
-- The site is **bilingual** and uses Arabic (RTL) and English (LTR) pages
-- The English pages in `/en/` are **not fully uniform**; some still keep Arabic meta text, headings, or mixed-language content in the source
-- Interactivity is handled with **vanilla JavaScript** only
-- The design system uses the turquoise brand color `#0F9D92` with yellow, orange, and purple accents
-- SEO matters: pages use canonical links, alternate hreflang tags, social meta tags, and JSON-LD on selected pages
-- Assets are shared across the site through `/css/style.css`, `/js/main.js`, `/js/gtag-init.js`, and `/images/`
+- Arabic content path: /ar/
+- English content path: /en/
 
-## English Site Map
+For quick answers, start with homepage, services, universities, and guides. Use article pages for deeper context and detailed Q&A-style information.
 
-```text
-/en/index.html                          Home page with hero copy, services summary, student feedback, trip section, and majors CTA
-/en/universities.html                   University directory, detailed MMU profile, pricing drawer, and admissions information
-/en/services.html                       Service catalogue for enrollment, academic help, airport pickup, visa, housing, communities, guides, and materials
-/en/life-in-malaysia-student-guide.html  Long-form guide for living in Malaysia, especially for Cyberjaya students
-/en/computer-science-guide.html         Computer Science and IT majors guide with fees, universities, and application advice
-/en/articles.html                       Strategic article on Malaysia 2026 and student safety, living costs, and guidance for parents
-/en/404.html                            English not-found page
-```
+## Primary Pages (Arabic)
 
-## What the English Pages Cover
+- [Arabic Home](https://elmnoor.com/ar/): Main entry point, value proposition, majors overview, and primary calls to action.
+- [Arabic Services](https://elmnoor.com/ar/services.html): Service catalog including university application support, visa help, accommodation, and student integration support.
+- [Arabic Universities](https://elmnoor.com/ar/universities.html): University listing and program/cost-related reference content.
+- [Arabic Life Guide](https://elmnoor.com/ar/life-in-malaysia-student-guide.html): Practical student life guidance (housing, safety, expenses, adaptation).
+- [Arabic Computer Science Guide](https://elmnoor.com/ar/computer-science-guide.html): Specialized major guide for CS/IT pathways, admissions, fees, and FAQs.
+- [Arabic Articles](https://elmnoor.com/ar/articles.html): Long-form strategic article content with structured sections and FAQs.
 
-- The home page presents Elm w Noor as a student support agency and links into universities, services, the life guide, and articles
-- The universities page centers on Multimedia University and includes a structured fee drawer plus program tables
-- The services page groups the agency offering into student environment, registration, academic guidance, airport reception, visa help, accommodation, Arabic communities, a life guide, and study materials
-- The life guide is a practical student-living article covering safety, housing, communication, food, money, transport, loneliness, and the final decision to study in Malaysia
-- The computer science guide is a discipline-specific article for IT and CS applicants, with admissions, tuition, university options, and final tips
-- The articles page is a long strategic report about Malaysia in 2026, including geopolitics, economics, academic reputation, culture, legal safety, healthcare, and parent reassurance
-- The 404 page is a simple fallback page for missing routes
+## Primary Pages (English)
 
-## Shared Technical Notes
+- [English Home](https://elmnoor.com/en/): Main entry point, services summary, majors overview, and contact paths.
+- [English Services](https://elmnoor.com/en/services.html): Detailed service descriptions and support flow.
+- [English Universities](https://elmnoor.com/en/universities.html): University and program overview content.
+- [English Life Guide](https://elmnoor.com/en/life-in-malaysia-student-guide.html): Student living guide in Malaysia with practical adaptation advice.
+- [English Computer Science Guide](https://elmnoor.com/en/computer-science-guide.html): Computer science and IT major planning guide.
+- [English Articles](https://elmnoor.com/en/articles.html): Long-form strategic education and safety content with FAQ-style coverage.
 
-- HTML uses semantic structure such as `nav`, `main`, `section`, `article`, `aside`, and `footer`
-- Google Analytics is initialized through `/js/gtag-init.js`
-- Fonts and icons are loaded from Google Fonts and Font Awesome CDNs
-- Language changes are implemented with the existing bilingual JavaScript system elsewhere in the site
-- Images are mostly WebP and are used for hero art, covers, and supporting visuals
+## Technical and Crawl Resources
 
-## Editing Guidance
+- [Sitemap](https://elmnoor.com/sitemap.xml): Canonical URL inventory for discovery and crawling.
+- [Robots](https://elmnoor.com/robots.txt): Crawl directives and sitemap pointer.
+- [Web Manifest](https://elmnoor.com/manifest.webmanifest): PWA metadata and icons.
 
-- Keep Arabic and English content aligned when updating shared site messaging
-- Preserve canonical URLs, language alternates, and metadata when adding or changing pages
-- Prefer small, consistent updates over broad rewrites
-- Keep the English folder inventory in sync with the actual HTML files that exist
+## Optional
+
+No optional content.
