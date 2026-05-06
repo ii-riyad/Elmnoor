@@ -1,0 +1,865 @@
+/* Import base styles from life guide */
+@import url('life-in-malaysia-student-guide.css');
+
+/* ================================================
+   COMPUTER SCIENCE GUIDE - SPECIFIC STYLES
+   ================================================ */
+
+/* Enhanced card sizing for better readability */
+.swipeable-card {
+  max-width: 1600px;
+  padding: 3.5rem;
+  overflow-y: auto;
+}
+
+.swipeable-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-content p {
+  font-size: 1.25rem;
+  line-height: 2.1;
+}
+
+.card-content h4 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card-content h5 {
+  font-size: 1.35rem;
+}
+
+/* Enhanced alert boxes and tip boxes */
+.tip-box,
+.alert-box,
+.success-box {
+  padding: 1.8rem;
+  margin: 1.8rem 0;
+}
+
+.tip-box h5,
+.alert-box h5,
+.success-box h5 {
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.tip-box h5 i,
+.alert-box h5 i,
+.success-box h5 i {
+  font-size: 1.4rem;
+}
+
+.tip-box p,
+.alert-box p,
+.success-box p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+/* Table Responsive Wrapper */
+.table-responsive {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Fees Tables */
+.fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fees-table thead {
+  background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
+  color: #fff;
+}
+
+.fees-table thead th {
+  padding: 1.2rem;
+  text-align: right;
+  font-weight: bold;
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+}
+
+.fees-table thead th:last-child {
+  border-right: none;
+}
+
+.fees-table tbody tr {
+  border-bottom: 2px solid #E0E0E0;
+  transition: background 0.2s ease;
+}
+
+.fees-table tbody tr:hover {
+  background: #F5F9F8;
+}
+
+.fees-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.fees-table tbody td {
+  padding: 1rem 1.2rem;
+  text-align: right;
+  border-right: 2px solid #F0F0F0;
+  font-size: 1.05rem;
+}
+
+.fees-table tbody td:last-child {
+  border-right: none;
+}
+
+.fees-table tbody td strong {
+  color: #00A99D;
+  font-weight: bold;
+}
+
+.fees-table .total-row {
+  background: #FFF3CD;
+  font-weight: bold;
+  border-top: 3px solid #000;
+}
+
+.fees-table .total-row td {
+  padding: 1.2rem;
+  font-size: 1.15rem;
+}
+
+.fees-table .highlight-row {
+  background: #E8F5E9;
+}
+
+/* University Cards */
+.university-card {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0 0 #000;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.university-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0 0 #000;
+}
+
+.uni-header {
+  background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
+  color: #fff;
+  padding: 1.4rem 1.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 4px solid #000;
+}
+
+.uni-header i {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.uni-header h4 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.uni-rank {
+  background: #fff;
+  color: #00A99D;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: 2px solid #000;
+  white-space: nowrap;
+}
+
+.uni-content {
+  padding: 1.5rem 1.7rem;
+}
+
+.uni-content p {
+  margin-bottom: 0.6rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.uni-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  color: #00A99D;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #00A99D;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.uni-link:hover {
+  background: #00A99D;
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+.uni-link i {
+  font-size: 1rem;
+}
+
+/* Featured University */
+.featured-uni .uni-header {
+  background: linear-gradient(135deg, #FF6B6B 0%, #E94E4E 100%);
+}
+
+.featured-uni .uni-rank {
+  color: #FF6B6B;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Scholarship Cards */
+.scholarship-card {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 12px;
+  padding: 1.3rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.scholarship-card h4 {
+  color: #2C3E50;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scholarship-details h5 {
+  color: #00A99D;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.scholarship-details p {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* University Type Boxes */
+.university-type-box {
+  background: #fff;
+  border: 3px solid #00A99D;
+  border-right: 6px solid #00A99D;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.university-type-box h5 {
+  color: #00A99D;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.university-type-box p {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Info Box */
+.info-box {
+  background: #E3F2FD;
+  border: 4px solid #2196F3;
+  border-right: 8px solid #2196F3;
+  border-radius: 12px;
+  padding: 1.3rem;
+  margin: 1.5rem 0;
+}
+
+.info-box h5 {
+  color: #1976D2;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.info-box h5 i {
+  color: #2196F3;
+}
+
+.info-box p {
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+/* Checklist Box */
+.checklist-box {
+  background: #F5F5F5;
+  border: 4px solid #2C3E50;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.checklist-box h5 {
+  color: #2C3E50;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checklist-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #E0E0E0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.checklist-item i {
+  color: #28a745;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.checklist-item strong {
+  color: #00A99D;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.checklist-item p {
+  margin: 0;
+  margin-top: 0.2rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* CTA Box */
+.cta-box {
+  background: linear-gradient(135deg, #0F9D92 0%, #00A99D 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  margin: 2rem 0;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 0 #000;
+}
+
+.cta-box h4 {
+  color: white !important;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.cta-box p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.cta-button {
+  background: white;
+  color: #0F9D92;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 0 #000;
+  transition: all 0.3s ease;
+  font-size: 1.15rem;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 0 #000;
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+/* Icon Color Variations */
+.card-icon-large i.fa-laptop-code {
+  color: #00A99D;
+}
+
+.card-icon-large i.fa-file-invoice-dollar {
+  color: #9C27B0;
+}
+
+.card-icon-large i.fa-university {
+  color: #FF6B6B;
+}
+
+.card-icon-large i.fa-dollar-sign {
+  color: #FFC107;
+}
+
+.card-icon-large i.fa-gift {
+  color: #E91E63;
+}
+
+.card-icon-large i.fa-check-circle {
+  color: #4CAF50;
+}
+
+/* ================================================
+   MOBILE RESPONSIVE - SPECIFIC OVERRIDES
+   ================================================ */
+
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .fees-table {
+    font-size: 0.7rem;
+  }
+
+  .fees-table thead th,
+  .fees-table tbody td {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .table-responsive {
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+
+  .university-card {
+    margin-bottom: 1rem;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+
+  .uni-header {
+    padding: 0.8rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  .uni-header i {
+    font-size: 1.3rem;
+  }
+
+  .uni-header h4 {
+    font-size: 0.95rem;
+    width: 100%;
+    margin-bottom: 0.4rem;
+  }
+
+  .uni-rank {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .uni-content {
+    padding: 0.9rem 1rem;
+  }
+
+  .uni-content p {
+    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .uni-link {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.6rem;
+  }
+
+  .scholarship-card {
+    padding: 0.9rem;
+    margin-bottom: 0.8rem;
+    border-width: 3px;
+    box-shadow: 3px 3px 0 0 #000;
+  }
+
+  .scholarship-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .scholarship-details h5 {
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+  }
+
+  .scholarship-details p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .university-type-box {
+    padding: 0.7rem;
+    border-width: 2px;
+    border-right-width: 4px;
+  }
+
+  .university-type-box h5 {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .university-type-box p {
+    font-size: 0.75rem;
+  }
+
+  .info-box,
+  .checklist-box {
+    padding: 0.8rem;
+    border-width: 3px;
+    border-right-width: 5px;
+  }
+
+  .info-box h5,
+  .checklist-box h5 {
+    font-size: 0.85rem;
+  }
+
+  .info-box p {
+    font-size: 0.75rem;
+  }
+
+  .checklist-item {
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .checklist-item i {
+    font-size: 1.1rem;
+  }
+
+  .checklist-item strong {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .checklist-item p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .cta-box {
+    padding: 1.2rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 0 #000;
+  }
+
+  .cta-box h4 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-box p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    border-width: 2px;
+    box-shadow: 3px 3px 0 0 #000;
+  }
+}
+
+/* Small Mobile (375px - 413px) */
+@media (min-width: 375px) and (max-width: 413px) {
+  .fees-table {
+    font-size: 0.72rem;
+  }
+
+  .fees-table thead th,
+  .fees-table tbody td {
+    padding: 0.55rem 0.45rem;
+    font-size: 0.72rem;
+  }
+
+  .uni-header h4 {
+    font-size: 1rem;
+  }
+
+  .uni-rank {
+    font-size: 0.68rem;
+  }
+
+  .uni-content p {
+    font-size: 0.78rem;
+  }
+
+  .scholarship-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .scholarship-details h5 {
+    font-size: 0.83rem;
+  }
+
+  .scholarship-details p {
+    font-size: 0.77rem;
+  }
+}
+
+/* Medium Mobile (414px - 479px) */
+@media (min-width: 414px) and (max-width: 479px) {
+  .fees-table {
+    font-size: 0.75rem;
+  }
+
+  .fees-table thead th,
+  .fees-table tbody td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .uni-header h4 {
+    font-size: 1.05rem;
+  }
+
+  .uni-rank {
+    font-size: 0.7rem;
+  }
+
+  .uni-content p {
+    font-size: 0.8rem;
+  }
+
+  .scholarship-card h4 {
+    font-size: 1rem;
+  }
+
+  .scholarship-details p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Standard Mobile (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .fees-table {
+    font-size: 0.8rem;
+  }
+
+  .fees-table thead th,
+  .fees-table tbody td {
+    padding: 0.7rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .university-card {
+    border-width: 4px;
+  }
+
+  .uni-header {
+    padding: 1rem 1.2rem;
+  }
+
+  .uni-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .uni-rank {
+    font-size: 0.72rem;
+  }
+
+  .uni-content {
+    padding: 1.1rem 1.2rem;
+  }
+
+  .uni-content p {
+    font-size: 0.85rem;
+  }
+
+  .scholarship-card {
+    padding: 1.1rem;
+  }
+
+  .scholarship-card h4 {
+    font-size: 1.05rem;
+  }
+
+  .scholarship-details h5 {
+    font-size: 0.95rem;
+  }
+
+  .scholarship-details p {
+    font-size: 0.85rem;
+  }
+
+  .cta-box {
+    padding: 1.5rem;
+  }
+
+  .cta-box h4 {
+    font-size: 1.2rem;
+  }
+
+  .cta-box p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Tablet (768px and above) */
+@media (min-width: 768px) {
+  .fees-table {
+    font-size: 0.9rem;
+  }
+
+  .fees-table thead th {
+    font-size: 1rem;
+  }
+
+  .fees-table tbody td {
+    font-size: 0.95rem;
+  }
+
+  .university-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 0 0 #000;
+  }
+
+  .scholarship-card {
+    padding: 1.5rem;
+  }
+
+  .cta-box {
+    padding: 2.5rem;
+  }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+  .fees-table {
+    font-size: 1rem;
+  }
+
+  .uni-header h4 {
+    font-size: 1.4rem;
+  }
+
+  .uni-rank {
+    font-size: 0.8rem;
+  }
+
+  .uni-content p {
+    font-size: 1rem;
+  }
+
+  .scholarship-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .scholarship-details h5 {
+    font-size: 1.05rem;
+  }
+
+  .scholarship-details p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ================================================
+   MOBILE CARD HEIGHT OVERRIDES
+   ================================================ */
+
+/* Extra Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+  .swipeable-card {
+    max-height: 85vh !important;
+    height: auto !important;
+    min-height: 500px;
+  }
+}
+
+/* Small Mobile (375px - 413px) */
+@media (min-width: 375px) and (max-width: 413px) {
+  .swipeable-card {
+    max-height: 85vh !important;
+    height: auto !important;
+    min-height: 520px;
+  }
+}
+
+/* Medium Mobile (414px - 479px) */
+@media (min-width: 414px) and (max-width: 479px) {
+  .swipeable-card {
+    max-height: 85vh !important;
+    height: auto !important;
+    min-height: 540px;
+  }
+}
+
+/* Standard Mobile (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .swipeable-card {
+    max-height: 85vh !important;
+    height: auto !important;
+    min-height: 560px;
+  }
+}
