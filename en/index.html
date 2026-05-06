@@ -69,6 +69,121 @@
   <!-- Scripts -->
   <script src="/js/gtag-init.js" defer></script>
   <script src="https://www.googletagmanager.com/gtag/js?id=G-4J70S0ZD47" async></script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://elmnoor.com/en/#logo",
+          "url": "https://elmnoor.com/images/icon-512.webp",
+          "width": 512,
+          "height": 512,
+          "caption": "Elm w Noor"
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://elmnoor.com/en/#cover-image",
+          "url": "https://elmnoor.com/images/og-cover.webp",
+          "width": 1200,
+          "height": 630,
+          "caption": "Elm w Noor - Your guide to studying in Malaysia"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://elmnoor.com/en/#organization",
+          "name": "Elm & Noor",
+          "@alternateName": "Elm w Noor",
+          "url": "https://elmnoor.com/en/",
+          "logo": { "@id": "https://elmnoor.com/en/#logo" },
+          "image": { "@id": "https://elmnoor.com/en/#cover-image" },
+          "description": "Elm & Noor helps students across the Arab world plan their higher education journey in Malaysia with university admissions, visa guidance, and student services.",
+          "sameAs": ["https://www.instagram.com/elmnooor"],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "@id": "https://elmnoor.com/en/#contact",
+              "contactType": "Customer Support",
+              "email": "contactme@elmnoor.com",
+              "availableLanguage": ["Arabic", "English"],
+              "areaServed": "Worldwide"
+            }
+          ],
+          "founder": {
+            "@type": "Person",
+            "@id": "https://elmnoor.com/en/#founder",
+            "name": "Elm & Noor Team"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://elmnoor.com/en/#website",
+          "url": "https://elmnoor.com/en/",
+          "name": "Elm & Noor",
+          "@alternateName": "Elm w Noor",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://elmnoor.com/en/#organization" },
+          "logo": { "@id": "https://elmnoor.com/en/#logo" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "@id": "https://elmnoor.com/en/#search-action",
+            "target": "https://elmnoor.com/en/search?q={search_term}",
+            "query-input": "required name=search_term"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://elmnoor.com/en/#faq",
+          "url": "https://elmnoor.com/en/",
+          "isPartOf": { "@id": "https://elmnoor.com/en/#website" },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "@id": "https://elmnoor.com/en/#faq-q1",
+              "name": "What services does Elm & Noor provide for students planning to study in Malaysia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "@id": "https://elmnoor.com/en/#faq-a1",
+                "text": "We help with university and major selection, admission application preparation, visa processing, airport pickup, accommodation arrangements, and ongoing academic guidance."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://elmnoor.com/en/#faq-q2",
+              "name": "Can I apply to more than one university through Elm & Noor?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "@id": "https://elmnoor.com/en/#faq-a2",
+                "text": "Yes. We provide a tailored application plan that lets you apply to multiple Malaysian universities with step-by-step tracking until final admission."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://elmnoor.com/en/#faq-q3",
+              "name": "Which languages does your support team offer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "@id": "https://elmnoor.com/en/#faq-a3",
+                "text": "Our team supports students in both Arabic and English to ensure a clear and comfortable experience."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://elmnoor.com/en/#faq-q4",
+              "name": "What study tools are available on the Study With Me - Shihab page?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "@id": "https://elmnoor.com/en/#faq-a4",
+                "text": "The Study With Me - Shihab page includes a Pomodoro timer, Malaysian-university GPA calculator, interactive to-do list, study notes, focus ambient sounds, and daily study stats. All tools are free and easy to use."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -413,9 +528,7 @@
     </section>
   </main>
   <script defer="" src="/js/main.js"></script>
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://elmnoor.com/en/#organization","name":"Elm & Noor","@alternateName":"علم ونور","url":"https://elmnoor.com/en/","logo":{"@type":"ImageObject","url":"https://elmnoor.com/images/icon-512.webp","width":512,"height":512,"caption":"علم ونور - Elm w Noor"},"image":{"@type":"ImageObject","url":"https://elmnoor.com/images/og-cover.webp","width":1200,"height":630,"caption":"علم ونور - دليلك للدراسة في ماليزيا"},"description":"Elm & Noor helps students across the Arab world plan their higher education journey in Malaysia with university admissions, visa guidance, and student services.","sameAs":["https://www.instagram.com/elmnooor"],"contactPoint":[{"@type":"ContactPoint","contactType":"Customer Support","email":"contactme@elmnoor.com","availableLanguage":["Arabic","English"],"areaServed":"Worldwide"}],"founder":{"@type":"Person","name":"Elm & Noor Team"}},{"@type":"WebSite","@id":"https://elmnoor.com/en/#website","url":"https://elmnoor.com/en/","name":"Elm & Noor","@alternateName":"علم ونور","inLanguage":"ar","publisher":{"@id":"https://elmnoor.com/en/#organization"},"logo":{"@type":"ImageObject","url":"https://elmnoor.com/images/icon-512.webp","width":512,"height":512},"potentialAction":{"@type":"SearchAction","target":"https://elmnoor.com/en/search?q={search_term}","query-input":"required name=search_term"}},{"@type":"FAQPage","@id":"https://elmnoor.com/en/#faq","url":"https://elmnoor.com/en/","mainEntity":[{"@type":"Question","name":"ما الخدمات التي يقدمها Elm & Noor للطلبة الراغبين بالدراسة في ماليزيا؟","acceptedAnswer":{"@type":"Answer","text":"نساعدك في اختيار الجامعة والتخصص المناسب، تجهيز طلب القبول، استخراج التأشيرة، الاستقبال في المطار، وإيجاد سكن مناسب إضافة إلى الإرشاد الأكاديمي طوال رحلتك."}},{"@type":"Question","name":"هل يمكنني التقديم على أكثر من جامعة عبر Elm & Noor؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نوفر لك خطة تقديم أين ما كنت تمكّنك من التقديم على عدة جامعات ماليزية مع متابعة حالة طلبك خطوة بخطوة حتى الحصول على القبول النهائي."}},{"@type"]["name":"ما هي اللغات التي يدعمها فريق الدعم؟","acceptedAnswer":{"@type":"Answer","text":"فريق Elm & Noor يتواصل مع الطلبة باللغة العربية والإنجليزية لضمان تجربة مريحة وواضحة للجميع."}},{"@type"]["name"]["name ":"ما هي أدوات الدراسة المتوفرة في صفحة ادرس معي – شِهاب؟","acceptedAnswer":{"@type ":"Answer ","text ":"صفحة ادرس معي – شِهاب تتضمن: مؤقت بومودورو للتركيز، حاسبة المعدل التراكمي GPA للجامعات الماليزية، قائمة مهام تفاعلية، ملاحظات دراسية، أصوات محيطة للتركيز، وإحصائيات الدراسة اليومية. جميع الأدوات مجانية وسهلة الاستخدام."}}]}]}
-</script>
+
   <footer class="footer">
     <div class="container">
       <p class="footer-text">© 2026 Elmnoor | Your guide to education in Malaysia. All rights reserved.</p>

@@ -68,6 +68,150 @@
   <!-- Scripts -->
   <script src="/js/gtag-init.js" defer></script>
   <script src="https://www.googletagmanager.com/gtag/js?id=G-4J70S0ZD47" async></script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://elmnoor.com/en/services.html#organization",
+        "name": "Elm w Noor",
+        "url": "https://elmnoor.com/en/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://elmnoor.com/en/services.html#logo",
+          "url": "https://elmnoor.com/images/icon-512.webp"
+        },
+        "description": "An educational platform offering comprehensive guides and student support services for studying in Malaysia.",
+        "sameAs": [
+          "https://twitter.com/elmnoor",
+          "https://www.facebook.com/elmnoor",
+          "https://www.instagram.com/elmnooor"
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://elmnoor.com/en/services.html#webpage",
+        "url": "https://elmnoor.com/en/services.html",
+        "name": "Services | Elm w Noor",
+        "description": "Services for students in Malaysia: university registration, visa support, accommodation, airport pickup, and academic guidance.",
+        "inLanguage": "en",
+        "mainEntity": {
+          "@id": "https://elmnoor.com/en/services.html#services-list"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://elmnoor.com/en/services.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://elmnoor.com/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://elmnoor.com/en/services.html"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://elmnoor.com/en/services.html#services-list",
+        "name": "Elm w Noor Services",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 8,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "Integrated Environment for Students",
+              "description": "A complete religious, health, and sports environment to help students integrate smoothly.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "University Registration",
+              "description": "Help choosing the right university and major, plus end-to-end application processing.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "Academic Guidance",
+              "description": "Academic consultations to help students choose the best study path.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "name": "Airport Pickup",
+              "description": "Personal airport reception and safe transport to accommodation.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Service",
+              "name": "Visa Assistance",
+              "description": "Document preparation and follow-up until student visa approval.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Service",
+              "name": "Accommodation Arrangement",
+              "description": "Safe and suitable housing options near the university.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "Service",
+              "name": "Arabic Student Communities",
+              "description": "Support for joining Arabic student communities in Malaysia.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "Service",
+              "name": "Life in Malaysia Guide",
+              "description": "A practical guide to common student-life challenges in Malaysia and how to solve them.",
+              "provider": { "@id": "https://elmnoor.com/en/services.html#organization" }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>

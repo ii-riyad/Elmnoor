@@ -67,26 +67,86 @@
   <script src="/js/gtag-init.js" defer></script>
   <script src="https://www.googletagmanager.com/gtag/js?id=G-4J70S0ZD47" async></script>
 
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "الرئيسية",
-      "item": "https://elmnoor.com/ar/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "الجامعات",
-      "item": "https://elmnoor.com/ar/universities.html"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://elmnoor.com/ar/universities.html#organization",
+        "name": "Elm w Noor - علم ونور",
+        "url": "https://elmnoor.com/ar/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://elmnoor.com/ar/universities.html#logo",
+          "url": "https://elmnoor.com/images/icon-512.webp"
+        },
+        "description": "منصة تعليمية تقدم أدلة وخدمات شاملة للطلاب العرب للدراسة في ماليزيا",
+        "sameAs": [
+          "https://twitter.com/elmnoor",
+          "https://www.facebook.com/elmnoor",
+          "https://www.instagram.com/elmnooor"
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://elmnoor.com/ar/universities.html#webpage",
+        "url": "https://elmnoor.com/ar/universities.html",
+        "name": "الجامعات | علم ونور",
+        "description": "تعرف على أفضل الجامعات الماليزية المعتمدة وروابطها الرسمية وبرامجها.",
+        "inLanguage": "ar",
+        "mainEntity": {
+          "@id": "https://elmnoor.com/ar/universities.html#universities-list"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://elmnoor.com/ar/universities.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "الرئيسية",
+            "item": "https://elmnoor.com/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "الجامعات",
+            "item": "https://elmnoor.com/ar/universities.html"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://elmnoor.com/ar/universities.html#universities-list",
+        "name": "الجامعات المتاحة في ماليزيا",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 1,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CollegeOrUniversity",
+              "name": "جامعة ملتميديا (MMU)",
+              "alternateName": "MMU",
+              "url": "https://www.mmu.edu.my",
+              "description": "أول جامعة خاصة في ماليزيا، رائدة في التعليم التقني والرقمي، ولها حرم في سايبرجايا وملاكا.",
+              "sameAs": ["https://www.mmu.edu.my"],
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "MY",
+                "addressLocality": "Cyberjaya / Melaka"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -106,7 +166,7 @@
           <a href="/ar/#majors" class="nav-link">التخصصات</a>
           <a href="/ar/universities.html" class="nav-link active">الجامعات</a>
           <a href="/ar/services.html" class="nav-link">الخدمات</a>
-          <a href="/ar/life-in-malaysia-student-guide.html" class="nav-link">الدليل</a>
+          <a href="/ar/universities.html" class="nav-link">الدليل</a>
           <a href="/ar/articles.html" class="nav-link">المقالات</a>
 
           <a href="/en/universities.html" class="lang-btn" aria-label="تبديل اللغة">

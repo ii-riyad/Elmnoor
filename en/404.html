@@ -26,6 +26,32 @@
 
   <!-- Critical CSS (blocking) -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://elmnoor.com/en/404.html#organization",
+        "name": "Elm w Noor",
+        "url": "https://elmnoor.com/en/",
+        "logo": "https://elmnoor.com/images/icon-512.webp",
+        "description": "An educational platform offering comprehensive guides and student support services for studying in Malaysia."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://elmnoor.com/en/404.html#webpage",
+        "url": "https://elmnoor.com/en/404.html",
+        "name": "Page Not Found | Elm w Noor",
+        "description": "404 error page for the Elm w Noor English website.",
+        "inLanguage": "en",
+        "about": { "@id": "https://elmnoor.com/en/404.html#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>

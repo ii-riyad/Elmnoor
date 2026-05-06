@@ -75,150 +75,137 @@
   <script src="/js/gtag-init.js" defer></script>
   <script src="https://www.googletagmanager.com/gtag/js?id=G-4J70S0ZD47" async></script>
 
-  <!-- JSON-LD Structured Data - Article Schema -->
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "التقرير الاستراتيجي الشامل: استدامة الاستقرار الجيوسياسي والبيئة التعليمية الآمنة في ماليزيا لعام 2026",
-    "description": "دليل تحليلي شامل لأولياء الأمور في الشرق الأوسط حول الأمان والاستقرار والتعليم في ماليزيا",
-    "image": "https://elmnoor.com/images/og-cover.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "Elm w Noor",
-      "url": "https://elmnoor.com/ar/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://elmnoor.com/images/logo.webp"
-      }
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Elm w Noor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://elmnoor.com/images/logo.webp"
-      }
-    },
-    "datePublished": "2026-03-01",
-    "dateModified": "2026-03-06",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://elmnoor.com/ar/articles.html"
-    },
-    "articleSection": "Education",
-    "keywords": "الدراسة في ماليزيا 2026, أمان ماليزيا, استقرار جيوسياسي, جامعات ماليزيا, مؤشر السلام العالمي, الطلاب العرب",
-    "inLanguage": "ar",
-    "wordCount": 5000,
-    "timeRequired": "PT45M",
-    "about": [
+    "@graph": [
       {
-        "@type": "Thing",
-        "name": "ماليزيا",
-        "sameAs": "https://en.wikipedia.org/wiki/Malaysia"
+        "@type": "Organization",
+        "@id": "https://elmnoor.com/ar/articles.html#organization",
+        "name": "Elm w Noor - علم ونور",
+        "url": "https://elmnoor.com/ar/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://elmnoor.com/ar/articles.html#logo",
+          "url": "https://elmnoor.com/images/icon-512.webp"
+        },
+        "description": "منصة تعليمية تقدم أدلة شاملة للطلاب العرب للدراسة في ماليزيا",
+        "sameAs": [
+          "https://x.com/elmnoor",
+          "https://www.facebook.com/elmnoor",
+          "https://www.instagram.com/elmnooor"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+60-18-873-4519",
+          "availableLanguage": ["Arabic", "English"],
+          "areaServed": ["MY", "SA", "AE", "EG", "JO", "IQ", "SY", "LB"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "MY"
+        }
       },
       {
-        "@type": "Thing",
-        "name": "التعليم العالي",
-        "sameAs": "https://en.wikipedia.org/wiki/Higher_education"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data - BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "الرئيسية",
-        "item": "https://elmnoor.com/ar/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "المقالات",
-        "item": "https://elmnoor.com/ar/articles.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
+        "@type": "WebPage",
+        "@id": "https://elmnoor.com/ar/articles.html#webpage",
+        "url": "https://elmnoor.com/ar/articles.html",
         "name": "التقرير الاستراتيجي الشامل - ماليزيا 2026",
-        "item": "https://elmnoor.com/ar/articles.html"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data - Educational Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Elm w Noor - علم ونور",
-    "url": "https://elmnoor.com/ar/",
-    "logo": "https://elmnoor.com/images/logo.webp",
-    "description": "منصة تعليمية تقدم أدلة شاملة للطلاب العرب للدراسة في ماليزيا",
-    "sameAs": [
-      "https://www.facebook.com/elmnoor",
-      "https://twitter.com/elmnoor",
-      "https://www.instagram.com/elmnooor"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "telephone": "+60-18-873-4519",
-      "availableLanguage": ["Arabic", "English"],
-      "areaServed": ["MY", "SA", "AE", "EG", "JO", "IQ", "SY", "LB"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "MY"
-    }
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data - FAQPage Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "هل ماليزيا آمنة للطلاب العرب في 2026؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "نعم، ماليزيا احتلت المرتبة 13 عالمياً في مؤشر السلام العالمي لعام 2025، متفوقة على قوى غربية تقليدية. تقع ضمن فئة 'السلام المرتفع جداً' مع معدلات جريمة منخفضة للغاية."
-        }
+        "description": "دليل تحليلي شامل لأولياء الأمور في الشرق الأوسط حول الأمان والاستقرار والتعليم في ماليزيا",
+        "inLanguage": "ar",
+        "mainEntity": { "@id": "https://elmnoor.com/ar/articles.html#article" },
+        "breadcrumb": { "@id": "https://elmnoor.com/ar/articles.html#breadcrumb" }
       },
       {
-        "@type": "Question",
-        "name": "كم تبلغ تكاليف الدراسة والمعيشة في ماليزيا 2026؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "يمكن للطالب العيش حياة كريمة بميزانية شهرية 400-700 دولار أمريكي شاملة السكن والطعام والمواصلات. السكن يتراوح بين 100-500 دولار، الطعام 10-15 دولار يومياً، والمواصلات 30-50 دولار شهرياً."
-        }
+        "@type": "Article",
+        "@id": "https://elmnoor.com/ar/articles.html#article",
+        "headline": "التقرير الاستراتيجي الشامل: استدامة الاستقرار الجيوسياسي والبيئة التعليمية الآمنة في ماليزيا لعام 2026",
+        "description": "دليل تحليلي شامل لأولياء الأمور في الشرق الأوسط حول الأمان والاستقرار والتعليم في ماليزيا",
+        "image": "https://elmnoor.com/images/og-cover.webp",
+        "author": { "@id": "https://elmnoor.com/ar/articles.html#organization" },
+        "publisher": { "@id": "https://elmnoor.com/ar/articles.html#organization" },
+        "datePublished": "2026-03-01",
+        "dateModified": "2026-03-06",
+        "mainEntityOfPage": { "@id": "https://elmnoor.com/ar/articles.html" },
+        "articleSection": "Education",
+        "keywords": "الدراسة في ماليزيا 2026, أمان ماليزيا, استقرار جيوسياسي, جامعات ماليزيا, مؤشر السلام العالمي, الطلاب العرب",
+        "inLanguage": "ar",
+        "about": [
+          {
+            "@type": "Thing",
+            "@id": "https://en.wikipedia.org/wiki/Malaysia",
+            "name": "ماليزيا",
+            "sameAs": "https://en.wikipedia.org/wiki/Malaysia"
+          },
+          {
+            "@type": "Thing",
+            "@id": "https://en.wikipedia.org/wiki/Higher_education",
+            "name": "التعليم العالي",
+            "sameAs": "https://en.wikipedia.org/wiki/Higher_education"
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "ما هي أفضل الجامعات الماليزية في 2026؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "جامعة مالايا (UM) في المرتبة 58 عالمياً، الجامعة الوطنية (UKM) 126، جامعة بوترا (UPM) 134، جامعة العلوم (USM) 134، وجامعة التكنولوجيا (UTM) 153 حسب تصنيف QS 2026."
-        }
+        "@type": "BreadcrumbList",
+        "@id": "https://elmnoor.com/ar/articles.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "الرئيسية",
+            "item": "https://elmnoor.com/ar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "التقرير الاستراتيجي الشامل - ماليزيا 2026",
+            "item": { "@id": "https://elmnoor.com/ar/articles.html" }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "هل ماليزيا مناسبة للطلاب المسلمين؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "نعم تماماً، ماليزيا دولة إسلامية ذات طابع عالمي. المساجد متوفرة في كل مكان، الطعام حلال 100%، وتعيش جالية عربية تتجاوز 200,000 نسمة."
-        }
+        "@type": "FAQPage",
+        "@id": "https://elmnoor.com/ar/articles.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/ar/articles.html#faq-safety",
+            "name": "هل ماليزيا آمنة للطلاب العرب في 2026؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، ماليزيا احتلت المرتبة 13 عالمياً في مؤشر السلام العالمي لعام 2025، متفوقة على قوى غربية تقليدية. تقع ضمن فئة 'السلام المرتفع جداً' مع معدلات جريمة منخفضة للغاية."
+            }
+          },
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/ar/articles.html#faq-costs",
+            "name": "كم تبلغ تكاليف الدراسة والمعيشة في ماليزيا 2026؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "يمكن للطالب العيش حياة كريمة بميزانية شهرية 400-700 دولار أمريكي شاملة السكن والطعام والمواصلات. السكن يتراوح بين 100-500 دولار، الطعام 10-15 دولار يومياً، والمواصلات 30-50 دولار شهرياً."
+            }
+          },
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/ar/articles.html#faq-universities",
+            "name": "ما هي أفضل الجامعات الماليزية في 2026؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "جامعة مالايا (UM) في المرتبة 58 عالمياً، الجامعة الوطنية (UKM) 126، جامعة بوترا (UPM) 134، جامعة العلوم (USM) 134، وجامعة التكنولوجيا (UTM) 153 حسب تصنيف QS 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/ar/articles.html#faq-muslims",
+            "name": "هل ماليزيا مناسبة للطلاب المسلمين؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم تماماً، ماليزيا دولة إسلامية ذات طابع عالمي. المساجد متوفرة في كل مكان، الطعام حلال 100%، وتعيش جالية عربية تتجاوز 200,000 نسمة."
+            }
+          }
+        ]
       }
     ]
   }

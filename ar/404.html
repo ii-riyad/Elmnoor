@@ -26,6 +26,32 @@
 
   <!-- Critical CSS (blocking) -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://elmnoor.com/ar/404.html#organization",
+        "name": "Elm w Noor - علم ونور",
+        "url": "https://elmnoor.com/ar/",
+        "logo": "https://elmnoor.com/images/icon-512.webp",
+        "description": "منصة تعليمية تقدم أدلة وخدمات شاملة للطلاب العرب للدراسة في ماليزيا"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://elmnoor.com/ar/404.html#webpage",
+        "url": "https://elmnoor.com/ar/404.html",
+        "name": "الصفحة غير موجودة | علم ونور",
+        "description": "صفحة خطأ 404 لموقع علم ونور باللغة العربية.",
+        "inLanguage": "ar",
+        "about": { "@id": "https://elmnoor.com/ar/404.html#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>

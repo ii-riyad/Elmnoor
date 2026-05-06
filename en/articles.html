@@ -75,150 +75,137 @@
   <script src="/js/gtag-init.js" defer></script>
   <script src="https://www.googletagmanager.com/gtag/js?id=G-4J70S0ZD47" async></script>
 
-  <!-- JSON-LD Structured Data - Article Schema -->
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "التقرير الاستراتيجي الشامل: استدامة الاستقرار الجيوسياسي والبيئة التعليمية الآمنة في ماليزيا لعام 2026",
-    "description": "دليل تحليلي شامل لأولياء الأمور في الشرق الأوسط حول الأمان والاستقرار والتعليم في ماليزيا",
-    "image": "https://elmnoor.com/images/og-cover.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "Elm w Noor",
-      "url": "https://elmnoor.com/en/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://elmnoor.com/images/logo.webp"
-      }
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Elm w Noor",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://elmnoor.com/images/logo.webp"
-      }
-    },
-    "datePublished": "2026-03-01",
-    "dateModified": "2026-03-06",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://elmnoor.com/en/articles.html"
-    },
-    "articleSection": "Education",
-    "keywords": "الدراسة في ماليزيا 2026, أمان ماليزيا, استقرار جيوسياسي, جامعات ماليزيا, مؤشر السلام العالمي, الطلاب العرب",
-    "inLanguage": "ar",
-    "wordCount": 5000,
-    "timeRequired": "PT45M",
-    "about": [
+    "@graph": [
       {
-        "@type": "Thing",
-        "name": "ماليزيا",
-        "sameAs": "https://en.wikipedia.org/wiki/Malaysia"
-      },
-      {
-        "@type": "Thing",
-        "name": "التعليم العالي",
-        "sameAs": "https://en.wikipedia.org/wiki/Higher_education"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data - BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "الرئيسية",
-        "item": "https://elmnoor.com/en/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "المقالات",
-        "item": "https://elmnoor.com/en/articles.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "التقرير الاستراتيجي الشامل - ماليزيا 2026",
-        "item": "https://elmnoor.com/en/articles.html"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data - Educational Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Elm w Noor - علم ونور",
-    "url": "https://elmnoor.com/en/",
-    "logo": "https://elmnoor.com/images/logo.webp",
-    "description": "منصة تعليمية تقدم أدلة شاملة للطلاب العرب للدراسة في ماليزيا",
-    "sameAs": [
-      "https://www.facebook.com/elmnoor",
-      "https://twitter.com/elmnoor",
-      "https://www.instagram.com/elmnooor"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "telephone": "+60-18-873-4519",
-      "availableLanguage": ["Arabic", "English"],
-      "areaServed": ["MY", "SA", "AE", "EG", "JO", "IQ", "SY", "LB"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "MY"
-    }
-  }
-  </script>
-
-  <!-- JSON-LD Structured Data - FAQPage Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "هل ماليزيا آمنة للطلاب العرب في 2026؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "نعم، ماليزيا احتلت المرتبة 13 عالمياً في مؤشر السلام العالمي لعام 2025، متفوقة على قوى غربية تقليدية. تقع ضمن فئة 'السلام المرتفع جداً' مع معدلات جريمة منخفضة للغاية."
+        "@type": "Organization",
+        "@id": "https://elmnoor.com/en/articles.html#organization",
+        "name": "Elm w Noor",
+        "url": "https://elmnoor.com/en/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://elmnoor.com/en/articles.html#logo",
+          "url": "https://elmnoor.com/images/icon-512.webp"
+        },
+        "description": "An educational platform offering comprehensive guides and student support services for studying in Malaysia.",
+        "sameAs": [
+          "https://x.com/elmnoor",
+          "https://www.facebook.com/elmnoor",
+          "https://www.instagram.com/elmnooor"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+60-18-873-4519",
+          "availableLanguage": ["Arabic", "English"],
+          "areaServed": ["MY", "SA", "AE", "EG", "JO", "IQ", "SY", "LB"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "MY"
         }
       },
       {
-        "@type": "Question",
-        "name": "كم تبلغ تكاليف الدراسة والمعيشة في ماليزيا 2026؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "يمكن للطالب العيش حياة كريمة بميزانية شهرية 400-700 دولار أمريكي شاملة السكن والطعام والمواصلات. السكن يتراوح بين 100-500 دولار، الطعام 10-15 دولار يومياً، والمواصلات 30-50 دولار شهرياً."
-        }
+        "@type": "WebPage",
+        "@id": "https://elmnoor.com/en/articles.html#webpage",
+        "url": "https://elmnoor.com/en/articles.html",
+        "name": "Comprehensive Strategic Report - Malaysia 2026",
+        "description": "A strategic analysis for families on safety, stability, and education in Malaysia in 2026.",
+        "inLanguage": "en",
+        "mainEntity": { "@id": "https://elmnoor.com/en/articles.html#article" },
+        "breadcrumb": { "@id": "https://elmnoor.com/en/articles.html#breadcrumb" }
       },
       {
-        "@type": "Question",
-        "name": "ما هي أفضل الجامعات الماليزية في 2026؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "جامعة مالايا (UM) في المرتبة 58 عالمياً، الجامعة الوطنية (UKM) 126، جامعة بوترا (UPM) 134، جامعة العلوم (USM) 134، وجامعة التكنولوجيا (UTM) 153 حسب تصنيف QS 2026."
-        }
+        "@type": "Article",
+        "@id": "https://elmnoor.com/en/articles.html#article",
+        "headline": "Comprehensive Strategic Report: Geopolitical Stability and Safe Education Environment in Malaysia 2026",
+        "description": "A strategic analysis for families on safety, stability, and education in Malaysia in 2026.",
+        "image": "https://elmnoor.com/images/og-cover.webp",
+        "author": { "@id": "https://elmnoor.com/en/articles.html#organization" },
+        "publisher": { "@id": "https://elmnoor.com/en/articles.html#organization" },
+        "datePublished": "2026-03-01",
+        "dateModified": "2026-03-06",
+        "mainEntityOfPage": { "@id": "https://elmnoor.com/en/articles.html#webpage" },
+        "articleSection": "Education",
+        "keywords": "study in Malaysia 2026, Malaysia safety, geopolitical stability, Malaysian universities, Global Peace Index, Arab students",
+        "inLanguage": "en",
+        "about": [
+          {
+            "@type": "Thing",
+            "@id": "https://en.wikipedia.org/wiki/Malaysia",
+            "name": "Malaysia",
+            "sameAs": "https://en.wikipedia.org/wiki/Malaysia"
+          },
+          {
+            "@type": "Thing",
+            "@id": "https://en.wikipedia.org/wiki/Higher_education",
+            "name": "Higher education",
+            "sameAs": "https://en.wikipedia.org/wiki/Higher_education"
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "هل ماليزيا مناسبة للطلاب المسلمين؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "نعم تماماً، ماليزيا دولة إسلامية ذات طابع عالمي. المساجد متوفرة في كل مكان، الطعام حلال 100%، وتعيش جالية عربية تتجاوز 200,000 نسمة."
-        }
+        "@type": "BreadcrumbList",
+        "@id": "https://elmnoor.com/en/articles.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://elmnoor.com/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Comprehensive Strategic Report - Malaysia 2026",
+            "item": { "@id": "https://elmnoor.com/en/articles.html#webpage" }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://elmnoor.com/en/articles.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/en/articles.html#faq-safety",
+            "name": "Is Malaysia safe for Arab students in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Malaysia ranked 13th globally in the 2025 Global Peace Index, placing it in the very high peace category with low crime rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/en/articles.html#faq-costs",
+            "name": "How much does studying and living in Malaysia cost in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A student can usually live comfortably on 400-700 USD per month including housing, food, and transport. Housing often ranges from 100-500 USD, food around 10-15 USD per day, and transport about 30-50 USD per month."
+            }
+          },
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/en/articles.html#faq-universities",
+            "name": "What are the top Malaysian universities in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Top universities include University of Malaya (UM), UKM, UPM, USM, and UTM according to QS 2026 rankings."
+            }
+          },
+          {
+            "@type": "Question",
+            "@id": "https://elmnoor.com/en/articles.html#faq-muslims",
+            "name": "Is Malaysia suitable for Muslim students?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Malaysia offers a Muslim-friendly environment with accessible mosques, halal food options, and diverse international communities."
+            }
+          }
+        ]
       }
     ]
   }
