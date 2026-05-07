@@ -18,10 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-.fonts-loaded body {
-  font-family: 'Changa', sans-serif
-}
-
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -168,167 +164,6 @@ body {
   background: #009185
 }
 
-/* Hero Section - Now uses unified style from style.css */
-/* Removed old styles - using global hero styles */
-
-.accordion-container {
-  margin: 2rem 0
-}
-
-.accordion-item {
-  background: #fff;
-  border: 4px solid #000;
-  border-radius: 15px;
-  margin-bottom: 1.5rem;
-  box-shadow: 6px 6px 0 0 #000;
-  overflow: hidden
-}
-
-.accordion-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: #00A99D;
-  color: #fff;
-  cursor: pointer;
-  transition: all .3s ease;
-  border: none;
-  width: 100%;
-  font-size: 1.1rem;
-  font-weight: bold;
-  font-family: 'Changa', cursive;
-  text-align: left
-}
-
-.accordion-header:hover,
-.accordion-header.active {
-  background: #009185
-}
-
-.accordion-header:hover {
-  transform: translateY(-2px)
-}
-
-.accordion-icon {
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  border: 3px solid #000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #00A99D;
-  font-weight: bold;
-  font-size: 1.3rem;
-  transition: transform .3s ease
-}
-
-.accordion-header.active .accordion-icon {
-  transform: rotate(180deg)
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease;
-  padding: 0 1.5rem
-}
-
-.accordion-content.active {
-  max-height: 2000px;
-  padding: 1.5rem
-}
-
-.accordion-content p,
-.challenge-content p {
-  margin-bottom: 1rem;
-  line-height: 1.8
-}
-
-.accordion-content h4,
-.challenge-content h4 {
-  font-size: 1.2rem;
-  color: #00A99D;
-  margin-top: 1.5rem;
-  margin-bottom: .8rem;
-  font-weight: bold
-}
-
-.overview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0
-}
-
-.overview-card,
-.challenge-card {
-  border: 4px solid #000;
-  border-radius: 15px;
-  box-shadow: 6px 6px 0 0 #000;
-  transition: transform .2s ease
-}
-
-.overview-card {
-  background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
-  padding: 1.5rem;
-  color: #fff;
-  text-align: center
-}
-
-.overview-card:hover,
-.challenge-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 8px 0 0 #000
-}
-
-.overview-card i {
-  font-size: 2.5rem;
-  margin-bottom: .5rem;
-  display: block
-}
-
-.overview-card h3 {
-  font-size: 1.1rem;
-  margin: .5rem 0;
-  font-weight: bold
-}
-
-.challenge-card {
-  background: #fff;
-  padding: 2rem;
-  margin-bottom: 2rem
-}
-
-.challenge-icon {
-  width: 60px;
-  height: 60px;
-  background: #00A99D;
-  border: 4px solid #000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  color: #FDFCF5;
-  margin-bottom: 1rem
-}
-
-.challenge-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #2C3E50;
-  font-weight: bold;
-  font-family: 'Changa', cursive
-}
-
-.challenge-content strong {
-  color: #2C3E50;
-  font-weight: bold
-}
-
 .tip-box,
 .alert-box,
 .success-box {
@@ -385,7 +220,7 @@ body {
 }
 
 .conclusion-section,
-.footer {
+footer {
   background: #2C3E50;
   color: #FDFCF5;
   border-top: 5px solid #000;
@@ -607,45 +442,6 @@ body {
   color: #FFF;
   right: 430px;
   box-shadow: 6px 6px 0 0 #000
-}
-
-.scroll-to-top-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 50px;
-  height: 50px;
-  background: #00C9B0;
-  border: 4px solid #000;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: #FFF;
-  z-index: 997;
-  box-shadow: 4px 4px 0 0 #000;
-  transition: all .3s ease;
-  font-weight: bold;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none
-}
-
-.scroll-to-top-btn.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto
-}
-
-.scroll-to-top-btn:hover {
-  background: #00B5A0;
-  transform: scale(1.1)
-}
-
-.scroll-to-top-btn:active {
-  box-shadow: 2px 2px 0 0 #000
 }
 
 .swipeable-section {
@@ -880,7 +676,7 @@ body {
   }
 }
 
-.footer {
+footer {
   padding: 2rem 0
 }
 
@@ -1062,13 +858,6 @@ body {
     height: 45px;
     font-size: 1.2rem;
   }
-
-  .scroll-to-top-btn {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
-    bottom: 75px;
-  }
 }
 
 /* Small Mobile (375px - 413px) */
@@ -1234,14 +1023,6 @@ body {
 
   .container {
     padding: 0 15px
-  }
-
-  .challenge-card {
-    padding: 1.5rem
-  }
-
-  .challenge-title {
-    font-size: 1.4rem
   }
 
   .nav-links {
@@ -1451,13 +1232,6 @@ body {
   .toc-icon {
     font-size: 1.4rem;
     width: auto
-  }
-
-  .scroll-to-top-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-    bottom: 80px
   }
 }
 
