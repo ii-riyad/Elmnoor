@@ -78,7 +78,7 @@
 }
 
 .fees-table thead {
-  background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
+  background: #009185;
   color: #fff;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .uni-header {
-  background: linear-gradient(135deg, #00A99D 0%, #009185 100%);
+  background: #009185;
   color: #fff;
   padding: 1.4rem 1.7rem;
   display: flex;
@@ -225,7 +225,7 @@
 
 /* Featured University */
 .featured-uni .uni-header {
-  background: linear-gradient(135deg, #FF6B6B 0%, #E94E4E 100%);
+  background: #E94E4E;
 }
 
 .featured-uni .uni-rank {
@@ -355,7 +355,7 @@
 
 /* CTA Box */
 .cta-box {
-  background: linear-gradient(135deg, #0F9D92 0%, #00A99D 100%);
+  background: #00A99D;
   color: white;
   padding: 2rem;
   border-radius: 15px;

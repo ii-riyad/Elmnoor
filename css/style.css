@@ -4,11 +4,6 @@
   --color-dark: #2C3E50;
   --color-beige: #FDFCF5;
   --color-white: #FFF;
-  --shihab-dark-blue: #2C3E50;
-  --shihab-turquoise: #00A99D;
-  --shihab-cream: #FDFCF5;
-  --shihab-white: #FFF;
-  --shihab-comic-black: #000;
   --font-body: 'Changa', sans-serif;
   --shadow-hard: 6px 6px 0 0 #000;
   --shadow-hard-hover: 10px 10px 0 0 #000;
@@ -206,41 +201,6 @@ html[lang="ar"] .whatsapp-float {
   color: var(--color-dark)
 }
 
-.btn-cinema {
-  background: linear-gradient(120deg, #ff6b6b, #f59e0b, #00a99d);
-  background-size: 220% 220%;
-  color: #fff;
-  border-color: #000;
-  border: var(--border-std) !important;
-  border-radius: 15px !important;
-  box-shadow: var(--shadow-hard), 0 0 18px rgba(255, 107, 107, .45);
-  transition: transform .25s ease, box-shadow .25s ease, background-position .6s ease;
-  animation: cinemaGlow 3s ease-in-out infinite
-}
-
-.btn-cinema:hover {
-  background-position: 100% 50%;
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 0 0 #000, 0 0 26px rgba(245, 158, 11, .55)
-}
-
-.btn-cinema:active {
-  transform: translateY(1px) scale(.99);
-  box-shadow: 0 4px 0 0 #000, 0 0 14px rgba(0, 169, 157, .4)
-}
-
-@keyframes cinemaGlow {
-
-  0%,
-  100% {
-    box-shadow: 0 6px 0 0 #000, 0 0 18px rgba(255, 107, 107, .45)
-  }
-
-  50% {
-    box-shadow: 0 6px 0 0 #000, 0 0 26px rgba(245, 158, 11, .6)
-  }
-}
-
 .hero-buttons {
   display: flex;
   gap: 0.8rem;
@@ -311,13 +271,14 @@ html[lang="ar"] .whatsapp-float {
   font-size: 1.5rem;
   color: var(--color-beige);
   text-decoration: none;
-  white-space: nowrap
+  white-space: nowrap;
+  font-weight: bold;
 }
 
 .logo-tagline {
   margin: 0;
   font-size: .75rem;
-  color: var(--color-primary);
+  color: #00EBDB;
   font-weight: bold;
   letter-spacing: .5px;
   font-style: italic;
@@ -391,7 +352,7 @@ html[lang="ar"] .whatsapp-float {
 
 .hero {
   background-color: var(--color-dark);
-  background-image: radial-gradient(rgba(253, 252, 245, .1) 1px, transparent 0);
+  background-image: #fdfcf51a;
   background-size: 12px 12px;
   color: var(--color-beige);
   padding: 5rem 0;
@@ -408,7 +369,7 @@ html[lang="ar"] .whatsapp-float {
 .universities-hero,
 .services-hero {
   background-color: var(--color-dark);
-  background-image: radial-gradient(rgba(253, 252, 245, .1) 1px, transparent 0);
+  background-image: #fdfcf51a;
   background-size: 12px 12px;
   color: var(--color-beige);
   padding: 5rem 0 4rem;
@@ -531,7 +492,7 @@ html[lang="en"] .hero-text {
 .universities-section {
   padding: 4rem 0 7rem 0;
   background-color: var(--color-beige);
-  background-image: radial-gradient(rgba(44, 62, 80, .08) 1px, transparent 0);
+  background-image: #2c3e5014;
   background-size: 12px 12px;
   position: relative;
   overflow-x: hidden;
@@ -649,7 +610,7 @@ html[lang="en"] .hero-text {
 }
 
 .cta-section {
-  background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+  background: var(--color-dark);
   color: var(--color-beige);
   padding: 4rem 0;
   text-align: center;
@@ -686,8 +647,8 @@ html[lang="en"] .hero-text {
 }
 
 .cta-btn-main {
-  background: var(--color-primary);
-  color: var(--color-white)
+  background: #FFFFFF;
+  color: #00615A;
 }
 
 .cta-btn-secondary {
@@ -764,8 +725,8 @@ footer {
 
 .pricing-drawer-close {
   background: transparent;
-  border: 3px solid var(--shihab-cream);
-  color: var(--shihab-cream);
+  border: 3px solid var(--color-beige);
+  color: var(--color-beige);
   padding: .6rem 1rem;
   border-radius: 10px;
   cursor: pointer;
@@ -784,7 +745,7 @@ footer {
 
 .pricing-drawer-content {
   padding: 1.5rem;
-  background: var(--shihab-cream)
+  background: var(--color-beige)
 }
 
 .pricing-drawer-content {
@@ -951,7 +912,7 @@ html[lang="en"] .back-to-top {
 .services-detail-section {
   padding: 4rem 0;
   background-color: #FDFCF5;
-  background-image: radial-gradient(rgba(44, 62, 80, .08) 1px, transparent 0);
+  background-image: #2c3e5014;
   background-size: 12px 12px
 }
 
@@ -1036,7 +997,7 @@ html[lang="en"] .back-to-top {
 .feedback-section {
   padding: 4rem 0;
   background-color: #f0f9f8;
-  background-image: radial-gradient(rgba(0, 169, 157, .05) 1px, transparent 0);
+  background-image: #00a99d0d;
   background-size: 20px 20px;
 }
 
@@ -1122,7 +1083,7 @@ html[lang="en"] .back-to-top {
 .trip-section {
   padding: 4rem 0;
   background-color: var(--color-beige);
-  background-image: radial-gradient(rgba(44, 62, 80, .08) 1px, transparent 0);
+  background-image: #2c3e5014;
   background-size: 12px 12px;
 }
 
@@ -1174,7 +1135,7 @@ html[lang="en"] .back-to-top {
   grid-column: span 2;
   grid-row: span 2;
   padding: 2rem;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #00d4c4 100%);
+  background: #00d4c4;
   display: flex;
   flex-direction: column;
 }
@@ -1191,7 +1152,7 @@ html[lang="en"] .back-to-top {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: rgba(0, 0, 0, 0.8);
   padding: 1rem;
   color: #fff;
   font-weight: bold;
@@ -1903,7 +1864,7 @@ html[lang="en"] .university-rank {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    background: var(--color-primary);
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
@@ -1943,9 +1904,7 @@ html[lang="en"] .university-rank {
   }
 
   .service-icon-featured {
-    background: linear-gradient(135deg,
-        var(--color-primary),
-        var(--color-secondary));
+    background: var(--color-primary);
     color: #fff;
     border-color: #000;
     animation: iconFloat 3s ease-in-out infinite;
@@ -1992,7 +1951,7 @@ html[lang="en"] .university-rank {
   }
 
   .btn-service-featured {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) !important;
+    background: var(--color-primary) !important;
     color: #fff !important;
     border-color: #000 !important;
   }
@@ -2006,7 +1965,7 @@ html[lang="en"] .university-rank {
   /* ===== MOBILE-OPTIMIZED CTA SECTION ===== */
   .cta-section {
     padding: 3rem 0;
-    background: linear-gradient(135deg, var(--color-dark) 0%, #1a4d48 100%);
+    background: #1a4d48;
     position: relative;
     overflow: hidden;
   }
@@ -2018,7 +1977,7 @@ html[lang="en"] .university-rank {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(rgba(253, 252, 245, .08) 1.5px, transparent 0);
+    background-image: #fdfcf514;
     background-size: 15px 15px;
     pointer-events: none;
   }
@@ -2178,7 +2137,7 @@ html[lang="en"] .university-rank {
 
   .university-header {
     padding: 2rem 1.5rem 1.5rem;
-    background: linear-gradient(135deg, rgba(0, 169, 157, 0.08) 0%, rgba(251, 191, 36, 0.05) 100%);
+    background: #fbbf240d;
   }
 
   .university-name {
