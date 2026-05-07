@@ -187,12 +187,12 @@ html[lang="ar"] .whatsapp-float {
 }
 
 .btn-primary {
-  background: var(--color-primary);
-  color: var(--color-white)
+  background: #FFFFFF;
+  color: #00615A
 }
 
 .btn-primary:hover {
-  background: #009185
+  background: #E6E6E6;
 }
 
 .btn-secondary {
@@ -1098,14 +1098,13 @@ html[lang="en"] .back-to-top {
 }
 
 .feedback-text {
-  color: var(--color-dark);
+  color: #00615A;
   line-height: 1.8;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
 
 .feedback-text strong {
-  color: var(--color-primary);
   font-weight: bold;
 }
 

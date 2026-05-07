@@ -74,7 +74,7 @@ body {
 .logo-tagline {
   margin: 0;
   font-size: .75rem;
-  color: #00A99D;
+  color: #00EBDB;
   font-weight: bold;
   letter-spacing: .5px;
   font-style: italic;
@@ -156,12 +156,12 @@ body {
 }
 
 .btn-primary {
-  background: #00A99D;
-  color: #fff
+  background: #FFFFFF;
+  color: #00615A
 }
 
 .btn-primary:hover {
-  background: #009185
+  background: #E6E6E6;
 }
 
 .tip-box,
