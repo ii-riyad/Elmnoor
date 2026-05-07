@@ -1,4 +1,5 @@
 Options -Indexes
+AddDefaultCharset UTF-8
 ErrorDocument 404 /ar/404.html
 
 # Use language-specific 404 pages based on requested URL; Arabic remains default.
