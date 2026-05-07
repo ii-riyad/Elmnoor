@@ -1,69 +1,29 @@
 ;(() => {
   'use strict'
 
-  const handle = document.getElementById('mmuPricingHandle')
-  const drawer = document.getElementById('mmuPricingDrawer')
-  const overlay = document.getElementById('mmuPricingOverlay')
-  const closeBtn = document.getElementById('mmuPricingClose')
-  const content = document.getElementById('mmuPricingContent')
+  const handle = /** @type {HTMLButtonElement} */ (document.getElementById('mmuPricingHandle'))
+  const drawer = /** @type {HTMLDivElement} */ (document.getElementById('mmuPricingDrawer'))
+  const overlay = /** @type {HTMLDivElement} */ (document.getElementById('mmuPricingOverlay'))
 
-  /**
-   * @returns {void}
-   */
+  if (!handle || !drawer || !overlay) return
+
   function openDrawer() {
-    if (!drawer || !overlay || !handle) return
     drawer.classList.add('open')
     overlay.classList.add('show')
     handle.setAttribute('aria-expanded', 'true')
     drawer.setAttribute('aria-hidden', 'false')
   }
 
-  /**
-   * @returns {void}
-   */
   function closeDrawer() {
-    if (!drawer || !overlay || !handle) return
     drawer.classList.remove('open')
     overlay.classList.remove('show')
     handle.setAttribute('aria-expanded', 'false')
     drawer.setAttribute('aria-hidden', 'true')
   }
 
-  if (handle) handle.addEventListener('click', openDrawer)
-  if (overlay) overlay.addEventListener('click', closeDrawer)
-  if (closeBtn) closeBtn.addEventListener('click', closeDrawer)
+  handle.addEventListener('click', openDrawer)
+  overlay.addEventListener('click', closeDrawer)
 
-  /** @type {number|null} */
-  let startX = null
-  let opened = false
-
-  if (handle) {
-    handle.addEventListener('pointerdown', (e) => {
-      startX = e.clientX
-      opened = false
-      handle.setPointerCapture(e.pointerId)
-    })
-
-    handle.addEventListener('pointermove', (e) => {
-      if (startX !== null && !opened) {
-        const dx = e.clientX - startX
-        if (dx > 40) {
-          openDrawer()
-          opened = true
-        }
-      }
-    })
-
-    handle.addEventListener('pointerup', () => {
-      startX = null
-      opened = false
-    })
-  }
-
-  const note = document.querySelector('.pricing-note')
-  const accordion = document.querySelector('.pricing-accordion')
-  if (content && accordion) {
-    if (note) content.appendChild(note)
-    content.appendChild(accordion)
-  }
+  const closeBtn = /** @type {HTMLButtonElement} */ (document.getElementById('mmuPricingClose'))
+  closeBtn?.addEventListener('click', closeDrawer)
 })()

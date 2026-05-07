@@ -183,17 +183,543 @@
   </nav>
   <!-- MMU Pricing Drawer Handle & Container -->
   <button aria-controls="mmuPricingDrawer" aria-expanded="false" aria-label="عرض أسعار MMU" class="pricing-handle"
-    id="mmuPricingHandle"><i aria-hidden="true" class="fas fa-money-bill-wave"></i> الأسعار</button>
+    id="mmuPricingHandle">
+    <i aria-hidden="true" class="fas fa-money-bill-wave"></i> الأسعار
+  </button>
   <div aria-hidden="true" class="pricing-drawer-overlay" id="mmuPricingOverlay"></div>
   <aside aria-hidden="true" aria-labelledby="mmuPricingTitle" class="pricing-drawer" id="mmuPricingDrawer"
     role="dialog">
     <div class="pricing-drawer-header">
-      <span class="pricing-drawer-title" id="mmuPricingTitle"><i aria-hidden="true" class="fas fa-money-bill-wave"></i>
-        أسعار جامعة ملتميديا (MMU)</span>
-      <button class="pricing-drawer-close" id="mmuPricingClose"><i aria-hidden="true" class="fas fa-times"></i>
-        إغلاق</button>
+      <span class="pricing-drawer-title" id="mmuPricingTitle">
+        <i aria-hidden="true" class="fas fa-money-bill-wave"></i> أسعار جامعة ملتميديا (MMU)
+      </span>
+      <button class="pricing-drawer-close" id="mmuPricingClose">
+        <i aria-hidden="true" class="fas fa-times"></i> إغلاق
+      </button>
     </div>
-    <div class="pricing-drawer-content" id="mmuPricingContent"></div>
+    <div class="pricing-drawer-content" id="mmuPricingContent">
+      <div class="pricing-note">
+        <p><strong><span>Important Information about MMU Programs:</span></strong> <span>Multimedia University
+            offers comprehensive study programs in several specialized fields. Tuition fees below are indicative and
+            may vary by semester and academic year. Fees do not include visa fees, health insurance, or
+            accommodation. Fees can be paid in installments, and the university provides various financing options
+            for international students.</span></p>
+        <p style="margin-top:0.5rem;opacity:0.85"><strong><span>Available Intakes:</span></strong>
+          <span>March/April, July/August, October/November</span>
+        </p>
+        <p style="margin-top:0.5rem;opacity:0.85"><strong><span>Basic Requirements:</span></strong> <span>IGCSE
+            minimum 5 credits in English and Mathematics, or A-Level minimum grade D, or equivalent from Arabic
+            certificates with 50-60% or above.</span></p>
+        <i class="fas fa-info-circle" style="color:#00A99D"></i>
+        <span style="font-weight:bold;color:#2C3E50">For a detailed schedule for your major with a customized
+          payment plan, contact us now!</span>
+      </div>
+      <div class="pricing-accordion" role="list">
+        <!-- FCI Programs -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-laptop-code" style="color:#00A99D"></i> <span>Faculty of Computing &amp;
+                Informatics (FCI) – Computer Science &amp; IT</span></span><i class="fas fa-chevron-down"></i>
+          </summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="FCI Computer Science Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Annual Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                  <th><span>Campus</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>31,200</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Computer Science</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>31,200</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of IT (Information Systems)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>31,200</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of IT (Data Communications &amp; Networking)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>31,200</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of IT (Business Intelligence &amp; Analytics)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>31,200</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Computer Science (Artificial Intelligence)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>31,200</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of IT (Security Technology)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr style="background: rgba(0,169,157,0.05);">
+                  <td colspan="4"><strong><span>Note:</span></strong> <span>Year 1: RM 31,200, Years 2-3: RM 26,900
+                      per year | Exchange rate: 1$ ≈ 4.3 RM</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- FAIE/FET Programs (Engineering & Applied Technology) -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-cogs" style="color:#00A99D"></i> <span>Faculty of Engineering &amp;
+                Technology (FAIE/FET)</span></span><i class="fas fa-chevron-down"></i>
+          </summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="FAIE/FET Engineering Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Annual Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                  <th><span>Specializations/Campus</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Electrical Engineering</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Electronics Engineering</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Electronics (Telecommunications)</span></td>
+                  <td><span>Cyberjaya/Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Electronics (Computer)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Mechanical Engineering</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Electronics Engineering (Robotics &amp; Automation)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Science (Intelligent Robotics)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>23,625</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Science (Applied AI)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr style="background: rgba(0,169,157,0.05);">
+                  <td colspan="4"><strong><span>Exchange rate:</span></strong> 1$ ≈ 4.0 RM
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- FOM/FOB Programs (Business, Finance, Management) -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-briefcase" style="color:#00A99D"></i> <span>Faculty of Management &amp;
+                Business (FOM/FOB) – Management, Accounting &amp; Finance</span></span><i
+              class="fas fa-chevron-down"></i></summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="FOM/FOB Business Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Annual Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                  <th><span>Campus</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Analytical Economics (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Business Administration (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Marketing (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Finance (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Banking &amp; Finance (Hons)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Digital Business Management (Hons)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>4 years</span></td>
+                  <td><span>Bachelor of Accounting (Hons)</span></td>
+                  <td><span>Cyberjaya/Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Human Resource Management (Hons)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Marketing Management (Hons)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of International Business (Hons)</span></td>
+                  <td><span>Melaka</span></td>
+                </tr>
+                <tr>
+                  <td>7,550</td>
+                  <td><span>5 years*</span></td>
+                  <td><span>Bachelor of Management ODL (Distance Learning)</span></td>
+                  <td><span>Anywhere</span></td>
+                </tr>
+                <tr style="background: rgba(0,169,157,0.05);">
+                  <td colspan="4"><strong><span>*ODL Program:</span></strong> <span>Annual fee RM 7,550 | Exchange
+                      rate: 1$ ≈ 4.0 RM</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- FCM/FCA Programs (Creative Multimedia & Communication) -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-palette" style="color:#00A99D"></i> <span>Faculty of Creative Multimedia
+                &amp; Communication (FCM/FCA)</span></span><i class="fas fa-chevron-down"></i>
+          </summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="FCM/FCA Creative Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Annual Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                  <th><span>Campus</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Immersive Media Design (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Multimedia (Advertising Design)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Multimedia (Animation)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Multimedia (Visual Effects)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Cinematic Arts (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr>
+                  <td>22,417</td>
+                  <td><span>3 years</span></td>
+                  <td><span>Bachelor of Strategic Communication (Hons)</span></td>
+                  <td><span>Cyberjaya</span></td>
+                </tr>
+                <tr style="background: rgba(0,169,157,0.05);">
+                  <td colspan="4"><strong><span>Exchange rate:</span></strong> 1$ ≈ 4.0 RM
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- Diploma Programs -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-certificate" style="color:#00A99D"></i> <span>Diploma Programs (2-3
+                years)</span></span><i class="fas fa-chevron-down"></i></summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="Diploma Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Total Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>28,000</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Diploma in Information Technology</span></td>
+                </tr>
+                <tr>
+                  <td>26,500</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Diploma in Business Administration</span></td>
+                </tr>
+                <tr>
+                  <td>26,500</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Diploma in Digital Business</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>26,500</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Diploma in Finance</span></td>
+                </tr>
+                <tr>
+                  <td>30,850</td>
+                  <td><span>2.9 years</span></td>
+                  <td><span>Diploma in Electronic Engineering</span></td>
+                </tr>
+                <tr>
+                  <td>30,850</td>
+                  <td><span>2.9 years</span></td>
+                  <td><span>Diploma in Mechanical Engineering</span></td>
+                </tr>
+                <tr>
+                  <td>30,550</td>
+                  <td><span>2.3 years</span></td>
+                  <td><span>Diploma in 3D Modeling &amp; Animation</span></td>
+                </tr>
+                <tr>
+                  <td>30,250</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Diploma in Creative Audio</span></td>
+                </tr>
+                <tr>
+                  <td>30,250</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Diploma in Creative Multimedia</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- Foundation Programs -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-layer-group" style="color:#00A99D"></i> <span>Foundation Programs – 1
+                Year</span></span><i class="fas fa-chevron-down"></i></summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="Foundation Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Total Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12,000</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Foundation in Science &amp; Technology</span></td>
+                </tr>
+                <tr>
+                  <td>12,000</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Foundation in Computing</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12,000</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Foundation in Engineering</span></td>
+                </tr>
+                <tr>
+                  <td>12,000</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Foundation in Creative Multimedia</span></td>
+                </tr>
+                <tr>
+                  <td>12,000</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Foundation in Business Management</span></td>
+                </tr>
+                <tr>
+                  <td>12,000</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Foundation in Communication</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- Master Programs -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-user-graduate" style="color:#00A99D"></i> <span>Master's Programs
+                (Coursework)</span></span><i class="fas fa-chevron-down"></i></summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="Master Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Total Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>23,600</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Business Administration (MBA)</span></td>
+                </tr>
+                <tr>
+                  <td>24,650</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Creative Multimedia</span></td>
+                </tr>
+                <tr>
+                  <td>25,250</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Science in Engineering Business Management</span></td>
+                </tr>
+                <tr>
+                  <td>25,875</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Engineering (Telecommunications)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <!-- PhD Programs -->
+        <details class="pricing-item" role="listitem">
+          <summary><span><i class="fas fa-flask" style="color:#00A99D"></i> <span>PhD &amp; Research Master's
+                Programs</span></span><i class="fas fa-chevron-down"></i></summary>
+          <div class="pricing-table-wrap">
+            <table aria-label="PhD Programs" class="pricing-table">
+              <thead>
+                <tr>
+                  <th><span>Annual Fee (RM)</span></th>
+                  <th><span>Duration</span></th>
+                  <th><span>Program</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>6,150</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Engineering Science</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6,150</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Computing (Research)</span></td>
+                </tr>
+                <tr>
+                  <td>6,150</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Science (Creative Multimedia)</span></td>
+                </tr>
+                <tr>
+                  <td>8,100</td>
+                  <td><span>1 year</span></td>
+                  <td><span>Master of Philosophy (Management)</span></td>
+                </tr>
+                <tr>
+                  <td>10,650</td>
+                  <td><span>2 years</span></td>
+                  <td><span>Master of Philosophy (Communications)</span></td>
+                </tr>
+                <tr>
+                  <td>12,750</td>
+                  <td><span>2 years</span></td>
+                  <td><span>PhD (Engineering)</span></td>
+                </tr>
+                <tr>
+                  <td>12,750</td>
+                  <td><span>2 years</span></td>
+                  <td><span>PhD (Computing)</span></td>
+                </tr>
+                <tr>
+                  <td>12,750</td>
+                  <td><span>2 years</span></td>
+                  <td><span>PhD (Creative Multimedia)</span></td>
+                </tr>
+                <tr>
+                  <td>14,700</td>
+                  <td><span>2 years</span></td>
+                  <td><span>PhD (Management)</span></td>
+                </tr>
+                <tr>
+                  <td>17,250</td>
+                  <td><span>3 years</span></td>
+                  <td><span>PhD (Communications)</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
   </aside>
   <!-- Hero -->
   <section class="universities-hero">
@@ -334,528 +860,6 @@
                 <span> Accredited by Malaysian Ministry of Education - Established since 1996</span>
               </li>
             </ul>
-          </div>
-          <!-- Pricing Section -->
-          <div class="pricing-note">
-            <p><strong><span>Important Information about MMU Programs:</span></strong> <span>Multimedia University
-                offers comprehensive study programs in several specialized fields. Tuition fees below are indicative and
-                may vary by semester and academic year. Fees do not include visa fees, health insurance, or
-                accommodation. Fees can be paid in installments, and the university provides various financing options
-                for international students.</span></p>
-            <p style="margin-top:0.5rem;opacity:0.85"><strong><span>Available Intakes:</span></strong>
-              <span>March/April, July/August, October/November</span>
-            </p>
-            <p style="margin-top:0.5rem;opacity:0.85"><strong><span>Basic Requirements:</span></strong> <span>IGCSE
-                minimum 5 credits in English and Mathematics, or A-Level minimum grade D, or equivalent from Arabic
-                certificates with 50-60% or above.</span></p>
-            <i class="fas fa-info-circle" style="color:#00A99D"></i>
-            <span style="font-weight:bold;color:#2C3E50">For a detailed schedule for your major with a customized
-              payment plan, contact us now!</span>
-          </div>
-          <div class="pricing-accordion" role="list">
-            <!-- FCI Programs -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-laptop-code" style="color:#00A99D"></i> <span>Faculty of Computing &amp;
-                    Informatics (FCI) – Computer Science &amp; IT</span></span><i class="fas fa-chevron-down"></i>
-              </summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="FCI Computer Science Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Annual Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                      <th><span>Campus</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>31,200</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Computer Science</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>31,200</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of IT (Information Systems)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>31,200</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of IT (Data Communications &amp; Networking)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>31,200</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of IT (Business Intelligence &amp; Analytics)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>31,200</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Computer Science (Artificial Intelligence)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>31,200</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of IT (Security Technology)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr style="background: rgba(0,169,157,0.05);">
-                      <td colspan="4"><strong><span>Note:</span></strong> <span>Year 1: RM 31,200, Years 2-3: RM 26,900
-                          per year | Exchange rate: 1$ ≈ 4.3 RM</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- FAIE/FET Programs (Engineering & Applied Technology) -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-cogs" style="color:#00A99D"></i> <span>Faculty of Engineering &amp;
-                    Technology (FAIE/FET)</span></span><i class="fas fa-chevron-down"></i>
-              </summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="FAIE/FET Engineering Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Annual Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                      <th><span>Specializations/Campus</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Electrical Engineering</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Electronics Engineering</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Electronics (Telecommunications)</span></td>
-                      <td><span>Cyberjaya/Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Electronics (Computer)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Mechanical Engineering</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Electronics Engineering (Robotics &amp; Automation)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Science (Intelligent Robotics)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>23,625</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Science (Applied AI)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr style="background: rgba(0,169,157,0.05);">
-                      <td colspan="4"><strong><span>Exchange rate:</span></strong> 1$ ≈ 4.0 RM
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- FOM/FOB Programs (Business, Finance, Management) -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-briefcase" style="color:#00A99D"></i> <span>Faculty of Management &amp;
-                    Business (FOM/FOB) – Management, Accounting &amp; Finance</span></span><i
-                  class="fas fa-chevron-down"></i></summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="FOM/FOB Business Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Annual Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                      <th><span>Campus</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Analytical Economics (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Business Administration (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Marketing (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Finance (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Banking &amp; Finance (Hons)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Digital Business Management (Hons)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>4 years</span></td>
-                      <td><span>Bachelor of Accounting (Hons)</span></td>
-                      <td><span>Cyberjaya/Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Human Resource Management (Hons)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Marketing Management (Hons)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of International Business (Hons)</span></td>
-                      <td><span>Melaka</span></td>
-                    </tr>
-                    <tr>
-                      <td>7,550</td>
-                      <td><span>5 years*</span></td>
-                      <td><span>Bachelor of Management ODL (Distance Learning)</span></td>
-                      <td><span>Anywhere</span></td>
-                    </tr>
-                    <tr style="background: rgba(0,169,157,0.05);">
-                      <td colspan="4"><strong><span>*ODL Program:</span></strong> <span>Annual fee RM 7,550 | Exchange
-                          rate: 1$ ≈ 4.0 RM</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- FCM/FCA Programs (Creative Multimedia & Communication) -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-palette" style="color:#00A99D"></i> <span>Faculty of Creative Multimedia
-                    &amp; Communication (FCM/FCA)</span></span><i class="fas fa-chevron-down"></i>
-              </summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="FCM/FCA Creative Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Annual Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                      <th><span>Campus</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Immersive Media Design (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Multimedia (Advertising Design)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Multimedia (Animation)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Multimedia (Visual Effects)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Cinematic Arts (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr>
-                      <td>22,417</td>
-                      <td><span>3 years</span></td>
-                      <td><span>Bachelor of Strategic Communication (Hons)</span></td>
-                      <td><span>Cyberjaya</span></td>
-                    </tr>
-                    <tr style="background: rgba(0,169,157,0.05);">
-                      <td colspan="4"><strong><span>Exchange rate:</span></strong> 1$ ≈ 4.0 RM
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- Diploma Programs -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-certificate" style="color:#00A99D"></i> <span>Diploma Programs (2-3
-                    years)</span></span><i class="fas fa-chevron-down"></i></summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="Diploma Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Total Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>28,000</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Diploma in Information Technology</span></td>
-                    </tr>
-                    <tr>
-                      <td>26,500</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Diploma in Business Administration</span></td>
-                    </tr>
-                    <tr>
-                      <td>26,500</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Diploma in Digital Business</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>26,500</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Diploma in Finance</span></td>
-                    </tr>
-                    <tr>
-                      <td>30,850</td>
-                      <td><span>2.9 years</span></td>
-                      <td><span>Diploma in Electronic Engineering</span></td>
-                    </tr>
-                    <tr>
-                      <td>30,850</td>
-                      <td><span>2.9 years</span></td>
-                      <td><span>Diploma in Mechanical Engineering</span></td>
-                    </tr>
-                    <tr>
-                      <td>30,550</td>
-                      <td><span>2.3 years</span></td>
-                      <td><span>Diploma in 3D Modeling &amp; Animation</span></td>
-                    </tr>
-                    <tr>
-                      <td>30,250</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Diploma in Creative Audio</span></td>
-                    </tr>
-                    <tr>
-                      <td>30,250</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Diploma in Creative Multimedia</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- Foundation Programs -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-layer-group" style="color:#00A99D"></i> <span>Foundation Programs – 1
-                    Year</span></span><i class="fas fa-chevron-down"></i></summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="Foundation Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Total Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>12,000</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Foundation in Science &amp; Technology</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,000</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Foundation in Computing</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>12,000</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Foundation in Engineering</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,000</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Foundation in Creative Multimedia</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,000</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Foundation in Business Management</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,000</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Foundation in Communication</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- Master Programs -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-user-graduate" style="color:#00A99D"></i> <span>Master's Programs
-                    (Coursework)</span></span><i class="fas fa-chevron-down"></i></summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="Master Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Total Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>23,600</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Business Administration (MBA)</span></td>
-                    </tr>
-                    <tr>
-                      <td>24,650</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Creative Multimedia</span></td>
-                    </tr>
-                    <tr>
-                      <td>25,250</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Science in Engineering Business Management</span></td>
-                    </tr>
-                    <tr>
-                      <td>25,875</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Engineering (Telecommunications)</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-            <!-- PhD Programs -->
-            <details class="pricing-item" role="listitem">
-              <summary><span><i class="fas fa-flask" style="color:#00A99D"></i> <span>PhD &amp; Research Master's
-                    Programs</span></span><i class="fas fa-chevron-down"></i></summary>
-              <div class="pricing-table-wrap">
-                <table aria-label="PhD Programs" class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th><span>Annual Fee (RM)</span></th>
-                      <th><span>Duration</span></th>
-                      <th><span>Program</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>6,150</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Engineering Science</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>6,150</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Computing (Research)</span></td>
-                    </tr>
-                    <tr>
-                      <td>6,150</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Science (Creative Multimedia)</span></td>
-                    </tr>
-                    <tr>
-                      <td>8,100</td>
-                      <td><span>1 year</span></td>
-                      <td><span>Master of Philosophy (Management)</span></td>
-                    </tr>
-                    <tr>
-                      <td>10,650</td>
-                      <td><span>2 years</span></td>
-                      <td><span>Master of Philosophy (Communications)</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,750</td>
-                      <td><span>2 years</span></td>
-                      <td><span>PhD (Engineering)</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,750</td>
-                      <td><span>2 years</span></td>
-                      <td><span>PhD (Computing)</span></td>
-                    </tr>
-                    <tr>
-                      <td>12,750</td>
-                      <td><span>2 years</span></td>
-                      <td><span>PhD (Creative Multimedia)</span></td>
-                    </tr>
-                    <tr>
-                      <td>14,700</td>
-                      <td><span>2 years</span></td>
-                      <td><span>PhD (Management)</span></td>
-                    </tr>
-                    <tr>
-                      <td>17,250</td>
-                      <td><span>3 years</span></td>
-                      <td><span>PhD (Communications)</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
           </div>
           <a class="university-link" href="https://www.mmu.edu.my" rel="noopener" target="_blank">
             <span>Visit Official Website</span>
