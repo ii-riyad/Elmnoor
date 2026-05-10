@@ -24,8 +24,11 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#00A99D">
 
-  <!-- Critical CSS (blocking) -->
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Deferred CSS -->
+  <link rel="preload" href="/css/style.css" as="style">
+  <noscript>
+    <link rel="stylesheet" href="/css/style.css">
+  </noscript>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
