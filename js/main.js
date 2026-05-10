@@ -66,19 +66,7 @@
   }
 
   function initBackToTopBtn() {
-    let backToTopBtn = /** @type {HTMLButtonElement | null} */ (document.querySelector('.back-to-top'))
-
-    if (!backToTopBtn) {
-      backToTopBtn = document.createElement('button')
-      backToTopBtn.className = 'back-to-top'
-      backToTopBtn.setAttribute('aria-label', 'الرجوع للأعلى')
-      const icon = document.createElement('i')
-      icon.className = 'fas fa-arrow-up'
-      backToTopBtn.appendChild(icon)
-      document.body.appendChild(backToTopBtn)
-    }
-
-    const btn = backToTopBtn
+    const backToTopBtn = /** @type {HTMLButtonElement} */ (document.querySelector('.back-to-top'))
     let ticking = false
 
     window.addEventListener(
@@ -86,7 +74,7 @@
       () => {
         if (!ticking) {
           requestAnimationFrame(() => {
-            btn.classList.toggle('show', window.pageYOffset > 300)
+            backToTopBtn.classList.toggle('show', window.pageYOffset > 300)
             ticking = false
           })
           ticking = true
@@ -95,10 +83,10 @@
       { passive: true }
     )
 
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
 
     // Initial state
-    btn.classList.toggle('show', window.pageYOffset > 300)
+    backToTopBtn.classList.toggle('show', window.pageYOffset > 300)
   }
 
   function initVisibilityUpdate() {
