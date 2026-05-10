@@ -34,12 +34,12 @@ ErrorDocument 404 /ar/404.html
 <IfModule mod_headers.c>
   # CSP Level 3 - Strict policy with minimal exceptions for trusted resources
   Header set Content-Security-Policy "default-src 'self'; \
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; \
+    script-src 'self'; \
     object-src 'none'; \
     style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; \
     font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; \
     img-src 'self' https: data: blob:; \
-    connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://fonts.googleapis.com; \
+    connect-src 'self' https://fonts.googleapis.com; \
     frame-ancestors 'none'; \
     base-uri 'self'; \
     form-action 'self'; \
