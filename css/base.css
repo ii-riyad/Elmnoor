@@ -1,0 +1,172 @@
+/* ============================================================
+   BASE.CSS — Variables · Reset · Typography · Layout
+   ============================================================ */
+
+/* Custom Properties */
+:root {
+  --color-primary: #00A99D;
+  --color-primary-dk: #009185;
+  --color-secondary: #fbbf24;
+  --color-dark: #2C3E50;
+  --color-beige: #FDFCF5;
+  --color-white: #FFF;
+
+  --font-body: 'Changa', sans-serif;
+
+  --border-std: 4px solid #000;
+  --shadow-hard: 6px 6px 0 0 #000;
+  --shadow-hard-lg: 10px 10px 0 0 #000;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Elements */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-beige);
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  background: #fff;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 10000;
+}
+
+/* Media Defaults */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Typography — Shared Title Styles */
+.hero-title,
+.section-title,
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: .5rem;
+  line-height: 1.2;
+}
+
+.hero-title,
+.cta-title {
+  color: var(--color-beige) !important;
+  text-shadow: none !important;
+}
+
+.section-title {
+  color: var(--color-dark) !important;
+  text-shadow: none !important;
+}
+
+.section-subtitle,
+.hero-subtitle,
+.cta-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  display: block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.section-subtitle {
+  color: #4b5563;
+}
+
+.hero-subtitle,
+.cta-subtitle {
+  color: var(--color-beige);
+  opacity: .9;
+  box-sizing: border-box;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Font Faces */
+
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Changa/Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Changa/Bold.woff2') format('woff2');
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
