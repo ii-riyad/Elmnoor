@@ -461,7 +461,6 @@
   pointer-events: none;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  animation: scrollBounce 2s infinite ease-in-out;
 }
 
 .card-scroll-hint i {
@@ -494,17 +493,4 @@
   line-height: 1.8;
   max-width: 900px;
   margin: 0 auto 2rem;
-}
-
-/* Article-specific Animations */
-@keyframes scrollBounce {
-
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  50% {
-    transform: translateX(-50%) translateY(5px);
-  }
 }

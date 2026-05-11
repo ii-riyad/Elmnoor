@@ -1235,10 +1235,6 @@ footer {
   box-shadow: 3px 3px 0 0 #000;
 }
 
-.whatsapp-float i {
-  animation: whatsappPulse 2s ease-in-out infinite;
-}
-
 html[lang="ar"] .whatsapp-float {
   left: 30px;
   right: auto;
@@ -1303,78 +1299,4 @@ html[lang="en"] .back-to-top {
 html[lang="ar"] .fullscreen-toggle-btn {
   right: auto;
   left: 20px;
-}
-
-/* Animations */
-@keyframes whatsappPulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-@keyframes pulse-playing {
-
-  0%,
-  100% {
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  50% {
-    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.7), 0 4px 12px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05);
-  }
-}
-
-@keyframes iconFloat {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

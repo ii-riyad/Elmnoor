@@ -1096,7 +1096,6 @@
     border-top: 5px solid #000;
     z-index: 9997;
     overflow-y: auto;
-    animation: slideDown 0.3s ease-out;
   }
 
   .nav-links.active {
@@ -1130,7 +1129,6 @@
     border: 3px solid #000 !important;
     box-shadow: 4px 4px 0 0 #000;
     font-size: 1.15rem !important;
-    animation: pulse 2s ease-in-out infinite;
   }
 
   .mobile-menu-btn {
@@ -1413,7 +1411,6 @@
     background: var(--color-primary);
     color: #fff;
     border-color: #000;
-    animation: iconFloat 3s ease-in-out infinite;
   }
 
   .service-title,
