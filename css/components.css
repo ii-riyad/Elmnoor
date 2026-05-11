@@ -537,31 +537,6 @@ html[lang="en"] .hero-text {
   margin-top: .8rem;
 }
 
-/* Special service card variants */
-.service-card-featured,
-.service-card-special {
-  border-color: var(--color-primary);
-}
-
-.service-card-featured {
-  border-width: 4px;
-  box-shadow: 6px 6px 0 0 #000 !important;
-}
-
-.service-card-special {
-  border-width: 5px;
-}
-
-.service-card-special:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .15), 10px 10px 0 0 var(--color-primary);
-}
-
-.service-icon-featured,
-.service-icon-special {
-  background: var(--color-primary);
-  border-color: #000;
-}
-
 /* Read More / University Link */
 .read-more-btn,
 .university-link {

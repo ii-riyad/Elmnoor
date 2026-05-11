@@ -224,7 +224,7 @@
   font-family: 'Font Awesome 6 Brands';
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
   src: url(/fonts/FontAwesome/Brands.woff2) format('woff2');
 }
 
@@ -245,7 +245,7 @@
   font-family: 'Font Awesome 6 Free';
   font-style: normal;
   font-weight: 900;
-  font-display: block;
+  font-display: swap;
   src: url(/fonts/FontAwesome/Solid.woff2) format('woff2');
 }
 

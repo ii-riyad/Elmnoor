@@ -189,13 +189,7 @@
     width: 70px;
     height: 70px;
     font-size: 3.2rem;
-    background: var(--color-primary) !important;
-    border: 3px solid #000 !important;
-  }
-
-  .service-icon i,
-  .major-icon i {
-    color: var(--color-white) !important;
+    border: 3px solid inherit !important;
   }
 
   .service-title,
@@ -352,13 +346,7 @@
     width: 75px;
     height: 75px;
     font-size: 3.3rem;
-    background: var(--color-primary) !important;
     border: 3px solid #000 !important;
-  }
-
-  .service-icon i,
-  .major-icon i {
-    color: var(--color-white) !important;
   }
 
   .service-title,
@@ -518,13 +506,7 @@
     width: 80px;
     height: 80px;
     font-size: 3.5rem;
-    background: var(--color-primary) !important;
     border: 3px solid #000 !important;
-  }
-
-  .service-icon i,
-  .major-icon i {
-    color: var(--color-white) !important;
   }
 
   .service-title,
@@ -697,13 +679,7 @@
     width: 85px;
     height: 85px;
     font-size: 3.8rem;
-    background: var(--color-primary) !important;
     border: 3px solid #000 !important;
-  }
-
-  .service-icon i,
-  .major-icon i {
-    color: var(--color-white) !important;
   }
 
   .service-title,
@@ -1354,10 +1330,9 @@
   .service-card,
   .major-card {
     padding: 2rem 1.5rem;
-    background: #fff;
-    border: 3px solid #000;
+    border: 3px solid inherit;
     border-radius: 18px;
-    box-shadow: 4px 4px 0 0 #000;
+    box-shadow: 4px 4px 0 0 inherit;
     position: relative;
     overflow: hidden;
   }
@@ -1370,20 +1345,8 @@
     left: 0;
     right: 0;
     height: 5px;
-    background: var(--color-primary);
     transform: scaleX(0);
     transition: transform 0.3s ease;
-  }
-
-  .service-card:active::before,
-  .major-card:active::before {
-    transform: scaleX(1);
-  }
-
-  .service-card:active,
-  .major-card:active {
-    transform: translateY(2px);
-    box-shadow: 2px 2px 0 0 #000;
   }
 
   .service-icon,
@@ -1392,25 +1355,12 @@
     width: 80px;
     height: 80px;
     border-radius: 16px;
-    background: rgba(0, 169, 157, 0.1);
-    border: 3px solid rgba(0, 169, 157, 0.2);
+    border: 3px solid inherit;
     margin: 0 auto 1.2rem;
-    color: var(--color-primary) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-  }
-
-  .service-icon i,
-  .major-icon i {
-    color: var(--color-primary) !important;
-  }
-
-  .service-icon-featured {
-    background: var(--color-primary);
-    color: #fff;
-    border-color: #000;
   }
 
   .service-title,
@@ -1734,39 +1684,6 @@
   .major-card,
   .university-card {
     user-select: none;
-  }
-
-  /* WhatsApp */
-  .whatsapp-float {
-    width: 58px;
-    height: 58px;
-    font-size: 28px;
-    bottom: 20px;
-    right: 20px;
-    box-shadow: 4px 4px 0 0 #000;
-  }
-
-  .whatsapp-float:hover {
-    box-shadow: 6px 6px 0 0 #000, 0 4px 10px rgba(37, 211, 102, 0.3);
-  }
-
-  html[lang="ar"] .whatsapp-float {
-    left: 20px;
-    right: auto;
-  }
-
-  /* Back to top */
-  .back-to-top {
-    bottom: 100px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-  }
-
-  html[lang="en"] .back-to-top {
-    right: 20px;
-    left: auto;
   }
 
   /* Feedback */

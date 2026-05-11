@@ -26,7 +26,7 @@ elm-w-noor-final/
 ├── css/
 │   └── style.css      # التنسيقات
 ├── js/
-│   └── main.js        # الوظائف (الترجمة، القائمة، النماذج)
+│   └── init.js        # الوظائف (الترجمة، القائمة، النماذج)
 ├── images/
 │   ├── guide-welcome.webp  # شخصية المرشد
 │   └── guide-poses.webp    # أوضاع المرشد
@@ -73,7 +73,7 @@ public_html/
 ├── css/
 │   └── style.css
 ├── js/
-│   └── main.js
+│   └── init.js
 └── images/
     ├── guide-welcome.webp
     └── guide-poses.webp
@@ -139,7 +139,7 @@ public_html/
 - تحقق من الأسماء: `guide-welcome.webp` و `guide-poses.webp`
 
 ### الترجمة لا تعمل
-- تأكد من رفع ملف `js/main.js`
+- تأكد من رفع ملف `js/init.js`
 - افتح Console في المتصفح (F12) وابحث عن أخطاء
 
 ### النموذج لا يرسل
