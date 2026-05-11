@@ -20,7 +20,7 @@
       const icon = mobileMenuBtn.querySelector('i')
       if (icon) {
         icon.classList.toggle('fa-bars', !open)
-        icon.classList.toggle('fa-times', open)
+        icon.classList.toggle('fa-xmark', open)
       }
 
       mobileMenuBtn.setAttribute('aria-expanded', String(open))

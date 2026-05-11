@@ -36,8 +36,8 @@ ErrorDocument 404 /ar/404.html
   Header set Content-Security-Policy "default-src 'self'; \
     script-src 'self'; \
     object-src 'none'; \
-    style-src 'self'https://cdnjs.cloudflare.com 'unsafe-inline'; \
-    font-src 'self' https://cdnjs.cloudflare.com data:; \
+    style-src 'self' 'unsafe-inline'; \
+    font-src 'self' data:; \
     img-src 'self' https: data: blob:; \
     connect-src 'self'; \
     frame-ancestors 'none'; \

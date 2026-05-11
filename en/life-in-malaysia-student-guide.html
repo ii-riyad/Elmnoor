@@ -55,9 +55,6 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#00A99D">
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
   <!-- Fonts -->
   <link rel="preload" href="/fonts/Changa/Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Changa/Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -66,12 +63,12 @@
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="/css/articles.css" as="style">
   <link rel="preload" href="/css/fonts.css" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="/css/fa.css" as="style">
   <noscript>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/articles.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/fa.css">
   </noscript>
 
   <!-- Scripts -->
@@ -257,7 +254,7 @@
     <!-- Table of Contents Sidebar -->
     <div class="toc-sidebar" id="tocSidebar">
       <div class="toc-header">
-        <h2><i class="fas fa-list-ul"></i>Table of Contents</h2>
+        <h2><i class="fas fa-list-dots"></i>Table of Contents</h2>
         <button class="toc-close-btn" id="tocCloseBtn">×</button>
       </div>
       <div class="toc-items">
@@ -266,7 +263,7 @@
           <span class="toc-text">Guide Introduction</span>
         </button>
         <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-shield-alt"></i></span>
+          <span class="toc-icon"><i class="fas fa-shield-halved"></i></span>
           <span class="toc-text">Laws & Safety</span>
         </button>
         <button class="toc-item">
@@ -375,7 +372,7 @@
           <!-- Card 2: Laws & Safety (NEW) -->
           <div class="swipeable-card" data-card="1" id="card-laws">
             <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-shield-alt"></i></div>
+              <div class="card-icon-large"><i class="fas fa-shield-halved"></i></div>
               <h2>القوانين الصارمة والأمان (الأولوية القصوى)</h2>
               <div class="card-content">
                 <div class="card-scroll-hint" aria-hidden="true">
@@ -385,7 +382,7 @@
                   تؤدي إلى <strong>الترحيل الفوري</strong> وإلغاء تأشيرتك.</p>
 
                 <div class="alert-box" style="margin-top:1.5rem;">
-                  <h5><i class="fas fa-exclamation-triangle"></i> تحذير هام: الحضور الإلزامي</h5>
+                  <h5><i class="fas fa-warning"></i> تحذير هام: الحضور الإلزامي</h5>
                   <p><strong>نسبة الحضور 80% إلزامية</strong> لتجديد التأشيرة. أي تهاون قد يؤدي لرفض التجديد والترحيل.
                   </p>
                   <p style="margin-top:0.5rem;">الجامعات تراقب الحضور بدقة، وترسل التقارير لإدارة الهجرة EMGS مباشرة.
@@ -479,7 +476,7 @@
                 </div>
 
                 <div class="success-box" style="margin-top:1rem;">
-                  <h5><i class="fas fa-hands-helping"></i> علم ونور تساعدك</h5>
+                  <h5><i class="fas fa-handshake"></i> علم ونور تساعدك</h5>
                   <p>نوفر لك <strong>مساعدة مجانية</strong> في البحث عن السكن المناسب، معاينة الوحدات، والتفاوض مع
                     الملاك. اتصل بنا قبل وصولك!</p>
                 </div>
@@ -499,7 +496,7 @@
                 <p>من أهم مميزات ماليزيا هو <strong>انتشار اللغة الإنجليزية كلغة تواصل أساسية</strong>.</p>
 
                 <div class="alert-box" style="margin-top:1.5rem;">
-                  <h5><i class="fas fa-exclamation-triangle"></i> تحدي اللهجة</h5>
+                  <h5><i class="fas fa-warning"></i> تحدي اللهجة</h5>
                   <p>الشعب الماليزي يتحدث بلكنة محلية سريعة (Manglish). أذنك ستحتاج لأسبوع أو أسبوعين للاعتياد.</p>
                 </div>
 
@@ -550,7 +547,7 @@
                 <p>نعلم أن الهاجس الأكبر لدى الآباء هو: <strong>"كيف سيعيش ابني؟"</strong>. بناءً على كتيب إرشاد علم
                   ونور، إليك التفاصيل المالية واللوجستية:</p>
 
-                <h3 style="margin-top:1rem;"><i class="fas fa-university"></i> 1. الأمان المالي: البنوك والمحافظ</h3>
+                <h3 style="margin-top:1rem;"><i class="fas fa-institution"></i> 1. الأمان المالي: البنوك والمحافظ</h3>
                 <p>النظام المالي في ماليزيا متطور جداً:</p>
 
                 <div class="alert-box" style="margin:1rem 0;">
@@ -584,7 +581,7 @@
                 </div>
 
                 <div class="success-box" style="margin:1rem 0;">
-                  <h5><i class="fas fa-bank"></i> البنوك المحلية (للمستقبل)</h5>
+                  <h5><i class="fas fa-institution"></i> البنوك المحلية (للمستقبل)</h5>
                   <p>بعد استقرارك، ننصح بفتح حساب في:</p>
                   <p style="margin-top:0.5rem;">• <strong>Maybank</strong> - الأشهر والأكثر انتشاراً</p>
                   <p style="margin-top:0.3rem;">• <strong>CIMB Bank</strong> - جيد للطلاب</p>
@@ -698,7 +695,7 @@
                 </p>
 
                 <div class="alert-box" style="margin-top:1rem;">
-                  <h5><i class="fas fa-exclamation-triangle"></i> تحذير الطقس</h5>
+                  <h5><i class="fas fa-warning"></i> تحذير الطقس</h5>
                   <p>ماليزيا حارة ورطبة، والأمطار مفاجئة! إذا كنت ستستخدم الدراجة، احمل معطفاً مقاوماً للماء دائماً.</p>
                 </div>
 
@@ -727,7 +724,7 @@
                   (سكن عربي، أكل عربي، أصدقاء عرب فقط).</p>
 
                 <div class="alert-box" style="margin-top:1.5rem;">
-                  <h5><i class="fas fa-exclamation-triangle"></i> النتيجة السلبية</h5>
+                  <h5><i class="fas fa-warning"></i> النتيجة السلبية</h5>
                   <p>هذا يحرمك من تطوير لغتك والاستفادة من التنوع الثقافي الذي هو أساس الدراسة بالخارج.</p>
                 </div>
 

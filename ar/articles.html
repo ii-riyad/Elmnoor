@@ -54,9 +54,6 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#00A99D">
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
   <!-- Fonts -->
   <link rel="preload" href="/fonts/Changa/Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Changa/Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -65,12 +62,12 @@
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="/css/articles.css" as="style">
   <link rel="preload" href="/css/fonts.css" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="/css/fa.css" as="style">
   <noscript>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/articles.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/fa.css">
   </noscript>
 
   <!-- Scripts -->
@@ -247,7 +244,7 @@
     <!-- Table of Contents Sidebar -->
     <div class="toc-sidebar" id="tocSidebar">
       <div class="toc-header">
-        <h2><i class="fas fa-list-ul"></i> المحتويات</h2>
+        <h2><i class="fas fa-list-dots"></i> المحتويات</h2>
         <button class="toc-close-btn" id="tocCloseBtn">×</button>
       </div>
       <div class="toc-items">
@@ -256,7 +253,7 @@
           <span class="toc-text">الملخص التنفيذي</span>
         </button>
         <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-shield-alt"></i></span>
+          <span class="toc-icon"><i class="fas fa-shield-halved"></i></span>
           <span class="toc-text">الاستقرار
             الجيوسياسي</span>
         </button>
@@ -273,11 +270,11 @@
           <span class="toc-text">البيئة الثقافية</span>
         </button>
         <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-shield-check"></i></span>
+          <span class="toc-icon"><i class="fas fa-shield"></i></span>
           <span class="toc-text">منظومة الأمن</span>
         </button>
         <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-hands-helping"></i></span>
+          <span class="toc-icon"><i class="fas fa-handshake"></i></span>
           <span class="toc-text">دور مكتبنا</span>
         </button>
         <button class="toc-item">
@@ -293,7 +290,7 @@
           <span class="toc-text">حملة VM2026</span>
         </button>
         <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-list-check"></i></span>
+          <span class="toc-icon"><i class="fas fa-tasks"></i></span>
           <span class="toc-text">كيف تقنع ابنك</span>
         </button>
         <button class="toc-item">
@@ -313,7 +310,8 @@
       <div class="container">
         <h1>التقرير الاستراتيجي الشامل للاستقرار في ماليزيا 2026</h1>
         <p>استدامة الاستقرار الجيوسياسي والبيئة التعليمية الآمنة - اختر القسم وابدأ القراءة</p>
-        <p style="margin-top:1rem;"><i class="fas fa-calendar-alt"></i> مارس 2026 | <i class="fas fa-clock"></i> قراءة45
+        <p style="margin-top:1rem;"><i class="fas fa-calendar-days"></i> مارس 2026 | <i class="fas fa-clock"></i>
+          قراءة45
           دقيقة</p>
       </div>
     </section>
@@ -377,7 +375,7 @@
           <!-- Card 1: الاستقرار الجيوسياسي -->
           <div class="swipeable-card" data-card="1" id="card-geopolitical">
             <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-shield-alt" style="color: #00A99D;"></i></div>
+              <div class="card-icon-large"><i class="fas fa-shield-halved" style="color: #00A99D;"></i></div>
               <h2>أولاً: تحليل الاستقرار الجيوسياسي ومكانة ماليزيا في مؤشر السلام العالمي 2026</h2>
               <div class="card-content">
                 <div class="card-scroll-hint" aria-hidden="true">
@@ -676,7 +674,7 @@
 
                   <div
                     style="background:#EBF5FF;border:4px solid #0066cc;border-radius:12px;padding:1.5rem;text-align:center;">
-                    <i class="fas fa-hands-helping" style="font-size:2.5rem;color:#0066cc;margin-bottom:1rem;"></i>
+                    <i class="fas fa-handshake" style="font-size:2.5rem;color:#0066cc;margin-bottom:1rem;"></i>
                     <h5 style="color:#004499;margin-bottom:0.8rem;">التعايش السلمي</h5>
                     <p style="color:#1a1a1a;">نموذج فريد للتعايش بين الأعراق المختلفة، مما يخلق بيئة من التسامح
                       والاحترام المتبادل.</p>
@@ -708,7 +706,7 @@
           <!-- Card 5: منظومة الأمن -->
           <div class="swipeable-card" data-card="5" id="card-security">
             <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-shield-check" style="color: #00A99D;"></i></div>
+              <div class="card-icon-large"><i class="fas fa-shield" style="color: #00A99D;"></i></div>
               <h2>خامساً: منظومة الأمن والحماية القانونية للطلاب الدوليين</h2>
               <div class="card-content">
                 <div class="card-scroll-hint" aria-hidden="true">
@@ -769,7 +767,7 @@
                 </div>
 
                 <div class="success-box" style="margin-top:1.5rem;">
-                  <h5><i class="fas fa-shield-alt"></i> راحة البال للآباء</h5>
+                  <h5><i class="fas fa-shield-halved"></i> راحة البال للآباء</h5>
                   <p>مع كل هذه الإجراءات، يمكن للأب أن يطمئن على سلامة ابنه في كل لحظة. ماليزيا تعتبر من أكثر دول
                     المنطقة أماناً للطلاب الدوليين.</p>
                 </div>
@@ -780,7 +778,7 @@
           <!-- Card 6: دور مكتبنا -->
           <div class="swipeable-card" data-card="6" id="card-office">
             <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-hands-helping" style="color: #00A99D;"></i></div>
+              <div class="card-icon-large"><i class="fas fa-handshake" style="color: #00A99D;"></i></div>
               <h2>سادساً: دور مكتبنا في توفير بيئة آمنة للطالب</h2>
               <div class="card-content">
                 <div class="card-scroll-hint" aria-hidden="true">
@@ -1010,8 +1008,9 @@
 
                 <div
                   style="background:#EBF5FF;border:3px solid #0066cc;padding:1.5rem;border-radius:10px;margin-top:1rem;">
-                  <p style="color:#1a1a1a;margin-bottom:0.8rem;"><i class="fas fa-hospital-alt"
-                      style="color:#0066cc;"></i> <strong>المستشفيات الحكومية:</strong> خدمة بأسعار مدعومة جداً</p>
+                  <p style="color:#1a1a1a;margin-bottom:0.8rem;"><i class="fas fa-hospital" style="color:#0066cc;"></i>
+                    <strong>المستشفيات الحكومية:</strong> خدمة بأسعار مدعومة جداً
+                  </p>
                   <p style="color:#1a1a1a;margin-bottom:0.8rem;"><i class="fas fa-clinic-medical"
                       style="color:#0066cc;"></i> <strong>المستشفيات الخاصة:</strong> خدمة سريعة بأسعار معقولة</p>
                   <p style="color:#1a1a1a;"><i class="fas fa-pills" style="color:#0066cc;"></i>
@@ -1077,7 +1076,7 @@
           <!-- Card 10: كيف تقنع ابنك وتستعد -->
           <div class="swipeable-card" data-card="10" id="card-preparation">
             <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-list-check" style="color: #00A99D;"></i></div>
+              <div class="card-icon-large"><i class="fas fa-tasks" style="color: #00A99D;"></i></div>
               <h2>عاشراً: كيف تقنع ابنك وتستعد لرحلته التعليمية؟</h2>
               <div class="card-content">
                 <div class="card-scroll-hint" aria-hidden="true">

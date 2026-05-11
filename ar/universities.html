@@ -49,9 +49,6 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#00A99D">
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
   <!-- Fonts -->
   <link rel="preload" href="/fonts/Changa/Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Changa/Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,11 +56,11 @@
   <!-- Deferred CSS -->
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="/css/fonts.css" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="/css/fa.css" as="style">
   <noscript>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/fa.css">
   </noscript>
 
   <!-- Scripts -->
@@ -189,7 +186,7 @@
     <div class="pricing-drawer-header">
       <span id="mmuPricingTitle" class="pricing-drawer-title"><i class="fas fa-money-bill-wave" aria-hidden="true"></i>
         أسعار جامعة ملتميديا (MMU)</span>
-      <button class="pricing-drawer-close" id="mmuPricingClose"><i class="fas fa-times" aria-hidden="true"></i>
+      <button class="pricing-drawer-close" id="mmuPricingClose"><i class="fas fa-xmark" aria-hidden="true"></i>
         إغلاق</button>
     </div>
     <div class="pricing-drawer-content" id="mmuPricingContent">
@@ -284,7 +281,7 @@
 
         <!-- FAIE/FET Programs (Engineering & Applied Technology) -->
         <details class="pricing-item" role="listitem">
-          <summary><span><i class="fas fa-cogs" style="color:#00A99D"></i> <span>كلية الهندسة
+          <summary><span><i class="fas fa-gears" style="color:#00A99D"></i> <span>كلية الهندسة
                 والتكنولوجيا المطبقة (FAIE/FET)</span></span><i class="fas fa-chevron-down"></i>
           </summary>
           <div class="pricing-table-wrap">
@@ -993,7 +990,7 @@
           <small>نساعدك في كل خطوة</small>
         </a>
         <a class="btn btn-secondary cta-btn-secondary" href="/ar/services.html">
-          <i class="fas fa-list-check"></i>
+          <i class="fas fa-tasks"></i>
           <span>تعرف على خدماتنا
             الكاملة</span>
         </a>

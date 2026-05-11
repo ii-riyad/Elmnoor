@@ -55,9 +55,6 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#00A99D">
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
   <!-- Fonts -->
   <link rel="preload" href="/fonts/Changa/Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Changa/Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -66,12 +63,12 @@
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="/css/computer-science-guide.css" as="style">
   <link rel="preload" href="/css/fonts.css" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="/css/fa.css" as="style">
   <noscript>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/computer-science-guide.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/fa.css">
   </noscript>
 
   <!-- Scripts -->
@@ -260,7 +257,7 @@
     <!-- Table of Contents Sidebar -->
     <div class="toc-sidebar" id="tocSidebar">
       <div class="toc-header">
-        <h2><i class="fas fa-list-ul"></i> المحتويات</h2>
+        <h2><i class="fas fa-list-dots"></i> المحتويات</h2>
         <button class="toc-close-btn" id="tocCloseBtn">×</button>
       </div>
       <div class="toc-items">
@@ -274,7 +271,7 @@
             والتأمين</span>
         </button>
         <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-university"></i></span>
+          <span class="toc-icon"><i class="fas fa-institution"></i></span>
           <span class="toc-text">الجامعات الرائدة</span>
         </button>
         <button class="toc-item">
@@ -408,10 +405,10 @@
                   </table>
                 </div>
 
-                <h4 style="margin-top:1.5rem;"><i class="fas fa-percentage"></i> ب. معدلات القبول لطلاب الثانوي</h4>
+                <h4 style="margin-top:1.5rem;"><i class="fas fa-percent"></i> ب. معدلات القبول لطلاب الثانوي</h4>
 
                 <div class="university-type-box" style="margin-top:1rem;">
-                  <h5><i class="fas fa-university"></i> الجامعات الحكومية (UM, UTM)</h5>
+                  <h5><i class="fas fa-institution"></i> الجامعات الحكومية (UM, UTM)</h5>
                   <p>• المعدل المطلوب: <strong>80% فما فوق</strong> (CGPA 3.00)</p>
                   <p>• المواد الأساسية: درجات عالية في الرياضيات والفيزياء</p>
                   <p>• اللغة: آيلتس <strong>5.5 - 6.0</strong></p>
@@ -456,7 +453,7 @@
           <!-- Card 3: Universities -->
           <div class="swipeable-card" data-card="2" id="card-universities">
             <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-university"></i></div>
+              <div class="card-icon-large"><i class="fas fa-institution"></i></div>
               <h2>الجامعات الرائدة في علوم الحاسوب</h2>
               <div class="card-content">
                 <p>إليك <strong>التحليل المؤسسي للجامعات الأربع الرائدة</strong> في تخصصات الحاسوب بماليزيا:</p>
@@ -481,7 +478,7 @@
 
                 <div class="university-card" style="margin-top:1rem;">
                   <div class="uni-header">
-                    <i class="fas fa-cogs"></i>
+                    <i class="fas fa-gears"></i>
                     <h4>جامعة التكنولوجيا ماليزيا (UTM)</h4>
                     <span class="uni-rank">الخيار الهندسي الأول</span>
                   </div>
@@ -500,7 +497,7 @@
 
                 <div class="university-card featured-uni" style="margin-top:1rem;">
                   <div class="uni-header">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-shield-halved"></i>
                     <h4>جامعة آسيا المحيط الهادئ (APU)</h4>
                     <span class="uni-rank">الجامعة الرقمية الأولى</span>
                   </div>
@@ -619,7 +616,7 @@
                 </div>
 
                 <div class="alert-box" style="margin-top:1rem;">
-                  <h5><i class="fas fa-exclamation-triangle"></i> نظام الأقساط</h5>
+                  <h5><i class="fas fa-warning"></i> نظام الأقساط</h5>
                   <p>الجامعات الماليزية <strong>لا توفر تقسيطًا شهريًا مباشرًا للأجانب</strong>. الدفع يكون فصليًا (كل
                     Semester). كل فصل دراسي يُدفع قبل بدايته.</p>
                 </div>
@@ -653,7 +650,7 @@
                 </p>
 
                 <div class="checklist-box" style="margin-top:1.5rem;">
-                  <h5><i class="fas fa-list-check"></i> قائمة التحقق للتقديم</h5>
+                  <h5><i class="fas fa-tasks"></i> قائمة التحقق للتقديم</h5>
                   <div class="checklist-item">
                     <i class="fas fa-check-square"></i>
                     <div>
