@@ -75,30 +75,6 @@
     })
   }
 
-  function initBackToTopBtn() {
-    const backToTopBtn = /** @type {HTMLButtonElement} */ (document.querySelector('.back-to-top'))
-    let ticking = false
-
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            backToTopBtn.classList.toggle('show', window.pageYOffset > 300)
-            ticking = false
-          })
-          ticking = true
-        }
-      },
-      { passive: true }
-    )
-
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
-
-    // Initial state
-    backToTopBtn.classList.toggle('show', window.pageYOffset > 300)
-  }
-
   function initVisibilityUpdate() {
     function update() {
       document.documentElement.setAttribute('data-visible', document.hidden ? 'false' : 'true')
@@ -110,7 +86,6 @@
   function boot() {
     preloadStylesheets()
     initMobileMenu()
-    initBackToTopBtn()
     initVisibilityUpdate()
     highlightCurrNavLink()
   }

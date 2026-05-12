@@ -1864,20 +1864,6 @@
     right: auto;
   }
 
-  .back-to-top {
-    width: 52px;
-    height: 52px;
-    font-size: 1.4rem;
-    bottom: 110px;
-    left: 24px;
-    border-radius: 14px;
-  }
-
-  html[lang="en"] .back-to-top {
-    right: 24px;
-    left: auto;
-  }
-
   .pricing-table {
     font-size: 0.92rem;
     display: block;
