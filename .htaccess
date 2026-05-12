@@ -33,12 +33,16 @@ ErrorDocument 404 /ar/404.html
 # =====================================================
 <IfModule mod_headers.c>
   Header set Content-Security-Policy "default-src 'self'; \
-    script-src 'self'; \
+    script-src 'none'; \
+    script-src-elem 'self'; \
     object-src 'none'; \
-    style-src 'self' 'unsafe-inline'; \
+    style-src 'none'; \
+    style-src-elem 'self'; \
+    style-src-attr 'unsafe-inline'; \
     font-src 'self' data:; \
     img-src 'self' https: data: blob:; \
     connect-src 'self'; \
+    manifest-src 'self'; \
     frame-ancestors 'none'; \
     base-uri 'self'; \
     form-action 'self'; \
