@@ -31,7 +31,6 @@ For quick answers, start with homepage, services, universities, and guides. Use 
 
 - [Sitemap](https://elmnoor.com/sitemap.xml): Canonical URL inventory for discovery and crawling.
 - [Robots](https://elmnoor.com/robots.txt): Crawl directives and sitemap pointer.
-- [Web Manifest](https://elmnoor.com/manifest.webmanifest): PWA metadata and icons.
 
 ## Optional
 
