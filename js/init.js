@@ -75,18 +75,9 @@
     })
   }
 
-  function initVisibilityUpdate() {
-    function update() {
-      document.documentElement.setAttribute('data-visible', document.hidden ? 'false' : 'true')
-    }
-    document.addEventListener('visibilitychange', update)
-    update()
-  }
-
   function boot() {
     preloadStylesheets()
     initMobileMenu()
-    initVisibilityUpdate()
     highlightCurrNavLink()
   }
 

@@ -1214,18 +1214,3 @@ html[lang="ar"] .whatsapp-float {
   left: 30px;
   right: auto;
 }
-
-/* Fullscreen toggle */
-.fullscreen-toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  border-radius: 10px;
-}
-
-html[lang="ar"] .fullscreen-toggle-btn {
-  right: auto;
-  left: 20px;
-}
