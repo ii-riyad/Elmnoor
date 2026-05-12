@@ -11,14 +11,12 @@
     drawer.classList.add('open')
     overlay.classList.add('show')
     handle.setAttribute('aria-expanded', 'true')
-    drawer.setAttribute('aria-hidden', 'false')
   }
 
   function closeDrawer() {
     drawer.classList.remove('open')
     overlay.classList.remove('show')
     handle.setAttribute('aria-expanded', 'false')
-    drawer.setAttribute('aria-hidden', 'true')
   }
 
   handle.addEventListener('click', openDrawer)
