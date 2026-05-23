@@ -1214,3 +1214,30 @@ html[lang="ar"] .whatsapp-float {
   left: 30px;
   right: auto;
 }
+
+/* === Phase 3 Extracted Classes === */
+.service-links-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.btn-service-sm {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+}
+.universities-quick-links {
+  padding-bottom: 0;
+}
+.section-header-mb-2 {
+  margin-bottom: 2rem;
+}
+.btn-univ-dark {
+  margin: 0.5rem;
+  background: #2C3E50;
+  border-color: #2C3E50;
+}
+.btn-univ-dark:hover {
+  background: #1a252f;
+  border-color: #1a252f;
+}
