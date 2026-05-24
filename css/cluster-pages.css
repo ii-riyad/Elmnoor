@@ -1159,3 +1159,9 @@
 .text-gold { color: gold; }
 .text-silver { color: #C0C0C0; }
 .py-md { padding: 2rem 0; }
+
+/* step-title icon in malaysia-study-guide */
+.step-title i {
+  color: var(--color-primary);
+  margin-left: 0.4rem;
+}
