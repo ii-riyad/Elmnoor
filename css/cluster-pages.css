@@ -1139,3 +1139,23 @@
   object-fit: contain;
   padding: 4px;
 }
+
+
+/* ── Guide page utility classes (malaysia-study-guide.html) ── */
+.guide-sub-heading-lg {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-dark);
+  font-weight: bold;
+}
+.guide-sub-heading {
+  font-size: 1.2rem;
+  margin: 2rem 0 1rem;
+  color: var(--color-dark);
+  font-weight: bold;
+}
+.bg-dark { background: var(--color-dark); }
+.text-primary { color: var(--color-primary); }
+.text-gold { color: gold; }
+.text-silver { color: #C0C0C0; }
+.py-md { padding: 2rem 0; }
