@@ -825,3 +825,29 @@
   .cluster-section, .cluster-section-alt { padding: 2.5rem 0; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ----- 18. UTILITY CLASSES (replacing all inline styles) ----- */
+
+/* Section intro paragraph */
+.section-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 800px;
+}
+
+/* Sub-heading inside a section (e.g. hidden-fees sub-table title) */
+.section-subheading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+/* Spacing helpers */
+.mt-sm { margin-top: 1.5rem; }
+.mt-md { margin-top: 2rem; }
+.mt-lg { margin-top: 2.5rem; }
+
+/* Danger icon colour override */
+.icon-danger { color: #ef4444; }
