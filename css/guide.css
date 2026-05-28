@@ -1,4 +1,4 @@
-﻿/* ===== TOC ===== */
+/* ===== TOC ===== */
 .guide-toc {
 background: #f0f9f8;
 border: 4px solid #000;
@@ -219,55 +219,95 @@ margin: 0.2rem 0;
 
 /* ===== Guide Tables ===== */
 .table-wrapper {
-overflow-x: auto;
-margin: 1.5rem 0;
-border-radius: 12px;
-border: 3px solid #000;
-box-shadow: 4px 4px 0 0 #000;
+  /* ─── Critical: clip overflow BEFORE border-radius ─── */
+  overflow: hidden;           /* outer clip for border-radius */
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 0 #000;
+  /* width must never exceed its parent */
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* inner scroll container — sits INSIDE the rounded wrapper */
+.table-wrapper-inner {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+/* If .table-wrapper-inner is absent, allow direct overflow on wrapper */
+.table-wrapper > table {
+  overflow-x: auto;
 }
 
 .guide-table {
-width: 100%;
-border-collapse: collapse;
-min-width: 500px;
+  width: 100%;
+  border-collapse: collapse;
+  /* min-width forces horizontal scroll on small screens */
+  min-width: 480px;
+  table-layout: auto;
 }
 
 .guide-table th {
-background: #2C3E50;
-color: #fff;
-padding: 0.85rem 1.1rem;
-text-align: right;
-font-weight: bold;
-font-size: 0.95rem;
-white-space: nowrap;
+  background: #2C3E50;
+  color: #fff;
+  padding: 0.85rem 1rem;
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.9rem;
+  /* allow wrapping so long headers don't force huge widths */
+  white-space: normal;
+  word-break: break-word;
 }
 
 html[dir="ltr"] .guide-table th {
-text-align: left;
+  text-align: left;
 }
 
 .guide-table td {
-padding: 0.75rem 1.1rem;
-border-bottom: 2px solid #e5e7eb;
-text-align: right;
-color: #374151;
-line-height: 1.6;
+  padding: 0.7rem 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  text-align: right;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 0.92rem;
+  /* prevent extremely long words from breaking layout */
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 html[dir="ltr"] .guide-table td {
-text-align: left;
+  text-align: left;
 }
 
 .guide-table tr:last-child td {
-border-bottom: none;
+  border-bottom: none;
 }
 
 .guide-table tr:nth-child(even) td {
-background: #f0f9f8;
+  background: #f0f9f8;
 }
 
 .guide-table tr:hover td {
-background: #e0f5f3;
+  background: #e0f5f3;
+  transition: background 0.15s;
+}
+
+/* ── Large comparison table (5+ cols) gets a scroll hint ── */
+.table-wrapper::after {
+  content: '';
+  display: block;
+  height: 0;
+}
+
+/* Scroll indicator shown only when table overflows */
+@supports (overflow-x: auto) {
+  .table-wrapper {
+    position: relative;
+  }
 }
 
 .badge-primary {
@@ -548,26 +588,75 @@ font-size: 0.95rem;
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-.payment-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
+  .payment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.author-box {
-  flex-direction: column;
-  text-align: center;
-}
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.toc-grid {
-  grid-template-columns: 1fr 1fr;
-}
+  .toc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ── Table responsive on tablet ── */
+  .table-wrapper {
+    margin: 1rem 0;
+    /* slightly smaller shadow on mobile */
+    box-shadow: 3px 3px 0 0 #000;
+  }
+
+  .table-wrapper-inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* scroll hint: fades right edge when content overflows */
+    background:
+      linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+      linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
+      radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.12), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.12), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-size:
+      40px 100%, 40px 100%,
+      14px 100%, 14px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  .guide-table th {
+    font-size: 0.82rem;
+    padding: 0.7rem 0.75rem;
+  }
+
+  .guide-table td {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
-.toc-grid {
-  grid-template-columns: 1fr;
-}
+  .toc-grid {
+    grid-template-columns: 1fr;
+  }
 
-.payment-grid {
-  grid-template-columns: 1fr;
-}
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Table on small mobile ── */
+  .guide-table {
+    /* allow slightly smaller min-width on tiny screens */
+    min-width: 380px;
+  }
+
+  .guide-table th {
+    font-size: 0.78rem;
+    padding: 0.6rem 0.6rem;
+  }
+
+  .guide-table td {
+    font-size: 0.8rem;
+    padding: 0.55rem 0.6rem;
+  }
 }
