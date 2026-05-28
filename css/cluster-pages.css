@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    CLUSTER-PAGES.CSS — Cluster & Sub-pages Components
    Requires: base.css, components.css
    Design: Neobrutalism — matches Elmnoor brand identity
@@ -1165,3 +1165,299 @@
   color: var(--color-primary);
   margin-left: 0.4rem;
 }
+
+/* ============================================================
+   20. LANDING PAGE ENHANCEMENTS (ar/index.html)
+   ============================================================ */
+
+/* ── Hero Stats Strip ── */
+.hero-stats-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.hero-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 169, 157, 0.12);
+  border: 2.5px solid #000;
+  border-radius: 10px;
+  padding: 0.45rem 1rem;
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hero-stat:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.hero-stat i {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+/* ── Section Badge (label above h2) ── */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: 2.5px solid #000;
+  border-radius: 8px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 3px 3px 0 #000;
+  margin-bottom: 0.9rem;
+}
+
+/* ── CTA Benefit Items (with icons) ── */
+.cta-benefit-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-benefit-item i {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ── 3-Column Footer ── */
+.site-footer {
+  background: var(--color-dark);
+  color: var(--color-beige);
+  border-top: 5px solid #000;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2.5rem;
+  padding: 3.5rem 0 2.5rem;
+}
+
+/* Brand column */
+.footer-brand { }
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-beige);
+  text-decoration: none;
+  margin-bottom: 0.9rem;
+}
+
+.footer-logo i {
+  color: var(--color-primary);
+  font-size: 1.6rem;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(253, 252, 245, 0.68);
+  margin-bottom: 1.25rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-beige);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.footer-social-link:hover {
+  background: var(--color-primary);
+  border-color: #000;
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-2px, -2px);
+}
+
+.footer-social-link.whatsapp:hover {
+  background: #25d366;
+}
+
+/* Quick links column */
+.footer-col-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-beige);
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-col-title::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: rgba(253, 252, 245, 0.72);
+  text-decoration: none;
+  transition: color 0.18s ease, gap 0.18s ease;
+}
+
+.footer-links li a i {
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.footer-links li a:hover {
+  color: var(--color-primary);
+  gap: 0.7rem;
+}
+
+/* Contact column */
+.footer-contact-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(253, 252, 245, 0.68);
+  margin-bottom: 1.1rem;
+}
+
+.footer-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #25d366;
+  color: #fff;
+  border: 3px solid #000;
+  border-radius: 10px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 #000;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  margin-bottom: 1rem;
+}
+
+.footer-whatsapp-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.footer-whatsapp-btn i {
+  font-size: 1.1rem;
+}
+
+.footer-email {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: rgba(253, 252, 245, 0.68);
+}
+
+.footer-email i {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.footer-email a {
+  color: rgba(253, 252, 245, 0.72);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.footer-email a:hover {
+  color: var(--color-primary);
+}
+
+/* Copyright bar */
+.footer-copyright {
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 3px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-copyright p {
+  font-size: 0.82rem;
+  color: rgba(253, 252, 245, 0.5);
+  margin: 0;
+}
+
+/* ── Responsive: Landing Page Enhancements ── */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-stats-strip {
+    gap: 0.5rem;
+  }
+
+  .hero-stat {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.5rem 0 2rem;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+}
+
