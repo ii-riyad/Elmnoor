@@ -212,9 +212,37 @@ font-size: 1rem;
 
 .alert-box p,
 .alert-box li {
-color: #374151;
-line-height: 1.7;
-margin: 0.2rem 0;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0.2rem 0;
+}
+
+/* ===== EMGS Step: 3-col alert grid ===== */
+.emgs-alerts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+  align-items: stretch;   /* equal height */
+}
+
+/* each child alert-box inside the grid */
+.emgs-alerts-grid .alert-box {
+  margin: 0;              /* remove default vertical margin */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .emgs-alerts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .emgs-alerts-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== Guide Tables ===== */
