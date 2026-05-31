@@ -553,21 +553,24 @@ line-height: 1.6;
 
 /* ===== NOC Flag List ===== */
 .noc-list {
-list-style: none;
-padding: 0;
-display: flex;
-flex-wrap: wrap;
-gap: 0.7rem;
-margin-top: 0.7rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 .noc-list li {
-background: #fff;
-border: 2px solid #000;
-border-radius: 10px;
-padding: 0.5rem 1rem;
-font-weight: bold;
-font-size: 0.95rem;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 3px 3px 0 #000;
+  line-height: 1.4;
 }
 
 /* ===== Scholarship Cards ===== */

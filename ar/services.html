@@ -206,8 +206,8 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav class="navbar" aria-label="القائمة الرئيسية">
     <div class="container">
       <div class="nav-content">
         <div class="logo-group">
@@ -216,15 +216,17 @@
           </a>
           <p class="logo-tagline">اِسأل مجرب ولا تنسى الطبيب</p>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة" aria-expanded="false"
-          aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navLinks">
+          <i class="fas fa-bars"></i>
+        </button>
         <div class="nav-links" id="navLinks">
           <a href="../ar/#majors" class="nav-link">التخصصات</a>
           <a href="../ar/universities.html" class="nav-link">الجامعات</a>
+          <a href="../ar/malaysia-study-guide.html" class="nav-link nav-link-featured">دليل الدراسة</a>
           <a href="../ar/services.html" class="nav-link active">الخدمات</a>
-          <a href="../ar/malaysia-study-guide.html" class="nav-link nav-link-featured">الدليل الشامل</a>
+          <a href="../ar/life-in-malaysia-student-guide.html" class="nav-link">دليل الغربة</a>
           <a href="../ar/articles.html" class="nav-link">المقالات</a>
-
+          <a href="../ar/events.html" class="nav-link">الفعاليات</a>
           <a href="../en/services.html" class="lang-btn" aria-label="تبديل اللغة">
             <i class="fas fa-globe"></i><span>English</span>
           </a>
@@ -233,204 +235,130 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="services-hero">
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="page-hero" aria-labelledby="servicesTitle">
     <div class="container">
-      <h1 class="hero-title">الخدمات التي نقدمها من إجراءات وسكن وغيرها</h1>
-      <p>نوفر لك كل ما تحتاجه لرحلة دراسية ناجحة في ماليزيا</p>
-    </div>
-  </section>
-
-  <!-- Services Detail Section -->
-  <section class="services-detail-section">
-    <div class="container">
-      <!-- Integrated Environment - Featured -->
-      <div class="service-detail-card featured-service">
-        <div class="featured-badge">
-          <span>⭐ خدمة مميزة</span>
-        </div>
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <h2 class="service-detail-title">
-            بيئة متكاملة للطالب</h2>
-        </div>
-        <p class="service-detail-desc">
-          نوفر له بيئة دينية وصحية ورياضية متكاملة، ونساعده على الاندماج في الغربة عبر مجتمعات عربية تنشط بالفعاليات
-          والرحلات الممتعة
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>بيئة دينية ملائمة</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>مرافق صحية ورياضية متاحة</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>فعاليات ورحلات منظمة</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>دعم مستمر للاندماج الاجتماعي</span></li>
-        </ul>
-      </div>
-
-      <!-- University Registration -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-file-signature"></i>
-          </div>
-          <h2 class="service-detail-title">
-            التسجيل في الجامعات</h2>
-        </div>
-        <p class="service-detail-desc">
-          نساعدك في اختيار الجامعة والتخصص المناسب وإتمام جميع إجراءات التسجيل بسهولة ويسر
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>استشارة مجانية لاختيار الجامعة</span>
-          </li>
-          <li><i class="fas fa-check-circle"></i> <span>مساعدة في تجهيز الأوراق المطلوبة</span>
-          </li>
-          <li><i class="fas fa-check-circle"></i> <span>متابعة طلب القبول حتى الحصول
-              عليه</span></li>
-        </ul>
-      </div>
-
-      <!-- Academic Guidance -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-user-graduate"></i>
-          </div>
-          <h2 class="service-detail-title">الإرشاد
-            الأكاديمي</h2>
-        </div>
-        <p class="service-detail-desc">
-          نقدم استشارات أكاديمية مجانية لمساعدتك في اختيار أفضل مسار دراسي يناسب قدراتك وطموحاتك
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>تقييم مستواك الأكاديمي</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>توجيهك للتخصص المناسب</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>دعم مستمر طوال فترة الدراسة</span></li>
-        </ul>
-      </div>
-
-      <!-- Airport Reception -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-plane-arrival"></i>
-          </div>
-          <h2 class="service-detail-title">الاستقبال
-            من المطار</h2>
-        </div>
-        <p class="service-detail-desc">
-          نستقبلك في المطار ونوصلك إلى سكنك بأمان وراحة تامة
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>استقبال شخصي من المطار</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>نقل آمن ومريح</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>مساعدة في الإجراءات الأولية</span></li>
-        </ul>
-      </div>
-
-      <!-- Visa Assistance -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-passport"></i>
-          </div>
-          <h2 class="service-detail-title">المساعدة
-            في التأشيرة</h2>
-        </div>
-        <p class="service-detail-desc">
-          نساعدك في تجهيز جميع الأوراق المطلوبة والحصول على التأشيرة الدراسية
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>إرشادات واضحة لإجراءات التأشيرة</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>مراجعة الأوراق قبل التقديم</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>متابعة طلب التأشيرة</span></li>
-        </ul>
-      </div>
-
-      <!-- Accommodation -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-home"></i>
-          </div>
-          <h2 class="service-detail-title">ترتيب
-            السكن</h2>
-        </div>
-        <p class="service-detail-desc">
-          نوفر لك خيارات سكن مناسبة وآمنة قريبة من جامعتك
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>خيارات سكن متنوعة</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>قريبة من الجامعات</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>أسعار
-              مناسبة</span></li>
-        </ul>
-      </div>
-
-      <!-- Arabic Communities -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h2 class="service-detail-title">
-            الانضمام إلى مجتمعات عربية</h2>
-        </div>
-        <p class="service-detail-desc">
-          نساعدك على الانضمام إلى مجتمعات الطلاب العرب في ماليزيا والتواصل معهم لتسهيل اندماجك
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>التعرف على طلاب عرب</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>المشاركة في الفعاليات الثقافية</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>تبادل الخبرات والنصائح</span></li>
-        </ul>
-      </div>
-
-      <!-- Life in Malaysia Guide -->
-      <div class="service-detail-card">
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-globe-asia"></i>
-          </div>
-          <h2 class="service-detail-title">
-            دليل الغربة في ماليزيا</h2>
-        </div>
-        <p class="service-detail-desc">
-          دليل شامل يساعدك على فهم التحديات الحقيقية للحياة في ماليزيا كطالب عربي وكيفية التغلب عليها بنجاح
-        </p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle"></i> <span>التعامل مع الصدمة الثقافية واللهجة
-              المحلية</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>نصائح عملية حول الطعام والسكن</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>إدارة الميزانية وتوفير المال</span></li>
-          <li><i class="fas fa-check-circle"></i> <span>التغلب على الوحدة
-              وبناء علاقات دولية</span></li>
-        </ul>
-        <div>
-          <a href="../ar/life-in-malaysia-student-guide.html" class="read-more-btn">اقرأ الدليل</a>
-        </div>
-      </div>
-
-      <!-- Study Materials - Coming Soon -->
-      <div class="service-detail-card coming-soon">
-        <div class="coming-soon-badge">
-          <span>قريباً 🚀</span>
-        </div>
-        <div class="service-detail-header">
-          <div class="service-detail-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <h2 class="service-detail-title">المواد الدراسية
-          </h2>
-        </div>
-        <p class="service-detail-desc">
-          قريباً سنوفر لك مواد دراسية ودعم أكاديمي طوال فترة دراستك
-        </p>
+      <h1 id="servicesTitle">خدماتنا للطلاب العرب في ماليزيا</h1>
+      <p>من التسجيل في الجامعة إلى الاستقبال من المطار — نرافقك في كل خطوة</p>
+      <div class="hero-stats-strip">
+        <div class="hero-stat"><i class="fas fa-check-circle"></i><span>مجاناً 100%</span></div>
+        <div class="hero-stat"><i class="fas fa-users"></i><span>+500 طالب</span></div>
+        <div class="hero-stat"><i class="fas fa-clock"></i><span>نرد في 24 ساعة</span></div>
+        <div class="hero-stat"><i class="fas fa-globe"></i><span>10+ دول</span></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- ═══════════════ SERVICES GRID ═══════════════ -->
+  <section class="svc-section" aria-labelledby="svcTitle">
+    <div class="container">
+      <div class="section-badge"><i class="fas fa-star"></i> خدماتنا</div>
+      <h2 id="svcTitle" class="section-title">كل ما تحتاجه في مكان واحد</h2>
+      <p class="section-subtitle">نوفر لك خدمات متكاملة لرحلة دراسية ناجحة في ماليزيا</p>
+      
+      <div class="svc-grid">
+        <div class="svc-card svc-card--featured">
+          <div class="svc-badge-top">⭐ خدمة مميزة</div>
+          <div class="svc-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3 class="svc-title">بيئة متكاملة للطالب</h3>
+          <p class="svc-desc">بيئة دينية وصحية ورياضية، ومجتمعات عربية نشطة بالفعاليات والرحلات</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> بيئة دينية ملائمة</li>
+            <li><i class="fas fa-check"></i> فعاليات ورحلات منظمة</li>
+            <li><i class="fas fa-check"></i> دعم مستمر للاندماج</li>
+            <li><i class="fas fa-check"></i> مرافق صحية ورياضية</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-file-signature"></i></div>
+          <h3 class="svc-title">التسجيل في الجامعات</h3>
+          <p class="svc-desc">نساعدك في اختيار الجامعة والتخصص وإتمام جميع إجراءات التسجيل</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> استشارة مجانية</li>
+            <li><i class="fas fa-check"></i> تجهيز الأوراق</li>
+            <li><i class="fas fa-check"></i> متابعة خطاب القبول</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-user-graduate"></i></div>
+          <h3 class="svc-title">الإرشاد الأكاديمي</h3>
+          <p class="svc-desc">استشارات مجانية لاختيار أفضل مسار دراسي يناسب قدراتك وطموحاتك</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> تقييم مستواك</li>
+            <li><i class="fas fa-check"></i> توجيهك للتخصص</li>
+            <li><i class="fas fa-check"></i> دعم طوال الدراسة</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-plane-arrival"></i></div>
+          <h3 class="svc-title">الاستقبال من المطار</h3>
+          <p class="svc-desc">نستقبلك في المطار ونوصلك إلى سكنك بأمان وراحة تامة</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> استقبال شخصي</li>
+            <li><i class="fas fa-check"></i> نقل آمن ومريح</li>
+            <li><i class="fas fa-check"></i> مساعدة في الإجراءات</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-passport"></i></div>
+          <h3 class="svc-title">المساعدة في التأشيرة</h3>
+          <p class="svc-desc">نساعدك في تجهيز جميع الأوراق والحصول على التأشيرة الدراسية</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> إرشادات واضحة</li>
+            <li><i class="fas fa-check"></i> مراجعة الأوراق</li>
+            <li><i class="fas fa-check"></i> متابعة الطلب</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-home"></i></div>
+          <h3 class="svc-title">ترتيب السكن</h3>
+          <p class="svc-desc">خيارات سكن مناسبة وآمنة قريبة من جامعتك بأسعار مناسبة</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> خيارات متنوعة</li>
+            <li><i class="fas fa-check"></i> قريبة من الجامعات</li>
+            <li><i class="fas fa-check"></i> أسعار تنافسية</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-users"></i></div>
+          <h3 class="svc-title">الانضمام لمجتمعات عربية</h3>
+          <p class="svc-desc">نساعدك على الانضمام لمجتمعات الطلاب العرب في ماليزيا</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> التعرف على طلاب عرب</li>
+            <li><i class="fas fa-check"></i> فعاليات ثقافية</li>
+            <li><i class="fas fa-check"></i> تبادل الخبرات</li>
+          </ul>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fas fa-globe-asia"></i></div>
+          <h3 class="svc-title">دليل الغربة في ماليزيا</h3>
+          <p class="svc-desc">دليل شامل للتغلب على تحديات الحياة في ماليزيا كطالب عربي</p>
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> نصائح الحياة اليومية</li>
+            <li><i class="fas fa-check"></i> إدارة الميزانية</li>
+            <li><i class="fas fa-check"></i> بناء علاقات دولية</li>
+          </ul>
+          <a href="../ar/life-in-malaysia-student-guide.html" class="svc-link"><i class="fas fa-arrow-left"></i> اقرأ الدليل</a>
+        </div>
+
+        <div class="svc-card svc-card--soon">
+          <div class="svc-badge-top svc-badge-soon">🚀 قريباً</div>
+          <div class="svc-icon"><i class="fas fa-book"></i></div>
+          <h3 class="svc-title">المواد الدراسية</h3>
+          <p class="svc-desc">مواد دراسية ودعم أكاديمي طوال فترة دراستك — قريباً</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
   <section class="cta-section">
     <div class="container">
       <h2 class="cta-title">هل تحتاج إلى مساعدة في رحلتك الدراسية؟</h2>
@@ -440,8 +368,7 @@
         <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer"
           class="btn btn-primary cta-btn-main">
           <i class="fas fa-headset"></i>
-          <span>تواصل معنا الآن -
-            مجاناً</span>
+          <span>تواصل معنا الآن - مجاناً</span>
           <small>نرد خلال 24 ساعة</small>
         </a>
         <a href="../ar/universities.html" class="btn btn-secondary cta-btn-secondary">
@@ -452,8 +379,7 @@
       <div class="cta-benefits">
         <div class="cta-benefit-item">
           <i class="fas fa-check-circle"></i>
-          <span>استشارة مجانية
-            متخصصة</span>
+          <span>استشارة مجانية متخصصة</span>
         </div>
         <div class="cta-benefit-item">
           <i class="fas fa-check-circle"></i>
@@ -461,33 +387,52 @@
         </div>
         <div class="cta-benefit-item">
           <i class="fas fa-check-circle"></i>
-          <span>أسعار تنافسية
-            وشفافة</span>
+          <span>أسعار تنافسية وشفافة</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
     <div class="container">
-      <p class="footer-text">
-        © 2025 علم ونور - دليلك للتعليم في ماليزيا. جميع الحقوق محفوظة
-      </p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/elmnooor" target="_blank" rel="noopener noreferrer"
-          class="social-link instagram" aria-label="تابعنا على الإنستغرام">
-          <i class="fab fa-instagram"></i>
-        </a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../ar/" class="footer-logo"><i class="fas fa-graduation-cap"></i> علم ونور</a>
+          <p class="footer-tagline">اِسأل مجرب ولا تنسى الطبيب</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/elmnooor" target="_blank" rel="noopener noreferrer" class="footer-social-link instagram" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="footer-social-link whatsapp" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="../ar/universities.html"><i class="fas fa-chevron-left"></i> الجامعات</a></li>
+            <li><a href="../ar/malaysia-study-guide.html"><i class="fas fa-chevron-left"></i> دليل الدراسة</a></li>
+            <li><a href="../ar/services.html"><i class="fas fa-chevron-left"></i> الخدمات</a></li>
+            <li><a href="../ar/articles.html"><i class="fas fa-chevron-left"></i> المقالات</a></li>
+            <li><a href="../ar/events.html"><i class="fas fa-chevron-left"></i> الفعاليات</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">تواصل معنا</h4>
+          <p class="footer-contact-text">استشارة مجانية عبر واتساب</p>
+          <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="footer-whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> ابدأ المحادثة
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>© 2026 علم ونور | جميع الحقوق محفوظة</p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
-    aria-label="تواصل معنا عبر واتساب">
+  <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="تواصل معنا عبر واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
 </body>
-
 </html>
