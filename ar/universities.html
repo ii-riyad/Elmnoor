@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -552,12 +552,13 @@
   </a>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    (function() {
       const buttons = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('#univGrid .uni-card');
       
       buttons.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
           // Update active state
           buttons.forEach(b => b.classList.remove('active'));
           this.classList.add('active');
@@ -577,7 +578,7 @@
           });
         });
       });
-    });
+    })();
   </script>
 
 </body>
