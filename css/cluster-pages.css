@@ -2793,11 +2793,11 @@ html[dir="rtl"] .svc-badge-top {
 
 /* COMIC DOTS PATTERNS (NEOBRUTALISM) */
 .pattern-dark {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 2px, transparent 2px) !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 2px, transparent 2px) !important;
   background-size: 20px 20px !important;
 }
 
 .pattern-light {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 2px, transparent 2px) !important;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.02) 2px, transparent 2px) !important;
   background-size: 20px 20px !important;
 }
