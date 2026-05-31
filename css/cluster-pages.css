@@ -2798,6 +2798,6 @@ html[dir="rtl"] .svc-badge-top {
 }
 
 .pattern-light {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.02) 2px, transparent 2px) !important;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 2px, transparent 2px) !important;
   background-size: 20px 20px !important;
 }
