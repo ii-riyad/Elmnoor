@@ -552,33 +552,36 @@
   </a>
 
   <script>
-    (function() {
-      const buttons = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('#univGrid .uni-card');
+    window.addEventListener('load', function() {
+      var buttons = document.querySelectorAll('.filter-btn');
+      var cards = document.querySelectorAll('.uni-card');
       
-      buttons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+      for (var i = 0; i < buttons.length; i++) {
+        // Ensure buttons are on top
+        buttons[i].style.position = 'relative';
+        buttons[i].style.zIndex = '9999';
+        
+        buttons[i].addEventListener('click', function(e) {
           e.preventDefault();
-          // Update active state
-          buttons.forEach(b => b.classList.remove('active'));
+          var cat = this.getAttribute('data-filter');
+          
+          for (var j = 0; j < buttons.length; j++) {
+            buttons[j].classList.remove('active');
+          }
           this.classList.add('active');
           
-          const cat = this.getAttribute('data-filter');
-          
-          // Filter cards
-          cards.forEach(card => {
-            const cats = card.getAttribute('data-cats') || '';
-            const show = cat === 'all' || cats.includes(cat);
-            
-            if (show) {
+          for (var k = 0; k < cards.length; k++) {
+            var card = cards[k];
+            var cats = card.getAttribute('data-cats') || '';
+            if (cat === 'all' || cats.indexOf(cat) !== -1) {
               card.style.display = 'flex';
             } else {
               card.style.display = 'none';
             }
-          });
+          }
         });
-      });
-    })();
+      }
+    });
   </script>
 
 </body>
