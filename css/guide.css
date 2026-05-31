@@ -119,20 +119,52 @@ margin-top: 0.5rem;
 
 /* ===== Steps ===== */
 .steps-list {
-list-style: none;
-padding: 0;
-counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  counter-reset: step-counter;
+  /* Override cluster-pages.css which sets display:flex on .steps-list */
+  display: block !important;
+  flex-direction: unset !important;
+  gap: unset !important;
 }
 
 .step-item {
-counter-increment: step-counter;
-background: #fff;
-border: 4px solid #000;
-border-radius: 16px;
-padding: 2.5rem 2rem 2rem;
-margin-bottom: 2rem;
-box-shadow: 6px 6px 0 0 #000;
-position: relative;
+  counter-increment: step-counter;
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 6px 6px 0 0 #000;
+  position: relative;
+  /* Override cluster-pages.css which sets display:flex on .step-item
+     causing tables and alert-grids to appear side-by-side */
+  display: block !important;
+  align-items: unset !important;
+}
+
+/* Ensure every direct child of step-item stacks vertically */
+.step-item > * {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* table-wrapper must always take full width and sit on its own row */
+.step-item > .table-wrapper {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* emgs-alerts-grid sits below the table, not beside it */
+.step-item > .emgs-alerts-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0;
+  width: 100%;
 }
 
 .step-item::before {
