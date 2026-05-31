@@ -126,19 +126,19 @@
     <div class="container">
       <div class="univ-filter-row">
         <span class="univ-filter-lbl">تصفية حسب:</span>
-        <button class="filter-btn active" data-filter="all" onclick="filterUnivs(this,'all')">
+        <button class="filter-btn active" data-filter="all" >
           <i class="fas fa-th"></i> الكل
         </button>
-        <button class="filter-btn" data-filter="eng" onclick="filterUnivs(this,'eng')">
+        <button class="filter-btn" data-filter="eng" >
           <i class="fas fa-cog"></i> هندسة وتقنية
         </button>
-        <button class="filter-btn" data-filter="med" onclick="filterUnivs(this,'med')">
+        <button class="filter-btn" data-filter="med" >
           <i class="fas fa-heartbeat"></i> طب وصحة
         </button>
-        <button class="filter-btn" data-filter="biz" onclick="filterUnivs(this,'biz')">
+        <button class="filter-btn" data-filter="biz" >
           <i class="fas fa-briefcase"></i> أعمال وإدارة
         </button>
-        <button class="filter-btn" data-filter="int" onclick="filterUnivs(this,'int')">
+        <button class="filter-btn" data-filter="int" >
           <i class="fas fa-globe"></i> شهادة دولية
         </button>
       </div>
@@ -552,20 +552,35 @@
   </a>
 
   <script>
-    function filterUnivs(btn, cat) {
-      // Update active button
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      // Filter cards
-      document.querySelectorAll('#univGrid .uni-card').forEach(card => {
-        const cats = card.dataset.cats || '';
-        const show = cat === 'all' || cats.split(' ').includes(cat);
-        card.style.display = show ? '' : 'none';
-        if (show) card.style.animation = 'none';
+    document.addEventListener("DOMContentLoaded", function() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('#univGrid .uni-card');
+      
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Update active state
+          buttons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          const cat = this.getAttribute('data-filter');
+          
+          // Filter cards
+          cards.forEach(card => {
+            const cats = card.getAttribute('data-cats') || '';
+            const show = cat === 'all' || cats.includes(cat);
+            
+            if (show) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
       });
-    }
+    });
   </script>
 
 </body>
 </html>
+
 
