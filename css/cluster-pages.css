@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    CLUSTER-PAGES.CSS — Cluster & Sub-pages Components
    Requires: base.css, components.css
    Design: Neobrutalism — matches Elmnoor brand identity
@@ -2634,163 +2634,135 @@ html[dir="rtl"] .svc-badge-top {
   }
 }
 
-/* 23. SERVICES PAGE */
+/* 23. SERVICES PAGE — Enhanced */
 .svc-section {
-  padding: 4rem 0 5rem;
-  background: #f8fffe;
+  padding: 4.5rem 0 6rem;
+  background: #f5f5ef;
 }
 
 .svc-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1.75rem;
+  margin-top: 3rem;
 }
 
 .svc-card {
   background: #fff;
   border: 3px solid #000;
-  border-radius: 16px;
-  padding: 1.75rem 1.5rem;
-  box-shadow: 5px 5px 0 #000;
-  transition: transform .2s, box-shadow .2s;
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 6px 6px 0 #000;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
   position: relative;
   overflow: hidden;
 }
 
 .svc-card:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0 #000;
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
 }
 
-.svc-card--featured {
-  border-color: #00A99D;
-  box-shadow: 5px 5px 0 #00A99D;
-  background: linear-gradient(135deg, #f0fdfc 0%, #fff 100%);
-  grid-column: span 1;
-}
+.svc-card:nth-child(1) { --svc-accent: #00A99D; }
+.svc-card:nth-child(2) { --svc-accent: #3b82f6; }
+.svc-card:nth-child(3) { --svc-accent: #8b5cf6; }
+.svc-card:nth-child(4) { --svc-accent: #f59e0b; }
+.svc-card:nth-child(5) { --svc-accent: #ef4444; }
+.svc-card:nth-child(6) { --svc-accent: #10b981; }
+.svc-card:nth-child(7) { --svc-accent: #ec4899; }
+.svc-card:nth-child(8) { --svc-accent: #f97316; }
+.svc-card:nth-child(9) { --svc-accent: #6366f1; }
 
-.svc-card--featured:hover {
-  box-shadow: 8px 8px 0 #00A99D;
-}
-
-.svc-card--soon {
-  opacity: 0.75;
-  background: #f9f9f9;
-}
-
-.svc-badge-top {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  background: #00A99D;
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: bold;
-  padding: 0.3rem 0.9rem;
-  border-radius: 0 0 12px 0;
-  border: 2px solid #000;
-}
-
-html[dir="rtl"] .svc-badge-top {
-  left: auto;
-  right: -1px;
-  border-radius: 0 0 0 12px;
-}
-
-.svc-badge-soon {
-  background: #6b7280;
-}
-
-.svc-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #00A99D, #008f84);
-  border: 3px solid #000;
-  border-radius: 14px;
+.svc-card-header {
+  background: var(--svc-accent, #00A99D);
+  padding: 1.4rem 1.6rem 1rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: #fff;
-  box-shadow: 3px 3px 0 #000;
-  flex-shrink: 0;
-  margin-top: 1.25rem;
+  align-items: flex-start;
+  gap: 0.9rem;
+  border-bottom: 3px solid #000;
 }
 
-.svc-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #2C3E50;
-  margin: 0;
-}
-
-.svc-desc {
-  font-size: 0.92rem;
-  color: #4b5563;
-  line-height: 1.65;
-  margin: 0;
+.svc-card-body {
+  padding: 1.25rem 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
   flex: 1;
 }
 
+.svc-card--featured { border-color: #00A99D; box-shadow: 6px 6px 0 #00A99D; }
+.svc-card--featured:hover { box-shadow: 10px 10px 0 #00A99D; }
+.svc-card--soon { opacity: 0.72; }
+
+.svc-badge-top {
+  position: absolute;
+  top: 0; right: 0;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  font-size: 0.72rem; font-weight: bold;
+  padding: 0.25rem 0.8rem;
+  border-radius: 0 20px 0 10px;
+}
+html[dir="rtl"] .svc-badge-top { right: auto; left: 0; border-radius: 20px 0 10px 0; }
+.svc-badge-soon { background: rgba(0,0,0,0.5); }
+
+.svc-icon {
+  width: 50px; height: 50px;
+  background: rgba(255,255,255,0.2);
+  border: 2.5px solid rgba(255,255,255,0.6);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; color: #fff; flex-shrink: 0;
+}
+
+.svc-title {
+  font-size: 1.05rem; font-weight: bold;
+  color: #fff; margin: 0; line-height: 1.35;
+}
+
+.svc-desc {
+  font-size: 0.91rem; color: #4b5563;
+  line-height: 1.7; margin: 0; flex: 1;
+}
+
 .svc-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  border-top: 2px dashed rgba(0,0,0,0.1);
+  padding-top: 0.9rem;
 }
 
 .svc-list li {
-  font-size: 0.88rem;
-  color: #374151;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-size: 0.87rem; color: #374151;
+  display: flex; align-items: center; gap: 0.6rem;
 }
 
 .svc-list li i {
-  color: #00A99D;
-  font-size: 0.85rem;
-  flex-shrink: 0;
+  color: var(--svc-accent, #00A99D);
+  font-size: 0.8rem; flex-shrink: 0;
+  width: 20px; height: 20px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
 }
 
 .svc-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: #00A99D;
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--svc-accent, #00A99D); font-weight: bold;
+  font-size: 0.88rem; text-decoration: none;
   border-bottom: 2px solid transparent;
-  transition: border-color .2s;
-  margin-top: auto;
+  transition: border-color .15s;
+  margin-top: auto; padding-top: 0.25rem;
 }
+.svc-link:hover { border-bottom-color: var(--svc-accent, #00A99D); }
 
-.svc-link:hover {
-  border-bottom-color: #00A99D;
-}
-
-@media (max-width: 900px) {
-  .svc-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+@media (max-width: 900px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) {
-  .svc-grid {
-    grid-template-columns: 1fr;
-  }
-  .svc-card--featured {
-    grid-column: span 1;
-  }
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-card--featured { grid-column: span 1; }
 }
-
 /* COMIC DOTS PATTERNS (NEOBRUTALISM) */
 .pattern-dark {
   background-image: radial-gradient(rgba(255, 255, 255, 0.04) 2px, transparent 2px) !important;
@@ -2801,3 +2773,4 @@ html[dir="rtl"] .svc-badge-top {
   background-image: radial-gradient(rgba(0, 0, 0, 0.06) 2px, transparent 2px) !important;
   background-size: 20px 20px !important;
 }
+
