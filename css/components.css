@@ -486,22 +486,23 @@ html[lang="en"] .hero-text {
 .major-icon,
 .service-icon,
 .card-icon {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   background: var(--color-primary);
   border: 3px solid #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto .8rem;
+  margin: 0 auto 1rem;
   transition: transform .2s ease;
+  box-shadow: 4px 4px 0 #000;
 }
 
 .major-icon i,
 .service-icon i,
 .card-icon i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--color-white);
 }
 
