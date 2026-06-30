@@ -676,3 +676,21 @@
 .fa-money-bill-wave:before {
   content: '\f53a';
 }
+
+.fa-stethoscope:before {
+  content: '\f0f1';
+}
+
+.fa-map-signs:before {
+  content: '\f277';
+}
+
+
+.fa-user-md:before {
+  content: '\f0f0';
+}
+
+
+.fa-file-contract:before {
+  content: '\f56c';
+}
