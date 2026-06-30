@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
 
@@ -67,7 +67,6 @@
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/cluster-pages.css">
   <script src="../js/init.js" defer></script>
-  <script src="../js/swipeable-cards.js" defer></script>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -209,6 +208,28 @@
     ]
   }
   </script>
+
+  <style>
+    /* Button alignment and text vertical centering */
+    .btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.75rem !important; /* Space between text and arrow */
+      padding-top: calc(0.75rem + 4px) !important; /* Push Arabic text down slightly to center it */
+    }
+
+    /* Disable hover effects on cards for mobile screens */
+    @media (max-width: 768px) {
+      .major-card, .info-card, .service-card, .highlight-box {
+        transition: none !important;
+      }
+      .major-card:hover, .info-card:hover, .service-card:hover, .highlight-box:hover {
+        transform: none !important;
+        box-shadow: var(--shadow-md) !important; /* Reset to default shadow instead of hover shadow */
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -241,573 +262,626 @@
   </nav>
 
   <main id="maincontent">
-    <!-- Table of Contents Sidebar -->
-    <div class="toc-sidebar" id="tocSidebar">
-      <div class="toc-header">
-        <h2><i class="fas fa-list-dots"></i> المحتويات</h2>
-        <button class="toc-close-btn" id="tocCloseBtn">×</button>
-      </div>
-      <div class="toc-items">
-        <button class="toc-item active">
-          <span class="toc-icon"><i class="fas fa-book"></i></span>
-          <span class="toc-text">مقدمة الدليل</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-shield-halved"></i></span>
-          <span class="toc-text">القوانين والأمان</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-home"></i></span>
-          <span class="toc-text">السكن والأمان</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-wallet"></i></span>
-          <span class="toc-text">المصاريف والبنوك</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-bus"></i></span>
-          <span class="toc-text">المواصلات</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-comments"></i></span>
-          <span class="toc-text">اللغة والاتصال</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-leaf"></i></span>
-          <span class="toc-text">الصدمة البيئية</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-users"></i></span>
-          <span class="toc-text">الوحدة والعزلة</span>
-        </button>
-        <button class="toc-item">
-          <span class="toc-icon"><i class="fas fa-graduation-cap"></i></span>
-          <span class="toc-text">الخلاصة</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- TOC Toggle Button -->
-    <button class="toc-toggle-btn" id="tocToggleBtn" title="فتح جدول المحتويات">
-      <i class="fas fa-bars"></i>
-    </button>
-
+  <main id="maincontent">
+    
     <!-- Hero Section -->
-    <section class="page-hero">
+    <section class="cluster-hero pattern-dark">
       <div class="container">
+        <nav class="breadcrumb-nav" aria-label="مسار التنقل">
+          <a href="../ar/">الرئيسية</a>
+          <span class="breadcrumb-sep"><i class="fas fa-chevron-left"></i></span>
+          <span class="breadcrumb-current">دليل الغربة في ماليزيا</span>
+        </nav>
+        
+        <div class="cluster-hero-logo" style="margin-bottom: 1.5rem;">
+          <i class="fas fa-globe-asia" style="font-size: 4rem; color: var(--color-beige);"></i>
+        </div>
+        
         <h1>دليل شامل للطلاب العرب عن حياة الغربة في ماليزيا</h1>
-        <p>كل ما تحتاج معرفته عن المعيشة والسكن والحلول المالية - اختر القسم وابدأ القراءة</p>
+        <p class="cluster-subtitle" style="margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+          كل ما تحتاج معرفته عن المعيشة والسكن والحلول المالية والتأقلم - خلاصة تجارب طلاب سابقين
+        </p>
+        
+        <div class="cluster-badges" style="justify-content: center; margin-top: 2rem;">
+          <span class="cluster-badge badge-accent"><i class="fas fa-star"></i> الدليل الشامل</span>
+          <span class="cluster-badge badge-primary"><i class="fas fa-user-graduate"></i> للطلاب الجدد</span>
+        </div>
       </div>
     </section>
 
-    <!-- Table of Contents (Removed - Now in Sidebar) -->
-
-    <!-- Swipeable Cards Section -->
-    <section class="swipeable-section">
+    <!-- Section 1: Introduction -->
+    <section class="cluster-section" id="intro">
       <div class="container">
-        <div class="cards-wrapper" id="cards-section">
-          <!-- Card 1: Introduction -->
-          <div class="swipeable-card active" data-card="0" id="card-intro">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-book"></i></div>
-              <h2>مقدمة الدليل</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>هل تفكر في الدراسة في ماليزيا؟ أو ربما وصلت للتو إلى مدينتك الجامعية؟</p>
+        <h2 class="cluster-section-title"><i class="fas fa-book"></i> مقدمة الدليل</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>هل تفكر في الدراسة في ماليزيا؟ أو ربما وصلت للتو إلى مدينتك الجامعية؟</p>
+          <p>كثيرًا ما يتم ترويج ماليزيا بصور الشواطئ الخلابة والغابات المطيرة، لكن <strong>حياة الطالب تختلف تماماً عن حياة السائح</strong>. الواقع اليومي للطالب يدور حول المحاضرات، البقالات، المذاكرة، والتعامل مع تحديات الغربة الحقيقية.</p>
+        </div>
 
-                <p>كثيرًا ما يتم ترويج ماليزيا بصور الشواطئ الخلابة والغابات المطيرة، لكن
-                  <strong>حياة الطالب تختلف تماماً عن حياة السائح</strong>. الواقع اليومي للطالب يدور حول المحاضرات،
-                  البقالات، المذاكرة، والتعامل مع تحديات الغربة الحقيقية.
-                </p>
-
-                <h3>لماذا سايبرجايا (Cyberjaya)؟</h3>
-                <p>سايبرجايا هي المدينة الذكية في ماليزيا وتُعتبر <strong>الوجهة الأولى للطلاب العرب</strong> لعدة
-                  أسباب:</p>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-graduation-cap"></i> مميزات سايبرجايا للطلاب</h5>
-                  <p><strong>• الجامعات:</strong> MMU، UNITAR، LIMKOKWING، Heriot-Watt - كلها في محيط واحد</p>
-                  <p><strong>• البنية التحتية:</strong> مدينة حديثة ومخططة بعناية مع إنترنت
-                    فائق السرعة</p>
-                  <p><strong>• المواصلات:</strong> قريبة من المطار (KLIA) وكوالالمبور (40
-                    دقيقة بالباص)</p>
-                  <p><strong>• المجتمع العربي:</strong> تجمع كبير من الطلاب العرب يسهل عليك
-                    التأقلم</p>
-                </div>
-
-                <h3>ما الذي ستجده في هذا الدليل؟</h3>
-                <p>هذا الدليل مبني على <strong>تجارب واقعية لطلاب عاشوا في سايبرجايا</strong> وليس معلومات نظرية. ستتعرف
-                  على:</p>
-                <p>✓ كيفية التعامل مع اللغة والثقافة المحلية</p>
-                <p>✓ الحلول المالية (البنوك، الصرافة، التطبيقات الضرورية)</p>
-                <p>✓ أماكن التسوق والبقالات وأسعارها</p>
-                <p>✓ كيف تتجنب فخ الوحدة والعزلة</p>
-                <p>✓ نصائح عملية لتوفير المال وإدارة حياتك</p>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-lightbulb"></i> هدف هذا الدليل</h5>
-                  <p>نريدك أن <strong>تصل سايبرجايا وأنت واثق</strong> من كل خطوة. هذا الدليل يوفر عليك أشهر من التجربة
-                    والخطأ.</p>
-                </div>
-
-                <p>👈 اسحب البطاقة لليسار أو اضغط على النقاط
-                  بالأسفل للمتابعة</p>
-              </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-city"></i></div>
+            <h3 class="info-card-title">لماذا سايبرجايا (Cyberjaya)؟</h3>
+            <div class="info-card-body">
+              <p>سايبرجايا هي المدينة الذكية في ماليزيا وتُعتبر الوجهة الأولى للطلاب العرب:</p>
+              <ul class="rich-list" style="margin-top: 1rem;">
+                <li><i class="fas fa-check"></i> <strong>الجامعات:</strong> MMU، UNITAR، LIMKOKWING، Heriot-Watt</li>
+                <li><i class="fas fa-check"></i> <strong>البنية التحتية:</strong> مدينة حديثة ومخططة بعناية</li>
+                <li><i class="fas fa-check"></i> <strong>المواصلات:</strong> قريبة من المطار وكوالالمبور</li>
+                <li><i class="fas fa-check"></i> <strong>المجتمع العربي:</strong> تجمع كبير يسهل التأقلم</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Card 2: Laws & Safety (NEW) -->
-          <div class="swipeable-card" data-card="1" id="card-laws">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-shield-halved"></i></div>
-              <h2>القوانين الصارمة والأمان (الأولوية القصوى)</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>قبل أي شيء، يجب أن تعرف <strong>الخطوط الحمراء</strong> التي لا يمكن تجاوزها في ماليزيا. مخالفتها قد
-                  تؤدي إلى <strong>الترحيل الفوري</strong> وإلغاء تأشيرتك.</p>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-warning"></i> تحذير هام: الحضور الإلزامي</h5>
-                  <p><strong>نسبة الحضور 80% إلزامية</strong> لتجديد التأشيرة. أي تهاون قد يؤدي لرفض التجديد والترحيل.
-                  </p>
-                  <p>الجامعات تراقب الحضور بدقة، وترسل التقارير لإدارة الهجرة EMGS مباشرة.
-                    <strong>الغياب المتكرر = خطر حقيقي على تأشيرتك</strong>.
-                  </p>
-                </div>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-ban"></i> العمل الجزئي: ممنوع إلا بشروط صارمة</h5>
-                  <p><strong>العمل غير المصرح به ممنوع قانونياً</strong> ويعرضك لخطر الترحيل الفوري.</p>
-                  <p><strong>الاستثناءات المسموحة فقط:</strong></p>
-                  <p>• العمل في العطلات الطويلة (Semester Breaks)</p>
-                  <p>• بحد أقصى <strong>20 ساعة أسبوعياً</strong></p>
-                  <p>• يتطلب تصريح رسمي من الجامعة</p>
-                  <p><strong>⚠️ العمل بدون تصريح = ترحيل فوري + حظر دخول لماليزيا</strong>
-                  </p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-check-circle"></i> كيف تبقى آمناً؟</h5>
-                  <p><strong>1. الحضور:</strong> لا تتغيب إلا بعذر مرضي أو طارئ موثق</p>
-                  <p><strong>2. العمل:</strong> إذا احتجت دخل إضافي، استشر قسم الطلاب
-                    الدوليين في جامعتك أولاً</p>
-                  <p><strong>3. التأشيرة:</strong> تابع تاريخ انتهاء تأشيرتك وجددها قبل
-                    الموعد بشهر على الأقل</p>
-                </div>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-lightbulb"></i> نصيحة علم ونور</h5>
-                  <p>احتفظ بنسخة من جميع وثائقك (جواز السفر، تأشيرة، بطاقة الطالب) على هاتفك وفي حساب سحابي. في حالة
-                    الطوارئ، هذه الوثائق قد تنقذك من مشاكل كبيرة.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Housing & Safety (NEW) -->
-          <div class="swipeable-card" data-card="2" id="card-housing">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-home"></i></div>
-              <h2>السكن والأمان (المعيار الأول للأهالي)</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>السكن هو <strong>أهم قرار ستتخذه</strong> بعد وصولك. الاختيار الصحيح يوفر عليك المال ويضمن راحتك
-                  وسلامتك.</p>
-
-                <h3><i class="fas fa-building"></i> أنواع السكن في سايبرجايا</h3>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-home"></i> 1. Serviced Apartments (الأفضل للطلاب)</h5>
-                  <p><strong>المميزات:</strong> مؤثث بالكامل، أمن 24/7، حمام سباحة وجيم، قريب من الجامعات</p>
-                  <p><strong>السعر:</strong> 450-700 RM شهرياً للشخص (مشاركة)</p>
-                  <p><strong>أمثلة:</strong> D'Pulze Residence، Evo Soho، Shaftsbury Square
-                  </p>
-                </div>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-home"></i> 2. Studio Units (SOHO)</h5>
-                  <p><strong>المميزات:</strong> مساحة أصغر، خصوصية أكثر، مناسب لشخص أو اثنين</p>
-                  <p><strong>السعر:</strong> 1000-1400 RM شهرياً للوحدة (بالمتوسط)</p>
-                  <p><strong>ملاحظة:</strong> تكلفتها أعلى من الشقق المشتركة</p>
-                </div>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-bolt"></i> ⚠️ تحذير هام: فواتير الكهرباء في SOHO</h5>
-                  <p><strong>انتبه!</strong> بعض وحدات الاستوديو (SOHO) قد تُحسب بتعرفة <strong>تجارية
-                      (Commercial)</strong> وليست سكنية.</p>
-                  <p><strong>النتيجة:</strong> فاتورة الكهرباء قد تكون <strong>أغلى بـ
-                      30-50%</strong> من السكن العادي!</p>
-                  <p><strong>الحل:</strong> قبل استئجار الوحدة، اسأل المالك أو الوكيل عن نوع
-                    التعرفة الكهربائية (Residential أو Commercial).</p>
-                </div>
-
-                <h3><i class="fas fa-search"></i> كيف تبحث عن السكن؟</h3>
-                <p><strong>أفضل المواقع والتطبيقات:</strong></p>
-                <p>• <strong>Mudah.my</strong> - الموقع الأشهر (مثل OLX)</p>
-                <p>• <strong>iProperty</strong> - عقارات مضمونة</p>
-                <p>• <strong>Facebook Groups</strong> - ابحث عن "Cyberjaya Student Housing"
-                  أو "MMU Students Accommodation"</p>
-                <p>• <strong>WhatsApp Groups</strong> - اسأل الطلاب العرب في جامعتك</p>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-lightbulb"></i> نصيحة ذهبية</h5>
-                  <p><strong>لا توقع العقد قبل معاينة الوحدة شخصياً!</strong> بعض الإعلانات تكون مضللة. تأكد من:</p>
-                  <p>✓ نظافة الوحدة وسلامة الأثاث</p>
-                  <p>✓ عمل التكييف والماء الساخن</p>
-                  <p>✓ أمان المبنى (حارس، كاميرات، بوابة دخول)</p>
-                  <p>✓ قرب السكن من الجامعة والمواصلات</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-handshake"></i> علم ونور تساعدك</h5>
-                  <p>نوفر لك <strong>مساعدة مجانية</strong> في البحث عن السكن المناسب، معاينة الوحدات، والتفاوض مع
-                    الملاك. اتصل بنا قبل وصولك!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 (old 2): Language -->
-          <div class="swipeable-card" data-card="5" id="card-language">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-comments"></i></div>
-              <h2>اللغة والاتصال</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>من أهم مميزات ماليزيا هو <strong>انتشار اللغة الإنجليزية كلغة تواصل أساسية</strong>.</p>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-warning"></i> تحدي اللهجة</h5>
-                  <p>الشعب الماليزي يتحدث بلكنة محلية سريعة (Manglish). أذنك ستحتاج لأسبوع أو أسبوعين للاعتياد.</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-check-circle"></i> النصيحة الذهبية</h5>
-                  <p>الشعب الماليزي ودود جداً؛ لا تتردد في طلب إعادة الكلام ببطء. سيقدرون جهدك.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 (old 3): Environment & Food -->
-          <div class="swipeable-card" data-card="6" id="card-environment">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-leaf"></i></div>
-              <h2>الصدمة البيئية والطعام</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>بمجرد الخروج من المطار، ستستقبلك <strong>الرطوبة العالية</strong>. التحدي البيئي مسألة وقت، لكن
-                  <strong>التحدي الأكبر يكمن في "معدتك"</strong>.
-                </p>
-
-                <h3>الطعام: تحدي البهارات</h3>
-                <p>الأكل الماليزي يعتمد على <strong>البهارات الحارة (Sambal)</strong>. قد تعاني معدتك في البداية إذا لم
-                  تكن معتاداً.</p>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-lightbulb"></i> الحل</h5>
-                  <p>في سايبرجايا، الخيارات العربية متوفرة بكثرة في مناطق مثل "Shaftsbury" و "Neo Cyber". لكن
-                    <strong>تعلم الطبخ في المنزل يظل هو الحل الأوفر والأصح</strong>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4: Financial Guide (UPDATED) -->
-          <div class="swipeable-card" data-card="3" id="card-financial">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-wallet"></i></div>
-              <h2>التعاملات المالية والمصاريف</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>نعلم أن الهاجس الأكبر لدى الآباء هو: <strong>"كيف سيعيش ابني؟"</strong>. بناءً على كتيب إرشاد علم
-                  ونور، إليك التفاصيل المالية واللوجستية:</p>
-
-                <h3><i class="fas fa-institution"></i> 1. الأمان المالي: البنوك والمحافظ</h3>
-                <p>النظام المالي في ماليزيا متطور جداً:</p>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-clock"></i> تحذير: فتح حساب بنكي يستغرق وقتاً</h5>
-                  <p>فتح حساب بنكي محلي <strong>صعب ويستغرق وقتاً طويلاً</strong> (أسبوعين - شهر) ويتطلب:</p>
-                  <p>• خطاب من الجامعة</p>
-                  <p>• جواز السفر + تأشيرة سارية</p>
-                  <p>• إيداع أولي (200-500 RM)</p>
-                  <p><strong>⏱️ المشكلة:</strong> قد لا تحتاج البطاقة فوراً، وستحتاج حلاً
-                    سريعاً للدفع!</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-rocket"></i> الحل الفوري: Wise (الخيار الأذكى)</h5>
-                  <p><strong>Wise</strong> هو حل مثالي للطلاب - بطاقة دولية تعمل فور الوصول:</p>
-                  <p>✓ <strong>تفعيل فوري</strong> - اطلبها قبل وصولك واستخدمها مباشرة</p>
-                  <p>✓ <strong>أسعار صرف ممتازة</strong> - أفضل من البنوك والصرافات</p>
-                  <p>✓ <strong>رسوم منخفضة جداً</strong></p>
-                  <p>✓ يمكن ربطها بـ <strong>Samsung Pay أو Google Pay</strong></p>
-                  <p><strong>💡 نصيحة:</strong> سجل حساب Wise قبل سفرك بأسبوعين!</p>
-                </div>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-mobile-alt"></i> المحافظ الإلكترونية (Essential Apps)</h5>
-                  <p><strong>Touch 'n Go:</strong> تطبيق أساسي للدفع في كل مكان (مواصلات، محلات، مطاعم). <strong>يجب
-                      تحميله فور الوصول!</strong></p>
-                  <p><strong>GrabPay:</strong> محفظة Grab للدفع في التوصيل (طعام، مواصلات).
-                    ربطها مع Grab يسهل الدفع.</p>
-                  <p><strong>BigPay:</strong> حل ممتاز للطلاب، يمكن شحنه ببطاقة دولية (يحتاج
-                    إيداع 20 رينجت للتفعيل).</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-institution"></i> البنوك المحلية (للمستقبل)</h5>
-                  <p>بعد استقرارك، ننصح بفتح حساب في:</p>
-                  <p>• <strong>Maybank</strong> - الأشهر والأكثر انتشاراً</p>
-                  <p>• <strong>CIMB Bank</strong> - جيد للطلاب</p>
-                  <p>• <strong>RHB Bank</strong> - خيار ثالث موثوق</p>
-                </div>
-
-                <h3><i class="fas fa-exchange-alt"></i> 2. نصائح "الصرافة" في سايبرجايا</h3>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-warning"></i> تحذير هام</h5>
-                  <p>لا يُنصح بصرف مبالغ كبيرة في المطار - الأسعار سيئة جداً!</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-map-marker-alt"></i> أفضل الأماكن للصرافة</h5>
-                  <p><strong>Glojuara Money Changer</strong> (داخل D'Pulze) - الأفضل سعراً.</p>
-                  <p><strong>Tamarind Square:</strong> يوجد صرافة لكن أسعار أقل تنافسية.</p>
-                  <p><strong>💡 نصيحة:</strong> استخدم Wise للدفع وتجنب الصرافات تماماً!</p>
-                </div>
-
-                <h3><i class="fas fa-shopping-cart"></i> 3. تجهيز السكن بأقل التكاليف</h3>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-shopping-bag"></i> محلات الأدوات المنزلية</h5>
-                  <p><strong>Eco-shop / Eco-save:</strong> الخيار الأول للطلاب (حوالي 2.40 رينجت لأدوات المطبخ).</p>
-                  <p><strong>MR.D.I.Y:</strong> موجود في كل مول، الأشمل لمستلزمات المنزل.</p>
-                  <p><strong>Daiso (2.5 RM Store):</strong> كل شيء بسعر موحد - رائع
-                    للميزانية!</p>
-                </div>
-
-                <h3><i class="fas fa-shopping-basket"></i> 4. دليل البقالات في سايبرجايا</h3>
-                <p><strong>للطوارئ (24 ساعة):</strong> Ken's Grocer، 7-Eleven</p>
-                <p><strong>المنتجات العربية:</strong> بقالة نور المدينة، البقالة السورية
-                </p>
-                <p><strong>للتسوق الأسبوعي:</strong> Star Grocer (أسعار معقولة)، Lotus's
-                  (توصيل للمجمعات)، Village Grocer (Premium)</p>
-
-                <h3><i class="fas fa-receipt"></i> 5. دفع الفواتير والرصيد</h3>
-                <p>استخدم <strong>Jompay</strong> (عبر تطبيق البنك) للفواتير الحكومية.</p>
-                <p>للرصيد النقدي: <strong>KK Mart</strong> و <strong>7-Eleven</strong>
-                  (متوفران في كل مكان).</p>
-                <p><strong>Touch 'n Go Reload:</strong> يمكن شحنه من أي 7-Eleven أو محطة وقود
-                  Petronas.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5: Transportation (NEW) -->
-          <div class="swipeable-card" data-card="4" id="card-transportation">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-bus"></i></div>
-              <h2>المواصلات في سايبرجايا وكوالالمبور</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p>المواصلات في ماليزيا متنوعة ورخيصة، لكن <strong>معرفة الخيارات الأفضل يوفر عليك الكثير!</strong></p>
-
-                <h3><i class="fas fa-subway"></i> 1. المترو (MRT) - الأسرع لكوالالمبور</h3>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-train"></i> خط MRT Putrajaya</h5>
-                  <p>يربط سايبرجايا بكوالالمبور مباشرة - <strong>40 دقيقة فقط!</strong></p>
-                  <p><strong>أقرب محطة:</strong> Cyberjaya Utara أو Putrajaya Sentral</p>
-                  <p><strong>السعر:</strong> 3-5 RM للرحلة الواحدة</p>
-                  <p><strong>💡 نصيحة:</strong> استخدم بطاقة Touch 'n Go للدفع - أسرع وأوفر!
-                  </p>
-                </div>
-
-                <h3><i class="fas fa-bus-alt"></i> 2. الحافلات - الأرخص داخل المدينة</h3>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-bus"></i> Rapid KL On-Demand</h5>
-                  <p><strong>الأرخص على الإطلاق!</strong> - حافلة حسب الطلب عبر تطبيق Rapid KL</p>
-                  <p><strong>السعر:</strong> 1-2 RM فقط للرحلة!</p>
-                  <p><strong>كيف تستخدمه:</strong> حمل تطبيق <strong>Pulse by Rapid
-                      KL</strong>، حدد موقعك ووجهتك، واحجز الحافلة</p>
-                  <p><strong>⏱️ ملاحظة:</strong> قد يستغرق الانتظار 10-20 دقيقة</p>
-                </div>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-bus"></i> حافلات الجامعة</h5>
-                  <p>معظم الجامعات توفر حافلات <strong>مجانية أو شبه مجانية</strong> للطلاب:</p>
-                  <p>• MMU Shuttle Bus - مجاني للطلاب</p>
-                  <p>• APU Bus Service - يربط الحرم بالمجمعات السكنية</p>
-                  <p><strong>💡 اسأل قسم الطلاب عن جداول الحافلات!</strong></p>
-                </div>
-
-                <h3><i class="fas fa-car"></i> 3. تطبيقات النقل (Ride-Hailing)</h3>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-mobile-alt"></i> Grab - التطبيق الأول</h5>
-                  <p><strong>Grab</strong> مثل Uber/Careem - الأفضل للرحلات القصيرة والمتوسطة</p>
-                  <p><strong>أنواع الخدمة:</strong></p>
-                  <p>• <strong>GrabCar:</strong> سيارة خاصة (4-10 RM)</p>
-                  <p>• <strong>GrabBike:</strong> دراجة نارية (2-5 RM) - الأسرع والأرخص!</p>
-                  <p><strong>💡 نصيحة:</strong> فعّل GrabPay wallet لتحصل على خصومات وعروض
-                  </p>
-                </div>
-
-                <div class="tip-box">
-                  <h5><i class="fas fa-taxi"></i> بدائل Grab</h5>
-                  <p><strong>InDrive:</strong> تطبيق جديد بأسعار أرخص - جربه!</p>
-                  <p><strong>Maxim:</strong> منافس آخر - أسعار مناسبة</p>
-                </div>
-
-                <h3><i class="fas fa-bicycle"></i> 4. الدراجات والسكوتر</h3>
-                <p>إذا كنت تسكن قريباً من الجامعة، <strong>الدراجة خيار ممتاز!</strong></p>
-                <p>• <strong>شراء دراجة:</strong> 200-500 RM من Decathlon أو Mr.DIY</p>
-                <p>• <strong>e-Scooter:</strong> متوفر للإيجار عبر تطبيقات مثل Beam و Neuron
-                </p>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-warning"></i> تحذير الطقس</h5>
-                  <p>ماليزيا حارة ورطبة، والأمطار مفاجئة! إذا كنت ستستخدم الدراجة، احمل معطفاً مقاوماً للماء دائماً.</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-calculator"></i> مقارنة التكاليف الشهرية</h5>
-                  <p><strong>استخدام MRT + Rapid KL:</strong> ~50-80 RM شهرياً</p>
-                  <p><strong>استخدام Grab فقط:</strong> ~150-250 RM شهرياً</p>
-                  <p><strong>دراجة هوائية:</strong> تكلفة أولية فقط (200-500 RM)</p>
-                  <p><strong>💡 الأذكى: مزيج من MRT + Rapid KL + GrabBike للطوارئ!</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 7: Loneliness -->
-          <div class="swipeable-card" data-card="7" id="card-loneliness">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-users"></i></div>
-              <h2>رابعاً: الوحدة والانعزال (الفخ الأكبر)</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p><strong>أصعب ما في الغربة ليس الدراسة، بل الوحدة.</strong> يقع كثير من الطلاب في فخ "الكانتون العربي"
-                  (سكن عربي، أكل عربي، أصدقاء عرب فقط).</p>
-
-                <div class="alert-box">
-                  <h5><i class="fas fa-warning"></i> النتيجة السلبية</h5>
-                  <p>هذا يحرمك من تطوير لغتك والاستفادة من التنوع الثقافي الذي هو أساس الدراسة بالخارج.</p>
-                </div>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-users"></i> نصيحة علم ونور</h5>
-                  <p><strong>انخرط في أندية الجامعة.</strong> لا تجعل غرفتك هي عالمك الوحيد. شارك في الأنشطة الرياضية
-                    والثقافية والتطوعية.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 8: Conclusion -->
-          <div class="swipeable-card" data-card="8" id="card-conclusion">
-            <div class="card-inner">
-              <div class="card-icon-large"><i class="fas fa-graduation-cap"></i></div>
-              <h2>الخلاصة: هل الدراسة في ماليزيا تستحق؟</h2>
-              <div class="card-content">
-                <div class="card-scroll-hint">
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-                <p><strong>الغربة في ماليزيا مدرسة وتدريب حياتي.</strong> نعم، هناك تحديات، لكن <strong>الأدوات
-                    موجودة</strong>، والبلد آمن، والفرص متاحة.</p>
-
-                <div class="success-box">
-                  <h5><i class="fas fa-check-circle"></i> ما الذي ستكتسبه</h5>
-                  <p>ستعلمك هذه التجربة <strong>الاعتماد على النفس، احترام الوقت، وتقبل الاختلاف</strong>.</p>
-                </div>
-
-                <p><strong>ماليزيا ليست فقط وجهة دراسية، بل هي محطة لتحويل نفسك إلى شخص أقوى
-                    وأكثر حكمة.</strong></p>
-
-                <p>
-                  🚀 الآن حان دورك. اتخذ القرار، احزم حقيبتك، وابدأ رحلتك!
-                </p>
-              </div>
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-list-check"></i></div>
+            <h3 class="info-card-title">ما الذي ستجده في هذا الدليل؟</h3>
+            <div class="info-card-body">
+              <p>هذا الدليل مبني على تجارب واقعية لطلاب عاشوا في سايبرجايا. ستتعرف على:</p>
+              <ul class="rich-list" style="margin-top: 1rem;">
+                <li><i class="fas fa-check"></i> التعامل مع اللغة والثقافة المحلية</li>
+                <li><i class="fas fa-check"></i> الحلول المالية والتطبيقات الضرورية</li>
+                <li><i class="fas fa-check"></i> أماكن التسوق والبقالات وأسعارها</li>
+                <li><i class="fas fa-check"></i> كيف تتجنب فخ الوحدة والعزلة</li>
+                <li><i class="fas fa-check"></i> نصائح لتوفير المال وإدارة حياتك</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <!-- Navigation Dots and Arrows -->
-        <div class="cards-navigation">
-          <button class="card-nav-btn card-nav-prev" id="prevCard" aria-label="البطاقة السابقة">
-            <i class="fas fa-chevron-left"></i>
-          </button>
+        <div class="highlight-box info" style="margin-top: 2.5rem;">
+          <div class="highlight-box-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="highlight-box-content">
+            <h4>هدف هذا الدليل</h4>
+            <p>نريدك أن <strong>تصل سايبرجايا وأنت واثق</strong> من كل خطوة. هذا الدليل يوفر عليك أشهر من التجربة والخطأ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="nav-dots-container">
-            <button class="nav-dot active" data-slide="0" aria-label="الشريحة 1"></button>
-            <button class="nav-dot" data-slide="1" aria-label="الشريحة 2"></button>
-            <button class="nav-dot" data-slide="2" aria-label="الشريحة 3"></button>
-            <button class="nav-dot" data-slide="3" aria-label="الشريحة 4"></button>
-            <button class="nav-dot" data-slide="4" aria-label="الشريحة 5"></button>
-            <button class="nav-dot" data-slide="5" aria-label="الشريحة 6"></button>
-            <button class="nav-dot" data-slide="6" aria-label="الشريحة 7"></button>
-            <button class="nav-dot" data-slide="7" aria-label="الشريحة 8"></button>
-            <button class="nav-dot" data-slide="8" aria-label="الشريحة 9"></button>
+    <!-- Section 2: Laws & Safety -->
+    <section class="cluster-section-alt" id="laws">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-shield-halved"></i> القوانين الصارمة والأمان (الأولوية القصوى)</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>قبل أي شيء، يجب أن تعرف <strong>الخطوط الحمراء</strong> التي لا يمكن تجاوزها في ماليزيا. مخالفتها قد تؤدي إلى <strong>الترحيل الفوري</strong> وإلغاء تأشيرتك.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+          <div class="highlight-box danger">
+            <div class="highlight-box-icon"><i class="fas fa-warning"></i></div>
+            <div class="highlight-box-content">
+              <h4>تحذير هام: الحضور الإلزامي</h4>
+              <p><strong>نسبة الحضور 80% إلزامية</strong> لتجديد التأشيرة. أي تهاون قد يؤدي لرفض التجديد والترحيل.</p>
+              <p>الجامعات تراقب الحضور بدقة، وترسل التقارير لإدارة الهجرة EMGS مباشرة. <strong>الغياب المتكرر = خطر حقيقي على تأشيرتك</strong>.</p>
+            </div>
           </div>
 
-          <button class="card-nav-btn card-nav-next" id="nextCard" aria-label="البطاقة التالية">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          <div class="highlight-box danger">
+            <div class="highlight-box-icon"><i class="fas fa-ban"></i></div>
+            <div class="highlight-box-content">
+              <h4>العمل الجزئي: ممنوع إلا بشروط صارمة</h4>
+              <p><strong>العمل غير المصرح به ممنوع قانونياً</strong> ويعرضك لخطر الترحيل الفوري.</p>
+              <p><strong>الاستثناءات المسموحة فقط:</strong></p>
+              <ul class="rich-list" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <li><i class="fas fa-check"></i> العمل في العطلات الطويلة (Semester Breaks)</li>
+                <li><i class="fas fa-check"></i> بحد أقصى <strong>20 ساعة أسبوعياً</strong></li>
+                <li><i class="fas fa-check"></i> يتطلب تصريح رسمي من الجامعة</li>
+              </ul>
+              <p><strong>⚠️ العمل بدون تصريح = ترحيل فوري + حظر دخول لماليزيا</strong></p>
+            </div>
+          </div>
+
+          <div class="highlight-box success">
+            <div class="highlight-box-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="highlight-box-content">
+              <h4>كيف تبقى آمناً؟</h4>
+              <ul class="rich-list" style="margin-top: 0.5rem;">
+                <li><i class="fas fa-check"></i> <strong>الحضور:</strong> لا تتغيب إلا بعذر مرضي أو طارئ موثق</li>
+                <li><i class="fas fa-check"></i> <strong>العمل:</strong> إذا احتجت دخل إضافي، استشر قسم الطلاب الدوليين في جامعتك أولاً</li>
+                <li><i class="fas fa-check"></i> <strong>التأشيرة:</strong> تابع تاريخ انتهاء تأشيرتك وجددها قبل الموعد بشهر على الأقل</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-box info">
+            <div class="highlight-box-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="highlight-box-content">
+              <h4>نصيحة علم ونور</h4>
+              <p>احتفظ بنسخة من جميع وثائقك (جواز السفر، تأشيرة، بطاقة الطالب) على هاتفك وفي حساب سحابي. في حالة الطوارئ، هذه الوثائق قد تنقذك من مشاكل كبيرة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Housing & Safety -->
+    <section class="cluster-section" id="housing">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-home"></i> السكن والأمان (المعيار الأول للأهالي)</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>السكن هو <strong>أهم قرار ستتخذه</strong> بعد وصولك. الاختيار الصحيح يوفر عليك المال ويضمن راحتك وسلامتك.</p>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1.5rem;"><i class="fas fa-building"></i> أنواع السكن في سايبرجايا</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-building-user"></i></div>
+            <h3 class="info-card-title">1. Serviced Apartments (الأفضل)</h3>
+            <div class="info-card-body">
+              <p><strong>المميزات:</strong> مؤثث بالكامل، أمن 24/7، مسبح وجيم، قريب من الجامعات</p>
+              <p><strong>السعر:</strong> 450-700 RM شهرياً للشخص (مشاركة)</p>
+              <p><strong>أمثلة:</strong> D'Pulze Residence، Evo Soho، Shaftsbury Square</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-door-closed"></i></div>
+            <h3 class="info-card-title">2. Studio Units (SOHO)</h3>
+            <div class="info-card-body">
+              <p><strong>المميزات:</strong> مساحة أصغر، خصوصية أكثر، مناسب لشخص أو اثنين</p>
+              <p><strong>السعر:</strong> 1000-1400 RM شهرياً للوحدة (بالمتوسط)</p>
+              <p><strong>ملاحظة:</strong> تكلفتها أعلى من الشقق المشتركة</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box danger" style="margin-top: 1.5rem; margin-bottom: 2.5rem;">
+          <div class="highlight-box-icon"><i class="fas fa-bolt"></i></div>
+          <div class="highlight-box-content">
+            <h4>⚠️ تحذير هام: فواتير الكهرباء في SOHO</h4>
+            <p><strong>انتبه!</strong> بعض وحدات الاستوديو (SOHO) قد تُحسب بتعرفة <strong>تجارية (Commercial)</strong> وليست سكنية. <strong>النتيجة:</strong> فاتورة الكهرباء قد تكون <strong>أغلى بـ 30-50%</strong> من السكن العادي!</p>
+            <p><strong>الحل:</strong> قبل استئجار الوحدة، اسأل المالك أو الوكيل عن نوع التعرفة الكهربائية (Residential أو Commercial).</p>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-search"></i> كيف تبحث عن السكن؟</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title">أفضل المواقع والتطبيقات:</h3>
+            <div class="info-card-body">
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>Mudah.my</strong> - الموقع الأشهر (مثل OLX)</li>
+                <li><i class="fas fa-check"></i> <strong>iProperty</strong> - عقارات مضمونة</li>
+                <li><i class="fas fa-check"></i> <strong>Facebook Groups</strong> - "Cyberjaya Student Housing"</li>
+                <li><i class="fas fa-check"></i> <strong>WhatsApp Groups</strong> - اسأل الطلاب العرب</li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">نصيحة ذهبية</h3>
+            <div class="info-card-body">
+              <p><strong>لا توقع العقد قبل معاينة الوحدة شخصياً!</strong> تأكد من:</p>
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> نظافة الوحدة وسلامة الأثاث</li>
+                <li><i class="fas fa-check"></i> عمل التكييف والماء الساخن</li>
+                <li><i class="fas fa-check"></i> أمان المبنى (حارس، كاميرات)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box success" style="margin-top: 1.5rem;">
+          <div class="highlight-box-icon"><i class="fas fa-handshake"></i></div>
+          <div class="highlight-box-content">
+            <h4>علم ونور تساعدك</h4>
+            <p>نوفر لك <strong>مساعدة مجانية</strong> في البحث عن السكن المناسب، معاينة الوحدات، والتفاوض مع الملاك. اتصل بنا قبل وصولك!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Language & Communication -->
+    <section class="cluster-section-alt" id="language">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-comments"></i> اللغة والاتصال</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>من أهم مميزات ماليزيا هو <strong>انتشار اللغة الإنجليزية كلغة تواصل أساسية</strong>.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+          <div class="highlight-box warning">
+            <div class="highlight-box-icon"><i class="fas fa-warning"></i></div>
+            <div class="highlight-box-content">
+              <h4>تحدي اللهجة</h4>
+              <p>الشعب الماليزي يتحدث بلكنة محلية سريعة (Manglish). أذنك ستحتاج لأسبوع أو أسبوعين للاعتياد.</p>
+            </div>
+          </div>
+
+          <div class="highlight-box success">
+            <div class="highlight-box-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="highlight-box-content">
+              <h4>النصيحة الذهبية</h4>
+              <p>الشعب الماليزي ودود جداً؛ لا تتردد في طلب إعادة الكلام ببطء. سيقدرون جهدك.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Environment & Food -->
+    <section class="cluster-section" id="environment">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-leaf"></i> الصدمة البيئية والطعام</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>بمجرد الخروج من المطار، ستستقبلك <strong>الرطوبة العالية</strong>. التحدي البيئي مسألة وقت، لكن <strong>التحدي الأكبر يكمن في "معدتك"</strong>.</p>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1.5rem;"><i class="fas fa-utensils"></i> الطعام: تحدي البهارات</h3>
+        <p style="margin-bottom: 1.5rem;">الأكل الماليزي يعتمد على <strong>البهارات الحارة (Sambal)</strong>. قد تعاني معدتك في البداية إذا لم تكن معتاداً.</p>
+
+        <div class="highlight-box info">
+          <div class="highlight-box-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="highlight-box-content">
+            <h4>الحل</h4>
+            <p>في سايبرجايا، الخيارات العربية متوفرة بكثرة في مناطق مثل "Shaftsbury" و "Neo Cyber". لكن <strong>تعلم الطبخ في المنزل يظل هو الحل الأوفر والأصح</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Financial Guide -->
+    <section class="cluster-section-alt" id="financial">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-wallet"></i> التعاملات المالية والمصاريف</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>نعلم أن الهاجس الأكبر لدى الآباء هو: <strong>"كيف سيعيش ابني؟"</strong>. بناءً على كتيب إرشاد علم ونور، إليك التفاصيل المالية واللوجستية:</p>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1.5rem;"><i class="fas fa-institution"></i> 1. الأمان المالي: البنوك والمحافظ</h3>
+        <p style="margin-bottom: 1.5rem;">النظام المالي في ماليزيا متطور جداً:</p>
+
+        <div class="info-grid" style="margin-bottom: 1.5rem;">
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-clock"></i> فتح حساب بنكي</h3>
+            <div class="info-card-body">
+              <p>فتح حساب بنكي محلي <strong>صعب ويستغرق وقتاً طويلاً</strong> (أسبوعين - شهر) ويتطلب:</p>
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> خطاب من الجامعة</li>
+                <li><i class="fas fa-check"></i> جواز السفر + تأشيرة سارية</li>
+                <li><i class="fas fa-check"></i> إيداع أولي (200-500 RM)</li>
+              </ul>
+              <p style="color: #ef4444; font-weight: bold; margin-top: 0.5rem;">⏱️ المشكلة: قد لا تحتاج البطاقة فوراً، وستحتاج حلاً سريعاً للدفع!</p>
+            </div>
+          </div>
+
+          <div class="info-card" style="border-top: 4px solid #22c55e;">
+            <h3 class="info-card-title"><i class="fas fa-rocket"></i> الحل الفوري: Wise</h3>
+            <div class="info-card-body">
+              <p><strong>Wise</strong> هو حل مثالي للطلاب - بطاقة دولية تعمل فور الوصول:</p>
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>تفعيل فوري</strong> - اطلبها قبل وصولك</li>
+                <li><i class="fas fa-check"></i> <strong>أسعار صرف ممتازة</strong></li>
+                <li><i class="fas fa-check"></i> <strong>رسوم منخفضة جداً</strong></li>
+              </ul>
+              <p style="font-weight: bold; margin-top: 0.5rem; color: var(--color-primary);">💡 نصيحة: سجل حساب Wise قبل سفرك بأسبوعين!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box info" style="margin-bottom: 2rem;">
+          <div class="highlight-box-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="highlight-box-content">
+            <h4>المحافظ الإلكترونية (Essential Apps)</h4>
+            <ul class="rich-list">
+              <li><i class="fas fa-check"></i> <strong>Touch 'n Go:</strong> تطبيق أساسي للدفع في كل مكان (مواصلات، محلات). <strong>يجب تحميله فور الوصول!</strong></li>
+              <li><i class="fas fa-check"></i> <strong>GrabPay:</strong> محفظة Grab للدفع في التوصيل (طعام، مواصلات).</li>
+              <li><i class="fas fa-check"></i> <strong>BigPay:</strong> حل ممتاز للطلاب، يمكن شحنه ببطاقة دولية.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1.5rem;"><i class="fas fa-exchange-alt"></i> 2. نصائح "الصرافة" وتجهيز السكن</h3>
+        <div class="highlight-box warning" style="margin-bottom: 1.5rem;">
+          <div class="highlight-box-icon"><i class="fas fa-warning"></i></div>
+          <div class="highlight-box-content">
+            <h4>تحذير هام</h4>
+            <p>لا يُنصح بصرف مبالغ كبيرة في المطار - الأسعار سيئة جداً! استخدم Wise للدفع وتجنب الصرافات تماماً!</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-shopping-bag"></i> محلات الأدوات المنزلية</h3>
+            <div class="info-card-body">
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>Eco-shop:</strong> الخيار الأول (حوالي 2.40 رينجت)</li>
+                <li><i class="fas fa-check"></i> <strong>MR.D.I.Y:</strong> الأشمل لمستلزمات المنزل</li>
+                <li><i class="fas fa-check"></i> <strong>Daiso:</strong> كل شيء بسعر موحد (للميزانية!)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-shopping-basket"></i> دليل البقالات في سايبرجايا</h3>
+            <div class="info-card-body">
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>للطوارئ (24 ساعة):</strong> Ken's Grocer، 7-Eleven</li>
+                <li><i class="fas fa-check"></i> <strong>المنتجات العربية:</strong> نور المدينة، البقالة السورية</li>
+                <li><i class="fas fa-check"></i> <strong>للتسوق الأسبوعي:</strong> Star Grocer، Lotus's</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box success" style="margin-top: 1.5rem;">
+          <div class="highlight-box-icon"><i class="fas fa-receipt"></i></div>
+          <div class="highlight-box-content">
+            <h4>دفع الفواتير والرصيد</h4>
+            <ul class="rich-list">
+              <li><i class="fas fa-check"></i> استخدم <strong>Jompay</strong> (عبر تطبيق البنك) للفواتير الحكومية.</li>
+              <li><i class="fas fa-check"></i> للرصيد النقدي: <strong>KK Mart</strong> و <strong>7-Eleven</strong> (متوفران في كل مكان).</li>
+              <li><i class="fas fa-check"></i> <strong>Touch 'n Go Reload:</strong> يمكن شحنه من أي 7-Eleven أو محطة وقود Petronas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Transportation -->
+    <section class="cluster-section" id="transportation">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-bus"></i> المواصلات في سايبرجايا وكوالالمبور</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p>المواصلات في ماليزيا متنوعة ورخيصة، لكن <strong>معرفة الخيارات الأفضل يوفر عليك الكثير!</strong></p>
+        </div>
+
+        <div class="info-grid" style="margin-top: 2rem;">
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-subway"></i> 1. المترو (MRT) - الأسرع</h3>
+            <div class="info-card-body">
+              <p>خط <strong>MRT Putrajaya</strong> يربط سايبرجايا بكوالالمبور مباشرة (40 دقيقة فقط).</p>
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>أقرب محطة:</strong> Cyberjaya Utara أو Putrajaya Sentral</li>
+                <li><i class="fas fa-check"></i> <strong>السعر:</strong> 3-5 RM للرحلة</li>
+              </ul>
+              <p style="font-weight: bold; margin-top: 0.5rem; color: var(--color-primary);">💡 نصيحة: استخدم بطاقة Touch 'n Go للدفع</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-bus-alt"></i> 2. الحافلات - الأرخص</h3>
+            <div class="info-card-body">
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>Rapid KL On-Demand:</strong> حافلة حسب الطلب. 1-2 RM فقط! حمل تطبيق Pulse by Rapid KL.</li>
+                <li><i class="fas fa-check"></i> <strong>حافلات الجامعة:</strong> مجانية أو شبه مجانية (مثل MMU Shuttle Bus).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-car"></i> 3. تطبيقات النقل (Grab)</h3>
+            <div class="info-card-body">
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>GrabCar:</strong> سيارة خاصة (4-10 RM)</li>
+                <li><i class="fas fa-check"></i> <strong>GrabBike:</strong> دراجة نارية (2-5 RM) - الأسرع!</li>
+                <li><i class="fas fa-check"></i> <strong>البدائل:</strong> InDrive و Maxim</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-bicycle"></i> 4. الدراجات والسكوتر</h3>
+            <div class="info-card-body">
+              <p>إذا كنت تسكن قريباً من الجامعة، الدراجة خيار ممتاز!</p>
+              <ul class="rich-list">
+                <li><i class="fas fa-check"></i> <strong>شراء دراجة:</strong> 200-500 RM</li>
+                <li><i class="fas fa-check"></i> <strong>e-Scooter:</strong> إيجار عبر Beam أو Neuron</li>
+              </ul>
+              <p style="color: #ef4444; font-weight: bold; margin-top: 0.5rem;">⚠️ تحذير: احمل معطفاً مقاوماً للماء للأمطار المفاجئة!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box success" style="margin-top: 2rem;">
+          <div class="highlight-box-icon"><i class="fas fa-calculator"></i></div>
+          <div class="highlight-box-content">
+            <h4>مقارنة التكاليف الشهرية</h4>
+            <p><strong>استخدام MRT + Rapid KL:</strong> ~50-80 RM شهرياً</p>
+            <p><strong>استخدام Grab فقط:</strong> ~150-250 RM شهرياً</p>
+            <p><strong>💡 الأذكى: مزيج من MRT + Rapid KL + GrabBike للطوارئ!</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Loneliness -->
+    <section class="cluster-section-alt" id="loneliness">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-users"></i> الوحدة والانعزال (الفخ الأكبر)</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p><strong>أصعب ما في الغربة ليس الدراسة، بل الوحدة.</strong> يقع كثير من الطلاب في فخ "الكانتون العربي" (سكن عربي، أكل عربي، أصدقاء عرب فقط).</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+          <div class="highlight-box warning">
+            <div class="highlight-box-icon"><i class="fas fa-warning"></i></div>
+            <div class="highlight-box-content">
+              <h4>النتيجة السلبية</h4>
+              <p>هذا يحرمك من تطوير لغتك والاستفادة من التنوع الثقافي الذي هو أساس الدراسة بالخارج.</p>
+            </div>
+          </div>
+
+          <div class="highlight-box success">
+            <div class="highlight-box-icon"><i class="fas fa-users"></i></div>
+            <div class="highlight-box-content">
+              <h4>نصيحة علم ونور</h4>
+              <p><strong>انخرط في أندية الجامعة.</strong> لا تجعل غرفتك هي عالمك الوحيد. شارك في الأنشطة الرياضية والثقافية والتطوعية.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Conclusion -->
+    <section class="cluster-section" id="conclusion">
+      <div class="container">
+        <h2 class="cluster-section-title"><i class="fas fa-graduation-cap"></i> الخلاصة: هل الدراسة في ماليزيا تستحق؟</h2>
+        <div class="cluster-section-divider"></div>
+        <div class="section-intro">
+          <p><strong>الغربة في ماليزيا مدرسة وتدريب حياتي.</strong> نعم، هناك تحديات، لكن <strong>الأدوات موجودة</strong>، والبلد آمن، والفرص متاحة.</p>
+        </div>
+
+        <div class="highlight-box success" style="margin-top: 2rem; margin-bottom: 2rem;">
+          <div class="highlight-box-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="highlight-box-content">
+            <h4>ما الذي ستكتسبه</h4>
+            <p>ستعلمك هذه التجربة <strong>الاعتماد على النفس، احترام الوقت، وتقبل الاختلاف</strong>.</p>
+          </div>
+        </div>
+
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 1rem;"><strong>ماليزيا ليست فقط وجهة دراسية، بل هي محطة لتحويل نفسك إلى شخص أقوى وأكثر حكمة.</strong></p>
+        <p style="text-align: center; font-size: 1.2rem; color: var(--color-primary); font-weight: bold;">🚀 الآن حان دورك. اتخذ القرار، احزم حقيبتك، وابدأ رحلتك!</p>
+      </div>
+    </section>
+
+    <!-- Comprehensive Guides Section -->
+    <section class="majors-section pattern-light" aria-labelledby="comprehensiveGuides" style="background-color: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="comprehensiveGuides" class="section-title"><span>الأدلة الشاملة للطلاب</span></h2>
+          <p class="section-subtitle">كل ما تحتاجه من معلومات عن القبول، السكن، التأشيرة، وأكثر</p>
+        </div>
+        <div class="majors-grid" role="list">
+          <div class="major-card" role="listitem">
+            <div class="major-icon"><i class="fas fa-file-contract"></i></div>
+            <h3 class="major-title">الشهادات العربية</h3>
+            <p class="major-desc">دليل شروط القبول لحملة الشهادات الثانوية العربية ومعادلتها.</p>
+            <a href="admission/arab-certificates.html" class="btn btn-primary">اقرأ الدليل <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="major-card" role="listitem">
+            <div class="major-icon"><i class="fas fa-globe"></i></div>
+            <h3 class="major-title">الشهادات الدولية</h3>
+            <p class="major-desc">متطلبات IGCSE، A-Levels، والشهادات الأجنبية للقبول الجامعي.</p>
+            <a href="admission/international-certificates.html" class="btn btn-primary">اقرأ الدليل <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="major-card" role="listitem">
+            <div class="major-icon"><i class="fas fa-language"></i></div>
+            <h3 class="major-title">متطلبات الإنجليزية</h3>
+            <p class="major-desc">درجات الآيلتس والتوفل المطلوبة للتخصصات.</p>
+            <a href="admission/english-requirements.html" class="btn btn-primary">اقرأ الدليل <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="major-card" role="listitem">
+            <div class="major-icon"><i class="fas fa-home"></i></div>
+            <h3 class="major-title">دليل السكن</h3>
+            <p class="major-desc">أنواع السكن الطلابي وأسعار الإيجار ونصائح لاختيار السكن المناسب.</p>
+            <a href="guides/housing-guide.html" class="btn btn-primary">اقرأ الدليل <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="major-card" role="listitem">
+            <div class="major-icon"><i class="fas fa-user-md"></i></div>
+            <h3 class="major-title">دراسة الطب</h3>
+            <p class="major-desc">دليل شامل لدراسة الطب البشري وطب الأسنان في ماليزيا وتكاليفها.</p>
+            <a href="guides/medicine-malaysia.html" class="btn btn-primary">اقرأ الدليل <i class="fas fa-arrow-left"></i></a>
+          </div>
+          <div class="major-card" role="listitem">
+            <div class="major-icon"><i class="fas fa-passport"></i></div>
+            <h3 class="major-title">تأشيرة الطالب</h3>
+            <p class="major-desc">إجراءات استخراج فيزا الطالب (EMGS) خطوة بخطوة.</p>
+            <a href="../ar/visa-arrival.html" class="btn btn-primary">اقرأ الدليل <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section pattern-light" aria-labelledby="servicesTitle">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fas fa-star"></i> ما نقدمه لك</div>
+          <h2 id="servicesTitle" class="section-title">خدماتنا للدراسة في ماليزيا</h2>
+          <p class="section-subtitle">
+            خدمات شاملة لمساعدتك في رحلتك الدراسية في ماليزيا: من التسجيل في الجامعات إلى استخراج التأشيرة وإيجاد السكن
+          </p>
+        </div>
+
+        <div class="services-grid" role="list">
+          <div class="service-card" role="listitem">
+            <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3 class="service-title">بيئة متكاملة للطالب</h3>
+            <p class="service-desc">
+              نوفر له بيئة دينية وصحية ورياضية متكاملة، ونساعده على الاندماج في الغربة عبر مجتمعات عربية تنشط بالفعاليات
+              والرحلات الممتعة
+            </p>
+          </div>
+
+          <div class="service-card" role="listitem">
+            <div class="service-icon"><i class="fas fa-plane"></i></div>
+            <h3 class="service-title">الاستقبال من المطار</h3>
+            <p class="service-desc">
+              نستقبلك في المطار ونساعدك على الاستقرار في ماليزيا. نوفر لك النقل والاستشارة حول الإقامة والتسهيلات
+              الأساسية
+            </p>
+          </div>
+
+          <div class="service-card" role="listitem">
+            <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+            <h3 class="service-title">المساعدة في التأشيرة</h3>
+            <p class="service-desc">
+              دعم كامل للتأشيرة بما في ذلك إعداد المستندات وتقديم الطلبات والمتابعة حتى الحصول على الموافقة النهائية
+            </p>
+          </div>
+
+          <div class="service-card" role="listitem">
+            <div class="service-icon"><i class="fas fa-home"></i></div>
+            <h3 class="service-title">دعم السكن</h3>
+            <p class="service-desc">
+              ابحث عن سكن مناسب بالقرب من جامعتك. نساعدك في اختيار السكن الآمن والمريح والاقتصادي بما يناسب احتياجاتك
+            </p>
+          </div>
+
+          <div class="service-card" role="listitem">
+            <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3 class="service-title">التسجيل في الجامعات</h3>
+            <p class="service-desc">
+              مساعدتك الكاملة في عملية التسجيل بالجامعات الماليزية. نتولى جميع الإجراءات الإدارية والأوراق اللازمة من
+              البداية إلى القبول النهائي والتسجيل
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="conclusion-section">
+    <section class="cluster-cta">
       <div class="container">
-        <h2>الخطوة التالية</h2>
-        <p>الآن بعد أن تعرفت على كل التفاصيل، حان
-          الوقت للعمل!</p>
-        <div>
-          <a href="../ar/universities.html" class="btn btn-primary">استكشف الجامعات</a>
-          <a href="../ar/services.html" class="btn btn-primary">خدماتنا</a>
-          <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="btn btn-primary">تواصل
-            معنا</a>
+        <h2 class="cluster-cta-title">الخطوة التالية</h2>
+        <p class="cluster-cta-desc">الآن بعد أن تعرفت على كل التفاصيل، حان الوقت للعمل!</p>
+        <div class="cluster-cta-actions">
+          <a href="../ar/universities.html" class="btn btn-primary"><i class="fas fa-university"></i> استكشف الجامعات</a>
+          <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fab fa-whatsapp"></i> تواصل معنا</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>
-        &copy; 2026 علم ونور - Elm w Noor. جميع الحقوق محفوظة.</p>
-      <p>
-        <a href="https://www.instagram.com/elmnooor" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        |
-        <a href="mailto:contactme@elmnoor.com">
-          <i class="fas fa-envelope"></i> البريد الإلكتروني
-        </a>
-      </p>
+      <div class="footer-content" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+        <div class="footer-logo">
+          <i class="fas fa-graduation-cap"></i> علم ونور
+        </div>
+        <div class="footer-social" style="display: flex; justify-content: center; gap: 1rem;">
+          <a href="https://www.instagram.com/elmnooor" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="الإنستغرام">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/60188734519" target="_blank" rel="noopener noreferrer" class="footer-social-link whatsapp" aria-label="واتساب">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:contactme@elmnoor.com" class="footer-social-link" aria-label="البريد الإلكتروني">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align: center; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+        <p>&copy; 2026 علم ونور - Elm w Noor. جميع الحقوق محفوظة.</p>
+      </div>
     </div>
   </footer>
 
