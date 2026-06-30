@@ -127,6 +127,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
   height: 55px;
   padding: 0 2rem;
   font-size: 18px;

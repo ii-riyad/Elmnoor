@@ -1449,7 +1449,7 @@
 
 @media (max-width: 600px) {
   .hero-stats-strip {
-    gap: 0.5rem;
+    display: none;
   }
 
   .hero-stat {
@@ -1465,6 +1465,14 @@
 
   .footer-brand {
     grid-column: auto;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-email {
+    justify-content: center;
   }
 }
 
@@ -2617,7 +2625,7 @@ html[dir="rtl"] .svc-badge-top {
     grid-column: span 1;
   }
   .hero-stats-strip {
-    gap: 0.6rem;
+    display: none;
   }
   .hero-stat {
     font-size: 0.8rem;

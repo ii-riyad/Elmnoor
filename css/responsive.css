@@ -371,6 +371,7 @@
     height: 46px;
     font-size: 15px;
     padding: 0 1.3rem;
+    gap: 0.4rem;
   }
 
   .toc-sidebar {
@@ -508,6 +509,12 @@
     height: 52px;
     margin-top: 1.5rem;
     width: 100%;
+  }
+
+  .btn-service-featured {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* CTA */
@@ -844,6 +851,30 @@
 
   .social-link:active {
     transform: translate(2px, 2px);
+  }
+
+  /* Disable card hovers on touch/mobile */
+  .service-card:hover,
+  .major-card:hover,
+  .university-card:hover,
+  .service-detail-card:hover,
+  .feedback-card:hover,
+  .info-card:hover,
+  .univ-preview-card:hover,
+  .guide-preview-card:hover,
+  .uni-card:hover,
+  .event-photo-card:hover,
+  .svc-card:hover {
+    transform: none !important;
+    box-shadow: 6px 6px 0 0 #000 !important;
+  }
+
+  .major-card:hover .major-icon {
+    transform: none !important;
+  }
+
+  .major-card:hover .major-title {
+    color: inherit !important;
   }
 }
 
